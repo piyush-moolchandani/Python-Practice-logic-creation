@@ -553,6 +553,7 @@
 
 '''35.	Replace digits where (digit × freq) + pos is prime '''
 
+
             
         
 
