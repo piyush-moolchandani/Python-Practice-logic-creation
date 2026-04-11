@@ -551,17 +551,223 @@
 # result=check(n)
 # print(result)
 
-'''35.	Replace digits where (digit × freq) + pos is prime '''
+'''35.	Replace digits where (digit × freq) + pos is prime digit= 3 '''
+# def check(n):
+#     pos=len(str(n))
+#     rem=n
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         x=rem
+#         count=0
+#         while x>0:
+#             digit2=x%10
+#             if digit==digit2:
+#                 count=count+1
+#             x=x//10
+#         pr=(digit*count)+pos
+#         count=0
+#         for i in range(1,pr+1):
+#             if pr%i==0:
+#                 count=count+1
+#         if count==2:
+#             digit=3
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# z=int(input("enter your number "))
+# result=check(z)
+# print(result)
 
+'''36.	Replace digits where digit² + freq² is even '''
+# def check(n):
+#     rem=n
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         x=rem
+#         count=0
+#         while x>0:
+#             digit2=x%10
+#             if digit==digit2:
+#                 count=count+1
+#             x=x//10
+#         if (digit**2+count**2)%2==0:
+#             new=new*10+digit
+#         n=n//10
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# z=int(input("enter your number "))
+# result=check(z)
+# print(result)
 
+'''38.	Replace digits where digit + pos + running sum is even '''
+# def check(n):
+#     pos=1
+#     new=""
+#     sum=0
+#     for i in n:
+#         digit=int(i)
+#         if (digit+pos+sum)%2==0:
+#             new+="8"
+#         else:
+#             new+=str(digit)
+#         sum=sum+digit
+#         pos+=1
+#     return new
+# a=input("enter your number ")
+# result=check(a)
+# print(result)
+
+'''39.	Replace digits where digit × pos × freq is prime '''
+# def check(n):
+#     pos=len(str(n))
+#     rem=n
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         x=rem
+#         count=0
+#         while x>0:
+#             digit2=x%10
+#             if digit==digit2:
+#                 count=count+1
+#             x=x//10
+#         pr=digit*count*pos
+#         count=0
+#         for i in range(1,pr+1):
+#             if pr%i==0:
+#                 count=count+1
+#         if count==2:
+#             new=new*10+digit
+#         n=n//10
+#         pos=pos-1
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number"))
+# result=check(a)
+# print(result)
+
+'''21.	Replace digits where running sum is prime '''
+# def check(n):
+#     new=""
+#     sum=0
+#     for i in n:
+#         digit=int(i)
+#         rs=sum+digit
+#         count=0
+#         for j in range(1,rs+1):
+#             if rs%j==0:
+#                 count=count+1
+#         if count==2:
+#             new+="P"
+#         else:
+#             new+=str(digit)
+#         sum=sum+digit
+#     return new
+# x=input("enter your number ")
+# result=check(x)
+# print(result)
+
+'''22.	Replace digits where running sum is even '''
+# def check(n):
+#     new=""
+#     sum=0
+#     for i in n:
+#         digit=int(i)
+#         sum=sum+digit
+#         if sum%2==0:
+#             new+="7"
+#         else:
+#             new+=str(digit)
+#     return new
+# a=input("enter your number ")
+# result=check(a)
+# print(result)
             
-        
+'''23.	Replace digits where running sum > 10 '''
+# def check(n):
+#     new=""
+#     sum=0
+#     for i in n:
+#         digit=int(i)
+#         sum=sum+digit
+#         if sum>10:
+#             new+="B"
+#         else:
+#             new+=str(digit)
+#     return new
+# a=input("enter your number ")
+# result=check(a)
+# print(result)
 
+'''24.	Replace digits where running sum < digit '''
+# def check(n):
+#     new=""
+#     running_sum=0
+#     for i in n:
+#         digit=int(i)
+#         if running_sum<digit:
+#             new+="S"
+#         else:
+#             new+=str(digit)
+#         running_sum=running_sum+digit
+#     return new
+# a=input("enter your number")
+# res=check(a)
+# print(res)
     
+'''25.	Replace digits where running product is prime '''
+# def check(n):
+#     new=""
+#     running_product=1
+#     for i in n:
+#         digit=int(i)
+#         running_product=running_product*digit
+#         count=0
+#         for j in range(1,running_product+1):
+#             if running_product%j==0:
+#                 count=count+1
+#         if count==2:
+#             new+="P"
+#         else:
+#             new+=str(digit)
+#     return new
+# a=input("enter your number ")
+# res=check(a)
+# print(res)
+
+'''digit × running product is even'''
+# def check(n):
+#     new=""
+#     running_prod=1
+#     for i in n:
+#         digit=int(i)
+#         if (running_prod*digit)%2==0:
+#             new+="E"
+#         else:
+#             new+=str(digit)
+#         running_prod=running_prod*digit
+#     return new
+# a=input("enter your number ")
+# res=check(a)
+# print(res)
     
    
-     
-
 
 
             
