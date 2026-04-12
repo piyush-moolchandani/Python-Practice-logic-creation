@@ -5167,6 +5167,103 @@ value is EVEN
 
 # print(new)
     
+'''174.	Replace digits where digit × position < average digit with 4. '''
+# def check(n):
+#     x=n
+#     pos=len(str(n))
+#     new=0
+#     sum=0
+#     while n>0:
+#         digit=n%10
+#         sum=sum+digit
+#         n=n//10
+#     avg=sum/pos
+#     while x>0:
+#         digit=x%10
+#         if digit*pos<avg:
+#             digit=4
+#         x=x//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+
+'''175.	Replace digits where digit + position is divisible by 3 with 5. '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         if (digit+pos)%3==0:
+#             digit=5
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+
+'''177.	Replace digits where digit % position == digit with 7. '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         if digit%pos==digit:
+#             digit=7
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+    
+
+'''179.	Replace digits where digit equals factorial of position % 10 with 9. '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,pos+1):
+#             fact=fact*i
+#         if fact%10==digit:
+#             digit=9
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+        
+        
+    
 
 
 
