@@ -5262,7 +5262,165 @@ value is EVEN
 # result=check(a)
 # print(result)
         
-        
+'''182.	Replace digits where digit equals square(position) % 10 with 3. '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         root=pos**2
+#         sq=root**2
+#         if (pos==sq)%10:
+#             digit=3
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
+'''184.	Replace digits where digit equals sum of digits at even positions with 5. '''
+# def check(n):
+#     x=n
+#     pos=len(str(n))
+#     new=0
+#     sum=0
+#     while n>0:
+#         digit=n%10
+#         sum=sum+digit
+#         n=n//10
+#     while x>0:
+#         digit=x%10
+#         if digit==sum and pos%2==0:
+#             digit=5
+#         x=x//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+
+'''211.	Replace digits where digit > average AND position is prime with 1. '''
+# def check(n):
+#     x=n
+#     pos=len(str(n))
+#     new=0
+#     sum=0
+#     while n>0:
+#         digit=n%10
+#         sum=sum+digit
+#         n=n//10
+#     avg=sum/pos
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for i in range(1,pos+1):
+#             if pos%i==0:
+#                 count=count+1
+#         if count==2 and digit>int(avg):
+#             digit=1
+#         x=x//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+
+
+'''213.	Replace digits where digit equals max digit AND position is even with 3. '''
+# n=int(input("enter your number "))
+# x=n
+# new=0
+# pos=len(str(n))
+# max=0
+# while n>0:
+#     digit=n%10
+#     if digit>max:
+#         max=digit
+#     n=n//10
+# while x>0:
+#     digit=x%10
+#     if digit==max and pos%2==0:
+#         digit=3
+#     x=x//10
+#     pos=pos-1
+#     new=new*10+digit
+# res=0
+# while new>0:
+#     digit=new%10
+#     res=res*10+digit
+#     new=new//10
+# print(res)
+
+'''217.	Replace digits where digit equals count of distinct digits AND position is odd with 7. '''
+# n=int(input("enter your number "))
+# rem=n
+# pos=len(str(n))
+# new=0
+# while n>0:
+#     digit=n%10
+#     x=rem
+#     count=0
+#     while x>0:
+#         digit2=x%10
+#         if digit==digit2:
+#             count=count+1
+#         x=x//10
+#     if count==1 and pos%2!=0:
+#         digit=7
+#     n=n//10
+#     pos=pos-1
+#     new=new*10+digit
+# res=0
+# while new>0:
+#     digit=new%10
+#     res=res*10+digit
+#     new=new//10
+# print(res)
+
+'''221.	Replace digits where digit equals sum of prime digits AND position divisible by 5 with 2'''
+# n=int(input("enter your number "))
+# x=n
+# pos=len(str(n))
+# new=0
+# while n>0:
+#     digit=n%10
+#     count=0
+#     sum=0
+#     for i in range(1,digit+1):
+#         if digit%i==0:
+#             count=count+i
+#     if count==2:
+#         sum=sum+digit
+#     if sum==digit and pos%2==0:
+#         digit=2
+#     n=n//10
+#     pos=pos-1
+#     new=new*10+digit
+# print(new)
+
+
+    
+
     
 
 
