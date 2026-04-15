@@ -206,6 +206,263 @@
 # print("Most frequent element =", most)
 # print("Frequency =", max_count)
 
+"Find Least Frequency "
+# l=[4,5,6,3,5,6,43,35,65,32,4]
+# min=l[0]
+# minimun=0
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count<min:
+#         min=count
+#         minimun=i
+# print("Most frequent element =", minimun)
+# print("Frequency =", min)
+
+
+'''34.	Count elements appearing more than once '''
+# l=[4,5,6,3,5,6,43,35,65,32,4,4]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+# if count>1:
+#     print(count)
+
+'''35.	Print duplicate elements '''
+# l=[4,5,6,3,5,6,43,35,65,32,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>1:
+#         l2.append(i)
+# print(l2)
+
+'''36.	Remove duplicates '''
+# l=[4,5,6,3,5,6,43,35,65,32,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==1:
+#         l2.append(i)
+# print(l2)
+
+'''37.	Count unique elements '''
+# l=[4,5,6,3,5,6,43,35,65,32,4,4]
+# count2=0
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==1:
+#         count2=count2+1
+# print(count2)
+
+'''38.	Replace duplicates with 0 '''
+# l=[4,5,6,3,5,6,43,35,65,32,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>1:
+#         i=0
+#     l2.append(i)
+# print(l2)
+
+'''39.	Find first non-repeating element '''
+# l=[4,5,6,3,5,6,43,35,65,32,4,4]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==1:
+#          print("First non-repeating element =", i)
+#          break
+
+'''40.	Find second most frequent element '''
+# l = [4,5,6,3,5,6,43,35,65,32,4,4]
+# max1 = 0
+# max2 = 0
+# first = 0
+# second = 0
+# done = []
+# for i in l:
+#     if i not in done:
+#         count = 0
+#         for j in l:
+#             if i == j:
+#                 count = count + 1
+#         if count > max1:
+#             max2 = max1
+#             second = first
+#             max1 = count
+#             first = i
+#         elif count > max2:
+#             max2 = count
+#             second = i
+#         done.append(i)
+# print("Second most frequent =", second)
+
+'''42.	Rotate list left by 1 '''
+# l=[10,20,30,40]
+# fi=l[0]
+# for i in range(len(l)-1):
+#     l[i]=l[i+1]
+# l[-1]=fi
+# print(l)
+
+'''43.	Rotate list right by 1 '''
+# l=[10,20,30,40]
+# lv=l[-1]
+# for i in range(len(l)-1,0,-1):
+#     l[i]=l[i-1]
+# l[0]=lv
+# print(l)
+
+'''44.	Rotate list by k positions '''
+# l=[1,2,3,4,5]
+# k=2
+# for j in range(2):
+#     lv=l[-1]
+#     for i in range(len(l)-1,0,-1):
+#         l[i]=l[i-1]
+#     l[0]=lv
+# print(l)
+
+'''Rotate list by k 7 '''
+# l=[1,2,3,4,5]
+# k=7
+# k=k%len(l)
+# for j in range(k):
+#     lv=l[-1]
+#     for i in range(len(l)-1,0,-1):
+#         l[i]=l[i-1]
+#     l[0]=lv
+# print(l)
+
+'''Left rotate by k'''
+# l=[1,2,3,4,5]
+# k=2
+# for j in range(k):
+#     fi=l[0]
+#     for i in range(len(l)-1):
+#         l[i]=l[i+1]
+#     l[-1]=fi
+# print(l)
+
+'''Left rotate by k3 '''
+# l=[1,2,3,4,5,6,7,8]
+# k=3
+# for j in range(k):
+#     fi=l[0]
+#     for i in range(len(l)-1):
+#         l[i]=l[i+1]
+#     l[-1]=fi
+# print(l)
+
+'''right rotate by k3 '''
+# l=[1,2,3,4,5,6,7,8]
+# k=3
+# for i in range (k):
+#     lv=l[-1]
+#     for i in range(len(l)-1,0,-1):
+#         l[i]=l[i-1]
+#     l[0]=lv
+# print(l)
+
+'''45.	Move all zeros to end '''
+# l=[1,0,2,0,3,0,4,0,5,0]
+# l2=[]
+# l3=[]
+# for i in l:
+#     if i!=0:
+#         l2.append(i)
+# for i in l:
+#     if i==0:
+#         l3.append(i)
+# print(l2+l3)
+
+'''46.	Move all zeros to front '''
+# l=[1,0,2,0,3,0,4,0,5,0]
+# l2=[]
+# l3=[]
+# for i in l:
+#     if i==0:
+#         l2.append(i)
+# for i in l:
+#     if i!=0:
+#         l3.append(i)
+# print(l2+l3)
+
+'''48.	Sort list (without using sort) '''
+'''🔹 Ascending Order (small to big)'''
+# l=[4,2,7,1,5]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]>l[j]:
+#             x=l[i]
+#             l[i]=l[j]
+#             l[j]=x
+# print(l)
+
+'''🔹 descending Order (big to small)'''
+# l=[4,2,7,1,5]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]<l[j]:
+#             x=l[i]
+#             l[i]=l[j]
+#             l[j]=x
+# print(l)
+
+
+'''49.	Merge two lists '''
+# l1=[1,2,3,4,5]
+# l2=[6,7,8,9,10]
+# for i in l2:
+#     l1.append(i)
+# print(l1)
+
+'''50.	Find intersection of two lists '''
+# l1=[1,2,3,4]
+# l2=[3,4,5,6]
+# l3=[]
+# for i in l1:
+#     if i in l2:
+#         l3.append(i)
+# print(l3)
+  
+''''''
+       
+
+    
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
 
 
 

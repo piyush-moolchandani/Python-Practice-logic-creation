@@ -5418,6 +5418,111 @@ value is EVEN
 #     new=new*10+digit
 # print(new)
 
+# '''226.	Replace digits where digit equals count of prime positions with 7. '''
+# def check(n):
+#     pos=len(str(n))
+#     x=n
+#     count2=0
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         count=0
+#         for i in range(1,pos+1):
+#             if pos%i==0:
+#                 count=count+1
+#         if count==2:
+#             count2=count2+1
+#         n=n//10
+#     pos=len(str(x))
+#     while x>0:
+#         digit=x%10
+#         if digit==count2:
+#             digit=7
+#         x=x//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+
+'''227.	Replace digits where digit equals count of square positions with 8. '''
+# n=int(input("enter your number "))
+# x=n
+# pos=len(str(n))
+# count=0
+# new=0
+# while n>0:
+#     digit=n%10
+#     root=pos**0.5
+#     sq=root**2
+#     if pos==sq:
+#         count=count+1
+#     n=n//10
+#     pos=pos-1
+# pos=len(str(x))
+# while x>0:
+#     digit=x%10
+#     if digit==count:
+#         digit=8
+#     x=x//10
+#     pos=pos-1
+#     new=new*10+digit
+# res=0
+# while new>0:
+#     digit=new%10
+#     res=res*10+digit
+#     new=new//10
+# print(res)
+
+'''229.	Replace digits where digit equals reversed digit × position with 1. '''
+# n=int(input("enter your number "))
+# x=n
+# pos=len(str(n))
+# rev=0
+# new=0
+# while n>0:
+#     digit=n%10
+#     rev=rev*10+digit
+#     n=n//10
+# while rev>0:
+#     digit=rev%10
+#     if 
+
+'''lucas number upto n terms '''
+# n=int(input("enter your number"))
+# fi=2
+# se=1
+# for i in range(n):
+#     print(fi,end=" ")
+#     nx=fi+se
+#     fi=se
+#     se=nx
+
+'''check whether condition'''
+# n=int(input("enter your number"))
+# fi=2
+# se=1
+# while fi<n:
+#     nx=fi+se
+#     fi=se
+#     se=nx
+# if fi==n:
+#     print("the number you entered is a lucas number ")
+# else:
+#     print("it's not a lucas number ")
+
+
+''''''
+
+
+       
+ 
 
     
 
