@@ -439,13 +439,68 @@
 '''50.	Find intersection of two lists '''
 # l1=[1,2,3,4]
 # l2=[3,4,5,6]
-# l3=[]
+# l3=[5,6,7,8]
+# l4=[]
 # for i in l1:
 #     if i in l2:
-#         l3.append(i)
-# print(l3)
+#         l4.append(i)
+# for i in l2:
+#     if i in l3:
+#         l4.append(i)
+# print(list(l4))
+
   
-''''''
+'''51.	Check if list is palindrome '''
+# l=[1,2,1]
+# l2=[]
+# for i in range(len(l)-1,-1,-1):
+#     l2.append(l[i])
+# if l==l2:
+#     print("the list is pallindrome")
+# else:
+#     print("the list is not pallindrome")
+
+'''52.	Find pair with given sum target = 100'''
+# l=[20,30,50,70]
+# t=100
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]+l[j]==t:
+#             print(l[i],l[j])
+#             break
+
+'''53.	Find all pairs with sum = k '''
+# l = [1,2,3,4,5]
+# k = 5
+# for i in range(len(l)):
+#     for j in range(i+1, len(l)):
+#         if l[i] + l[j] == k:
+#             print(l[i], l[j])
+
+'''54.	Find maximum difference between elements '''
+# l = [1,2,3,4,5]
+# max=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#        dif = abs(l[i]-l[j])
+#        if dif>max:
+#            max=dif
+# print(max)            excellent work
+
+'''55.	Find minimum difference '''
+# l=[5,3,8,4]
+# min=9
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         dif=abs(l[i]-l[j])
+#         if dif<min:
+#             min=dif
+# print(min)
+        
+'''56.	Find longest increasing sequence will understand later'''
+
+
+
        
 
     

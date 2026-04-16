@@ -5518,7 +5518,29 @@ value is EVEN
 #     print("it's not a lucas number ")
 
 
-''''''
+'''Replace digits where (digit² + position³) is prime with 9 '''
+n=int(input("enter your number "))
+pos=len(str(n))
+new=0
+while n>0:
+    digit=n%10
+    sq=digit**2+pos**3
+    count=0
+    for i in range(1,sq+1):
+        if sq%i==0:
+            count=count+1
+    if count==2:
+        digit=9
+    n=n//10
+    pos=pos-1
+    new=new*10+digit
+res=0
+while new>0:
+    digit=new%10
+    res=res*10+digit
+    new=new//10
+print(res)
+
 
 
        
