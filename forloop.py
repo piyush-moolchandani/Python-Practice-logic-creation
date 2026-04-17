@@ -5519,27 +5519,56 @@ value is EVEN
 
 
 '''Replace digits where (digit² + position³) is prime with 9 '''
-n=int(input("enter your number "))
-pos=len(str(n))
-new=0
-while n>0:
-    digit=n%10
-    sq=digit**2+pos**3
-    count=0
-    for i in range(1,sq+1):
-        if sq%i==0:
-            count=count+1
-    if count==2:
-        digit=9
-    n=n//10
-    pos=pos-1
-    new=new*10+digit
-res=0
-while new>0:
-    digit=new%10
-    res=res*10+digit
-    new=new//10
-print(res)
+# n=int(input("enter your number "))
+# pos=len(str(n))
+# new=0
+# while n>0:
+#     digit=n%10
+#     sq=digit**2+pos**3
+#     count=0
+#     for i in range(1,sq+1):
+#         if sq%i==0:
+#             count=count+1
+#     if count==2:
+#         digit=9
+#     n=n//10
+#     pos=pos-1
+#     new=new*10+digit
+# res=0
+# while new>0:
+#     digit=new%10
+#     res=res*10+digit
+#     new=new//10
+# print(res)
+
+'''Replace digits where digit! + position² is prime with 1 '''
+# n=int(input("enter your number "))
+# x=n
+# pos=len(str(n))
+# new=0
+# while x>0:
+#     digit=x%10
+#     fact=1
+#     for i in range(1,digit+1):
+#         fact=fact*1
+#     pr=fact+pos**2
+#     count=0
+#     for j in range(1,pr+1):
+#         if pr%j==0:
+#             count=count+1
+#     if count==2:
+#         digit=1
+#     x=x//10
+#     pos=pos-1
+#     new=new*10+digit
+# res=0
+# while new>0:
+#     digit=new%10
+#     res=res*10+digit
+#     new=new//10
+# print(res)
+
+
 
 
 
