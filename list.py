@@ -943,8 +943,151 @@ Bigger than best? save'''
 #         print(i)
 #         break
 
-'''40.	Find top 2 most frequent elements '''
-l=[1,3,4,1,6,1,7,90,7,45,7,23,7,6]
+'''41.	Reverse only even elements '''
+# l=[19,12,34,24,79]
+# l2=[]
+# for i in l:
+#     if i%2==0:
+#         rev=0
+#         x=i
+#         while x>0:
+#             digit=x%10
+#             rev=rev*10+digit
+#             x=x//10
+#         l2.append(rev)
+#     else:
+#         l2.append(i)
+# print(l2)
+
+'''43.	Swap first and last element '''
+# l=[19,12,34,24,79]
+# x=l[0]
+# l[0]=l[-1]
+# l[-1]=x
+# print(l)
+
+'''44.	Swap largest and smallest element '''
+# l=[19,12,34,24,79]
+# large=0
+# small=0
+# for i in range(len(l)):
+#     if l[i]>l[large]:
+#         large=i
+#     if l[i]<l[small]:
+#         small=i
+# x=l[large]
+# l[large]=l[small]
+# l[small]=x
+# print(l)
+
+'''45.	Move all negative numbers to front '''
+# l=[-1,2,3,4,-5,6,-7]
+# l2=[]
+# for i in l:
+#     if i<0:
+#         l2.append(i)
+# for i in l:
+#     if i>0:
+#         l2.append(i)
+# print(l2)
+
+'''47.	Arrange odd first then even '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     if i%2!=0:
+#         l2.append(i)
+# for i in l:
+#     if i%2==0:
+#         l2.append(i)
+# print(l2)
+
+
+'''48.	Sort list in descending order (without sort) '''
+# l=[5,6,3,9,1,2,3]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]<l[j]:
+#             x=l[i]
+#             l[i]=l[j]
+#             l[j]=x
+# print(l)
+
+'''49.	Concatenate two lists '''
+# l1=[1,2,3,4]
+# l2=[5,6,7,8]
+# for i in l2:
+#     l1.append(i)
+# print(l1)
+
+'''50.	Find union of two lists '''
+# l1=[1,2,3,4]
+# l2=[3,4,5,6]
+# for i in l1:
+#     if i in l2:
+#         print(i)
+
+'''51.	Check if all elements are same '''
+# l=[1,1,1,2,1]
+# same=1
+# for i in l:
+#     if i!=l[0]:
+#         same=0
+#         break
+# if same==1:
+#     print("all ements are same")
+# else:
+#     print("all elements are not same")
+
+'''52.	Check if list is strictly increasing '''
+# l=[1,2,3,4]
+# count=1
+# for i in range(1,len(l)):
+#     if l[i]<=l[i-1]:
+#         count=0
+#         break
+# if count==1:
+#     print("strictly increasing")
+# else:
+#     print("not increasing strictly")
+
+'''53.	Check if list is strictly decreasing '''
+# l=[5,4,3,2,1]
+# count=1
+# for i in range(1,len(l)):
+#     if l[i]>=l[i-1]:
+#         count=0
+#         break
+# if count==1:
+#     print("strictly decreasing")
+# else:
+#     print("not strictly decreasing")
+
+'''54.	Find pair with maximum sum '''
+# l=[1,2,3,4]
+# max=l[0]+l[1]
+# a=l[0]
+# b=l[1]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         s=l[i]+l[j]
+#         if s>max:
+#             max=s
+#             a=l[i]
+#             b=l[j]
+# print(a,b)
+# print(max)
+        
+
+
+    
+
+
+
+
+
+
+    
 
 
 
