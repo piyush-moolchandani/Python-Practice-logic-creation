@@ -1077,7 +1077,45 @@ Bigger than best? save'''
 #             b=l[j]
 # print(a,b)
 # print(max)
-        
+
+
+'''55.	Find pair with minimum sum '''
+# l=[1,2,3,4]
+# min=l[0]+l[1]
+# a=l[0]
+# b=l[1]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         s=l[i]+l[j]
+#         if s<min:
+#             min=s
+#             a=l[i]
+#             b=l[j]
+# print(a,b)
+# print(min)
+
+'''56.	Find longest consecutive sequence '''
+# l = [100,4,200,1,3,2]
+# l.sort()
+# l2=[]
+# temp=[l[0]]
+# for i in range(1,len(l)):
+#     if l[i]==l[i-1]+1:
+#         temp.append(l[i])
+#     elif l[i]==l[i-1]:
+#         pass
+#     else:
+#         if len(temp)>len(l2):
+#             l2=temp[:]
+#         temp=[l[i]]
+#     if len(temp)>len(l2):
+#         l2=temp[:]
+# print(l2)
+    
+''''''
+
+
+
 
 
     
