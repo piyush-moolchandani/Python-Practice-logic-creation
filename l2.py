@@ -172,6 +172,187 @@
 #         l2.append(l[i])
 # print(l2)
 
+'''70.	Replace elements at even index with 0 '''
+# l=[10, 20, 30, 40, 50, 60]
+# l2=[]
+# for i in range(len(l)):
+#     if i%2!=0:
+#         l2.append(l[i])
+# print(l2)
+ 
+'''71.	Replace each element with factorial value '''
+# l=[1,2,3,4,5,6]
+# l2=[]
+# for i in l:
+#     fact=1
+#     for j in range(1,i+1):
+#         fact=fact*j
+#     l2.append(fact)
+# print(l2)
+
+'''72.	Replace each element with number of digits '''
+# l=[121,4567,2,33]
+# l2=[]
+# for i in l:
+#     count=0
+#     while i>0:
+#         digit=i%10
+#         count=count+1
+#         i=i//10
+#     l2.append(count)
+# print(l2)
+
+'''73.	Replace each element with sum of digits '''
+# l=[121,4567,25,33]
+# l2=[]
+# for i in l:
+#     sum=0
+#     while i>0:
+#         digit=i%10
+#         sum=sum+digit
+#         i=i//10
+#     l2.append(sum)
+# print(l2)
+
+'''74.	Replace each element with reverse of number '''
+# l=[121,4567,25,33]
+# l2=[]
+# for i in l:
+#     rev=0
+#     while i>0:
+#         digit=i%10
+#         rev=rev*10+digit
+#         i=i//10
+#     l2.append(rev)
+# print(l2)
+
+'''75.	Replace palindrome numbers with 1 else 0 '''
+# l=[121,4567,25,33]
+# l2=[]
+# for i in l:
+#     rev=0
+#     x=i
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if i==rev:
+#         i=1
+#     else:
+#         i=0
+#     l2.append(i)
+# print(l2)
+
+
+'''76.	Replace prime numbers with square '''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count==2:
+#         i=i**2
+#     l2.append(i)
+# print(l2)
+
+
+'''78.	Replace each element with next greater element in list '''
+# l=[1,3,2,5]
+# l2=[]
+# for i in range(len(l)):
+#     ans=-1
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[i] and ans==-1:
+#             ans=l[j]
+#     l2.append(ans)
+# print(l2)
+
+'''79.	Replace each element with previous smaller element '''
+# l=[3,1,7,6]
+# l2=[]
+# for  i in range(len(l)):
+#     ans=-1
+#     for j in range(i-1,-1,-1):
+#         if l[j]<l[i] and ans==-1:
+#           ans=l[j]
+#     l2.append(ans)
+# print(l2)
+
+'''80.	Replace each element with frequency of itself '''
+# l=[1,2,3,1,5,3,7]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     l2.append(count)
+# print(l2)
+
+'''81.	Find least frequent element '''
+# l=[1,2,3,1,5,3,7,5,2]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==1:
+#         print(i)
+
+'''82.	Find all elements with maximum frequency '''
+# l=[1,2,3,1,5,3,7,5,2]
+
+'''83.	Find first unique element '''
+# l=[2,2,8,44,5,3,3]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==1:
+#         break
+# print(i)
+
+'''84.	Find second repeating element '''
+# l=[2,2,8,3,3,44,5]
+# c=0
+# for i in range(len(l)):
+#     count=0
+#     for j in l:
+#         if l[i]==j:
+#             count=count+1
+#     if count>1 and l[i] not in l[:i]:
+#         c=c+1
+#         if c==2:
+#             print(l[i])
+
+'''86.	Print frequency of each element without using dictionary '''
+# l=[2,2,8,3,3,44,5]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     print(f"{i} Frequency = {count}")
+    
+
+
+
+   
+
+
+
+
+
+
+
+
+    
+
+
 
         
 
