@@ -338,10 +338,221 @@
 #             count=count+1
 #     print(f"{i} Frequency = {count}")
     
+'''87.	Find element whose frequency is prime '''
+# l=[1,3,3,4,3]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     c2=0
+#     for x in range(1,count+1):
+#         if count%x==0:
+#             c2=c2+1
+#     if c2==2:
+#         pass
+# print(i)
+
+'''88.	Remove elements occurring more than twice '''
+# l=[1,1,2,3,4,4,4,5]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count<=2:
+#         l2.append(i)
+# print(l2)
+
+'''89.	Replace repeated elements with -1 '''
+# l=[1,1,2,3,4,4,4,5]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>1:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+
+'''90.	Find longest streak of same number '''
+# l = [1,1,2,3,4,4,4,5]
+# current = [l[0]]
+# best = [l[0]]
+# for i in range(1, len(l)):
+#     if l[i] == l[i-1]:
+#         current.append(l[i])
+#     else:
+#         current = [l[i]]
+#     if len(current) > len(best):
+#         best = current[:]
+# print(best)
+
+'''91.	Keep only numbers whose sum of digits is even '''
+# l=[22,34,13,78,94,33]
+# l2=[]
+# for i in l:
+#     sum=0
+#     x=i
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     if sum%2==0:
+#         l2.append(i)
+# print(l2)
+
+'''92.	Remove numbers whose reverse is same '''
+# l=[121,34,56,22,434,11,56]
+# l2=[]
+# for i in l:
+#     rev=0
+#     x=i
+#     while i>0:
+#         digit=i%10
+#         rev=rev*10+digit
+#         i=i//10
+#     if rev!=x:
+#         l2.append(x)
+# print(l2)
+
+'''93.	Replace negatives with absolute value only if even '''
+# l=[-12,45,-13,-24]
+# l2=[]
+# for i in l:
+#     if i%2==0:
+#         l2.append(abs(i))
+#     else:
+#         i=i
+#         l2.append(i)
+# print(l2)
+
+'''94.	Keep only numbers having exactly 3 digits '''
+# l=[123,45,678,34,56,333,56,4]
+# l2=[]
+# for i in l:
+#     if len(str(i))==3:
+#         l2.append(i)
+# print(l2)
+
+'''95.	Remove numbers divisible by sum of digits '''
+# l=[123,45,678,34,56,333,56,4]
+# l2=[]
+# for i in l:
+#     sum=0
+#     x=i
+#     while i>0:
+#         digit=i%10
+#         sum=sum+digit
+#         i=i//10
+#     if x%sum!=0:
+#         l2.append(x)
+# print(l2)
+
+'''96.	Print numbers whose square ends with 5 '''
+# l=[123,45,678,34,56,333,56,4]
+# l2=[]
+# for i in l:
+#     sq=i**2
+#     if sq%5==0:
+#         print(i)
+
+'''97.	Count numbers having more even digits than odd digits '''
+# l=[221,455,343,885,214]
+# c=0
+# for i in l:
+#     count=0
+#     count2=0
+#     while i>0:
+#         digit=i%10
+#         if digit%2==0:
+#             count=count+1
+#         elif digit%2!=0:
+#             count2=count2+1
+#         i=i//10
+#     if count>count2:
+#         c=c+1
+# print(c)
+
+'''98.	Replace zeros with next non-zero element '''
+# l=[4,0,0,7,2]
+# l2=[]
+# for i in range(len(l)):
+#     if l[i]==0:
+#         l[i]=l[i+1]
+#     l2.append(l[i])
+# print(l2)
+
+# l = [4,0,0,7,2]
+# l2 = []
+# for i in range(len(l)):
+#     if l[i] == 0:
+#         value = 0
+#         for j in range(i+1, len(l)):
+#             if l[j] != 0:
+#                 value = l[j]
+#                 break
+#         l2.append(value)
+#     else:
+#         l2.append(l[i])
+# print(l2)
+
+'''99.	Keep only numbers greater than average and less than max '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# div=len(l)
+# max=0
+# sum=0
+# for i in l:
+#     sum=sum+i
+# avg=abs(sum/div)
+# for j in l:
+#     if j>max:
+#         max=j
+# for j in l:
+#     if j>avg and j<max:
+#         l2.append(j)
+# print(l2)
+
+'''100.	Remove numbers appearing at prime indexes'''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in range(len(l)):
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count!=2:
+#         l2.append(l[i])
+# print(l2)
+
+
+
+
+
+
+
+
+        
+    
+
+
+
+
+
+        
+       
+
+
+
 
 
 
    
+
 
 
 

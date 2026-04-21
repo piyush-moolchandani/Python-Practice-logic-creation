@@ -5596,7 +5596,59 @@ value is EVEN
 # print(result)
 
 
-''''''
+'''Replace digits where digit³ + position has exactly 2 factors with 5 '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=digit**3+pos
+#         count=0
+#         for i in range(1,fact+1):
+#             if fact%i==0:
+#                 count=count+1
+#         if count==2:
+#             digit=5
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+'''Replace digits where digit × position + digit is prime with 0 '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         ch=digit*pos+digit
+#         count=0
+#         for i in range(1,ch+1):
+#             if ch%i==0:
+#                 count=count+1
+#         if count==2:
+#             digit=0
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
 
 
 
