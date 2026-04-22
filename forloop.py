@@ -5648,6 +5648,101 @@ value is EVEN
 # result=check(x)
 # print(result)
 
+'''6.	👉 Replace digits where digit XOR position is even with 8 '''
+# n=int(input("enter your number "))
+# pos=len(str(n))
+# new=0
+# while n>0:
+#     digit=n%10
+#     if (digit^pos)%2==0:
+#         digit=8
+#     n=n//10
+#     pos=pos-1
+#     new=new*10+digit
+# res=0
+# while new>0:
+#     digit=new%10
+#     res=res*10+digit
+#     new=new//10
+# print(res)
+
+'''7.	👉 Replace digits where binary(digit + position) ends in 1 with 4 '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         x=bin(digit+pos)
+#         if x[-1]=="1":
+#             digit=4
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+'''💡 Simpler Version (No bin() needed)
+
+Same logic:
+
+if (digit + pos) % 2 != 0:
+    digit = 4
+
+Because odd numbers in binary always end in 1.'''
+
+
+
+'''Replace digits where number of 1s in binary(digit²) = position with 2 '''
+'''Go through each digit of the number with its position.
+For every digit:
+Find the digit
+Square the digit → digit²
+Convert that square to binary
+Count how many 1s are in that binary form
+If that count equals the digit’s position, replace the digit with 2
+Otherwise keep the digit unchanged.'''
+
+# def check(n):
+#     pos = len(str(n))
+#     new = 0
+#     while n > 0:
+#         digit = n % 10
+#         original = digit
+#         sq = digit ** 2
+#         b = format(sq, 'b')
+#         count = 0
+#         for ch in b:
+#             if ch == '1':
+#                 count = count + 1
+#         if pos == count:
+#             digit = 2
+#         else:
+#             digit = original
+#         n = n // 10
+#         pos = pos - 1
+#         new = new * 10 + digit
+#     res = 0
+#     while new > 0:
+#         digit = new % 10
+#         res = res * 10 + digit
+#         new = new // 10
+#     return res
+# x = int(input("enter your number "))
+# result = check(x)
+# print(result)
+
+# binary return string data type (by-default)
+# print(f"{5:b}")-->to get int data type 
+# print(bin(5))-->by default str data type
+
+
+
 
 
 

@@ -529,6 +529,177 @@
 #         l2.append(l[i])
 # print(l2)
 
+'''101.	Replace each element with product of digits '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# prod=1
+# for i in l:
+#     prod=prod*i
+#     i=prod
+#     l2.append(i)
+# print(l2)
+
+'''102.	Replace each element with largest digit '''
+# l=[221, 455, 343]
+# l2=[]
+# for i in l:
+#     large=0
+#     while i>0:
+#         digit=i%10
+#         if digit>large:
+#             large=digit
+#         i=i//10
+#     l2.append(large)
+# print(l2)
+
+'''104.	Replace each element with count of even digits '''
+# l=[221,456,345,785,4,325]
+# l2=[]
+# for i in l:
+#     count=0
+#     while i>0:
+#         digit=i%10
+#         if digit%2==0:
+#             count=count+1
+#         i=i//10
+#     l2.append(count)
+# print(l2)
+
+'''106.	Replace numbers with sum of factors '''
+# l=[24,56,81,9,4,2]
+# l2=[]
+# for i in l:
+#     sum=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             sum=sum+j
+#     l2.append(sum)
+# print(l2)
+
+'''107.	Replace perfect squares with root value '''
+# l=[4,9,16,25]
+# l2=[]
+# for i in l:
+#     sq = i**0.5
+#     l2.append(int(sq))
+# print(l2)
+
+'''108.	Replace Armstrong numbers with 1 else 0 '''
+# l=[153,234,347,2,3,67]
+# l2=[]
+# for i in l:
+#     sum=0
+#     power=len(str(i))
+#     x=i
+#     while i>0:
+#         digit=i%10
+#         sum=sum+digit**power
+#         i=i//10
+#     if x==sum:
+#         x=1
+#     else:
+#         x=0
+#     l2.append(x)
+# print(l2)
+
+'''109.	Replace each element with nearest multiple of 10 '''
+# l=[12, 27, 44]
+# l2=[]
+# for i in l:
+#     low=(i//10)*10
+#     high=low+10
+#     if i-low<high-1:
+#         l2.append(low)
+#     else:
+#         l2.append(high)
+# print(l2)
+
+'''110.	Replace each element with difference of max digit and min digit '''
+# l=[349,478,456,214]
+# l2=[]
+# for i in l:
+#     max=0
+#     min=9
+#     while i>0:
+#         digit=i%10
+#         if digit>max:
+#             max=digit
+#         elif digit<min:
+#             min=digit
+#         i=i//10
+#     diff=max-min
+#     l2.append(diff)
+# print(l2)
+
+'''111.	Find element with second least frequency '''
+'''112.	Find all elements appearing odd number of times '''
+# l=[1,2,2,3,3,3,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count%2!=0:
+#         l2.append(i)
+# print(l2)        
+        
+'''114.	Replace elements occurring once with 0 '''
+# l=[1,2,2,3,3,3,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==1:
+#         i=0
+#     l2.append(i)
+# print(l2)
+
+'''115.	Remove first repeating element only '''
+# l=[1,2,2,3,3,3,4]
+# rv=None
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>1:
+#         rv=i
+#         break
+# l2=[]
+# for i in l:
+#     if i!=rv:
+#         l2.append(i)
+# print(l2)
+
+
+'''116.	Remove last repeating element only '''
+# l=[1,2,2,3,3,3,4]
+# rv=None
+# for i in range(len(l)-1,-1,-1):
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>1:
+#         rm=i
+#         break
+# l2=[]
+# for i in l:
+#     if i!=rm:
+#         l2.append(i)
+# print(l2)
+
+
+'''117.	Find first element whose frequency > average frequency '''
+
+
+
+     
+
+
 
 
 
