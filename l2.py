@@ -694,6 +694,129 @@
 
 
 '''117.	Find first element whose frequency > average frequency '''
+# l=[1,2,2,3,3,3,4]
+# l2=[]
+# sum=0
+# unique=0
+# for i in l:
+#     if i not in l2:
+#         count=0
+#         for j in l:
+#             if i==j:
+#                 count=count+1
+#         sum=sum+count
+#         unique=unique+1
+#         l2.append(i)
+# avg=sum/unique
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>avg:
+#         print(i)
+#         break
+
+'''111.	Keep only numbers whose product of digits is odd '''
+# l=[234,54,36,26,78,12,13,56]
+# l2=[]
+# for i in l:
+#     prod=1
+#     x=i
+#     while i>0:
+#         digit=i%10
+#         prod=prod*digit
+#         i=i//10
+#     if prod%2!=0:
+#         l2.append(x)
+# print(l2)
+
+'''112.	Remove numbers having equal even and odd digits '''
+# l=[2233,435,2543,433,123,45436,65,4477]
+# l2=[]
+# for i in l:
+#     x=i
+#     count=0
+#     count2=0
+#     while x>0:
+#         digit=x%10
+#         if digit%2==0:
+#             count=count+1
+#         else:
+#             count2=count2+1
+#         x=x//10
+#     if count!=count2:
+#         l2.append(i)
+# print(l2)
+
+
+'''113.	Replace numbers divisible by reverse(number) with 0 '''
+# l=[123,22,323,565,34,81]
+# l2=[]
+# for i in l:
+#     rev=0
+#     x=i
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if i%rev==0:
+#         i=0
+#     l2.append(i)
+# print(l2)
+
+
+'''114.	Keep only numbers whose largest digit is prime '''
+# l=[157,102,468,244,345]
+# l2=[]
+# for i in l:
+#     x=i
+#     large=0
+#     while x>0:
+#         digit=x%10
+#         if digit>large:
+#             large=digit
+#         x=x//10
+#         count=0
+#     for j in range(1,large+1):
+#         if large%j==0:
+#             count=count+1
+#     if count==2:
+#         l2.append(i)
+# print(l2)
+
+'''115.	Remove numbers whose sum of factors is even '''
+# l=[4,5,6]
+# l2=[]
+# for i in l:
+#     sum=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             sum=sum+j
+#     if sum%2!=0:
+#         l2.append(i)
+# print(l2)
+
+'''116.	Replace negatives whose digit sum is odd with absolute value '''
+# l=[-452,-765,455,-245,-789]
+# l2=[]
+# for i in l:
+#     sum=0
+#     x=abs(i)
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     if sum%2!=0 and i<0:
+#         i=abs(i)
+#     l2.append(i)
+# print(l2)
+
+
+'''117.	Keep only numbers appearing odd number of times '''
+
+    
+    
 
 
 
