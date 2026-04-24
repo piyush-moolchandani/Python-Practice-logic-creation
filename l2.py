@@ -814,11 +814,145 @@
 
 
 '''117.	Keep only numbers appearing odd number of times '''
+# l=[1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count%2!=0:
+#         l2.append(i)
+# print(l2)
+    
+# '''118.	Remove elements whose index is Fibonacci number '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in range(len(l)):
+#     fi=0
+#     se=1
+#     for j in range(i):
+#         nx=fi+se
+#         l2.append(i)
+#         fi=se
+#         se=nx
+# print(l2)
 
     
+'''119.	Replace zeros with nearest non-zero on left or right '''
+# l=[1,2,0,4,3]
+
+'''120.	Count numbers whose binary form has more 1s than 0s '''
+# l=[1,2,3,4,5,6,7,8,9]
+# count=0
+# for i in l:
+#     ch=bin(i)[2:]
+#     count2=0
+#     count3=0
+#     for j in ch:
+#         if j=="1":
+#             count2=count2+1
+#         elif j=="0":
+#             count3=count3+1
+#     if count2>count3:
+#         count=count+1
+# print(count)
+        
+
+'''121.	Replace each element with second largest digit '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# large=0
+# se_large=0
+# for i in l:
+#     if i>large:
+#         se_large=large
+#         large=i
+#     elif i>se_large and i!=large:
+#         pass
+# for i in l:
+#     i=se_large
+#     l2.append(i)
+# print(l2)
+
+
+'''122.	Replace each element with second smallest digit '''  
+# l=[428,345,123,784,234]
+# l2=[]
+# for i in l:
+#     x=i
+#     small=9
+#     se_small=9
+#     while x>0:
+#         digit=x%10
+#         if digit<small:
+#             se_small=small
+#             small=digit
+#         elif digit<se_small and digit!=small:
+#             se_small=digit
+#         x=x//10
+#     l2.append(se_small)
+# print(l2)
+
+'''123.	Replace each element with count of prime digits '''
+# l=[428,345,123,784,234]
+# l2=[]
+# for i in l:
+#     x=i
+#     c2=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count=count+1
+#         if count==2:
+#             c2=c2+1
+#         x=x//10
+#     l2.append(c2)
+# print(l2)
+
+'''124.	Replace each element with count of composite digits '''
+# l=[428,345,492,784,234]
+# l2=[]
+# for i in l:
+#     x=i
+#     c=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count=count+1
+#         if count>2:
+#             c=c+1
+#         x=x//10
+#     l2.append(c)
+# print(l2)
     
 
+'''125.	Replace each element with sum of prime digits '''
+# l=[321,457,897,123]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count=count+1
+#         if count==2:
+#             sum=sum+digit
+#         x=x//10
+#     l2.append(sum)
+# print(l2)
+          
+''''''
 
+
+    
 
      
 
