@@ -949,12 +949,217 @@
 #     l2.append(sum)
 # print(l2)
           
-''''''
+'''126.	Replace each element with product of odd digits '''
+# l=[123,432,756,2356,794]
+# l2=[]
+# for i in l:
+#     prod=1
+#     while i>0:
+#         digit=i%10
+#         if digit%2!=0:
+#             prod=prod*digit
+#         i=i//10
+#     l2.append(prod)
+# print(l2)
+
+'''127.	Replace each element with difference of even-digit sum and odd-digit sum '''
+l=[123,432,756,2356,794]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     sum2=0
+#     while x>0:
+#         digit=x%10
+#         if digit%2==0:
+#             sum=sum+digit
+#         else:
+#             sum2=sum2+digit
+#         x=x//10
+#     diff=abs(sum-sum2)
+#     l2.append(diff)
+# print(l2)
+        
+'''128.	Replace each element with nearest perfect square '''
+# l = [12,20,27,35,50]
+# l2=[]
+# for i in l:
+#     small=0
+#     big=0
+#     x=0
+#     while x*x<=i:
+#         small=x*x
+#         x=x+1
+#     big=x*x
+#     if i-small<big-i:
+#         l2.append(small)
+#     else:
+#         l2.append(big)
+# print(l2)
+
+ 
+'''129.	Replace each element with count of factors '''
+# l=[24,12,56,8,45]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     l2.append(count)
+# print(l2)
+    
+'''130.	Replace each element with largest factor less than itself '''
+# l=[24,12,56,8,45]
+# l2=[]
+# for i in l:
+#     large=0
+#     for j in range(1,i):
+        #  if i%j==0:                      --> {great work}
+#             if j>large:
+#                 large=j
+#     l2.append(large)
+# print(l2)
+
+'''131.	Find first element appearing exactly 3 times '''
+# l=[1,2,2,2,4,5,5,5,7,8,8,8]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==3:
+#         print(i)
+#         break
+
+
+'''131.	Find last element appearing exactly 3 times '''
+# l=[1,2,2,2,4,5,5,5,7,8,8,8]
+# for i in range(len(l)-1,-1,-1):
+#     count=0
+#     for j in l:
+#         if l[i]==j:
+#             count=count+1
+#     if count==3:
+#         print(l[i])
+#         break
+
+'''132.	Find last element appearing odd number of times '''
+# l=[1,1,2,5,4,4,4,7,8,9,9,9]
+# for i in range(len(l)-1,-1,-1):
+#     count=0
+#     for j in l:
+#         if l[i]==j:
+#             count=count+1
+#     if count%2!=0:
+#         print(l[i])
+#         break
+
+'''134.	Replace elements with their rank by frequency '''
+# l = [2,2,3,3,3,5]
+# vals = []
+# freq = []
+# for i in l:
+#     if i not in vals:
+#         vals.append(i)
+#         count = 0
+#         for j in l:
+#             if i == j:
+#                 count = count + 1
+#         freq.append(count)
+# rank = []
+# for i in range(len(freq)):
+#     r = 1
+#     for j in range(len(freq)):
+#         if freq[j] > freq[i]:
+#             r = r + 1
+#     rank.append(r)
+# l2 = []
+# for i in l:
+#     for j in range(len(vals)):
+#         if i == vals[j]:
+#             l2.append(rank[j])
+#             break
+# print(l2)
+
+
+'''141.	Move all prime numbers to front '''
+# l=[1,2,3,4,5,6,7,8,9,10,11,12,13]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count==2:
+#         l2.append(i)
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count!=2:
+#         l2.append(i)
+# print(l2)
+   
+
+'''146.	Rotate list left by count of zeros '''
+# l=[1,0,2,0,3,0,4,0]
+# count=0
+# for i in l:
+#     if i==0:
+#         count=count+1
+# k=count
+# for j in range(k):
+#     fi=l[0]
+#     for i in range(len(l)-1):
+#         l[i]=l[i+1]
+#     l[-1]=fi
+# print(l)
+
+
+'''146.	Rotate list right by count of zeros '''
+# l=[1,0,2,0,3,0,4,0]
+# count=0
+# for i in l:
+#     if i==0:
+#         count=count+1
+# k=count
+# for j in range(k):
+#     lv=l[-1]
+#     for i in range(len(l)-1,0,-1):
+#         l[i]=l[i-1]
+#     l[0]=lv
+# print(l)
+
+'''147.	Rotate list right by largest element value '''
+# l=[1,2,3,4,5,6,7,8,9]
+# large=0
+# for i in l:
+#     if i>large:
+#         large=i
+# k=large%len(l)
+# for j in range(k):
+#     lv=l[-1]
+#     for i in range(len(l)-1,0,-1):
+#         l[i]=l[i-1]
+#     l[0]=lv
+# print(l)
+
+'''150.	Merge two lists alternately, extras at end '''
+# l = [1,2,3]
+# l2 = [10,20,30]
+# for i in l:
+#     l2.append(i)
+# print(l2)
+
+
 
 
     
 
      
+
 
 
 

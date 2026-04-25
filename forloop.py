@@ -5829,6 +5829,84 @@ Otherwise keep the digit unchanged.'''
 # print(result)
 
 
+'''Replace digits where digit = units digit of reverse(position²) with 9 '''
+'''For every digit:
+Find its position
+Square the position → position²
+Reverse that squared number
+Take the units digit (last digit) of that reversed number
+Compare with the current digit
+If both are equal, replace that digit with 9
+Otherwise keep the digit unchanged.'''
+
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         sq=pos**2
+#         rev=0
+#         while sq>0:
+#             digit2=sq%10
+#             rev=rev*10+digit2
+#             sq=sq//10
+#         ld=rev%10
+#         if ld==digit:
+#             digit=9
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+''' Replace digits where sum of digits(reverse(position + digit)) is odd with 0 '''
+'''For every digit:
+Take the digit
+Take its position
+Add them → position + digit
+Reverse that result
+Find sum of digits of the reversed number
+If that sum is odd, replace the original digit with 0
+Otherwise keep the digit unchanged.'''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         add=pos+digit
+#         rev=0
+#         while add>0:
+#             digit2=add%10
+#             rev=rev*10+digit2
+#             add=add//10
+#         sum=0
+#         while rev>0:
+#             digit3=rev%10
+#             sum=sum+digit3
+#             rev=rev//10
+#         if sum%2!=0:
+#             digit=0
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
 
 
 
