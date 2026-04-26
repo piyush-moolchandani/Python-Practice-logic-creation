@@ -1153,6 +1153,147 @@ l=[123,432,756,2356,794]
 #     l2.append(i)
 # print(l2)
 
+'''131.	Keep only numbers whose sum of prime digits is even '''
+# l=[453,222,218,304,422]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count=count+1
+#         if count==2:
+#             sum=sum+digit
+#         x=x//10
+#     if sum%2==0:
+#         l2.append(i)
+# print(l2)
+   
+            
+'''132.	Remove numbers whose largest digit equals smallest digit '''
+l=[111,232,777,454,9]
+# l2=[]
+# for i in l:
+#     x=i
+#     large=0
+#     small=9
+#     while x>0:
+#         digit=x%10
+#         if digit>large:
+#             large=digit
+#         elif digit<small:
+#             small=digit
+#         x=x//10
+#     if large!=small:
+#         l2.append(i)
+# print(l2)
+
+'''133.	Keep only numbers divisible by sum of their digits '''
+# l=[120,424,450,123,57,8464,460]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     if i%sum==0:
+#         l2.append(i)
+# print(l2)
+
+
+'''134.	Remove numbers whose reverse is prime '''
+# l=[17,20,71,99]
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     count=0
+#     for j in range(1,rev+1):
+#         if rev%j==0:
+#            count=count+1
+#     if count!=2:
+#         l2.append(i)
+# print(l2)
+
+
+'''136.	Keep only numbers whose binary form ends with 1 and has exactly 2 ones '''
+# l=[5,6,9,10,3]
+# l2=[]
+# for i in l:
+#     x=bin(i)[2:]
+#     count=0
+#     for j in x:
+#         if j=="1":
+#             count=count+1
+#     if count==2 and j[-1]=="1":
+#         l2.append(i)
+# print(l2)
+
+
+'''137.	Remove elements whose index is prime and value is even '''
+# l=[5,8,4,7,6,10]
+# l2=[]
+# for i in range(len(l)):
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count!=2 or l[i]%2!=0:
+#         l2.append(l[i])
+# print(l2)
+
+'''135.	Replace negatives whose count of odd digits is even with absolute value '''
+# l=[-435,-432543,-324,343,-765]
+# l2=[]
+# for i in l:
+#     x=abs(i)
+#     count=0
+#     while x>0:
+#         digit=x%10
+#         if digit%2!=0:
+#             count=count+1
+#         x=x//10
+#     if i<0 and count%2==0:
+#         l2.append(abs(i))
+# print(l2)
+
+'''139.	Remove numbers whose count of factors is odd '''
+# l=[24,45,56,78,81,9,30]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count%2==0:
+#         l2.append(i)
+# print(l2)
+
+'''140.	Count numbers whose reverse is greater than original '''
+# l=[123,459,321,45,423,34]
+# count=0
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if rev>i:
+#         count=count+1
+# print(count)
+    
+
+    
 
 
 

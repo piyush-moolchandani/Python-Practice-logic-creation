@@ -5906,6 +5906,32 @@ Otherwise keep the digit unchanged.'''
 # result=check(x)
 # print(result)
 
+'''Replace digits where (digit!) mod position = 1 with 2 '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,digit+1):
+#             fact=fact*i
+#         if fact%pos==1:
+#             digit=2
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+    
+
+'''Replace digits where digit! + position! is divisible by 7 with 6 '''
 
 
 
