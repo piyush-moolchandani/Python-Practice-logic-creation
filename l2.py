@@ -1293,10 +1293,199 @@ l=[111,232,777,454,9]
 # print(count)
     
 
-    
+'''141.	Replace each element with third largest digit '''
+# l=[1234,478,235,74234,6436]
+# l2=[]
+# for i in l:
+#     x=i
+#     large=0
+#     se_large=0
+#     th_large=0
+#     while x>0:
+#         digit=x%10
+#         if digit>large:
+#           th_large=se_large
+#           se_large=large
+#           large=digit
+#         elif digit>se_large and digit!=large:
+#            th_large=se_large
+#            se_large=digit
+#         elif digit>th_large and digit!=se_large and digit!=large:
+#            th_large=digit
+#         x=x//10
+#     l2.append(th_large)
+# print(l2)
+
+
+'''143.	Replace each element with sum of composite digits '''
+# l=[462,789,843,556,469]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count=count+1
+#         if count>2:
+#             sum=sum+digit
+#         x=x//10
+#     l2.append(sum)
+# print(l2)
+
+
+'''145.	Replace each element with difference of largest and second largest digit '''
+# l=[462,789,843,556,469]
+# l2=[]
+# for i in l:
+#     x=i
+#     large=0
+#     se_large=0
+#     while x>0:
+#         digit=x%10
+#         if digit>large:
+#             se_large=large
+#             large=digit        
+#         elif digit>se_large and digit!=large:
+#             se_large=digit
+#         x=x//10
+#     diff=large-se_large
+#     l2.append(diff)
+# print(l2)
+
+'''146.	Replace each element with nearest cube number '''
+# l = [10,20,30,50,70]
+# l2 = []
+# for i in l:
+#     small = 0
+#     big = 0
+#     x = 0
+#     while x**3 <= i:
+#         small = x**3
+#         x = x + 1
+#     big = x**3
+#     if i - small < big - i:
+#         l2.append(small)
+#     else:
+#         l2.append(big)
+# print(l2)
+           
+
+'''147.	Replace each element with count of odd factors '''
+# l=[24,56,48,45,9,8]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0 and j%2!=0:
+#             count=count+1
+#     l2.append(count)
+# print(l2)
+
+'''148.	Replace each element with smallest factor greater than 1 '''
+# l=[24,56,48,45,9,8]
+# l2=[]
+# for i in l:
+#     small=9
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             if j<small and j>1:
+#                 small=j
+#     l2.append(small)
+# print(l2)
+
+'''149.	Replace each element with sum of digits of reverse(number) '''
+# l=[24,56,48,45]
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#         while rev>0:
+#             digit=rev%10
+#             sum=sum+digit
+#             rev=rev//10
+#     l2.append(sum)
+# print(l2)
+  
+
+'''150.	Replace each element with count of digits greater than average digit '''
+# l = [4725,111,908]
+# l2 = []
+# for i in l:
+#     x = i
+#     div = len(str(i))
+#     total = 0
+#     while x > 0:
+#         digit = x % 10
+#         total = total + digit
+#         x = x // 10
+#     avg = total / div
+#     x = i
+#     count = 0
+#     while x > 0:
+#         digit = x % 10
+#         if digit > avg:
+#             count = count + 1
+#         x = x // 10
+#     l2.append(count)
+# print(l2)
+
+
+'''151.	Find first element whose frequency is odd and > average frequency '''
+# l=[3,3,3,2,2,44,5,5,5]
+# l2=[]
+# sum=0
+# for i in l:
+#     if i not in l2:
+#         count=0
+#         for j in l:
+#             if i==j:
+#                 count=count+1
+#         sum=sum+count
+#         l2.append(i)
+# avg=sum/len(l2)
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count%2!=0 and count>avg:
+#         print(i)
+#         break
+
+'''Rotate left by count of prime numbers'''
+# l=[1,2,3,4,5,6,7,8,9]
+# c=0
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count==2:
+#         c=c+1
+# k=c
+# for j in range(k):
+#     fi=l[0]
+#     for i in range(len(l)-1):
+#         l[i]=l[i+1]
+#     l[-1]=fi
+# print(l)
 
 
 
+
+
+            
+        
+   
+        
     
 
      
