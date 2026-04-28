@@ -5743,35 +5743,35 @@ Otherwise keep the digit unchanged.'''
 
 
 '''Replace digits where binary(position) has more 1s than binary(digit) with 3 '''
-def check(n):
-    pos=len(str(n))
-    new=0
-    while n>0:
-        digit=n%10
-        x=bin(pos)[2:]
-        y=bin(digit)[2:]
-        count=0
-        count2=0
-        for i in x:
-            if i=="1":
-                count=count+1
-        for j in y:
-            if j=="1":
-                count2=count2+1
-        if count>count2:
-            digit=3
-        n=n//10
-        pos=pos-1
-        new=new*10+digit
-    res=0
-    while new>0:
-        digit=new%10
-        res=res*10+digit
-        new=new//10
-    return res
-a=int(input("enter your number "))
-result=check(a)
-print(result)
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         x=bin(pos)[2:]
+#         y=bin(digit)[2:]
+#         count=0
+#         count2=0
+#         for i in x:
+#             if i=="1":
+#                 count=count+1
+#         for j in y:
+#             if j=="1":
+#                 count2=count2+1
+#         if count>count2:
+#             digit=3
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
 
 '''Replace digits where digit + reverse(position) is prime with 7 '''
 # def check (n):
@@ -5931,7 +5931,35 @@ Otherwise keep the digit unchanged.'''
 # print(result)
     
 
-'''Replace digits where digit! + position! is divisible by 7 with 6 '''
+# '''Replace digits where digit! + position! is divisible by 2 with 6 '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         fact2=1
+#         for i in range(1,digit+1):
+#             fact=fact+digit
+#         for j in range(1,pos+1):
+#             fact2=fact2+pos
+#         if (digit+pos)%2==0:
+#             digit=6
+#         n=n//10
+#         pos=pos=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+        
+
+
 
 
 
