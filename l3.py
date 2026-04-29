@@ -311,6 +311,126 @@
 #         l3.append(i)
 # print(l3)
 
+'''Find fourth largest element'''
+# l=[1,2,3,4,5,6,7,8,9]
+# large=0
+# se_large=0
+# th_large=0
+# fo_large=0
+# for i in l:
+#     if i>large:
+#         fo_large=th_large
+#         th_large=se_large
+#         se_large=large
+#         large=i
+#     elif th_large>i and i!=large:
+#         fo_large=th_large
+#     elif i>fo_large and i!=large and i!=se_large and i!=th_large:
+#         fo_large=i 
+# print(fo_large)
+
+'''Find difference between sum of max 2 and min 2 elements'''
+# l=[4,1,9,3,7]
+# large=0
+# se_large=0
+# small=9
+# se_small=9
+# for i in l:
+#     if i>large:
+#         se_large=large
+#         large=i
+#     elif i>se_large and i!=large:
+#         se_large=i
+# for i in l:
+#     if i<small:
+#         se_small=small
+#         small=i
+#     elif i<se_small and i!=small:
+#         se_small=i
+# diff=(large+se_large)-(small+se_small)
+# print(diff)
+
+'''4.Find sum of numbers divisible by both 2 and 3 '''
+# l=[1,2,3,4,5,6,7,8,9]
+# sum=0
+# for i in l:
+#     if i%2==0 and i%3==0:
+#         sum=sum+i
+# print(sum)
+
+'''Find sum of absolute values of negative numbers'''
+# l=[3, -4, 7, -2, -5]
+# sum=0
+# for i in l:
+#     if i<0:
+#         sum=sum+abs(i)
+# print(sum)
+
+'''6.Count perfect square numbers in list '''
+# l=[4,9,25,64,5,16]
+# count=0
+# for i in l:
+#     root=i**0.5
+#     sq=root**2
+#     if int(i)==sq:
+#         count=count+1
+# print(count)
+
+'''7.	Count numbers having exactly 3 divisors '''
+# l=[21,4,8,64,21]
+# c=0
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i%j==0:
+#             count=count+1
+#     if count==3:
+#         c=c+1
+# print(c)
+
+'''8.	Find average of prime numbers only '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count==2:
+#         l2.append(i)
+# sum=0
+# for i in l2:
+#     sum=sum+i
+# avg=sum/len(l2)
+# print(avg)
 
 
+'''10.	Print elements nearest to average '''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# sum=0
+# for i in l:
+#     sum=sum+i
+# avg=sum/len(l)
+# small_diff=abs(l[0] - avg)
+# for i in l:
+#     diff=abs(i - avg)
+#     if diff<small_diff:
+#         small_diff=diff
+# for i in l:
+#     if abs(i - avg)==small_diff:
+#         print(i)
 
+'''11.	Print elements greater than left neighbor only '''
+# l=[1,2,3,4,5,6,7,8,9]
+# for i in range(1,len(l)-1):
+#     if l[i]>l[i-1]:
+#         print(l[i])
+
+'''12.	Print elements smaller than right neighbor only '''
+# l=[1,2,3,4,8,3,9]
+# for i in range(1,len(l)-1):
+#     if l[i]<l[i+1]:
+#         print(l[i])
+
+'''13.	Remove only first duplicate occurrence of each repeated value '''
+l=[1,2,2,2,3,3,3,3,4,5,5,5]
