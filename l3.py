@@ -434,3 +434,85 @@
 
 '''13.	Remove only first duplicate occurrence of each repeated value '''
 l=[1,2,2,2,3,3,3,3,4,5,5,5]
+
+# '''14.	Keep only values appearing exactly twice '''
+# l=[1,2,2,3,3,4,5,5,5]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==2:
+#         l2.append(i)
+# print(l2)
+
+'''15.	Replace multiples of both 2 and 5 with 10 '''
+# l=[2,11,25,4,40,55,23]
+# l2=[]
+# for i in l:
+#     if i%2==0:
+#         i=10
+#     elif i%5==0:
+#         i=10
+#     l2.append(i)
+# print(l2)
+    
+'''16.	Replace numbers divisible by 3 or 5 with -1 '''
+# l=[25,3,46,9,54,33,1]
+# l2=[]
+# for i in l:
+#     if i%3==0 or i%5==0:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+
+'''21.	Replace each element with triple value '''
+# l=[1,2,3,4,5,6,7,8]
+# l2=[]
+# for i in l:
+#     tr=i*3
+#     l2.append(tr)
+# print(l2)
+
+''' 53.	Find missing number from 1 to n '''
+# l=[1,2,4,5]
+# n = len(l)+1
+# sum_2=0
+# for i in range(1,n):
+#     sum=n*(n+1)/2
+# for i in l:
+#     sum_2=sum_2+i
+# missing_number= int(sum)-sum_2
+# print(missing_number)
+
+
+'''54.	Find repeated number from 1 to n '''
+# l=[1,2,3,4,4]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+# if count>1:
+#     print("repeated digit is ", i)
+
+ 
+'''156.	Move all elements with even frequency to front '''
+# l=[1,2,2,3,3,3,4,4,4,4]
+# l2=[]
+# l3=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count%2==0:
+#         l2.append(i)
+#     else:
+#         l3.append(i)
+# print(l2+l3)
+        
+''''''
+    
+

@@ -5959,6 +5959,39 @@ Otherwise keep the digit unchanged.'''
 # print(result)
         
 
+'''Replace digits where sum of digits(digit!) is prime with 8 '''
+# def check(n):
+#     new = 0
+#     while n > 0:
+#         digit = n % 10        
+#         fact = 1
+#         for i in range(1, digit + 1):
+#             fact = fact * i        
+#         temp = fact
+#         total = 0
+#         while temp > 0:
+#             d = temp % 10
+#             total = total + d
+#             temp = temp // 10        
+#         count = 0
+#         for j in range(1, total + 1):
+#             if total % j == 0:
+#                 count = count + 1
+#         if count == 2:
+#             digit = 8
+#         n = n // 10
+#         new = new * 10 + digit   
+#     res = 0
+#     while new > 0:
+#         d = new % 10
+#         res = res * 10 + d
+#         new = new // 10
+#     return res
+# x = int(input("enter your number "))
+# print(check(x))
+
+
+
 
 
 
