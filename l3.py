@@ -513,6 +513,120 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 #         l3.append(i)
 # print(l2+l3)
         
-''''''
+
+'''22.	Replace each element with square root (perfect squares only) '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     root=i**0.5
+#     sq=root**2
+#     if i==sq:
+#         i=int(root)
+#     l2.append(i)
+# print(l2)
+
+'''24.	25.	Replace even numbers with previous even number  '''
+# l=[3,4,6,8,5]
+# l2=[]
+# for i in l:
+#     if i%2==0:
+#         i=i-2
+#     l2.append(i)
+# print(l2)
     
+'''27.	Replace each element with distance from max '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# max=0
+# for i in l:
+#     if i>max:
+#         max=i
+# for i in l:
+#     dis=max-i
+#     l2.append(dis)
+# print(l2)
+
+'''31.	Find elements with second highest frequency '''
+# l=[1,2,2,2,3,3]
+# max=0
+# se_max=0
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>max:
+#         se_max=max
+#         max=count
+#     elif count>se_max and count!=max:
+#         se_max=count
+# print(i)
+    
+'''43.	Reverse every group of 3 elements '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=l[0:3]
+# l3=l[3:6]
+# l4=l[6:9]
+# sl=l2[::-1]
+# sl1=l3[::-1]
+# sl2=l4[::-1]
+# print(sl+sl1+sl2)
+
+'''47.	Move all positives to end while preserving order '''
+# l=[2, -3, 4, -1, 5, -6]
+# l2=[]
+# for i in l:
+#     if i<0:
+#         l2.append(i)
+# for i in l:
+#     if i>0:
+#         l2.append(i)
+# print(l2)
+
+'''50.	Find symmetric difference of two lists '''
+# l1 = [1,2,3]
+# l2 = [2,3,4]
+# l3 = []
+# for i in l1:
+#     if i not in l2:
+#         l3.append(i)
+# for i in l2:
+#     if i not in l1:
+#         l3.append(i)
+# print(l3)
+
+'''53.	Find all triplets with sum = 0 '''
+# l=[-1,2,3,2,-1,-1]
+# l2=[]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k]==0:
+#                 temp=[l[i],l[j],l[k]]
+#                 temp.sort()
+#                 if temp not in l2:
+#                     l2.append(temp)
+# print(l2)
+
+'''58.	Replace each element with next smaller element '''
+# l=[4,5,2,10,8]
+# l2=[]
+# for i in range(len(l)):
+#     found=0
+#     for j in range(i+1,len(l)):
+#         if l[j]<l[i]:
+#            l2.append(l[j])
+#            found=1
+#            break
+#     if found==0:
+#         l2.append(-1)
+# print(l2)
+
+
+''''''
+
+
+
+
+
 

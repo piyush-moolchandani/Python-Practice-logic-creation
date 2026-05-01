@@ -1479,7 +1479,17 @@ l=[111,232,777,454,9]
 # print(l)
 
 
-
+# l=[1,2,7]
+# l2=[3,4,5,6]
+# l3=l+l2
+# print(l3)
+# for i in range(len(l3)):
+#     for j in range(i+1,len(l3)):
+#         if l3[i]>l3[j]:
+#             x=l3[i]
+#             l3[i]=l3[j]
+#             l3[j]=x
+# print(l3)
 
 
             

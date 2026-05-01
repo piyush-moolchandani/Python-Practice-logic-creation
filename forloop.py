@@ -5991,6 +5991,34 @@ Otherwise keep the digit unchanged.'''
 # print(check(x))
 
 
+'''Replace digits where (digit! − position) is a square with 4 '''
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,digit+1):
+#             fact=fact*i
+#         ch=fact-pos
+#         root=ch**0.5
+#         sq=root**2
+#         if ch==int(sq):
+#             digit=4
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
 
 
 
