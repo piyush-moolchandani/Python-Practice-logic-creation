@@ -37,7 +37,7 @@
 # else:
 #     print('not pallindrome')
 
-'''create a random number guessing game with python.'''
+'''created a random number guessing game with python.'''
 import random
 num=random.randint(1,100)
 tries=0

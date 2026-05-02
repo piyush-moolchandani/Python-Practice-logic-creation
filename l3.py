@@ -623,7 +623,183 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 # print(l2)
 
 
-''''''
+'''37.	Find first element repeating exactly twice '''
+# l=[1,2,2,3,3,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==2:
+#         print(i)
+#         break
+
+
+'''Find difference between sum of even-index and odd-index elements'''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# sum=0
+# sum2=0
+# for i in range(1,len(l)):
+#     if i%2==0:
+#         sum=sum+l[i]
+#     elif i%2!=0:
+#         sum2=sum2+l[i]
+# diff=abs(sum-sum2)
+# print(diff)
+
+'''Find element with maximum absolute value'''
+# l=[3, -7, 2, -10, 5]
+# max=0
+# for i in l:
+#     if abs(i)>abs(max):
+#         max=i
+# print(max)
+
+'''Find sum of elements at prime indexes'''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# sum=0
+# for i in range(len(l)):
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count==2:
+#         sum=sum+l[i]
+# print(sum)
+
+
+'''6.	Find average of elements at odd positions only '''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# l2=[]
+# sum=0
+# for i in range(len(l)):
+#     if i%2!=0:
+#         l2.append(l[i])
+# sum=0
+# for i in l2:
+#     sum=sum+i
+# avg=sum/len(l2)
+# print(avg)
+
+'''7.	Print elements whose value equals index '''
+# l=[1,1,3,3,4,5]
+# for i in range(len(l)):
+#     if l[i]==i:
+#         print(l[i])
+
+'''8.	Find sum of elements excluding max and min '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# max=l[0]
+# min=l[0]
+# for i in l:
+#     if i>max:
+#         max=i
+#     elif i<min:
+#         min=i
+# sum=0
+# for i in l:
+#     if i!=max and i!=min:
+#         sum=sum+i
+# print(sum)
+
+   
+'''9.	Count elements strictly between min and max '''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# count=0
+# for i in l:
+#     if i>min(l) and i<max(l):
+#         count=count+1
+# print(count)
+
+'''10.	Find element farthest from average '''
+# l=[2, 4, 6, 8]
+# l2=[]
+# sum=0
+# for i in l:
+#     sum=sum+i
+# avg=sum/len(l)
+# max=0
+# res=l[0]
+# for i in l:
+#     dis=abs(i-avg)
+#     if dis>max:
+#         max=dis
+#         res=i
+# print(res)
+
+'''11.	Keep only elements whose digit sum is divisible by 3 '''
+# l=[15,21,22,46,84]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     if sum%3==0:
+#         l2.append(i)
+# print(l2)
+
+'''12.	Remove elements whose last digit is even '''
+# l=[132,456,433,566,782,654]
+# l2=[]
+# for i in l:
+#     ld=i%10
+#     if ld%2!=0:
+#         l2.append(i)
+# print(l2)
+
+'''13.	Keep numbers where first digit > last digit '''
+# l=[132,456,433,566,782,654]
+# l2=[]
+# for i in l:
+#     x=i
+#     while x>10:
+#         x=x//10
+#         fd=x
+#         ld=i%10
+#     if fd>ld:
+#         l2.append(i)
+# print(l2)
+
+'''14.	Remove elements whose square is > 100 '''
+# l=[9,45,23,1,2,6,43]
+# l2=[]
+# for i in l:
+#     if i**2<100:
+#         l2.append(i)
+# print(l2)
+
+'''15.	.Keep only numbers having unique digits  '''
+# l=[123,223,567,432,677,322,549,213]
+# l2=[]
+# for i in l:
+#     x=i
+#     count_repeat=0
+#     rem=x
+#     while x>0:
+#         digit=x%10
+#         a=rem
+#         count=0
+#         while a>0:
+#             digit2=a%10
+#             if digit==digit2:
+#                 count=count+1
+#             a=a//10
+#         if count>1:
+#             count_repeat=1
+#             break
+#         x=x//10
+#     if count_repeat==0:
+#         l2.append(i)
+# print(l2)
+
+            
+
+    
 
 
 
