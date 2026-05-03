@@ -6019,6 +6019,68 @@ Otherwise keep the digit unchanged.'''
 # print(result)
 
 
+'''Replace digits where digit! + digit + position is odd with 3 '''
+
+# def check(n):
+#     pos=len(str(n))
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,fact+1):
+#             fact=fact*i
+#         if (fact+digit+pos)%2!=0:
+#             digit=3
+#         n=n//10
+#         pos=pos-1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number"))
+# result=check(x)
+# print(result)
+
+
+'''Replace digits where digit XOR reverse(position) is prime with 1 '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         rev=0
+#         x=pos
+#         while x>0:
+#             digit2=x%10
+#             rev=rev*10+digit2
+#             x=x//10
+#         xor=digit^rev
+#         count=0
+#         for i in range(1,xor+1):
+#             if xor%i==0:
+#                 count=count+1
+#         if count==2:
+#             digit=1
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
+'''Replace digits where (digit + position)! mod 10 = digit with 6 '''
+
+
 
 
 
