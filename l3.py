@@ -773,7 +773,7 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 #         l2.append(i)
 # print(l2)
 
-'''15.	.Keep only numbers having unique digits  '''
+'''16.	.Keep only numbers having unique digits  '''
 # l=[123,223,567,432,677,322,549,213]
 # l2=[]
 # for i in l:
@@ -797,9 +797,191 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 #         l2.append(i)
 # print(l2)
 
-            
+'''15.	Replace elements divisible by 4 but not 8 with -1 '''    
+# l=[1,16,4,24,20]
+# l2=[]
+# for i in l:
+#     if i%4==0 and i%8!=0:
+#         i=-1
+#         l2.append(i)
+#     else:
+#         i=i
+#         l2.append(i)
+# print(l2)
 
-    
+'''17.	Remove numbers containing digit ‘0’ '''
+# l=[102,456,220,679]
+# l2=[]
+# for i in l:
+#     x=i
+#     zero=False
+#     while x>0:
+#         digit=x%10
+#         if digit==0:
+#             zero=True
+#         x=x//10
+#     if not zero:
+#         l2.append(i)
+# print(l2)
+
+
+'''18.	Keep numbers whose reverse is greater than original '''
+# l=[102,456,220,679]   
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if rev>i:
+#         l2.append(i)
+# print(l2)
+
+
+'''19.	Count numbers whose digits are strictly increasing '''
+# l=[123, 321, 456, 455, 789]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     valid=True
+#     for j in range(len(x)-1):
+#         if x[j]>=x[j+1]:
+#             valid=False
+#             break
+#     if valid:
+#         l2.append(i)
+# print(l2)
+   
+
+'''20.	Replace numbers having repeated digits with 0 '''
+# l=[121,223,567,477,123,321]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     if len(x)==len(set(x)):
+#         l2.append(i)
+#     else:
+#         l2.append(0)
+# print(l2)
+
+'''21.	Replace each element with sum of squares of its digits '''
+# l=[121,223,567,477,123,321]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sq=digit**2
+#         sum=sum+sq
+#         x=x//10
+#     l2.append(sum)
+# print(l2)
+
+   
+'''22.	Replace each element with product of non-zero digits''' 
+# l=[105, 2304, 111, 100]
+# l2=[]
+# for i in l:
+#     x=i
+#     prod=1
+#     while x>0:
+#         digit=x%10
+#         if digit!=0:
+#             prod=prod*digit
+#         x=x//10
+#     l2.append(prod)
+# print(l2)
+
+
+'''23.	Replace each element with difference between first and last digit '''
+# l=[121,223,567,477,123,321]
+# l2=[]
+# for i in l:
+#     x=i
+#     while x>10:
+#         x=x//10
+#     fd=x
+#     ld=i%10
+#     diff=abs(fd-ld)
+#     l2.append(diff)
+# print(l2)
+
+'''25.	Replace each element with count of divisors '''
+# l=[24,12,56,44]
+# l2=[]
+# count=0
+# for i in l:
+#     for j in range(1,i+1):
+#         if i%j:
+#             count=count+1
+#     l2.append(count)
+# print(l2)
+
+
+'''26.	Replace each element with sum of proper divisors '''
+# l=[24,12,56,44]
+# l2=[]
+# sum=0
+# for i in l:
+#     for j in range(1,i):
+#         if i%j==0:
+#             sum=sum+j
+#     l2.append(sum)
+# print(l2)
+
+'''27.	Replace each element with nearest multiple of 5 '''
+# l = [12, 23, 37, 40, 42]
+# l2=[]
+# for i in l:
+#     lower=(i//5)*5
+#     upper=lower+5
+#     if (i-lower)<=(upper-i):
+#         l2.append(lower)
+#     else:
+#         l2.append(upper)
+# print(l2)
+
+'''28.	Replace each element with next prime number '''
+# l = [10, 14, 17, 20, 23]
+# l2 = []
+# for i in l:
+#     num=i+1
+#     while True:
+#         count=0
+#         for j in range(1,num+1):
+#             if num%j==0:
+#                 count=count+1
+#         if count==2:
+#             l2.append(num)
+#             break
+#         else:
+#             num+=1
+# print(l2)
+
+'''30.	Replace each element with number of trailing zeros in factorial '''
+# l=[5, 10, 6]
+# l2=[]
+# for i in l:
+#     fact=1
+#     for j in range(1,i+1):
+#         fact=fact*j
+#     count=0
+#     while fact%10==0:
+#         count=count+1
+#         fact=fact//10
+#     l2.append(count)
+# print(l2)
+
+
+        
+
+                     
+
+
+
 
 
 
