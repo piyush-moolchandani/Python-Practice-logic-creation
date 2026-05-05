@@ -975,6 +975,39 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 #     l2.append(count)
 # print(l2)
 
+'''31.	Find elements whose frequency equals their value '''
+# l=[1,2,2,3,3,4,4,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==i:
+#         l2.append(i)
+# print(l2)
+
+# '''32.	Count elements with prime frequency '''
+# l=[1,2,2,3,3,3,4,4,4,4]
+# l2=[]
+# c2=0
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     c=0
+#     for k in range(1,count+1):
+#         if count%k==0:
+#             c=c+1
+#     if c==2:
+#         c2=c2+1
+# print(c2)
+
+
+'''37.	Find element with maximum frequency but smallest value '''
+l=[4,2,2,3,3,3,3,3]
+
 
         
 
