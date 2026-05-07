@@ -1510,7 +1510,18 @@ l=[111,232,777,454,9]
 
 
         
-    
+#     for i in l:
+#     num=i+1
+#     while True:
+#         count=0
+#         for j in range(1,num+1):
+#             if num%j==0:
+#                 count=count+1
+#         if count==2:
+#             l2.append(num)
+#             break
+#         else:
+#             num+=1
 
 
 

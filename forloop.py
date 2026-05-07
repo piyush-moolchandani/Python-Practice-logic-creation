@@ -6103,7 +6103,57 @@ Otherwise keep the digit unchanged.'''
 # result=check(x)
 # print(result)
 
-''''''
+'''Replace digits where digit > number of factors(position) with 7 '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         count=0
+#         for i in range(1,pos+1):
+#             if pos%i==0:
+#                 count=count+1
+#         if digit>count:
+#             digit=7
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
+'''Replace digits where digit = sum of factors(position) with 9 '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         sum=0
+#         for i in range(1,pos+1):
+#             if pos%i==0:
+#                 sum=sum+i
+#         if digit==sum:
+#             digit=9
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
 
         
 

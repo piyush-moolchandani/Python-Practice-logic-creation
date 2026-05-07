@@ -1006,18 +1006,298 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 
 
 '''37.	Find element with maximum frequency but smallest value '''
-l=[4,2,2,3,3,3,3,3]
+# l=[1,1,2,2,3]
+# max_freq=0
+# small=l[0]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>max_freq :
+#         max_freq=count
+#         small=i
+#     elif count==max_freq and i<small:
+#         small=i
+# print(small)]
 
 
+'''39.	Count how many elements appear in consecutive positions '''
+# l=[1,1,2,2,2,3,4,4]
+# count=0
+# l2=[]
+# for i in range(len(l)-1):
+#     if l[i]==l[i+1] and l[i] not in l2:
+#         count=count+1
+#         l2.append(l[i])
+# print(count)
+
+'''41.	Rearrange array such that positives and negatives alternate (stable) '''
+# l=[-5, 1, -2, 2, 3, -8]
+
+
+# pos = []
+# neg = []
+# result = []
+
+# # separate positives and negatives
+# for i in l:
+#     if i >= 0:
+#         pos.append(i)
+#     else:
+#         neg.append(i)
+
+# # alternate them
+# i = 0
+# j = 0
+
+# while i < len(pos) and j < len(neg):
+#     result.append(pos[i])
+#     result.append(neg[j])
+
+#     i += 1
+#     j += 1
+
+# # remaining positives
+# while i < len(pos):
+#     result.append(pos[i])
+#     i += 1
+
+# # remaining negatives
+# while j < len(neg):
+#     result.append(neg[j])
+#     j += 1
+
+# print(result)
         
 
-                     
+
+'''Find elements whose frequency equals sum of digits'''
+# l=[11,11,2,2,2,3,3]
+# l2=[]
+# for i in l:
+#     if i not in l2:
+#         l2.append(i)
+#         x=i
+#         sum=0
+#         while x>0:
+#             digit=x%10
+#             sum=sum+digit
+#             x=x//10
+#         count=0
+#         for j in l:
+#             if i==j:
+#                 count=count+1
+#         if count==sum:
+#             print(i)
+
+
+'''1.	Replace elements whose digit sum is prime with their reverse '''
+# l=[21,23,44,14,78]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     count=0
+#     rev=0
+#     for j in range(1,sum+1):
+#         if sum%j==0:
+#             count=count+1
+#     if count==2:
+#         rev=0
+#         while i>0:
+#             digit=i%10
+#             rev=rev*10+digit
+#             i=i//10
+#         l2.append(rev)
+#     else:
+#         l2.append(i)
+# print(l2)
+   
+
+'''2.	Keep numbers where product of digits > sum of digits '''
+# l=[21,23,44,14,78]
+# l2=[]
+# for i in l:
+#     y=i
+#     x=i
+#     prod=1
+#     while x>0:
+#         digit=x%10
+#         prod=prod*digit
+#         x=x//10
+#     sum=0
+#     while i>0:
+#         digit=i%10
+#         sum=sum+digit
+#         i=i//10
+#     if prod>sum:
+#         l2.append(y)
+# print(l2)
+
+
+'''3.	Replace elements ending with 5 by nearest prime '''
+# l = [12,15,67,45,34,65,33,75]
+# l2 = []
+# for i in l:
+#     if i % 10 == 5:
+#         # previous prime
+#         prev = i - 1
+#         while prev > 1:
+#             count = 0
+#             for j in range(1, prev + 1):
+#                 if prev % j == 0:
+#                     count += 1
+#             if count == 2:
+#                 break
+#             prev -= 1
+#         # next prime
+#         nxt = i + 1
+#         while True:
+#             count = 0
+#             for j in range(1, nxt + 1):
+#                 if nxt % j == 0:
+#                     count += 1
+#             if count == 2:
+#                 break
+#             nxt += 1
+#         # choose nearest
+#         if (i - prev) <= (nxt - i):
+#             l2.append(prev)
+#         else:
+#             l2.append(nxt)
+#     else:
+#         l2.append(i)
+# print(l2)
 
 
 
+'''4.	Count numbers having exactly 3 divisors '''
+# l=[9,4,24,6]
+# count=0
+# for i in l:
+#     c=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             c=c+1
+#     if c==3:
+#         count=count+1
+# print(count)
+
+'''5.	Keep elements whose first digit is even and last digit is odd '''
+# l=[235,222,479,567]
+# l2=[]
+# for i in l:
+#     x=i
+#     while x>10:
+#         x=x//10
+#         fd=x
+#         ld=i%10
+#     if fd%2==0 and ld%2!=0:
+#         l2.append(i)
+# print(l2)
 
 
+'''6.	Replace numbers containing repeated odd digits with -1 '''
+# l=[151,565,334,123,456]
+# l2=[]
+# for i in l:
+#     x=i
+#     rem=x
+#     while x>0:
+#         digit=x%10
+#         a=rem//10
+#         while a>0:
+#             digit2=a%10
+#             if digit==digit2 and digit%2!=0:
+#                 i=-1
+#             a=a//10
+#         x=x//10
+#     l2.append(i)
+# print(l2)
+
+# l = [151,565,334,123,456]
+# l2 = []
+# for i in l:
+#     x = i
+#     while x > 0:
+#         digit = x % 10
+#         a = x // 10
+#         while a > 0:
+#             digit2 = a % 10
+#             if digit == digit2 and digit % 2 != 0:
+#                 i = -1
+#             a = a // 10
+#         x = x // 10
+#     l2.append(i)
+# print(l2)
+    
+
+'''7.	Find elements whose reverse is divisible by original '''
+# l=[42,101,56,11]
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if rev%i==0:
+#         l2.append(i)
+# print(l2)
 
 
+'''8.	Count elements whose digit product is divisible by 7 '''
+# l=[71,72,45,26,78]
+# count=0
+# for i in l:
+#     prod=1
+#     while i>0:
+#         digit=i%10
+#         prod=prod*digit
+#         i=i//10
+#     if prod%7==0:
+#         count=count+1
+# print(count)
+
+
+'''9.	Replace each element with largest digit minus smallest digit '''
+# l=[657,352,634,179,367]
+# l2=[]
+# for i in l:
+#     x=i
+#     small=9
+#     large=0
+#     while x>0:
+#         digit=x%10
+#         if digit>large:
+#             large=digit
+#         elif digit<small:
+#             small=digit
+#         x=x//10
+#     diff=large-small
+#     l2.append(diff)
+# print(l2)
+
+
+'''10.	Keep numbers whose digits form a palindrome after squaring '''
+# l=[11,12,26]
+# l2=[]
+# for i in l:
+#     sq=i**2
+#     x=sq
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if rev==sq:
+#         l2.append(i)
+# print(l2)
 
 
