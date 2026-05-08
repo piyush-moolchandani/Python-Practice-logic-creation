@@ -1301,3 +1301,138 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 # print(l2)
 
 
+'''11.	Replace digits where digit × position is even with 0 '''
+# l=[3,5,2,7]
+# l2=[]
+# for i in range(len(l)):
+#     if (l[i]*i)%2==0:
+#         l[i]=0
+#     l2.append(l[i])
+# print(l2)
+
+'''12.	Replace digits where digit + reverse(position) is prime with 5 '''
+# l=[3,5,2,7]
+# l2=[]
+# for i in range(len(l)):
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     ch=l[i]+rev
+#     count=0
+#     for j in range(1,ch+1):
+#         if ch%j==0:
+#             count=count+1
+#     if count==2:
+#         l[i]=5
+#     l2.append(l[i])
+# print(l2)
+
+'''13.	Count digits whose factorial is divisible by position '''
+# l=[3,5,2,7]
+# l2=[]
+# count=0
+# for i in range(1,len(l)):
+#     fact=1
+#     for j in range(1,l[i]+1):
+#         fact=fact*j
+#     if fact%i==0:
+#         count=count+1
+# print(count)
+
+
+'''14.	Replace digits where digit² + position is palindrome with 9 '''
+# l=[2,3,4,5]
+# l2=[]
+# for i in range(len(l)):
+#     sq=l[i]**2+i
+#     x=sq
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     if rev==sq:
+#         l[i]=9
+#     l2.append(l[i])
+# print(l2)
+
+
+'''15.	Keep digits whose cube ends with same digit '''
+# l=[2,4,5,9]
+# l2=[]
+# for i in l:
+#     cube=i**3
+#     if cube%10==i:
+#         l2.append(i)
+# print(l2)
+
+'''16.	Replace digits where (digit + position) is divisible by 4 with 7 '''
+# l=[2,4,5,9]
+# l2=[]
+# for i in range(len(l)):
+#     if (l[i]+i)%4==0:
+#         l[i]=7
+#     l2.append(l[i])
+# print(l2)
+
+'''17.	Count positions where digit equals factorial of position '''
+# l=[1,1,2,6,5]
+# count=0
+# for i in range(len(l)):
+#     fact=1
+#     for j in range(1,i+1):
+#         fact=fact*j
+#     if fact==l[i]:
+#         count=count+1
+# print(count)
+
+'''18.	Replace digits whose XOR with position is odd with 3 '''
+# l=[1,1,2,6,5]
+# l2=[]
+# for i in range(len(l)):
+#     if (l[i]^i)%2!=0:
+#         l[i]=3
+#     l2.append(l[i])
+# print(l2)
+
+''' 21.	Find elements whose frequency is a perfect square '''
+# l=[1,1,2,6,5,5,5,5]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     root=count**0.5
+#     sq=root**2
+# if sq==count:
+#     print(i)
+
+'''22.	Replace elements having odd frequency with their negative '''
+# l=[1,2,2,3,3,3,4,4,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count%2!=0:
+#         i=-i
+#     l2.append(i)
+# print(l2)
+
+'''23.	Keep only elements whose frequency equals number of digits '''
+# l=[12,3,5,12,567,343,567,567]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count==len(str(i)) and i not in l2:
+#         l2.append(i)
+# print(l2)
+        
+
