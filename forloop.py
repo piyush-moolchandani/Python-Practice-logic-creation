@@ -6183,6 +6183,38 @@ Otherwise keep the digit unchanged.'''
 # print(result)
 
         
+'''34.	👉 Replace digits where digit = units digit(position!) with 3 '''
+'''
+For each digit:
+Find factorial of its position
+Take only the units (last) digit of that factorial
+Compare with the digit
+If equal → replace digit with 3
+
+'''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,pos+1):
+#             fact=fact*i
+#         if (fact%10)==digit:
+#             digit=3
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
 
 
 

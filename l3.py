@@ -1434,5 +1434,345 @@ l=[1,2,2,2,3,3,3,3,4,5,5,5]
 #     if count==len(str(i)) and i not in l2:
 #         l2.append(i)
 # print(l2)
+
+'''24.	Count elements appearing consecutively more than twice '''
+# l=[1,1,2,2,2,3,4,4,4]
+# count=0
+# for i in range(len(l)-2):
+#     if l[i]==l[i+1]==l[i+2]:
+#         count+=1
+# print(count)
+
+'''25.	Find longest streak of same element '''
+# l=[5,5,5,5,2,2,7]
+# max=1
+# current=1
+# for i in range(len(l)-1):
+#     if l[i]==l[i+1]:
+#         current+=1
+#     else:
+#         if current>max:
+#             max=current
+#         current=1
+# if current>max:
+#     max=current
+# print(max)
+
+
+'''find longest streak of even numbers '''
+# l=[2,4,8,6,2,3,4,7,6,4,2,10]
+# current=1
+# max=1
+# for i in range(len(l)-1):
+#     if (l[i]%2==0) and (l[i+1]%2==0):
+#         current+=1
+#     else:
+#        if current>max:
+#         max=current
+#        current=1
+# if current>max:
+#     max=current
+# print(max)
+
+'''26.	Replace elements whose frequency is divisible by their value with 0 '''
+# l=[4,4,1,4,27,27,27,1,1,9,9]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if i%count==0:
+#         i=0
+#     l2.append(i)
+# print(l2)
+
+'''27.	Find element with second highest frequency '''
+# l=[4,4,4,4,27,27,27]
+# max_freq=0
+# se_max_freq=0
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     if count>max_freq:
+#         se_max_freq=max_freq
+#         max_freq=count
+#     elif count>se_max_freq and count!=max_freq:
+#         se_max_freq=count
+# print(f"so the second highest frequency is {se_max_freq} of element {i}")
+
+
+'''29.	Keep elements whose frequency is prime and value is even '''
+# l=[2,4,2,8,8,8,6,9,9,9]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count=count+1
+#     c=0
+#     for k in range(1,count+1):
+#         if count%k==0:
+#             c+=1
+#     if c==2 and i%2==0 and i not in l2:
+#         l2.append(i)
+# print(l2)
+
+
+'''30.	Find element with highest frequency among prime numbers '''
+# l=[1,2,3,3,4,5,5,5,7,7,9]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=count+1
+#     if count==2:
+#         l2.append(i)
+# max_prime_freq=0
+# ans=0
+# for i in l2:
+#     count=0
+#     for j in l2:
+#         if i==j:
+#             count=count+1
+#     if count>max_prime_freq:
+#         max_prime_freq=count
+#         ans=i
+# print(ans)
+
+
+'''33.	Replace each element with binary equivalent count of 1s '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     binary=bin(i)
+#     count=0
+#     for i in binary:
+#         if i=="1":
+#             count=count+1
+#     l2.append(count)
+# print(l2)
+
+'''31.	Replace each element with sum of factorials of digits '''
+# l=[23,145,34]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         fact=1
+#         for j in range(1,digit+1):
+#             fact=fact*j
+#         sum=sum+fact
+#         x=x//10
+#     l2.append(sum)
+# print(l2)
         
 
+'''32.	Replace each element with count of prime digits '''
+# l=[2358,149,777]
+# l2=[]
+# for i in l:
+#     x=i
+#     c=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count=count+1
+#         if count==2:
+#             c+=1
+#         x=x//10
+#     l2.append(c)
+# print(l2)
+
+
+'''34.	Replace each element with next palindrome number '''
+# l = [120,44,98]
+# l2 = []
+# for i in l:
+#     num=i+1
+#     while True:
+#         x=num
+#         rev=0
+#         while x>0:
+#             digit=x%10
+#             rev=rev*10+digit
+#             x=x//10
+#         if rev==num:
+#             l2.append(num)
+#             break
+#         num+=1
+# print(l2)
+   
+
+'''36.	Replace each element with sum of cubes of digits '''
+# l = [120,44,98]
+# l2 = []
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         cube=digit**3
+#         sum=sum+cube
+#         x=x//10
+#     l2.append(sum)
+# print(l2)
+
+'''37.	Replace each element with count of trailing zeros in square '''
+# l=[10,20,5,50]
+# l2=[]
+# for i in l:
+#     sq=i**2
+#     count=0
+#     while sq>0:
+#         digit=sq%10
+#         if digit==0:
+#             count=count+1
+#         else:
+#             break
+#         sq=sq//10
+#     l2.append(count)
+# print(l2)
+
+
+'''38.	Replace each element with largest prime factor '''
+# l=[12,18,20,17]
+# l2=[]
+# for i in l:
+#     large=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=0
+#             for k in range(1,j+1):
+#                 if j%k==0:
+#                     count=count+1
+#             if count==2:
+#                 if j>large:
+#                     large=j
+#     l2.append(large)
+# print(l2)
+
+
+'''39.	Replace each element with smallest missing digit '''
+# l = [123,567,908,444]
+# l2=[]
+# for i in l:
+#     for j in range(0,10):
+#         count=0
+#         x=i
+#         while x>0:
+#             digit=x%10
+#             if digit==j:
+#                 count+=1
+#             x=x//10
+#         if count==0:
+#             l2.append(j)
+#             break
+# print(l2)
+
+
+'''40.	Replace each element with digital root '''
+# l=[987,45,999]
+# l2=[]
+# for i in l:
+#     x=i
+#     while x>=10:   --> this line checks whether the sum is of 2 digits or greater than 2 digits
+#         sum=0
+#         while x>0:
+#             digit=x%10
+#             sum=sum+digit
+#             x=x//10
+#         x=sum
+#     l2.append(x)
+# print(l2)
+
+    
+'''41.	Find elements whose frequency equals sum of digits '''
+# l=[11,11,2,2,2,3,3]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count==sum and i not in l2:
+#         l2.append(i)
+# print(l2)
+
+'''42.	Replace numbers where reverse is prime with 1 '''
+# l=[30,75,44,20]
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     count=0
+#     for j in range(1,rev+1):
+#         if rev%j==0:
+#             count=count+1
+#     if count==2:
+#         l2.append(1)
+#     else:
+#         l2.append(i)
+# print(l2)
+
+
+'''44.	Keep numbers where alternating digit sum is even '''
+# l = [1234,352,245]
+# l2 = []
+# for i in l:
+#     x = str(i)
+#     total = 0
+#     for j in range(len(x)):
+#         digit = int(x[j])
+#         if j % 2 == 0:
+#             total = total + digit
+#         else:
+#             total = total - digit
+#     if total % 2 == 0:
+#         l2.append(i)
+# print(l2)
+
+
+'''
+45.	Replace elements whose digit frequency is unique with 0 
+🧠 Correct mental process
+For each number:
+Count frequency of every digit
+Compare those frequencies
+If no frequency repeats
+Replace number with 0
+
+'''
+l=[122333,112233,1223,5557]
+for i in l:
+    x=i
+    rem=i
+    while x>0:
+        digit=x%10
+        z=rem
+        count=0
+        while z>0:
+            digit2=z%10
+            if digit==digit2:
+                count+=1
+            z=z//10
+        
+        
+    
