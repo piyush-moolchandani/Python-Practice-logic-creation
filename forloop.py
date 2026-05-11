@@ -6216,6 +6216,32 @@ If equal → replace digit with 3
 # print(result)
 
 
+'''36.	👉 Replace digits where digit is prime AND position is even with 1 '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         count=0
+#         for i in range(1,digit+1):
+#             if digit%i==0:
+#                 count+=1
+#         if count==2 and pos%2==0:
+#             digit=1
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number"))
+# result=check(x)
+# print(result)
+
+
 
 
 

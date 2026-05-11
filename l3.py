@@ -1760,19 +1760,139 @@ If no frequency repeats
 Replace number with 0
 
 '''
-l=[122333,112233,1223,5557]
-for i in l:
-    x=i
-    rem=i
-    while x>0:
-        digit=x%10
-        z=rem
-        count=0
-        while z>0:
-            digit2=z%10
-            if digit==digit2:
-                count+=1
-            z=z//10
+# l=[122333,112233,1223,5557]
+# l2=[]
+
+# for i in l:
+#     x=i
+#     freq=[]
+#     rem=i
+#     while x>0:
+#         digit=x%10
+#         z=rem
+#         count=0
+#         while z>0:
+#             digit2=z%10
+#             if digit==digit2:
+#                 count+=1
+#             z=z//10
         
+
         
-    
+'''1.	Replace elements whose digit sum is even with their reverse '''
+# l=[28,428,11,597]
+# l2=[]
+# for i in l:
+#     temp=i
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     rev=0
+#     if sum%2==0:
+#         while i>0:
+#             digit=i%10
+#             rev=rev*10+digit
+#             i=i//10
+#         l2.append(rev)
+#     else:
+#         l2.append(temp)
+# print(l2)
+
+'''2.	Keep numbers whose largest digit is prime '''
+# l=[523,724,832,670]
+# l2=[]
+# for i in l:
+#     x=i
+#     large=0
+#     while x>0:
+#         digit=x%10
+#         if digit>large:
+#             large=digit
+#         x=x//10
+#     count=0
+#     for j in range(1,large+1):
+#         if large%j==0:
+#             count+=1
+#     if count==2:
+#         l2.append(i)
+# print(l2)
+
+
+'''4.	Count elements whose first and last digit are same '''
+# l=[121,876,956,989,567,787]
+# count=0
+# for i in l:
+#     x=i
+#     while x>10:
+#         x=x//10
+#         fd=x
+#         if fd==i%10:
+#             count+=1
+# print(count)
+
+'''5.	Keep numbers where middle digit is even '''
+# l=[123,45890,597]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     mid=len(x)//2
+#     if int(x[mid])%2==0:
+#         l2.append(i)
+# print(l2)
+
+'''6.	Replace numbers having more even digits than odd digits with -1 '''
+# l = [2481,1357,2468,1234,90876,555,86420,741]
+# l2=[]
+# for i in l:
+#     x=i
+#     count=0
+#     count2=0
+#     while x>0:
+#         digit=x%10
+#         if digit%2==0:
+#             count+=1
+#         else:
+#             count2+=1
+#         x=x//10
+#     if count>count2:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+ 
+
+'''10.	Replace elements whose digits are in decreasing order with 0 '''
+# l=[9751,421,544,123]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     valid=True
+#     for j in range(len(x)-1):
+#         if x[j]<=x[j+1]:
+#             valid=False
+#     if valid:
+#         l2.append(0)
+#     else:
+#         l2.append(i)
+# print(l2)
+   
+
+'''11.	Replace elements where element + index is prime with 1 '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in range(len(l)):
+#     prime=l[i]+i
+#     count=0
+#     for j in range(1,prime+1):
+#         if prime%j==0:
+#             count+=1
+#     if count==2:
+#         l[i]=1
+#     l2.append(l[i])
+# print(l2)
+
+'''12.	Count positions where element = square of position '''
+
+
