@@ -1894,5 +1894,138 @@ Replace number with 0
 # print(l2)
 
 '''12.	Count positions where element = square of position '''
+# l=[1,1,4,9,8]
+# count=0
+# for i in range(len(l)):
+#     if l[i]==i**2:
+#         count+=1
+# print(count)
+
+'''13.	Replace elements where element × index ends with 5 by 0 '''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# l2=[]
+# for i in range(len(l)):
+#     if (l[i]*i)%10==5:
+#         l[i]=0
+#     l2.append(l[i])
+# print(l2)
+
+'''14.	Keep elements where index factorial is even '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in range(len(l)):
+#     fact=1
+#     for j in range(1,i+1):
+#         fact=fact*j
+#     if fact%2==0:
+#         l2.append(l[i])
+# print(l2)
+
+'''18.	Keep elements where element XOR index is prime '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in range(len(l)):
+#     prime=l[i]^i
+#     count=0
+#     for j in range(1,prime+1):
+#         if prime%j==0:
+#             count+=1
+#     if count==2:
+#         l2.append(l[i])
+# print(l2)
+
+'''41.	Find numbers whose reverse frequency equals original frequency '''
+# l=[12,12,21,21]
+# l2=[]
+# for i in l:
+#     c=0
+#     for j in l:
+#         if i==j:
+#             c+=1
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     c2=0
+#     for j in l:
+#         if rev==j:
+#             c2+=1
+#     if c==c2:
+#         print(i)
+
+'''42.	Replace elements whose square root is integer with 0 '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     root=i**0.5
+#     if root==int(root):
+#         i=0
+#     l2.append(i)
+# print(l2)
+
+'''43.	Count elements whose binary form is palindrome '''
+# l=[1,2,3,4,5,6,7,8,9]
+# count=0
+# for i in l:
+#     check=bin(i)[2:]
+#     rev=check[::-1]
+#     if rev==check:
+#         count+=1
+# print(count)
 
 
+'''whether some pair of alternate-position digits has an even product.'''
+# l = [1234,2468,1357,4826,9753,8642,1111,9081]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     for j in range(1,len(x)-2):
+#         if int(x[j])*int(x[j+2]) %2==0:
+#             l2.append(i)
+# print(l2)
+
+'''44.	Keep numbers whose alternating product of digits is even '''
+# l = [1234,2468,1357,4826,9753,8642,1111,9081]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     prod=1
+#     for j in range(0,len(x),2):
+#         prod=prod*int(x[j])
+#     if prod%2==0:
+#         l2.append(i)
+# print(l2)
+
+'''45.	Replace elements whose digit sum frequency is prime with -1 '''
+# l=[23,14,50,32,41]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum=sum+digit
+#         x=x//10
+#     count=0
+#     for j in l:
+#         y=j
+#         sum2=0
+#         while y>0:
+#             digit2=y%10
+#             sum2=sum2+digit2
+#             y=y//10
+#         if sum==sum2:
+#             count+=1
+#     c=0
+#     for k in range(1,count+1):
+#         if count%k==0:
+#             c+=1
+#     if c==2:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+   
+
+''''''
