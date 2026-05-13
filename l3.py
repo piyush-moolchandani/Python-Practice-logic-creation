@@ -2028,4 +2028,227 @@ Replace number with 0
 # print(l2)
    
 
-''''''
+'''48.	Keep numbers having more prime digits than composite digits '''
+# l=[2357,2468,2234,5671,4689,7721,1234,9992]
+# l2=[]
+# for i in l:
+#     x=i
+#     c=0
+#     c2=0
+#     while x>0:
+#         digit=x%10
+#         count=0
+#         for j in range(1,digit+1):
+#             if digit%j==0:
+#                 count+=1
+#         if count==2:
+#             c+=1
+#         elif count>2:
+#             c2+=1
+#         x=x//10
+#     if c>c2:
+#         l2.append(i)
+# print(l2)
+
+'''49.	Replace elements whose reverse divisor count is even with 1 '''
+# l=[123,21,11,90]
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     count=0
+#     for j in range(1,rev+1):
+#         if rev%j==0:
+#             count+=1
+#     if count%2==0:
+#         i=1
+#     l2.append(i)
+# print(l2)
+
+'''13.	Keep elements whose binary form contains more 1s than 0s '''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# l2=[]
+# for i in l:
+#     count=0
+#     count2=0
+#     check=bin(i)[2:]
+#     for j in check:
+#         if j=='1':
+#             count+=1
+#         elif j=="0":
+#             count2+=1
+#     if count>count2:
+#         l2.append(i)
+# print(l2)
+
+'''2.	Replace elements whose binary digit count is prime with -1 '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     binary=bin(i)[2:]
+#     count=0
+#     for j in binary:
+#         count+=1
+#     c=0
+#     for j in range(1,count+1):
+#         if count%j==0:
+#             c+=1
+#     if c==2:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+
+
+'''12.	Replace numbers whose alternating digit sum is prime with -1 '''
+# l = [1234,352,245,864,975,111,2468,1357]
+# l2=[]
+# for i in l:
+#     x=str(i)
+#     sum=0
+#     for j in range(0,len(x),2):
+#         sum=sum+int(x[j])
+#     count=0
+#     for k in range(1,sum+1):
+#         if sum%k==0:
+#             count+=1
+#     if count==2:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+
+'''17.	Replace each element with count of unique prime factors '''
+# l = [12,18,20,45,7,60,100,84]
+# l2=[]
+# for i in l:
+#     c=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count=0
+#             for k in range(1,j+1):
+#                 if j%k==0:
+#                     count+=1
+#             if count==2:
+#                 temp = i
+#                 freq = 0
+#                 while temp > 0:
+#                     if temp % j == 0:
+#                         freq += 1
+#                     temp = temp // j
+#                 c += 1
+#     l2.append(c)
+# print(l2)     
+
+
+'''18.	Keep numbers where even-position digit sum is greater than odd-position digit sum '''
+# l=[4826,2468,1230]
+# for i in l:
+#     x=i
+#     pos=1
+#     while x>0:
+#         digit=x%10
+#         if (pos%2==0)>(pos%2!=0):
+#             pass
+#         x=x//10
+#         pos+=1
+# print(i)
+
+'''20.	Count elements whose reverse factorial digit sum is prime'''
+# l=[1,2,3,4,5,6]
+# count=0
+# for i in l:
+#     fact=1
+#     for j in range(1,i+1):
+#         fact=fact*j
+#     rev=0
+#     x=fact
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     sum=0
+#     temp=rev
+#     while temp>0:
+#         digit=temp%10
+#         sum=sum+digit
+#         temp=temp//10
+#     c=0
+#     for k in range(1,sum+1):
+#         if sum%k==0:
+#             c+=1
+#     if c==2:
+#         count+=1
+# print(count)
+   
+
+'''Replace each element with count of 1s in binary representation'''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# l2=[]
+# for i in l:
+#     count=0
+#     binary=bin(i)[2:]
+#     for j in binary:
+#         if j=='1':
+#             count+=1
+#     l2.append(count)
+# print(l2)
+
+'''7.	Replace each element with nearest palindrome prime '''
+# l=[121,11,787]
+# l2=[]
+# for i in l:
+#     num=i+1
+#     while True:
+#         x=num
+#         rev=0
+#         while x>0:
+#             digit=x%10
+#             rev=rev*10+digit
+#             x=x//10
+#         if rev==num:
+#             count=0
+#             for j in range(1,num+1):
+#                 if num%j==0:
+#                     count+=1
+#             if count==2:
+#                 l2.append(num)
+#                 break
+#         num+=1
+# print(l2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for i in l:
+#     num=i+1
+#     while True:
+#         x=num
+#         rev=0
+#         while x>0:
+#             digit=x%10
+#             rev=rev*10+digit
+#             x=x//10
+#         if rev==num:
+#             l2.append(num)
+#             break
+#         num+=1
+# print(l2)
+   
