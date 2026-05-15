@@ -6290,6 +6290,12 @@ If equal → replace digit with 3
 # print(result)
 
 
+'''39.	👉 Replace digits where digit is composite AND digit+position is prime with 2 '''
+
+
+
+
+
 
 
 

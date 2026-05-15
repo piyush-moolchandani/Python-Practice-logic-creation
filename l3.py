@@ -2219,6 +2219,33 @@ Replace number with 0
 #         num+=1
 # print(l2)
 
+'''10.	Count numbers whose reverse square is palindrome '''
+# l=[12,11,13,2,21,10,3]
+# count=0
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     sq=rev**2
+#     z=sq
+#     rev2=0
+#     while z>0:
+#         digit2=z%10
+#         rev2=rev2*10+digit2
+#         z=z//10
+#     if sq==rev2:
+#         count+=1
+# print(count)
+
+''''''
+
+
+
+
+
 
 
 
