@@ -2240,7 +2240,25 @@ Replace number with 0
 #         count+=1
 # print(count)
 
+'''Count numbers whose binary palindrome length is prime'''
+# l=[1,2,3,4,5,6,7,8,9]
+# count=0
+# for i in l:
+#     x=bin(i)[2:]
+#     ch=x[::-1]
+#     if ch==x:
+#         pr=len(x)
+#         c=0
+#         for j in range(1,pr+1):
+#             if pr%j==0:
+#                 c+=1
+#         if c==2:
+#             count+=1
+# print(count)
+
+
 ''''''
+
 
 
 

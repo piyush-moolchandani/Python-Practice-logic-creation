@@ -128,4 +128,43 @@
 # print(maximum)
 
 
+'''58 Replace element with next greater element'''
+# l=[4,5,2,10]
+# l2=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[i]:
+#             found=l[j]
+#             break
+#     l2.append(found)
+# print(l2)
+
+'''59.	Replace element with previous smaller element '''
+# l=[4,2,5,1,6,3]
+# l2=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i-1,-1,-1):
+#         if l[j]<l[i]:
+#             found=l[j]
+#             break
+#     l2.append(found)
+# print(l2)
+
+'''60.	Find equilibrium index (left sum = right sum)'''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left=0
+#     right=0
+#     for j in range(0,i):
+#         left=left+l[j]
+#     for k in range(i+1,len(l)):
+#         right=right+l[k]
+#     if left==right:
+#         print(i)
+
 ''''''
+
+    
+

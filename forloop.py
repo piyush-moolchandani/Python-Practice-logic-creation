@@ -6291,6 +6291,34 @@ If equal → replace digit with 3
 
 
 '''39.	👉 Replace digits where digit is composite AND digit+position is prime with 2 '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         prime=digit+pos
+#         count=0
+#         for i in range(1,digit+1):
+#             if digit%i==0:
+#                 count+=1
+#         count2=0
+#         for j in range(1,prime+1):
+#             if prime%j==0:
+#                 count2+=1
+#         if count2==2 and count>2:
+#             digit=2
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
 
 
 
