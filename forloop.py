@@ -6320,6 +6320,27 @@ If equal → replace digit with 3
 # result=check(x)
 # print(result)
 
+'''Replace digits where digit = position OR digit² = position with 4 '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         if digit==pos or digit**2==pos:
+#             digit=4
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
 
 
 

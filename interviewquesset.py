@@ -164,7 +164,192 @@
 #     if left==right:
 #         print(i)
 
-''''''
+'''43.	Swap first and last element '''
+# l=[1,2,3,4,5]
+# l[0],l[-1]=l[-1],l[0]
+# print(l)
+
+'''44.	Swap largest and smallest element '''
+# l=[4,5,7,1,5,8,9,2]
+# large=l[0]
+# small=l[0]
+# for i in range(len(l)):
+#     if l[i]>large:
+#         large=l[i]
+#         large_index=i
+#     elif l[i]<small:
+#         small=l[i]
+#         small_index=i
+# l[large_index],l[small_index]=l[small_index],l[large_index]
+# print(l)
+
+'''91.	Rotate list left by 1 position '''
+# l=[1,2,3,4,5]
+# fi=l[0]
+# for i in range(len(l)-1):
+#     l[i]=l[i+1]
+# l[-1]=fi
+# print(l)
+
+'''92.	Rotate list right by k positions '''
+# l=[1,2,3,4,5]
+# k=2
+# for i in range(k):
+#     lv=l[-1]
+#     for j in range(len(l)-1,0,-1):
+#         l[j]=l[j-1]
+#     l[0]=lv
+# print(l)
+
+'''98.	Zigzag arrange (small > big < small > big...) '''
+'''98. Zigzag arrange (> < > <)'''
+
+# l=[4,7,1,9,2]
+
+# for i in range(len(l)-1):
+
+#     if i%2==0:
+
+#         if l[i]<l[i+1]:
+
+#             l[i],l[i+1]=l[i+1],l[i]
+
+#     else:
+
+#         if l[i]>l[i+1]:
+
+#             l[i],l[i+1]=l[i+1],l[i]
+
+# print(l)
+
+'''99.	Sort only even elements, keep odd positions same '''
+# l=[9,8,7,6,5,4,3,2,1]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if ((l[j]%2==0) > (l[i])%2==0):
+#             x=l[i]
+#             l[i]=l[j]
+#             l[j]=x
+# print(l)
+
+
+'''100.	Merge two sorted lists into one sorted list '''
+# l1=[1,3,5]
+# l2=[2,4,6]
+# l3=[]
+# i=0
+# j=0
+# while i<len(l1) and j<(len(l2)):
+#     if l1[i]<l2[j]:
+#         l3.append(l1[i])
+#         i+=1
+#     else:
+#         l3.append(l2[j])
+#         j+=1
+# print(l3)
+
+'''111.	Find element with second least frequency '''
+# l=[1,3,3,2,2,2,4,4,4,4]
+# min=9
+# se_min=9
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count<min:
+#         se_min=min
+#         min=count
+#     elif count<se_min and count!=min:
+#         se_min=count
+#         x=i
+# print(x)
+   
+
+'''112.	Find all elements appearing odd number of times '''
+# l=[1,2,2,3,3,3,4,4,4,4,5,5,5,5,5]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count%2!=0 and i not in l2:
+#         l2.append(i)
+# print(l2)
+
+'''115.	Remove first repeating element only '''
+# l=[1,2,2,3,3,3]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count>1:
+#         l.remove(i)
+#         break
+# print(l)
+
+'''116.	Remove last repeating element only '''
+# l=[1,2,2,3,3,3]
+# for i in range(len(l)-1,-1,-1):
+#     count=0
+#     for j in l:
+#         if l[i]==j:
+#             count+=1
+#     if count>1:
+#         x=l[i]
+#         while x in l:
+#             l.remove(x)
+#         break
+# print(l)
+
+'''117.	Find first element whose frequency > average frequency '''
+# l=[4,4,5,5,5,6]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count not in l2:
+#         l2.append(count)
+# sum=0
+# for i in l2:
+#     sum=sum+i
+# avg=sum/len(l2)
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count>int(avg):
+#         print(i)
+#         break
+
+'''118.	Count how many distinct repeated elements exist '''
+# l=[1,2,2,3,3,3,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count>1 and i not in l2:
+#         l2.append(i)
+# print(l2)
+# print(len(l2))
+
+'''65.	Find stock buy/sell max profit '''
+
+
+
+
+
+
+
+
+
 
     
 
