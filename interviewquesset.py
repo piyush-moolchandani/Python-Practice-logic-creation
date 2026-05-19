@@ -340,8 +340,148 @@
 # print(l2)
 # print(len(l2))
 
-'''65.	Find stock buy/sell max profit '''
+'''119.	Print elements sorted by frequency descending '''
+'''27.	Replace elements whose binary 1-count frequency is prime with 6 '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     count=0
+#     ch=bin(i)[2:]
+#     for j in ch:
+#         if j=='1':
+#             count+=1
+#     c=0
+#     for k in range(1,count+1):
+#         if count%k==0:
+#             c+=1
+#     if c==2:
+#         i=6
+#     l2.append(i)
+# print(l2)
 
+'''131.	Find pair whose sum is closest to k '''
+# l=[1,4,7,10]
+# l2=[]
+# k=15
+# small=9
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(k-sum)
+#         if diff<small:
+#             small=diff
+#             x=l[i]
+#             z=l[j]
+# print(x,z)
+
+'''132.	Find pair whose product is minimum '''
+# l=[1,4,7,10]
+# min_prod=999999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         prod=l[i]*l[j]
+#         if prod<min_prod:
+#             min_prod=prod
+#             x=l[i]
+#             z=l[j]
+# print((x,z))
+
+'''133.	Count pairs with both numbers prime '''
+# l=[2,3,4,5,6,7]
+# count=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         pr=(l[i],l[j])
+#         x=pr[0]
+#         z=pr[1]
+#         c=0
+#         for k in range(1,x+1):         ----------> {damn great work}
+#             if x%k==0:
+#                 c+=1
+#         c2=0
+#         for m in range(1,z+1):
+#             if z%m==0:
+#                 c2+=1
+#         if c==2 and c2==2:
+#             count+=1
+# print(count)
+
+'''134.	Find pair with same last digit '''
+# l=[12,25,37,42,55]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         pair=(l[i],l[j])
+#         x=pair[0]%10
+#         z=pair[1]%10
+#         if x==z:
+#             print(pair)
+
+'''135.	Count pairs where one is square of another '''
+# l=[2,4,3,9,5]
+# count=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         pair=(l[i],l[j])
+#         if pair[0]**2==pair[1]:
+#             count+=1
+# print(count)
+
+'''136.	Find triplet with maximum sum '''
+# l=[1,4,7,10,5]
+# max_sum=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             sum=l[i]+l[j]+l[k]
+#             if sum>max_sum:
+#                 max_sum=sum
+#                 x=l[i]
+#                 y=l[j]
+#                 z=l[k]
+# print((x,y,z))
+
+'''137.	Count triplets with all distinct values '''
+'''151.	Find first element whose frequency is odd and > average frequency '''
+l=[1,2,2,3,3,3,4,4,4,4,5,5,5]
+# l1=[]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if i not in l1:
+#         l2.append(count)
+#         l1.append(i)
+# sum=0
+# for i in l2:
+#     sum=sum+i
+# avg=sum/len(l2)
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count%2!=0 and count>avg:
+#         print(i)
+#         break
+
+
+
+
+
+        
+
+      
+
+        
+    
+    
+
+
+
+
+    
 
 
 

@@ -6342,6 +6342,11 @@ If equal → replace digit with 3
 # print(result)
 
 
+'''45.	👉 Replace digits where digit = next digit −1 with 3 '''
+
+ 
+
+
 
 
 
