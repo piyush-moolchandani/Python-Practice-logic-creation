@@ -442,7 +442,7 @@
 
 '''137.	Count triplets with all distinct values '''
 '''151.	Find first element whose frequency is odd and > average frequency '''
-l=[1,2,2,3,3,3,4,4,4,4,5,5,5]
+# l=[1,2,2,3,3,3,4,4,4,4,5,5,5]
 # l1=[]
 # l2=[]
 # for i in l:
@@ -465,6 +465,66 @@ l=[1,2,2,3,3,3,4,4,4,4,5,5,5]
 #     if count%2!=0 and count>avg:
 #         print(i)
 #         break
+
+'''137.	Count triplets with all distinct values '''
+# l=[1,2,2,3]
+# count=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             triplets=(l[i],l[j],l[k])
+#             a=l[i]
+#             b=l[j]
+#             c=l[k]
+#             if a!=b and a!=c and b!=c:
+#                 count+=1
+# print(count)
+
+
+'''138.	Find pair with gcd > 1 '''
+# l=[2,3,4,9,6]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         a=l[i]
+#         b=l[j]
+#         gcd=1
+#         small=min(a,b)
+#         for k in range(1,small+1):
+#             if a%k==0 and b%k==0:
+#                 gcd=k
+#         if gcd>1:
+#             print((a,b))
+
+'''139.	Find pair with minimum absolute difference '''
+# l=[1,4,7,10]
+# small=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         a=l[i]
+#         b=l[j]
+#         diff=abs(a-b)
+#         if diff<small:
+#             small=diff
+#             x=a
+#             y=b
+# print((x,y))
+        
+
+'''140.	Print all pairs with equal sum'''
+# l=[1,2,3,4,5]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum1=l[i]+l[j]
+#         for k in range(i+1,len(l)):
+#             for m in range(k+1,len(l)):
+#                 sum2=l[k]+l[m]
+#                 if sum1==sum2:
+#                     if i!=k and i!=m and j!=k and j!=m:
+#                         print((l[i],l[j]),(l[k],l[m]))
+           
+    
+
+        
 
 
 

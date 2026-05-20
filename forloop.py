@@ -6342,7 +6342,36 @@ If equal → replace digit with 3
 # print(result)
 
 
-'''45.	👉 Replace digits where digit = next digit −1 with 3 '''
+'''50.	👉 Replace digits where number of divisors(digit + position) is prime and odd with '''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         div=(digit+pos)
+#         count=0
+#         for i in range(1,div+1):
+#             if div%i==0:
+#                 count+=1
+#         c=0
+#         for j in range(1,count+1):
+#             if count%j==0:
+#                 c+=1
+#         if c==2 and count%2!=0:
+#             digit=9
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
 
  
 
