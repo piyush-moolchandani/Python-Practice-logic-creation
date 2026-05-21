@@ -522,7 +522,85 @@
 #                     if i!=k and i!=m and j!=k and j!=m:
 #                         print((l[i],l[j]),(l[k],l[m]))
            
-    
+
+'''41.	Rotate left by 2 positions '''
+# l=[1,2,3,4,5]
+# k=2
+# for i in range(k):
+#     fi=l[0]
+#     for j in range(len(l)-1):
+#         l[j]=l[j+1]
+#     l[-1]=fi
+# print(l)
+
+'''42.	Rotate right by 2 positions '''
+# l=[1,2,3,4,5]
+# k=2
+# for i in range(k):
+#     lv=l[-1]
+#     for j in range(len(l)-1,0,-1):
+#         l[j]=l[j-1]
+#     l[0]=lv
+# print(l)    
+
+'''43.	Reverse only first half of list '''
+# l=[1,2,3,4,5,6]
+# mid=len(l)//2
+# l2=l[0:mid]
+# l3=l[mid:]
+# l4=[]
+# for i in range(len(l2)-1,-1,-1):
+#     l4.append(l2[i])
+# print(l4+l3)
+
+
+'''44.	Reverse only second half of list '''
+# l=[1,2,3,4,5,6]
+# mid=len(l)//2
+# l2=l[0:mid]
+# l3=l[mid:]
+# l4=[]
+# for i in range(len(l3)-1,-1,-1):
+#     l4.append(l3[i])
+# print(l2+l4)
+
+'''45.	Put all even numbers first, odd later '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[i for i in l if i%2==0]          -------->[list comphrension]
+# l3=[i for i in l if i%2!=0]
+# print(l2+l3)
+
+'''47.	Arrange positives first, negatives later '''
+# l=[1,-2,3,-4,5,-6,7,-8,-9]
+# l2=[i for i in l if i>0] + [i for i in l if i<0]
+# print(l2)
+
+'''49.	Merge two sorted lists into one sorted list '''
+# l=[1,3,5]
+# l2=[2,4,6]
+# l3=[]
+# i=0
+# j=0
+# while i<len(l) and j<(len(l2)):
+#     if l[i]<l2[j]:
+#         l3.append(l[i])
+#         i+=1
+#     else:
+#         l3.append(l2[j])
+#         j+=1
+# print(l3)
+
+'''61.	Find all subarrays with sum = k '''
+# l=[1,2,3,4,5]
+# k=5
+# for i in range(len(l)):
+#     sum=0
+#     for j in range(i,len(l)):
+#         sum=sum+l[j]
+#         if sum==k:
+#             print(l[i:j+1])
+
+
 
         
 
