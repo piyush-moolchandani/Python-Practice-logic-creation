@@ -601,8 +601,57 @@
 #             print(l[i:j+1])
 
 
+'''62.	Find longest subarray with equal 0s and 1s '''
+# l=[0,1,0,1,1]
+# max_len=0
+# for i in range(len(l)):
+#     count=0
+#     count2=0
+#     for j in range(i,len(l)):
+#         if l[j]==1:
+#             count+=1
+#         elif l[j]==0:
+#             count2+=1
+#         if count==count2:
+#             length=j-i+1
+#             if length>max_len:
+#                 max_len=length
+#                 z=l[i:j+1]
+# print(z)
+# print(max_len)
+
+'''11.	Print elements greater than left neighbor only '''
+# l=[3,5,2,8,1]
+# l2=[]
+# for i in range(len(l)-1):
+#     if l[i]<l[i+1]:
+#         l2.append(l[i+1])
+# print(l2)
+
+'''12.	Print elements smaller than right neighbor only '''
+# l=[3,5,2,8,1]
+# for i in range(len(l)-1):
+#     if l[i]<l[i+1]:
+#         print(l[i])
+
+'''13.	Remove only first duplicate occurrence of each repeated value '''
+# l=[1,2,2,3,3,3,4,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l2:
+#         if i==j:
+#             count+=1
+#     if count!=1:
+#         l2.append(i)
+# print(l2)
+
+ 
+
 
         
+
+            
 
 
 

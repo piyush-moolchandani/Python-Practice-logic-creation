@@ -6372,7 +6372,32 @@ If equal → replace digit with 3
 # result=check(x)
 # print(result)
 
-
+'''49.	👉 Replace digits where digit³ + reverse(position²) is divisible by 11 with 2 '''
+# def check(n):
+#     new=0
+#     pos=1
+#     while n>0:
+#         digit=n%10
+#         sq=pos**2
+#         rev=0
+#         while sq>0:
+#             digit2=sq%10
+#             rev=rev*10+digit2
+#             sq=sq//10
+#         if (digit**3+rev)%11==0:
+#             digit=2
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
  
 
 
