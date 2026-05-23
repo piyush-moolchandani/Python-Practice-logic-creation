@@ -6398,6 +6398,57 @@ If equal → replace digit with 3
 # x=int(input("enter your number "))
 # result=check(x)
 # print(result)
+
+'''44.	👉 Replace digits where digit = previous digit ×2 mod 10 with 5 '''
+
+'''👉 Replace digits where (digit+position**2) is a palindrome with 7'''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         ch=digit+pos**2
+#         x=ch
+#         rev=0
+#         while ch>0:
+#             digit2=ch%10
+#             rev=rev*10+digit2
+#             ch=ch//10
+#         if x==rev:
+#             digit=7
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# a=int(input("enter your number "))
+# result=check(a)
+# print(result)
+# ---------------------------------------------------------------------------
+# def is_palindrome(num):
+#     return str(num) == str(num)[::-1]
+# def check(n):
+#     pos = 1
+#     result = ""
+#     while n > 0:
+#         digit = n % 10
+#         value = digit + pos**2
+#         if is_palindrome(value):
+#             result += "7"
+#         else:
+#             result += str(digit)
+#         n = n // 10
+#         pos += 1
+#     return int(result[::-1])
+# a = int(input("Enter your number: "))
+# print(check(a))
+
+        
+
  
 
 

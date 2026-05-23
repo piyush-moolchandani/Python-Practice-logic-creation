@@ -646,10 +646,131 @@
 #         l2.append(i)
 # print(l2)
 
+'''14.	Keep only values appearing exactly twice '''
+# l=[1,2,2,3,3,4,4,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count==2 and i not in l2:
+#         l2.append(i)
+# print(l2)
  
+'''17.	Keep only composite numbers '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count+=1
+#     if count>2:
+#         l2.append(i)
+# print(l2)
 
+'''19.	Replace negative even numbers with 0 '''
+# l=[1,-2,3,-4,5,6]
+# l2=[]
+# for i in l:
+#     if i%2==0 and i<0:
+#         l2.append(0)
+#     else:
+#         l2.append(i)
+# print(l2)
 
+'''27.	Replace each element with distance from max '''
+# l=[1,2,3,4,5,6,7,40,8,9]
+# l2=[]
+# for i in l:
+#     diff=abs(i-max(l))
+#     l2.append(diff)
+# print(l2)
+
+'''51.	Check if list can become sorted by one swap '''
+# l=[1,5,3,4,2]  
+# l[1],l[4]=l[4],l[1]
+# print(l)
+
+'''52.	Find pair whose sum is closest to zero '''
+# l=[-8,-3,2,4,7]
+# small=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(sum)
+#         if diff<small:
+#             small=diff
+#             x=l[i]
+#             y=l[j]
+# print((x,y))
+
+'''53.	Find all triplets with sum = 0 '''
+# l=[-1,0,1,2,-1,-4]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k]==0:
+#                 print((l[i],l[j],l[k]))
+
+'''54.	Find maximum product of any two elements '''
+# l=[1,4,7,10]
+# max_check=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         prod=l[i]*l[j]
+#         if prod>max_check:
+#             max_check=prod
+#             x=l[i]
+#             y=l[j]
+# print((x,y))
+
+'''56.	Find longest consecutive increasing subarray '''
+# l=[1,2,3,1,2,3,4]
+# max_len=1
+# x=[l[0]]
+# for i in range(len(l)):
+#     temp=[l[i]]
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[j-1]:
+#             temp.append(l[j])
+#         else:
+#             break
+#     if len(temp)>max_len:
+#         max_len=len(temp)
+#         x=temp
+# print(x)
         
+'''| Variable | Meaning                     |
+| -------- | --------------------------- |
+| temp     | current increasing subarray |
+| max_len  | maximum length found        |
+| x        | longest subarray answer     |
+| i        | starting index              |
+| j        | moving forward              |
+'''
+
+'''57.	Find longest consecutive decreasing subarray '''
+# l=[1,2,3,4,3,2,1]
+# max_len=1
+# x=[l[0]]
+# for i in range(len(l)):
+#     temp=[l[i]]
+#     for j in range(i+1,len(l)):
+#         if l[j]<l[j-1]:
+#             temp.append(l[j])
+#         else:
+#             break
+#     if len(temp)>max_len:
+#         max_len=len(temp)
+#         x=temp
+# print(x)
+
+
+    
+
+
 
             
 
