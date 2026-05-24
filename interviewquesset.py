@@ -767,6 +767,68 @@
 #         x=temp
 # print(x)
 
+'''3.	Count elements whose square root digit sum is even '''
+# from math import sqrt
+# l=[4,9,16,25,169]
+# count=0
+# for i in l:
+#     root=int(sqrt(i))
+#     sum=0
+#     while root>0:
+#         digit=root%10
+#         sum=sum+digit
+#         root=root//10
+#     if sum%2==0:
+#         count+=1
+# print(count)
+
+'''58.	Replace each element with next smaller element '''
+# l=[5,2,8,6,3]
+# l2=[]
+# for i in range(len(l)):
+#     found=False
+#     for j in range(i+1,len(l)):
+#         if l[i]>l[j]:
+#             l[i]=l[j]
+#             found=True
+#             break
+#     if found==False:
+#         l[i]=-1
+# print(l)
+
+'''59.	Replace each element with previous greater element '''
+# l=[5,2,8,6,3]
+# l2=[]
+# for i in range(len(l)):
+#     found=False
+#     for j in range(i-1,-1,-1):
+#         if l[j]>l[i]:
+#             l2.append(l[j])
+#             found=True
+#             break
+#     if found==False:
+#         l2.append(-1)
+# print(l2)
+    
+'''60.	Find all equilibrium indices '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left_sum=0
+#     right_sum=0
+#     for j in range(i):
+#         left_sum=left_sum+l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum=right_sum+l[k]
+#     if left_sum==right_sum:
+#         print(i)
+
+
+'''43.	Arrange elements by distance from median '''
+
+
+
+
+
 
     
 
