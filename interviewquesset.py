@@ -824,6 +824,130 @@
 
 
 '''43.	Arrange elements by distance from median '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# l.sort()
+# n=len(l)
+# if n%2!=0:
+#     median=l[n//2]
+# else:
+#     median=(l[n//2]+l[n//2-1])/2
+# for i in l:
+#     diff=abs(i-median)
+#     l2.append(diff)
+# print(l2)
+
+'''44.	Reverse elements at prime indexes only '''
+# l=[11,12,13,1,4,15,16,17,18,19]
+# l2=[]
+# for i in range(len(l)):
+#     x=l[i]
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count+=1
+#     if count==2:
+#         rev=0
+#         while x>0:
+#             digit=x%10
+#             rev=rev*10+digit
+#             x=x//10
+#         l2.append(rev)
+#     else:
+#         l2.append(l[i])
+# print(l2)
+
+
+'''45.	Swap elements at even and odd indexes '''
+# l=[10,20,30,40,50,60]
+# for i in range(len(l)):
+#     if i%2==0:
+#         l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''46.	Rotate array by number of odd elements (if rotation not given then assume left)'''
+# l=[1,2,3,4,5,8]
+# count=0
+# for i in l:
+#     if i%2!=0:
+#         count+=1
+# k=count
+# for i in range(k):
+#     fi=l[0]
+#     for j in range(len(l)-1):
+#         l[j]=l[j+1]
+#     l[-1]=fi
+# print(l)
+
+''' rotate array right with number of composite odd  elements'''
+# l=[1,2,3,4,5,6,7,8,9,15]
+# total_comp=0
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count+=1
+#     if count>2 and i%2!=0:
+#         total_comp+=1
+# k=total_comp
+# for i in range(k):
+#     lv=l[-1]
+#     for j in range(len(l)-1,0,-1):
+#         l[j]=l[j-1]
+#     l[0]=lv
+# print(l)
+
+'''47.	Group elements by number of digits '''
+# l=[1,22,333,44,5555,6]
+# d={}
+# for i in l:
+#     x=i
+#     count=0
+#     while x>0:
+#         digit=x%10
+#         count+=1
+#         x=x//10
+#     if count not in d:
+#         d[count]=[]
+#     d[count].append(i)
+# print(d)
+    
+'''48.	Arrange numbers so that even digits come before odd digits (inside number) '''
+# l=[123456,573218,482731,914263,785421]
+# l2=[]
+# for i in l:
+#     even=""
+#     odd=""
+#     for j in str(i):
+#         if int(j)%2==0:
+#             even=even+j
+#         else:
+#             odd=odd+j
+#     l2.append(even+odd)
+# print(l2)
+
+
+'''49.	Reverse subarray where sum is maximum '''
+# l=[1,-2,3,4,-1]
+# max_sum=0
+# for i in range(len(l)):
+#     sum=0
+#     for j in range(i,len(l)):
+#         sum=sum+l[j]
+#         if sum>max_sum:
+#             max_sum=sum
+#             print(l[i:j+1])
+           
+
+
+
+
+    
+
+
+
+
+
 
 
 

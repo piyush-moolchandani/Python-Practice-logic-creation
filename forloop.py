@@ -6448,6 +6448,64 @@ If equal → replace digit with 3
 # print(check(a))
 
         
+'''👉 Replace digits where sum of digits(digit3+position3) is prime with 4'''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         cube=digit**3+pos**3
+#         sum=0
+#         while cube>0:
+#             digit2=cube%10
+#             sum=sum+digit2
+#             cube=cube//10
+#         count=0
+#         for i in range(1,sum+1):
+#             if sum%i==0:
+#                 count+=1
+#         if count==2:
+#             digit=4
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
+'''👉 Replace digits where (digit×position!)mod 2 =digit with 0'''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,pos+1):
+#             fact=fact*i
+#             if (digit*fact)%2==digit:
+#                 digit=0
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+        
+
 
  
 
