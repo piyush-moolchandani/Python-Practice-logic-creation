@@ -937,6 +937,96 @@
 #         if sum>max_sum:
 #             max_sum=sum
 #             print(l[i:j+1])
+
+'''50.	Arrange array in wave form (a ≥ b ≤ c ≥ d...) '''
+# l=[1,2,3,4,5]
+# for i in range(0,len(l)-1,2):
+#     l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+# small<big
+# l=[1,2,3,4,5]
+# for i in range(1,len(l)-1,2):
+#     l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''53.	Rotate only prime numbers in array '''
+# l=[2,4,3,6,5,8,7]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in range(1,i+1):
+#         if i%j==0:
+#             count+=1
+#     if count==2:
+#         l2.append(i)
+# fi=l2[0]
+# for i in range(len(l2)-1):
+#     l2[i]=l2[i+1]
+# l2[-1]=fi
+# k=0
+# for i in range(len(l)):
+#     count=0
+#     for j in range(1,l[i]+1):
+#         if l[i]%j==0:
+#             count+=1
+#     if count==2:
+#         l[i]=l2[k]
+#         k+=1
+# print(l)
+
+'''51.	Find subarray where first and last element are equal '''
+# l=[4,6,4,2,1]
+# for i in range(len(l)):
+#     l2=[]
+#     for j in range(i,len(l)):
+#         l2.append(l[j])
+#         if l2[0]==l2[-1]:
+#             print(l2)
+
+'''52.	Rearrange array so that all duplicates come together '''
+# l=[1,2,3,2,1,4,3]
+# l2=[]
+# for i in l:
+#     if i not in l2:
+#         for j in l:
+#             if i==j:
+#                 l2.append(i)
+# print(l2)
+
+# ✅ Condition meaning
+# if i not in l2
+# means:
+# "Agar ye number pehle process nahi hua,
+# tabhi uske saare duplicates append karo"
+# 🧠 VERY IMPORTANT
+# Condition:
+# duplicates ko rok nahi rahi
+# It only prevents:
+# same NUMBER ko dubara process karna
+# 💡 SUPER SIMPLE UNDERSTANDING
+# Outer loop:
+# ek number choose karta
+# Inner loop:
+# us number ke saare copies dhundta
+# Condition:
+# same number ko repeat processing se bachati
+
+''''''
+    
+
+
+     
+    
+
+
+
+   
+
+            
+
+       
+
            
 
 

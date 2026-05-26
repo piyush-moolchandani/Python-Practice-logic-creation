@@ -2257,7 +2257,28 @@ Replace number with 0
 # print(count)
 
 
+'''8.	Keep numbers whose sum of odd digits is greater than product of even digits '''
+# l=[1234, 3521, 8642, 97531, 2468, 7135]
+# l2=[]
+# for i in l:
+#     x=i
+#     sum=0
+#     sum2=0
+#     while x>0:
+#         digit=x%10
+#         if digit%2==0:
+#             sum=sum+digit
+#         else:
+#             sum2=sum2+digit
+#         x=x//10
+#     if sum2>sum:
+#         l2.append(i)
+# print(l2)
+
 ''''''
+
+
+
 
 
 
