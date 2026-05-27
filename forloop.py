@@ -6504,6 +6504,60 @@ If equal → replace digit with 3
 # result=check(x)
 # print(result)
 
+# '''👉 Replace digits where number of divisors(digit2+position2) is even with 9'''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         ch=digit**2+pos**2
+#         count=0
+#         for i in range(1,ch+1):
+#             if ch%i==0:
+#                 count+=1
+#         if count%2==0:
+#             digit=9
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         new=new*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
+'''👉 Replace digits where reverse(digit+position) is divisible by 3 with 5'''
+def check(n):
+    pos=1
+    new=0
+    while n>0:
+        digit=n%10
+        ch=digit+pos
+        rev=0
+        while ch>0:
+            digit2=ch%10
+            rev=rev*10+digit2
+            ch=ch//10
+        if rev%3==0:
+            digit=5
+        n=n//10
+        pos+=1
+        new=new*10+digit
+    res=0
+    while new>0:
+        digit=new%10
+        res=res*10+digit
+        new=new//10
+    return res
+x=int(input("enter your number "))
+result=check(x)
+print(result)
+
         
 
 

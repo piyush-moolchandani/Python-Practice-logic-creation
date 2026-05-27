@@ -1012,7 +1012,58 @@
 # Condition:
 # same number ko repeat processing se bachati
 
-''''''
+
+'''54.	Replace every element with nearest even element '''
+
+'''55.	Reverse only negative numbers positions '''
+# l=[1,-2,3,-4,5,-6]
+# l2=[]
+# for i in l:
+#     if i<0:
+#         l2.append(i)
+# l3=[]
+# for j in range(len(l2)-1,-1,-1):
+#     l3.append(l2[j])
+# k=0
+# for i in range(len(l)):
+#     if l[i]<0:
+#         l[i]=l3[k]
+#         k+=1
+# print(l)
+
+'''56.	Arrange elements in increasing-decreasing alternate form '''
+# l=[8,1,3,7,0,1]
+# for i in range(1,len(l)-1,2):
+#     l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''57.	Move all perfect square numbers to front '''
+# from math import isqrt
+# l=[8,4,7,9,10,16]
+# l2=[]
+# for i in l:
+#     if isqrt(i)**2==i:
+#         l2.append(i)
+# l3=[]
+# for i in l:
+#     if isqrt(i)**2!=i:
+#         l3.append(i)
+# print(l2+l3)
+
+# '''58.	Find longest alternating even-odd subarray '''
+# l=[1,2,3,4,6,7,8]
+# for i in range(len(l)):
+#     max_array=0
+#     for j in range(i,len(l)):
+#         if l[j]%2!=0 and l[j+1]%2==0:
+#             print(l[i:j+1])
+
+
+
+
+
+
+
     
 
 

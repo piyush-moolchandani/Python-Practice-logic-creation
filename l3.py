@@ -2275,7 +2275,10 @@ Replace number with 0
 #         l2.append(i)
 # print(l2)
 
-''''''
+'''54.	Replace every element with nearest even element '''
+
+    
+
 
 
 
