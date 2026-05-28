@@ -6532,31 +6532,64 @@ If equal → replace digit with 3
 
 
 '''👉 Replace digits where reverse(digit+position) is divisible by 3 with 5'''
-def check(n):
-    pos=1
-    new=0
-    while n>0:
-        digit=n%10
-        ch=digit+pos
-        rev=0
-        while ch>0:
-            digit2=ch%10
-            rev=rev*10+digit2
-            ch=ch//10
-        if rev%3==0:
-            digit=5
-        n=n//10
-        pos+=1
-        new=new*10+digit
-    res=0
-    while new>0:
-        digit=new%10
-        res=res*10+digit
-        new=new//10
-    return res
-x=int(input("enter your number "))
-result=check(x)
-print(result)
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         ch=digit+pos
+#         rev=0
+#         while ch>0:
+#             digit2=ch%10
+#             rev=rev*10+digit2
+#             ch=ch//10
+#         if rev%3==0:
+#             digit=5
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+
+
+'''👉 Replace digits where binary(digit×position) contains exactly 2 ones with 1'''
+# def check(n):
+#     pos=0
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         by=bin(digit)[2:]
+#         by2=bin(pos)[2:]
+#         prod=int(by)*int(by2)
+#         count=0
+#         while prod>0:
+#             digit=prod%10
+#             if digit==1:
+#                 count+=1
+#             prod=prod//10
+#         if count==2:
+#             digit=1
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
+        
+        
 
         
 

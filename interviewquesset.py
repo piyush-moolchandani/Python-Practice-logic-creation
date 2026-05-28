@@ -1050,7 +1050,7 @@
 #         l3.append(i)
 # print(l2+l3)
 
-# '''58.	Find longest alternating even-odd subarray '''
+'''58.	Find longest alternating even-odd subarray '''
 # l=[1,2,3,4,6,7,8]
 # for i in range(len(l)):
 #     max_array=0
@@ -1058,8 +1058,68 @@
 #         if l[j]%2!=0 and l[j+1]%2==0:
 #             print(l[i:j+1])
 
+'''59.	Rearrange array so that smallest, largest appear alternately '''
+# l=[1,2,3,4,5]
+# for i in range(1,len(l)-1,2):
+#     l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''Two Sum'''
+# l=[1,5,8,2]
+# target=10
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]+l[j]==target:
+#             print((l[i],l[j]))
+
+'''Reverse string'''
+# x='python'
+# rev=""
+# for i in range(len(x)-1,-1,-1):
+#     rev=rev+x[i]
+# print(rev)
+
+'''check pallindrome'''
+# ch='madam'
+# rev=''
+# for i in range(len(ch)-1,-1,-1):
+#     rev=rev+ch[i]
+# if rev==ch:
+#     print("The string is pallindrome")
+
+'''Frequency Count'''
+# x='aabccddd'
+# checked=''
+# for i in x:
+#     if i not in checked:
+#         freq=0
+#         for j in x:
+#             if i==j:
+#                 freq=freq+1
+#         print(i,":",freq)
+#         checked=checked+i
+
+'''65.	Rearrange array so every element becomes product of neighbors '''
+# l=[2,3,4,5]
+# l2=[]
+# l2.append(l[0]*l[1])
+# for i in range(1,len(l)-1):
+#     l2.append(l[i-1]*l[i+1])
+# l2.append(l[-2]*l[-1])
+# print(l2)
+
+''''''
+    
 
 
+
+
+  
+   
+    
+
+  
+   
 
 
 
