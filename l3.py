@@ -2275,9 +2275,22 @@ Replace number with 0
 #         l2.append(i)
 # print(l2)
 
-'''54.	Replace every element with nearest even element '''
 
-    
+'''13.	Keep elements whose binary contains consecutive 0s '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in l:
+#     ch=bin(i)[2:]
+#     count=0
+#     for j in ch:
+#         if j=='0':
+#             count+=1
+#             if count==2:
+#                 l2.append(i)
+#                 break
+#         else:
+#             count=0
+# print(l2)
 
 
 

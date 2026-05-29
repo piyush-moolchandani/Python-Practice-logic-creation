@@ -1108,7 +1108,56 @@
 # l2.append(l[-2]*l[-1])
 # print(l2)
 
-''''''
+'''69.	Rearrange array so odd indexes contain greater elements than neighbors '''
+# l=[1,2,3,4,5]
+# for i in range(len(l)-1):
+#     if i%2!=0:
+#         l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''66.	Find longest mountain subarray (increase then decrease) '''
+# A simple beginner brute-force approach:
+# l=[1,2,1,3,5,4,2]
+# max_len=0
+# ans=[]
+# for i in range(len(l)):
+#     for j in range(i+2,len(l)):
+#         sub=l[i:j+1]
+#         peak=sub.index(max(sub))
+#         if peak!=0 and peak!=len(sub)-1:
+#             left=True
+#             right=True
+#             for k in range(peak):
+#                 if sub[k]>=sub[k+1]:
+#                     left=False
+#             for k in range(peak,len(sub)-1):
+#                 if sub[k]<=sub[k+1]:
+#                     right=False
+#             if left and right:
+#                 if len(sub)>max_len:
+#                     max_len=len(sub)
+#                     ans=sub
+# print(ans)
+
+'''67.	Arrange elements by closeness to average of array '''
+# l=[2,4,6,8,10]
+# l2=[]
+# l3=[]
+# sum=0
+# for i in l:
+#     sum=sum+i
+# avg=sum/len(l)
+# for j in l:
+#     dis=abs(avg-j)
+# ---------x---------
+
+ 
+    
+
+
+
+   
+
     
 
 
