@@ -2293,6 +2293,33 @@ Replace number with 0
 # print(l2)
 
 
+'''14.	Replace elements whose reverse digit sum frequency is odd with 0 '''
+# l=[123,321,111]
+# l2=[]
+# for i in l:
+#     x=i
+#     rev=0
+#     while x>0:
+#         digit=x%10
+#         rev=rev*10+digit
+#         x=x//10
+#     sum=0
+#     while rev>0:
+#         digit=rev%10
+#         sum=sum+digit
+#         rev=rev//10
+#     l2.append(sum)
+# l3=[]
+# for i in l2:
+#     count=0
+#     for j in l2:
+#         if i==j:
+#             count+=1
+#     if count%2!=0:
+#         i=0
+#     l3.append(i)
+# print(l3)
+    
 
 
 

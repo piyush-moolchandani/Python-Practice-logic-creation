@@ -1141,17 +1141,70 @@
 
 '''67.	Arrange elements by closeness to average of array '''
 # l=[2,4,6,8,10]
-# l2=[]
-# l3=[]
-# sum=0
-# for i in l:
-#     sum=sum+i
-# avg=sum/len(l)
-# for j in l:
-#     dis=abs(avg-j)
-# ---------x---------
+# avg=sum(l)/len(l)
+# ans=[]
+# temp=[]
+# for i in range(len(l)):
+#     min_diff=999
+#     pos=-1
+#     for j in range(len(l)):
+#         if j not in temp:
+#             diff=abs(l[j]-avg)
+#             if diff<min_diff:
+#                 min_diff=diff
+#                 pos=j
+#     ans.append(l[pos])
+#     temp.append(pos)
+# print(ans)
 
- 
+'''68.	Reverse every subarray whose sum is prime '''
+# l=[1,2,3]
+# for i in range(len(l)):
+#     sum=0
+#     for j in range(i,len(l)):
+#         sum=sum+l[j]
+#         sub=l[i:j+1]
+#         ch_prime=0
+#         for k in range(1,sum+1):
+#             if sum%k==0:
+#                 ch_prime+=1
+#         if ch_prime==2:
+#             ans=[]
+#             for m in range(len(sub)-1,-1,-1):
+#                 ans.append(sub[m])
+#             print(ans)
+
+'''64.	Rotate subarray having maximum sum only '''
+# l=[1,-2,3,4,-1]
+# max_sum=0
+# start=0
+# end=0
+# for i in range(len(l)):
+#     sum=0
+#     for j in range(i,len(l)):
+#         sum=sum+l[j]
+#         sub=l[i:j+1]
+#         if sum>max_sum:
+#             max_sum=sum
+#             ans=sub
+#             start=i
+#             end=j
+# ans=l[start:end+1]
+# fi=ans[0]
+# for i in range(len(ans)-1):
+#     ans[i]=ans[i+1]
+# ans[-1]=fi
+# l[start:end+1]=ans
+# print(l)
+
+''''''
+
+
+     
+        
+            
+       
+
     
 
 
