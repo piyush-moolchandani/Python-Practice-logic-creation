@@ -1197,8 +1197,62 @@
 # l[start:end+1]=ans
 # print(l)
 
-''''''
+'''70.Partition array into maximum increasing chunks'''
+# l=[1,2,5,3,4,7,1,8]
+# l2=[]
+# for i in range(len(l)-1):
+#     l2.append(l[i])
+#     if l[i]>=l[i+1]:
+#         print(l2)
+#         l2=[]
+# l2.append(l[-1])
+# print(l2)
 
+'''63.	Arrange array according to frequency, and same frequency by value '''
+# l=[4,5,6,5,4,3,3,3]
+# for i in range(len(l)-1):
+#     for j in range(i+1,len(l)):
+#         freq=0
+#         freq2=0
+#         for k in l:
+#             if l[i]==k:
+#                 freq+=1
+#             if l[j]==k:
+#                 freq2+=1
+#         if freq>freq2:
+#             l[i],l[j]=l[j],l[i]
+#         elif freq==freq2:
+#             if l[i]>l[j]:
+#                 l[i],l[j]=l[j],l[i]
+# print(l)
+
+'''Arrange array so local minimums come at even indexes'''
+# l=[1,2,3,4,5]
+# for i in range(len(l)-1):
+#     if i%2!=0:                       --- same like ques 69
+#         l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+  
+
+'''72.	Rotate only the longest increasing subarray '''
+l=[5,6,7,1,2,3,4]
+max_len=0
+ans=[]
+for i in range(len(l)):
+    for j in range(i,len(l)-1):
+        if l[j] < l[j+1]:
+            sub=l[i:j+2]
+            if len(sub)>max_len:
+                max_len=len(sub)
+                ans=sub
+        else:
+            break
+
+            
+            
+       
+
+ 
 
      
         

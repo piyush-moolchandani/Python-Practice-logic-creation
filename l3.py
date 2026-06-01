@@ -2322,6 +2322,29 @@ Replace number with 0
     
 
 
+'''29.	9.	Replace elements whose smallest digit frequency is even with 1  '''
+# l=[1223,1123]
+# l2=[]
+# for i in l:
+#     x=i
+#     y=i
+#     small=9
+#     while x>0:
+#         digit=x%10
+#         if digit<small:
+#             small=digit
+#         x=x//10
+#     freq=0
+#     while y>0:
+#         digit=y%10
+#         if digit==small:
+#             freq+=1
+#         y=y//10
+#     if freq%2==0:
+#         i=1
+#     l2.append(i)
+# print(l2)
+    
 
 
 
