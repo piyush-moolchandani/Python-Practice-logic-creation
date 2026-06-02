@@ -1235,19 +1235,76 @@
   
 
 '''72.	Rotate only the longest increasing subarray '''
-l=[5,6,7,1,2,3,4]
-max_len=0
-ans=[]
-for i in range(len(l)):
-    for j in range(i,len(l)-1):
-        if l[j] < l[j+1]:
-            sub=l[i:j+2]
-            if len(sub)>max_len:
-                max_len=len(sub)
-                ans=sub
-        else:
-            break
+# l=[5,6,7,1,2,3,4]
+# max_len=0
+# ans=[]
+# for i in range(len(l)):
+#     for j in range(i,len(l)-1):
+#         if l[j] < l[j+1]:
+#             sub=l[i:j+2]
+#             if len(sub)>max_len:
+#                 max_len=len(sub)
+#                 ans=sub
+#         else:
+#             break
 
+'''75.	Group numbers by sum of digits '''
+# l=[12,21,30,111,24,42]
+# d={}
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         sum=sum+x%10
+#         x=x//10
+#     if sum not in d:
+#         d[sum]=[]
+#     d[sum].append(i)
+# print(d,end=' ')
+
+'''79.	Find subarray having maximum product and reverse it '''
+# l=[2,3,-1,4]
+# max_prod=0
+# for i in range(len(l)):
+#     prod=1
+#     for j in range(i,len(l)):
+#         prod=prod*l[j]
+#         sub=l[i:j+1]
+#         if prod>max_prod:
+#             max_prod=prod
+#             x=sub
+#             start=i
+#             end=j
+# l2=[]
+# x=l[start:end+1]
+# for i in range(len(x)-1,-1,-1):
+#     l2.append(x[i])
+# l[start:end+1]=l2
+# print(l)
+
+
+'''80.	Rotate only elements occurring odd number of times '''
+# l=[1,2,2,3,3,3,4]
+# l2=[]
+# for i in l:
+#     if l.count(i)%2!=0:
+#         l2.append(i)
+# l2=l2[1:]+[l2[0]]
+# k=0
+# ----------------------
+
+
+
+
+            
+            
+           
+       
+
+
+       
+
+    
             
             
        
@@ -1256,7 +1313,8 @@ for i in range(len(l)):
 
      
         
-            
+
+
        
 
     

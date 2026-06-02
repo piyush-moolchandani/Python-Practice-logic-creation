@@ -2344,6 +2344,28 @@ Replace number with 0
 #         i=1
 #     l2.append(i)
 # print(l2)
+
+
+'''2.	Keep numbers where product of digits > sum of digits '''
+# l=[23,40,56,47,80,43,67]
+# l2=[]
+# for i in l:
+#     x=i
+#     z=i
+#     prod=1
+#     while x>0:
+#         digit=x%10
+#         prod=prod*digit
+#         x=x//10
+#     sum=0
+#     while z>0:
+#         digit=z%10
+#         sum=sum+digit
+#         z=z//10
+#     if prod>sum:
+#         l2.append(i)
+# print(l2)
+
     
 
 
