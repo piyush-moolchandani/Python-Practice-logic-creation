@@ -2366,6 +2366,22 @@ Replace number with 0
 #         l2.append(i)
 # print(l2)
 
+
+'''5.	Keep elements whose first digit is even and last digit is odd '''
+# l=[21,33,45,76,54,45]
+# l2=[]
+# for i in l:
+#     x=i
+#     z=i
+#     while x>10:
+#         x=x//10
+#         fd=x
+#         ld=z%10
+#     if fd%2==0 and ld%2!=0:
+#         l2.append(i)
+# print(l2)
+        
+    
     
 
 

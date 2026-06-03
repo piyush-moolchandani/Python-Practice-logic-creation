@@ -1293,6 +1293,127 @@
 # k=0
 # ----------------------
 
+'''81.	Find pair whose sum is closest to target '''
+# l=[1,5,8,12]
+# k=10
+# min_target=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(k-sum)
+#         if diff<min_target:
+#             min_target=diff
+#             pair=l[i],l[j]
+# print(pair)
+
+'''82.	Find triplet whose sum equals target '''
+# l=[1,2,3,4,5]
+# target=9
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k]==target:
+#                 print((l[i],l[j],l[k]))
+
+# optimized code of it with 0(n2)
+# l=[1,2,3,4,5]
+# target=9
+# l.sort()
+# for i in range(len(l)-2):
+#     left=i+1
+#     right=len(l)-1
+#     while left<right:
+#         s=l[i]+l[left]+l[right]
+#         if s==target:
+#             print(l[i],l[left],l[right])
+#             break
+#         elif s<target:
+#             left+=1
+#         else:
+#             right-=1
+
+'''83.	Find longest subarray with equal even and odd elements '''
+# l=[1,2,3,4,5]
+# max_array=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         even_count=0
+#         odd_count=0
+#         for k in sub:
+#             if k%2==0:
+#                 even_count+=1
+#             elif k%2!=0:
+#                 odd_count+=1
+#         if len(sub)>max_array and even_count==odd_count:
+#             max_array=len(sub)
+#             ans=sub
+# print(ans)
+
+'''84.	Find first repeating element '''
+# l=[1,3,3,3,4,4,4,4]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count>1:
+#         print(i)
+#         break
+           
+'''85.	Find first non-repeating element '''
+# l=[2,2,3,4,4,5,6]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if count==1:
+#         print(i)
+#         break
+
+'''86.	Find all pairs having same digit sum '''
+# l=[12,21,30,24,42]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum1=0
+#         x=l[i]
+#         while x>0:
+#             digit=x%10
+#             sum1=sum1+digit
+#             x=x//10
+#         sum2=0
+#         y=l[j]
+#         while y>0:
+#             digit=y%10
+#             sum2=sum2+digit
+#             y=y//10
+#         if sum1==sum2:
+#             print(l[i],l[j])
+
+# optimized code
+# l=[12,21,30,24,42]
+# d={}
+# for num in l:
+#     s=0
+#     x=num
+#     while x>0:
+#         s=s+x%10
+#         x=x//10
+#     if s not in d:
+#         d[s]=[]
+#     d[s].append(num)
+# for values in d.values():
+#     for i in range(len(values)):
+#         for j in range(i+1,len(values)):
+#             print((values[i],values[j]))
+
+''''''
+
+        
+       
+       
+
 
 
 
