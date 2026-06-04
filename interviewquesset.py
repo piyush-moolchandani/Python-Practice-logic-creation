@@ -1408,10 +1408,80 @@
 #         for j in range(i+1,len(values)):
 #             print((values[i],values[j]))
 
-''''''
 
-        
+'''87.	Find longest consecutive sequence in array -----------'''
+# l=[100,4,200,1,3,2]
+# max_len=0
+# ans=[]
+# for i in l:
+#     temp=[]
+#     num=i
+#     while num in l:
+#         temp.append(num)
+#         num=num+1
+#     if len(temp)>max_len:
+#         max_len=len(temp)
+#         ans=temp
+# print(ans)
+
+'''88.	Find subarray whose sum is closest to zero '''
+# l=[4,-2,-1,5]
+# target=0
+# min_target=999
+# for i in range(len(l)):
+#     sum=0
+#     for j in range(i,len(l)):
+#         sum=sum+l[j]
+#         sub=l[i:j+1]
+#         diff=abs(target-sum)
+#         if diff<min_target:
+#             min_target=diff
+#             x=sub
+# print(x,"=",min_target)
+
+'''89.	Find majority element (> n/2 occurrences) '''
+# l=[2,2,1,2,3,2,2]
+# occur=len(l)/2
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq>occur:
+#         print(i)
+#         break
+
+'''90.	Find element occurring odd number of times '''
+# l=[1,2,3,2,3,1,3]
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq%2!=0:
+#         print(i)
+#         break
+
+'''92.	Find all leaders in array '''
+# l=[16,17,4,3,5,2]
+# l2=[]
+# for i in range(len(l)):
+#     leader=True
+#     for j in range(i+1,len(l)):
+#         if l[j]>=l[i]:
+#             leader=False
+#             break
+#     if leader:
+#         l2.append(l[i])
+# print(l2)
+    
+            
+            
+
+
+
        
+
        
 
 
@@ -1423,7 +1493,8 @@
        
 
 
-       
+
+
 
     
             
