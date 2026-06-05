@@ -1475,7 +1475,53 @@
 #         l2.append(l[i])
 # print(l2)
     
-            
+'''91.	Rearrange array so no two adjacent elements are equal '''
+# l=[1,1,1,2,2]
+# for i in range(len(l)-1):
+#     if l[i]==l[i+1]:
+#         for j in range(i+2,len(l)):
+#             if l[j]!=l[i]:
+#                 l[i+1],l[j]=l[j],l[i+1]
+#                 break
+# print(l)
+
+'''93.	Find next greater element for every element '''
+# l=[4,5,2,10]
+# l2=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[i]:
+#             found=l[j]
+#             break
+#     l2.append(found)
+# print(l2)
+
+
+'''94.	Find previous smaller element for every element '''
+# l=[4,5,2,10]
+# l2=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i-1,-1,-1):
+#         if l[j]<l[i]:
+#             found=l[j]
+#             break
+#     l2.append(found)
+# print(l2)
+
+
+''''''
+
+     
+   
+
+  
+
+    
+        
+
+
             
 
 
