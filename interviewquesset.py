@@ -1511,10 +1511,166 @@
 # print(l2)
 
 
-''''''
+'''95.	Find maximum difference j-i such that a[j] > a[i] '''
+# l=[9,2,3,4,5,6,7,8,18,0]
+# max_diff=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[i]:
+#             diff=j-i
+#             if diff>max_diff:
+#                 max_diff=diff
+# print(max_diff)
 
-     
-   
+
+'''96.	Merge overlapping intervals '''
+# l=[[1,3],[2,6],[8,10],[15,18]]
+# l2=[]
+# for i in range(len(l)-1):
+#     fi=l[i]
+#     se=l[i+1]
+#     if se[0]<=fi[1]:
+#         l2.append([min(fi),max(se)])
+#     else:
+#         l2.append(l[i])
+# print(l2)
+# --------------------------------------------------------------------------------------
+# l=[[1,3],[2,6],[8,10],[15,18]]                                                      
+# l2=[]
+# fi=l[0]
+# for i in range(1,len(l)):
+#     se=l[i]
+#     if se[0]<=fi[1]:
+#         fi=[fi,max(fi[1],se[1])]
+#     else:
+#         l2.append(fi)
+#         fi=se
+# l2.append(fi)
+# print(l2)
+'''🔥 Interview me agar tum ye explain kar do:
+"fi current merged interval hai. Agar overlap mile to usko bada karte hain. 
+Agar overlap na mile to fi ko answer me daal dete hain aur next interval 
+ko new fi bana dete hain.
+Start
+fi=[1,3]
+↓
+Compare [2,6]
+↓
+Merge
+fi=[1,6]
+↓
+Compare [8,10]
+↓
+No overlap
+Store [1,6]
+↓
+fi=[8,10]
+↓
+Compare [15,18]
+↓
+No overlap
+Store [8,10]
+↓
+fi=[15,18]
+↓
+Loop ends
+↓
+Store last interval
+↓
+[[1,6],[8,10],[15,18]]"'''
+
+
+'''97.	Find missing number from 1 to n '''
+# l=[1,2,3,5,6,7]
+# expected_sum=0
+# for i in range(1,8):
+#     expected_sum=expected_sum+i
+# actual_sum=0
+# for i in l:
+#     actual_sum=actual_sum+i
+# missing_number=expected_sum-actual_sum
+# print("The Missing Number Is",missing_number)
+
+'''and explain:
+"I calculate the sum that should be present from 1 to n, 
+then subtract the sum of the given array. 
+The difference is the missing number."
+that's a solid interview answer. 🔥
+For companies asking basic Python/logic rounds, 
+this is exactly the kind of solution they expect.'''
+
+
+'''98.	Find duplicate number without using extra list '''
+# l=[1,3,4,2,2]
+# for i in l:
+#     duplicate_value=0
+#     for j in l:
+#         if i==j:
+#             duplicate_value+=1
+#     if duplicate_value>1:
+#         print(i)
+#         break
+'''optimized code'''
+# l=[1,3,4,2,2]
+# for i in range(len(l)):
+#     index=abs(l[i])
+#     if l[index] < 0:
+#         print(index)
+#         break
+#     l[index] = -l[index]
+
+
+'''19.	Frequency count of characters  '''
+# x="madam"
+# for i in x:
+#     count=0
+#     for j in x:
+#         if i==j:
+#             count+=1
+#     print(i,count)
+
+'''20.	First non-repeating character '''
+# x="madam"
+# for i in x:
+#     count=0
+#     for j in x:
+#         if i==j:
+#             count+=1
+#     if count==1:
+#         print(i)
+#         break
+
+'''24.	Longest word in string '''
+# string="Hello My Name Is Piyush"
+# words=string.split()
+# long=words[0]
+# for i in words:
+#     if len(i)>len(long):
+#        long=i
+# print(long)
+
+'''23.	Reverse words in sentence '''
+# x="I love Python"
+# words=x.split()
+# ans=""
+# for i in range(len(words)-1,-1,-1):
+#     ans=ans+words[i]+" "
+# print(ans)
+
+'''reverse string without in built function (slicing)'''
+# x="python"
+# ans=""
+# for i in range(len(x)-1,-1,-1):
+#     ans=ans+x[i]
+# print(ans)
+
+
+
+
+
+    
+
+
 
   
 
