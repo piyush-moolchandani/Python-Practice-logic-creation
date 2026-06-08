@@ -262,7 +262,7 @@
 # l3=l[mid:]
 # l4=[]
 # for i in range(len(l2)-1,-1,-1):
-#     l4.append(l[i])
+#     l4.append(l[i])ti
 # print(l4+l3)
 
 '''44.	Reverse only second half of list '''

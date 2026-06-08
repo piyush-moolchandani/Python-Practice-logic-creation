@@ -1541,7 +1541,7 @@
 # for i in range(1,len(l)):
 #     se=l[i]
 #     if se[0]<=fi[1]:
-#         fi=[fi,max(fi[1],se[1])]
+#         fi=[fi[0],max(fi[1],se[1])]
 #     else:
 #         l2.append(fi)
 #         fi=se
@@ -1663,6 +1663,86 @@ this is exactly the kind of solution they expect.'''
 # for i in range(len(x)-1,-1,-1):
 #     ans=ans+x[i]
 # print(ans)
+
+
+'''99.	Find equilibrium index '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left=0
+#     right=0
+#     for j in range(0,i):
+#         left=left+l[j]
+#     for k in range(i+1,len(l)):
+#         right=right+l[k]
+#     if left==right:
+#         print(f"Equilibrium index is {i} and the value is {l[i]}")
+
+'''100.	Find longest increasing contiguous subarray '''
+# l=[5,6,7,1,2,3,4]
+# max_len=0
+# ans=[]
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         increasing=True
+#         for k in range(len(sub)-1):
+#             if sub[k]>=sub[k+1]:
+#                 increasing=False
+#                 break
+#         else:
+#             if increasing and len(sub)>max_len:
+#                 max_len=len(sub)
+#                 ans=sub
+# print(ans)
+
+
+'''1.	Reverse array '''
+# l=[1,2,3,4,5,6,7,8,9]
+# l2=[]
+# for i in range(len(l)-1,-1,-1):
+#     l2.append(l[i])
+# print(l2)
+
+'''2.	Largest & second largest '''
+'''largest'''
+# l=[1,2,3,4,56,78,2,59]
+# largest=0
+# for i in l:
+#     if i>largest:
+#         largest=i
+# print(largest)
+'''second largest'''
+# l=[1,2,3,4,56,78,2,59]
+# largest=0
+# se_largest=0
+# for i in l:
+#     if i>largest:
+#         se_largest=largest
+#         largest=i
+#     elif i>se_largest and i!=largest:
+#         se_largest=i
+# print(se_largest)
+
+'''4.	Rotate array  '''
+# l=[1,0,2,0,3,0]
+# fi=l[0]
+# for i in range(len(l)-1):
+#     l[i]=l[i+1]
+# l[-1]=fi
+# print(l)
+
+'''4.	Rotate array right  '''
+# l=[1,0,2,0,3,0]
+# lv=l[-1]
+# for i in range(len(l)-1,0,-1):
+#     l[i]=l[i-1]
+# l[0]=lv
+# print(l)
+
+
+
+
+
 
 
 
