@@ -6590,73 +6590,92 @@ If equal → replace digit with 3
 # print(result)
         
 '''👉 Replace digits where reverse(digit+position!) is prime with 4'''
-def check(n):
-    pos=1
-    new=0
-    while n>0:
-        digit=n%10
-        fact=1
-        for i in range(1,pos+1):
-            fact=fact*i
-        ch=digit+fact
-        rev=0
-        while ch>0:
-            digit=ch%10
-            rev=rev*10+digit
-            ch=ch//10
-        count=0
-        for k in range(1,rev+1):
-            if rev%k==0:
-                count+=1
-        if count==2:
-            digit=4
-        n=n//10
-        pos+=1
-        new=new*10+digit
-    res=0
-    while new>0:
-        digit=new%10
-        res=res*10+digit
-        new=new//10
-    return res
-x=int(input("enter your number "))
-result=check(x)
-print(result)
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         fact=1
+#         for i in range(1,pos+1):
+#             fact=fact*i
+#         ch=digit+fact
+#         rev=0
+#         while ch>0:
+#             digit=ch%10
+#             rev=rev*10+digit
+#             ch=ch//10
+#         count=0
+#         for k in range(1,rev+1):
+#             if rev%k==0:
+#                 count+=1
+#         if count==2:
+#             digit=4
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
 
-# ----------------------------------------
-def check(n):
-    pos = 1
-    new = 0
-    while n > 0:
-        digit = n % 10
-        fact = 1
-        for i in range(1, pos + 1):
-            fact *= i
-        ch = digit + fact
-        temp = ch
-        rev = 0
-        while temp > 0:
-            d = temp % 10
-            rev = rev * 10 + d
-            temp //= 10
-        count = 0
-        for k in range(1, rev + 1):
-            if rev % k == 0:
-                count += 1
-        if count == 2:
-            digit = 4
-        new = new * 10 + digit
-        n //= 10
-        pos += 1
-    res = 0
-    while new > 0:
-        d = new % 10
-        res = res * 10 + d
-        new //= 10
-    return res
+# # ----------------------------------------
+# def check(n):
+#     pos = 1
+#     new = 0
+#     while n > 0:
+#         digit = n % 10
+#         fact = 1
+#         for i in range(1, pos + 1):
+#             fact *= i
+#         ch = digit + fact
+#         temp = ch
+#         rev = 0
+#         while temp > 0:
+#             d = temp % 10
+#             rev = rev * 10 + d
+#             temp //= 10
+#         count = 0
+#         for k in range(1, rev + 1):
+#             if rev % k == 0:
+#                 count += 1
+#         if count == 2:
+#             digit = 4
+#         new = new * 10 + digit
+#         n //= 10
+#         pos += 1
+#     res = 0
+#     while new > 0:
+#         d = new % 10
+#         res = res * 10 + d
+#         new //= 10
+#     return res
 
-        
 
+'''👉 Replace digits where (digit2+position2)mod8=1 with 4'''
+# def check(n):
+#     pos=1
+#     new=0
+#     while n>0:
+#         digit=n%10
+#         if (digit**2+pos**2)%8==1:
+#             digit=4
+#         n=n//10
+#         pos+=1
+#         new=new*10+digit
+#     res=0
+#     while new>0:
+#         digit=new%10
+#         res=res*10+digit
+#         new=new//10
+#     return res
+# x=int(input("enter your number "))
+# result=check(x)
+# print(result)
         
 
 
