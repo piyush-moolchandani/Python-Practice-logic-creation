@@ -177,6 +177,53 @@ l1.extend(l2)Modifies:Existing List No new merged list variable needed.'''
 #         if l[i]+l[j]==sum:
 #             print((l[i],l[j]))
 
-''''''
+'''12.	Find all pairs with sum = k '''
+# l=[1,2,3,4,5]
+# k=5
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]+l[j]==k:
+#             print((l[i],l[j]))
 
+'''13.	Find maximum difference between elements '''
+# l=[7,2,9,1]
+# max_diff=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if j>i:
+#            diff=l[j]-l[i]
+#            if diff>max_diff:
+#                max_diff=diff
+# print(max_diff)
+
+'''14.	Find longest increasing sequence '''
+# l=[1,2,3,1,2,3,4,0]
+# current=1
+# maximum=1
+# for i in range(1,len(l)):
+#         if l[i]>l[i-1]:
+#             current+=1
+#         else:
+#               maximum=max(maximum,current)
+#               current=1
+# maximum=max(maximum,current)
+# print(maximum)
+'''"I traverse the array once. If the current element is greater than the previous element, 
+the increasing sequence continues and I increase the current count. Otherwise the sequence breaks,
+so I update the maximum length and reset the current count."'''
+
+'''15.	Replace element with next greater element '''
+# l=[4,5,2,10]
+# res=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[i]:
+#             found=l[j]
+#             break
+#     res.append(found)
+# print(res)
+
+
+         
 
