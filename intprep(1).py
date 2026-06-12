@@ -224,6 +224,76 @@ so I update the maximum length and reset the current count."'''
 #     res.append(found)
 # print(res)
 
-
+'''16.	Replace element with previous smaller element '''
+'''Ek Golden Formula Yaad Rakho
+Question   ->     Direction
+Next Greater  ->	Right (i+1 → end)
+Next Smaller  ->	Right (i+1 → end)
+Previous Greater  ->	Left (i-1 → 0)(i-1,-1,-1)
+Previous Smaller  ->	Left (i-1 → 0)
+Aur condition badlegi:
+Question	Condition
+Greater	>
+Smaller	<'''
+# l=[4,5,2,10]
+# res=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i-1,-1,-1):
+#         if l[j]<l[i]:
+#             found=l[j]
+#             break
+#     res.append(found)
+# print(res)
          
+'''17.	Find equilibrium index '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left=0
+#     right=0
+#     for j in range(0,i):
+#         left=left+l[j]
+#     for k in range(i+1,len(l)):
+#         right=right+l[k]
+#     if left==right:
+#         print(i)
+'''"For every index, I calculate the sum of all elements on its left side 
+and the sum of all elements on its right side. If both sums become equal, 
+that index is an equilibrium index."'''
+
+'''18.	Swap first and last element '''
+# l=[1,2,3,4]
+# l[0],l[-1]=l[-1],l[0]
+# print(l)
+'''"Python supports multiple assignment. 
+The values on the right side are evaluated first, 
+then assigned simultaneously to the variables on the left side, 
+allowing us to swap values without using a temporary variable."'''
+
+'''19.	Swap largest and smallest element '''
+# l=[4,5,1,8,9,4]
+# max_element=l[0]
+# min_element=l[0]
+# large_index=0
+# small_index=0
+# for i in range(len(l)):
+#     if l[i] > max_element:
+#         max_element=l[i]
+#         large_index=i
+#     if l[i] < min_element:
+#         min_element=l[i]
+#         small_index=i
+# l[large_index],l[small_index]=l[small_index],l[large_index]
+# print(l)
+'''"I scan the array once to find the indices of the maximum and minimum elements, 
+then I swap those two positions. 
+This takes O(n) time and O(1) extra space.
+
+"Main array ko ek baar traverse karta hoon. Ek variable mein ab tak ka largest element aur 
+uska index store karta hoon. Dusre variable mein ab tak ka smallest element aur uska index 
+store karta hoon. Jab bhi koi bada element milta hai to largest update kar deta hoon, aur 
+jab bhi koi chhota element milta hai to smallest update kar deta hoon. Loop ke end mein mere 
+paas largest aur smallest dono ke indexes hote hain. Fir un dono positions ko swap kar deta hoon.""'''
+
+
 
