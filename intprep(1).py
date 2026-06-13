@@ -295,5 +295,37 @@ store karta hoon. Jab bhi koi bada element milta hai to largest update kar deta 
 jab bhi koi chhota element milta hai to smallest update kar deta hoon. Loop ke end mein mere 
 paas largest aur smallest dono ke indexes hote hain. Fir un dono positions ko swap kar deta hoon.""'''
 
+'''20.	Zigzag arrange (> < > < big to small) '''
+# l=[4,3,7,8,6,2,1]
+# for i in range(len(l)-1):
+#     if i%2==0:
+#         if l[i]<l[i+1]:
+#             l[i],l[i+1]=l[i+1],l[i]
+#     else:
+#         if l[i]>l[i+1]:
+#             l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''"I traverse the array once. For every even index, 
+I ensure the current element is greater than the next element. 
+For every odd index, I ensure the current element is smaller than 
+the next element. If the condition is violated, I swap the adjacent elements. 
+This creates the zigzag pattern in a single pass."'''
+
+'''23.	Find pair whose sum is closest to k '''
+# l=[1,4,7,10]
+# k=15
+# min_sum=999
+# for i in  range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(sum-k)
+#         if diff<min_sum:
+#             min_sum=diff
+#             x=l[i]
+#             y=l[j]
+# print(x,y)
+
+
 
 
