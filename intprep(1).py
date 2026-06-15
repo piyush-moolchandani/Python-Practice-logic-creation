@@ -327,5 +327,121 @@ This creates the zigzag pattern in a single pass."'''
 # print(x,y)
 
 
+'''24.	Find pair whose product is minimum '''
+# l=[5,7,2,9]
+# min_pair=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         prod=l[i]*l[j]
+#         if prod<min_pair:
+#             min_pair=prod
+#             x=l[i]
+#             y=l[j]
+# print((x,y))
+
+'''25.	Count pairs with both numbers prime '''
+# l=[2,3,4,5,6]
+# count=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         x=l[i]
+#         y=l[j]
+#         c=0
+#         for k in range(1,x+1):
+#             if x%k==0:
+#                 c+=1
+#         c2=0
+#         for m in range(1,y+1):
+#             if y%m==0:
+#                 c2+=1
+#         if c==2 and c2==2:
+#             count+=1
+# print(count)
+
+# optimized version
+# l=[2,3,4,5,6]
+# prime=[]
+# for num in l:
+#     count=0
+#     for i in range(1,num+1):
+#         if num%i==0:
+#             count+=1
+#     if count==2:
+#         prime.append(num)
+# n=len(prime)
+# count=n*(n-1)//2
+# print(count)
+'''"Instead of checking every pair and testing primality repeatedly, 
+I first count how many prime numbers are present in the array. 
+If there are n prime numbers, then the number of pairs where 
+both numbers are prime is nC2 = n(n−1)/2."'''
+
+'''26.	Find pair with same last digit '''
+# l=[17,27,38,49]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         x=l[i]
+#         y=l[j]
+#         if x%10==y%10:
+#             print((x,y))
+'''"I generate all unique pairs using nested loops. For each pair, 
+I compare their last digits using the modulo operator %10. If both last digits are equal, 
+I print the pair."'''
+# optimized
+# l=[17,27,38,49]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]%10 == l[j]%10:
+#             print((l[i],l[j]))
+
+'''27.	Count pairs where one is square of another '''
+# l=[2,4,3,9]
+# count=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#          if l[i]**2 == l[j] or l[j]**2 == l[i]:
+#             count+=1
+# print(count)
+'''"For every unique pair, I check both possibilities: 
+whether the first number is the square of the second or the second number 
+is the square of the first. If either condition is true, I count that pair."'''
+
+'''21.	Sort only even elements '''
+# l=[8,3,6,1,4,7,2]
+# l2=[]
+# for i in l:
+#     if i%2==0:
+#         l2.append(i)
+# for i in range(len(l2)):
+#     for j in range(i+1,len(l2)):
+#         if l2[i]>l2[j]:
+#             x=l2[i]
+#             l2[i]=l2[j]
+#             l2[j]=x
+# pos=0
+# for i in range(len(l)):
+#     if l[i]%2==0:
+#         l[i]=l2[pos]
+#         pos+=1
+# print(l)
+"First I extract all even numbers and sort them. "
+"Then I traverse the original array again."
+" Whenever I encounter an even number,"
+" I replace it with the next element from the sorted even list,"
+" while keeping odd numbers unchanged."
+
+
+        
+
+
+
+      
+         
+
+
+
+      
+
+
 
 

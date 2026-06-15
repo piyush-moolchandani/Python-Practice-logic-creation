@@ -2421,4 +2421,17 @@ Replace number with 0
 #             break
 #         num+=1
 # print(l2)
+
+# Find average of even numbers only
+l=[1,2,3,4,5,6,7,8]
+l2=[]
+for i in l:
+    if i%2==0:
+        l2.append(i)
+sum=0
+for i in l:
+    sum=sum+i
+avg=sum/len(l)
+print(avg)
+
    
