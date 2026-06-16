@@ -431,7 +431,54 @@ is the square of the first. If either condition is true, I count that pair."'''
 " while keeping odd numbers unchanged."
 
 
-        
+'''28.	Find triplet with maximum sum '''
+# l=[2,50,10,40,30]
+# max_sum=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             l_sum=l[i]+l[j]+l[k]
+#             if l_sum>max_sum:
+#                 max_sum=l_sum
+#                 x=l[i]
+#                 y=l[j]
+#                 z=l[k]
+# print(x,y,z)
+
+# optimized version
+# l=[2,50,10,40,30]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]>l[j]:
+#             l[i],l[j]=l[j],l[i]
+# print(l[-1],l[-2],l[-3])
+
+'''29.	Count triplets with all distinct values '''
+# l=[1,1,2,3]
+# triplets=set()
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#                 if l[i]!=l[j] and l[i]!=l[k] and l[j]!=l[k]:
+#                     triplets.add((l[i],l[j],l[k]))
+# print(len(triplets))
+'''"I generate all possible triplets using three nested loops. 
+Then I check whether all three values are different by comparing every pair of elements. 
+If all comparisons are true, the triplet contains distinct values."'''
+# optimized version but only if interviewer ask to count
+# l=[1,1,2,3]
+# n=len(set(l))
+# count=n*(n-1)*(n-2)//6
+# print(count)
+'''"We need to choose any 3 distinct values from n unique values. 
+The number of ways to choose 3 elements is nC3, whose formula is n(n−1)(n−2)/6. 
+The division by 6 comes from 3! because the same 3 elements can be arranged in 
+6 different orders."'''
+
+''''''
+
+
+
 
 
 
