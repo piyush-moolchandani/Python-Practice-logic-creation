@@ -475,8 +475,70 @@ The number of ways to choose 3 elements is nC3, whose formula is n(n−1)(n−2)
 The division by 6 comes from 3! because the same 3 elements can be arranged in 
 6 different orders."'''
 
-''''''
+'''30.	Find pair with GCD > 1 '''
+# l=[8,12,15]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         x=l[i]
+#         y=l[j]
+#         gcd=1
+#         small=min(x,y)
+#         for k in range(1,small+1):
+#             if x%k==0 and y%k==0:
+#                 gcd=k
+#         if gcd>1:
+#             print((x,y))
 
+'''31.	Find pair with minimum absolute difference '''
+# l=[5,2,9,4]
+# min_diff=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         diff=abs(l[i]-l[j])
+#         if diff<min_diff:
+#             min_diff=diff
+#             a=l[i]
+#             b=l[j]
+# print((a,b))
+
+'''32.	Print all pairs with equal sum '''
+# l=[3,4,7,1,2,9,8]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         for k in range(i+1,len(l)):
+#             for m in range(k+1,len(l)):
+#                 sum2=l[k]+l[m]
+#                 if sum==sum2:
+#                     if i!=k and i!=m and j!=k and j!=m:
+#                         print((l[i],l[j]),(l[k],l[m]))
+
+# optimized
+'''"I'll store each pair's sum. When another pair with the same sum appears, 
+I immediately print both pairs. This reduces complexity from O(n⁴) to O(n²)."'''
+# l=[3,4,7,1,2,9,8]
+# d={}
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         s=l[i]+l[j]
+#         if s in d:
+#             print(d[s],(l[i],l[j]))
+#         else:
+#             d[s]=(l[i],l[j])
+
+'''33.	Reverse only first half of list '''
+# l=[1,2,3,4,5,6]
+# mid=len(l)//2
+# l2=l[0:mid]
+# l3=l[mid:]
+# l4=[]
+# for i in range(len(l2)-1,-1,-1):
+#     l4.append(l2[i])
+# print(l4+l3)
+
+
+
+      
 
 
 
