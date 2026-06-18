@@ -536,6 +536,65 @@ I immediately print both pairs. This reduces complexity from O(n⁴) to O(n²)."
 #     l4.append(l2[i])
 # print(l4+l3)
 
+'''34.	Reverse only second half of list '''
+# l=[1,2,3,4,5,6]
+# mid=len(l)//2
+# l2=l[0:mid]
+# l3=l[mid:]
+# l4=[]
+# for i in range(len(l3)-1,-1,-1):
+#     l4.append(l3[i])
+# print(l2+l4)
+
+'''35.	Put even numbers first, odd later '''
+# l=[1,2,3,4,5,6,7,8,9]
+# res=list(filter(lambda x:x%2==0,l))
+# res2=list(filter(lambda x:x%2!=0,l))
+# print(res+res2)
+
+'''37.	Find all subarrays with sum = k '''
+# l=[1,2,3,4]
+# k=5
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         sum=0
+#         for num in sub:
+#             sum=sum+num
+#         if sum==k:
+#             print(sub)
+
+'''38.	Find longest subarray with equal 0s and 1s '''
+# l=[0,1,1,0,1]
+# max_subaaray=0
+# x=[]
+# for i in range(len(l)):
+#       for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         count_0=0
+#         count_1=0
+#         for k in sub:
+#             if k==0:
+#                 count_0+=1
+#             elif k==1:
+#                 count_1+=1
+#         if count_0==count_1:
+#             sub=l[i:j+1]
+#             if len(sub)>max_subaaray:
+#                 max_subaaray=len(sub)
+#                 x=sub
+# print(x)
+
+'''39.	Check if list can become sorted by one swap '''
+# l=[1,3,2,4,5]
+# l[1],l[2]=l[2],l[1]
+# print(l)
+
+
+
+
+
+
 
 
       
