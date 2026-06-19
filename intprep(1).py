@@ -590,6 +590,20 @@ I immediately print both pairs. This reduces complexity from O(n⁴) to O(n²)."
 # l[1],l[2]=l[2],l[1]
 # print(l)
 
+'''40.	Find pair whose sum is closest to zero '''
+# l=[-21,-67,-37,-18,4,-65]
+# min_sum=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(sum)
+#         if diff<min_sum:
+#             min_sum=diff
+#             x=l[i]
+#             y=l[j]
+# print((x,y))
+
+
 
 
 
