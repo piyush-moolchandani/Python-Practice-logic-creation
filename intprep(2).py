@@ -72,6 +72,58 @@
 #         odd+=i
 # print(even+odd)
 
+'''49.	Sum of digits grouping '''
+# num = 123456
+# l=str(num)
+# for i in range(0,len(l),2):
+#     if i+1<len(l):
+#         sum=int(l[i])+int(l[i+1])
+#     else:
+#         sum=int(l[i])
+#     print(sum)
+'''"I convert the number into a string, traverse digits in groups of two, 
+sum each pair, and for odd-length numbers I treat the last remaining digit as 
+a separate group to avoid index errors."'''
+
+'''Sum of digits grouping odd and even digits'''
+# num = 123456
+# l=str(num)
+# even_sum=0
+# odd_sum=0
+# for i in l:
+#     if int(i)%2==0:
+#         even_sum+=int(i)
+#     else:
+#         odd_sum+=int(i)
+# print(even_sum)
+# print(odd_sum)
+
+'''50.	Binary 1-count prime replacement Replace by count of 1s'''
+# l = [5, 6, 8] 
+# l2=[]
+# for i in l:
+#     ch=bin(i)[2:]
+#     bin_count=0
+#     for j in ch:
+#         if j=="1":
+#             bin_count+=1
+#     prime=0
+#     for k in range(1,bin_count+1):
+#         if bin_count%k==0:
+#             prime+=1
+#     if prime==2:
+#         i=bin_count
+#     l2.append(i)
+# print(l2)
+
+
+
+        
+
+
+
+    
+        
 
 
 
