@@ -248,7 +248,112 @@ a separate group to avoid index errors."'''
 #         print(k)
 #         break
 
-''''''
+'''56.	Count distinct repeated elements '''
+# l=[1,2,2,3,3,3,4]
+# c=0
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1
+#     if i not in l2 and count>1:
+#         c+=1
+#         l2.append(i)
+# print(c)
+
+
+'''57.	Find first element whose frequency is odd and > average '''
+# l=[1,2,2,3,3,3,4,4,4,4,5,5,5,5,5]
+# l2=[]
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq not in l2:
+#         l2.append(freq)
+# x=sum(l2)
+# avg=x/len(l2)
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq%2!=0 and freq>avg:
+#         print(i)
+#         break
+    
+'''58.	Arrange array according to frequency '''
+'''59.	Find majority element (> n/2) '''
+# l=[2,2,1,2,3,2,2]
+# n=len(l)
+# half=n/2
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq>half:
+#         print(i)
+#         break
+
+'''66.	Group numbers by digit count '''
+# l=[10,2,345,78,9999,100]
+# d={}
+# for i in l:
+#     x=i
+#     count=0
+#     while x>0:
+#         count+=1
+#         x=x//10
+#     if count not in d:
+#         d[count]=[]
+#     d[count].append(i)
+# print(d)
+'''"I traverse each number and count its digits by repeatedly dividing it by 10. 
+The digit count becomes the dictionary key. If that key doesn't exist, 
+I create an empty list for it. Then I append the original number to that list.
+ Finally, all numbers having the same number of digits are grouped together."'''
+
+'''67.	Group numbers by digit sum '''
+# l=[14,25,33,42,51,60,111]
+# d={}
+# for i in l:
+#     x=i
+#     sum=0
+#     while x>0:
+#         digit=x%10
+#         sum+=digit
+#         x=x//10
+#     if sum not in d:
+#         d[sum]=[]
+#     d[sum].append(i)
+# print(d,end=' ')
+
+'''68.	Find all pairs having same digit sum '''
+# l=[10,12,21,30,15,24,42]
+# d={}
+# for i in l:
+#     sum=0
+#     for j in str(i):
+#         sum+=int(j)
+#     if sum not in d:
+#         d[sum]=[]
+#     d[sum].append(i)
+# for num in d.values():
+#     for i in range(len(num)):
+#         for j in range(i+1,len(num)):
+#             print((num[i],num[j]))
+'''"First I calculate the digit sum of every number and group numbers having the same digit sum 
+using a dictionary. After grouping, I traverse each group separately and generate all possible 
+pairs using nested loops."'''
+
+
+
+        
+   
+        
 
 
   
