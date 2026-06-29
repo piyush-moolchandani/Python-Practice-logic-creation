@@ -350,6 +350,65 @@ using a dictionary. After grouping, I traverse each group separately and generat
 pairs using nested loops."'''
 
 
+'''60.	Find element occurring odd number of times '''
+# l=[1,2,2,3,3,3,4,4,4,4]
+# l2=[]
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq%2!=0 and i not in l2:
+#         print(i)
+#         l2.append(i)
+
+'''61.	Rearrange array so duplicates come together '''
+# l=[3,1,2,3,2,1]
+# ans=[]
+# seen=[]
+# for i in l:
+#     if i not in seen:
+#         count=0
+#         for j in l:
+#             if i==j:
+#                 count+=1
+#         for k in range(count):
+#             ans.append(i)
+#         seen.append(i)
+# print(ans)
+'''"Main ek seen list maintain karta hoon taaki kisi element ko baar-baar process na karna pade. 
+Har unique element ke liye main poori list scan karke uski frequency count karta hoon. 
+Phir us frequency ke hisaab se us element ko answer list me consecutive times add karta hoon. 
+Isse saare duplicate elements ek saath aa jaate hain."'''
+
+'''62.	Rearrange array so no adjacent elements are equal '''
+
+'''73.	Reverse subarray having maximum sum '''
+# l=[1,2,3,-5,4]
+# max_sum=0
+# for i in range(len(l)):    
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         sum=0
+#         for k in sub:
+#             sum+=k
+#         if sum>max_sum:
+#             max_sum=sum
+#             x=sub
+#             start=i
+#             end=j
+# rev=x[::-1]
+# l[start:end+1]=rev
+# print(l)
+'''"I generate all possible subarrays using two nested loops. 
+For each subarray, I calculate its sum and keep track of the 
+maximum sum along with its starting and ending indexes. Once 
+I find the maximum-sum subarray, I reverse it and replace only 
+that portion of the original array using slice assignment. 
+This gives the required output."'''
+
+        
+        
 
         
    
