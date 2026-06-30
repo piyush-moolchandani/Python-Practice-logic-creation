@@ -407,8 +407,110 @@ I find the maximum-sum subarray, I reverse it and replace only
 that portion of the original array using slice assignment. 
 This gives the required output."'''
 
+
+'''63.	Keep only values appearing exactly twice '''
+# l=[1,2,2,3,3,3,4,4]
+# l2=[]
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq==2:
+#         l2.append(i)
+# print(l2)
+        
+
+# '''64.	Remove first duplicate occurrence '''
+# l=[1,2,2,3,3,3]
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq>1:
+#         l.remove(i)
+#         break
+# print(l)
+
+'''71.	Longest consecutive increasing subarray '''
+# l=[5,6,7,1,2,3,4]
+# max_len=0
+# for i in range(len(l)):
+#     sub=[]
+#     sub.append(l[i])
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[j-1]:
+#             sub.append(l[j])
+#         else:
+#             break
+#     if len(sub)>max_len:
+#         max_len=len(sub)
+#         ans=sub
+# print(ans)        
+'''"Main har index ko starting point maanta hoon aur usse ek increasing subarray banana start karta hoon. 
+Jab tak current element previous element se bada hota hai, main usse subarray me add karta rehta hoon. 
+Jaisi hi condition fail hoti hai, main us subarray ki length ko maximum length se compare karta hoon. 
+Agar wo badi hoti hai to answer update kar deta hoon. Aakhir me mere paas longest consecutive increasing 
+subarray hoti hai."'''
+
+'''72.	Longest consecutive decreasing subarray '''
+# l=[20,15,10,8,12,9,5]
+# max_len=0
+# for i in range(len(l)):
+#     sub=[]
+#     sub.append(l[i])
+#     for j in range(i+1,len(l)):
+#         if l[j]<l[j-1]:
+#             sub.append(l[j])
+#         else:
+#             break
+#     if len(sub)>max_len:
+#         max_len=len(sub)
+#         ans=sub
+# print(ans)
+
+'''74.	Rotate subarray having maximum sum '''
+# l=[1,2,3,-5,4]
+# max_sum=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         sum=0
+#         for k in sub:
+#             sum+=k
+#             if sum>max_sum:
+#                 max_sum=sum
+#                 ans=sub
+#                 start=i
+#                 end=j
+# ans=ans[1:]+ans[:1]
+# l[start:end+1]=ans
+# print(l)
+
+'''76.	Reverse every subarray whose sum is prime '''
+# l=[1,3,2,4]
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         sum=0
+#         for k in sub:
+#             sum+=k
+#         count=0
+#         for m in range(1,sum+1):
+#             if sum%m==0:
+#                 count+=1
+#         if count==2:
+#             rev=sub[::-1]
+#             print(rev)
+
+
+
+
         
         
+
+
 
         
    
