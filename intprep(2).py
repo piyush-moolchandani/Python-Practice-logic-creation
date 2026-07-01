@@ -505,9 +505,129 @@ subarray hoti hai."'''
 #             print(rev)
 
 
+'''36.	Arrange positives first, negatives later '''
+# l=[1,-2,3,-4,5,-6]
+# res1=list(filter(lambda x:x>0,l))
+# res2=list(filter(lambda x:x<0,l))
+# print(res1+res2)
+
+'''75.	Longest mountain subarray '''
+# l=[1,3,5,4,2,6]
+# max_len=0
+# for i in range(len(l)):
+#     sub=[l[i]]
+#     inc=False
+#     dec=False
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[j-1] and dec==False:
+#             sub.append(l[j])
+#             inc=True
+#         elif l[j]<l[j-1] and inc==True:
+#             sub.append(l[j])
+#             dec=True
+#         else:
+#             break
+#     if inc==True and dec==True:
+#         if len(sub)>max_len:
+#             max_len=len(sub)
+#             ans=sub
+# print(ans)
+'''"Main har index ko mountain ka starting point maanta hoon. 
+Do boolean flags (inc aur dec) maintain karta hoon. 
+Jab tak elements increasing hote hain, increasing part build karta hoon. 
+Jaise hi decreasing start hoti hai, decreasing part build karta hoon. 
+Agar decreasing ke baad fir increasing aa jaye, mountain invalid ho jati hai aur loop break kar deta hoon. 
+Jis valid mountain ki length sabse badi hoti hai, use answer bana deta hoon."'''
+
+'''Jab tak neeche utarna start nahi hua hai (dec=False), tab tak hi increasing allow hai. 
+Ek baar decreasing start ho gayi (dec=True), uske baad increasing bilkul allow nahi hai.
+Interview me agar interviewer puche:
+Why did you use dec == False?
+Tum confidently bol sakte ho:
+"I used dec == False to ensure that increasing is allowed only before the decreasing phase starts. 
+Once the subarray starts decreasing (dec=True), any new increasing element would mean the mountain
+has ended, because a valid mountain can have only one peak."'''
 
 
-        
+'''77.	Partition array into maximum increasing chunks '''
+# l=[1,2,3,2,4,5]
+# sub=[l[0]]
+# for i in range(1,len(l)):
+#     if l[i]>l[i-1]:
+#         sub.append(l[i])
+#     else:
+#         print(sub)
+#         sub=[l[i]]
+# print(sub)
+'''"Main pehle element se first increasing chunk start karta hoon. 
+Har next element ko previous element se compare karta hoon. 
+Agar current element bada hai to usse current chunk me add kar deta hoon. 
+Agar increasing order toot jata hai, to current chunk complete ho jata hai, 
+use print/store kar deta hoon aur current element se naya chunk start kar deta hoon.
+ Loop ke end me last chunk ko bhi print kar deta hoon."'''
+# logical explanation 2
+'''"I start the first chunk with the first element. Then I scan the array from left to right.
+If the current element is greater than the previous element, I append it to the current increasing chunk.
+If the increasing order breaks, I output/store the current chunk and start a new chunk from the current element. 
+After the loop finishes, I print the last chunk because it would not have been printed 
+inside the loop if the array ended while still increasing."'''
+
+
+'''78.	Rotate longest increasing subarray '''
+# l=[5,1,2,3,4,0]
+# max_array=0
+# for i in range(len(l)):
+#     sub=[l[i]]
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[j-1]:
+#             sub.append(l[j])
+#         else:
+#             break
+#     if len(sub)>max_array:
+#         max_array=len(sub)
+#         ans=sub
+#         start=i
+#         end=i+len(sub)-1
+# ans=ans[-1:]+ans[:-1]
+# l[start:end+1]=ans
+# print(l)
+'''Tum bol sakte ho:
+"j break hone ke baad invalid comparison wale index par hota hai.
+Isliye main end = i + len(sub) - 1 use karta hoon, kyunki sub me sirf 
+valid increasing elements hi store hote hain."'''
+
+'''"I first find the longest increasing subarray by checking every possible 
+starting index and extending it while the elements remain in increasing order. 
+Whenever I find a longer increasing subarray, I store that subarray along with 
+its start and end indexes. After identifying the longest increasing subarray, 
+I perform a right rotation on it and replace only that portion back into the 
+original array using slice assignment. This keeps the rest of the array unchanged."'''
+# unoptimized approach for this ques
+# l=[5,1,2,3,4,0]
+# max_array=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         inc=True
+#         for k in range(1,len(sub)):
+#             if sub[k]<=sub[k-1]:
+#                 inc=False
+#                 break
+#         if inc==True:
+#             if len(sub)>max_array:
+#                 max_array=len(sub)
+#                 ans=sub
+#                 start=i
+#                 end=j
+# print(ans)
+
+
+
+
+
+
+       
+
         
 
 
