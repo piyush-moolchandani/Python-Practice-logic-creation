@@ -621,9 +621,102 @@ original array using slice assignment. This keeps the rest of the array unchange
 #                 end=j
 # print(ans)
 
+'''79.	Find subarray with sum closest to zero '''
+# l=[6,-5,2]
+# min_sum=999
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         sum=0
+#         for k in sub:
+#             sum+=k
+#         if abs(sum)<min_sum:
+#             min_sum=abs(sum)
+#             ans=sub
+# print(ans)
+'''"The question asks for the subarray whose sum is closest to zero, not the smallest sum. 
+A negative sum like -5 is actually farther from zero than 1. Therefore, I compare abs(sum) 
+because it gives the distance from zero irrespective of whether the sum is positive or negative."'''
+
+'''80.	Find longest subarray with equal even and odd elements '''
+# l=[1,2,4,3,5]
+# max_array=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         even_count=0
+#         odd_count=0
+#         for k in sub:
+#             if k%2==0:
+#                 even_count+=1
+#             else:
+#                 odd_count+=1
+#         if even_count==odd_count and len(sub)>=max_array:
+#             max_array=len(sub)
+#             ans=sub
+# print(ans)
+'''"I generate all possible subarrays using two nested loops. 
+For each subarray, I count the number of even and odd elements. 
+If both counts are equal, it is a valid subarray. 
+Among all valid subarrays, I keep the one with the maximum length as the answer."'''
+# Rule to remember
+# > → First maximum ko preserve karta hai.
+# >= → Last maximum ko preserve karta hai. ✅
+
+'''81.	Find subarray where first and last element are equal '''
+# l=[2,3,2,5]
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         if sub[0]==sub[-1]:
+#             print(sub)
+
+'''82.	Find maximum product subarray and reverse it '''
+# l=[2,3,-2,4]
+# max_prod=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         prod=1
+#         for k in sub:
+#             prod*=k
+#         if prod>max_prod:
+#             max_prod=prod
+#             ans=sub
+#             start=i
+#             end=j
+# rev=ans[::-1]
+# l[start:end+1]=rev
+# print(l)
+
+'''83.	Find longest consecutive sequence '''
+# l=[100,4,200,1,3,2]
+# max_len=0
+# for i in l:
+#     seq=[i]
+#     num=i
+#     while num+1 in l:
+#         seq.append(num+1)
+#         num+=1
+#     if len(seq)>max_len:
+#         max_len=len(seq)
+#         ans=seq
+# print(ans)
+
+'''84.	Longest alternating even-odd subarray '''
+
+   
+
+    
+    
 
 
 
+
+        
+        
+
+    
 
 
        
