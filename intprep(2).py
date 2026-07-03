@@ -703,7 +703,103 @@ Among all valid subarrays, I keep the one with the maximum length as the answer.
 #         ans=seq
 # print(ans)
 
+
+''' keep only numbers repeating twice and thrice'''
+# l=[1,2,2,3,3,3,4,4,4,4]
+# l2=[]
+# for i in l:
+#     count=0
+#     for j in l:
+#         if i==j:
+#             count+=1           
+#     if count in [2,3]:
+#         l2.append(i)
+# print(l2)
+
 '''84.	Longest alternating even-odd subarray '''
+# l=[2,4,3,6,5]
+# max_len=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         alt=True
+#         for k in range(len(sub)-1):
+#             if(sub[k]%2)==(sub[k+1]%2):
+#                 alt=False
+#                 break
+#         if alt==True:
+#             if len(sub)>max_len:
+#                 max_len=len(sub)
+#                 ans=sub
+# print(ans)
+
+'''85.	Find all equilibrium indices '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left_sum=0
+#     right_sum=0
+#     for j in range(i):
+#         left_sum+=l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum+=l[k]
+#     if left_sum==right_sum:
+#        print(i)
+
+'''86.	Find leaders in array '''
+# l=[16,17,4,3,5,2]
+# for i in range(len(l)):
+#     leader=True
+#     for j in range(i+1,len(l)):
+#         if l[j]>=l[i]:
+#             leader=False
+#             break
+#     if leader:
+#         print(l[i])
+
+'''87.	Find all triplets with sum = 0 '''
+# l=[-1,0,1,2,-1,-4]
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k] == 0:
+#                 print((l[i],l[j],l[k]))
+
+'''88.	Find triplet whose sum equals target '''
+# l=[1,2,3,4,5]
+# target=10
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k] == target:
+#                 print((l[i],l[j],l[k]))
+
+'''89.	Find triplet with maximum sum '''
+# l=[-1,0,1,2,-1,-4]
+# max_sum=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             sum=l[i]+l[j]+l[k]
+#             if sum>max_sum:
+#                 max_sum=sum
+#                 ans=((l[i],l[j],l[k]))
+# print(ans)
+
+'''90.	Count triplets with all distinct values '''
+# l=[1,1,2,3]
+# count=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]!=l[j] and l[j]!=l[k] and l[i]!=l[k]:
+#                 count+=1
+# print(count)
+
+
+                
+
+        
+  
 
    
 
