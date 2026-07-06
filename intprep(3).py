@@ -137,7 +137,92 @@
 #                 prime+=1
 #         if prime==2:
 #             print(sub[::-1])
+
+'''100.	Prime frequency-based replacement with (-1)'''
+# l=[5,5,5,8,8,9,9,9,9]
+# l2=[]
+# for i in l:
+#     frq=0
+#     for j in l:
+#         if i==j:
+#             frq+=1
+#     count=0
+#     for k in range(1,frq+1):
+#         if frq%k==0:
+#             count+=1
+#     if count==2:
+#         i=-1
+#     l2.append(i)
+# print(l2)
+
+'''101.	Two Sum '''
+# l=[1,2,3,4]
+# k=6
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i]+l[j] == k:
+#             print((l[i],l[j]))
+'''two sum optimized version'''
+# l=[1,2,3,4]
+# k=6
+# d={}
+# for i in l:
+#     target=k-i
+#     if target in d:
+#         print((target,i))
+#     d[i]=1
+
+''' three sum using optimized hasing version'''
+# l=[1,2,3,4]
+# k=9
+# d={}
+# for i in range(len(l)-2):
+#     target=k-l[i]
+#     for j in range(i+1,len(l)):
+#         need=target-l[j]
+#         if need in d:
+#             print(l[i],need,l[j])
+#         d[l[j]]=1
+
+
+
+
+# l=[1,2,3,4]
+# k=9
+# d={}
+# for i in range(len(l)):
+#     # fix value 2 index 0
+#     target=k-l[i]
+#     # moving to next indexings after 1 the next indexing will be 2,3 elements=3,4
+#     for j in range(i+1,len(l)):
+#         # next value 4
+#         need=target-l[j]
+#         if need in d:
+#             print((l[i],need,l[j]))
+#         d[l[j]]=1
+
+
+''' four sum '''
+# l=[1,2,3,4,5]
+# k=14
+# for i in range(len(l)):
+#     target=k-l[i]
+#     for j in range(i+1,len(l)):
+#         target2=target-l[j]
+#         d={}
+#         for m in range(j+1,len(l)):
+#             need=target2-l[m]
+#             if need in d:
+#                 print(l[i],l[j],need,l[m])
+#             d[l[m]]=1
             
+            
+            
+            
+
+
+
+
     
         
 
