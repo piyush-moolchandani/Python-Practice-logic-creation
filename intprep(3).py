@@ -184,9 +184,6 @@
 #             print(l[i],need,l[j])
 #         d[l[j]]=1
 
-
-
-
 # l=[1,2,3,4]
 # k=9
 # d={}
@@ -201,7 +198,6 @@
 #             print((l[i],need,l[j]))
 #         d[l[j]]=1
 
-
 ''' four sum '''
 # l=[1,2,3,4,5]
 # k=14
@@ -215,7 +211,113 @@
 #             if need in d:
 #                 print(l[i],l[j],need,l[m])
 #             d[l[m]]=1
-            
+
+'''102.	Merge Sorted Arrays '''
+# l1=[1,3,5,7]
+# l2=[2,4,6,8]
+# l3=[]
+# i=0
+# j=0
+# while i<len(l1) and j<len(l2):
+#     if l1[i]<l2[j]:
+#         l3.append(l1[i])
+#         i+=1
+#     else:
+#         l3.append(l2[j])
+#         j+=1
+# print(l3)
+
+'''103.	Next Greater Element '''
+# l=[1,3,5]
+# l2=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i+1,len(l)):
+#         if l[j]>l[i]:
+#             found=l[j]
+#             break
+#     l2.append(found)
+# print(l2)            
+
+'''104.	Previous Smaller Element '''
+# l=[1,3,5,8]
+# l2=[]
+# for i in range(len(l)):
+#     found=-1
+#     for j in range(i-1,-1,-1):
+#         if l[j]<l[i]:
+#             found=l[j]
+#             break
+#     l2.append(found)
+# print(l2)
+
+'''105.	Majority Element '''
+# l=[1,1,2,1,3]
+# half=len(l)/2
+# for i in l:
+#     freq=0
+#     for j in l:
+#         if i==j:
+#             freq+=1
+#     if freq>half:
+#         break
+# print("the majority element is",i)
+
+'''106.	Leaders in Array '''
+# l=[16,17,4,3,5,2]
+# for i in range(len(l)):
+#     leader=True
+#     for j in range(i+1,len(l)):
+#         if l[j]>=l[i]:
+#             leader=False
+#             break
+#     if leader:
+#         print(l[i])
+
+'''107.	Equilibrium Index '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left_sum=0
+#     right_sum=0
+#     for j in range(0,i):
+#         left_sum+=l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum+=l[k]
+#     if left_sum==right_sum:
+#         print(i)
+
+'''111.	Find Pair Closest to Target '''
+# l=[3,8,12,17,21,25,30]
+# target=28
+# min_target=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(target-sum)
+#         if diff<min_target:
+#             min_target=diff
+#             x=l[i]
+#             y=l[j]
+# print(x,y)
+
+'''112.	Find Pair Closest to Zero '''
+# l=[-20,-10,-5,-2,1,4,8,15]
+# min_pair=999
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         sum=l[i]+l[j]
+#         diff=abs(sum)
+#         if diff<min_pair:
+#             min_pair=diff
+#             x=l[i]
+#             y=l[j]
+# print(x,y)
+
+
+           
+
+
+
             
             
             
