@@ -225,10 +225,45 @@
 #     else:
 #         l3.append(l2[j])
 #         j+=1
+# while i<len(l1):
+#     l3.append(l1[i])
+#     i+=1
+# while j<len(l2):
+#     l3.append(l2[j])
+#     j+=1
 # print(l3)
 
+'''Remove Duplicates from Sorted Array using 2 pointers'''
+# l=[1,1,2,2,3,3,4,5,5]
+# i=0
+# for j in range(1,len(l)):
+#     if l[i]!=l[j]:
+#         i+=1
+#         l[i]=l[j]
+# print(l[:i+1])
+
+'''move zeros using two pointers'''
+# l=[0,1,0,3,12]
+# l2=[]
+# i=0
+# for j in range(1,len(l)):
+#     if l[j]!=0:        
+#         l[i],l[j]=l[j],l[i]
+#         i+=1
+# print(l)
+
+'''Remove a Given Element (LeetCode 27)'''
+# l=[3,2,2,3,4,3,5]
+# x=3
+# i=0
+# for j in range(len(l)):
+#     if l[j]!=x:
+#         l[i]=l[j]
+#         i+=1
+# print(l[:i])
+
 '''103.	Next Greater Element '''
-# l=[1,3,5]
+# l=[4,5,2,25]
 # l2=[]
 # for i in range(len(l)):
 #     found=-1
@@ -237,10 +272,10 @@
 #             found=l[j]
 #             break
 #     l2.append(found)
-# print(l2)            
+# print(l2)
 
 '''104.	Previous Smaller Element '''
-# l=[1,3,5,8]
+# l=[10,4,2,20,40,12,30]
 # l2=[]
 # for i in range(len(l)):
 #     found=-1
@@ -251,24 +286,12 @@
 #     l2.append(found)
 # print(l2)
 
-'''105.	Majority Element '''
-# l=[1,1,2,1,3]
-# half=len(l)/2
-# for i in l:
-#     freq=0
-#     for j in l:
-#         if i==j:
-#             freq+=1
-#     if freq>half:
-#         break
-# print("the majority element is",i)
-
 '''106.	Leaders in Array '''
 # l=[16,17,4,3,5,2]
 # for i in range(len(l)):
 #     leader=True
 #     for j in range(i+1,len(l)):
-#         if l[j]>=l[i]:
+#         if l[j]>l[i]:
 #             leader=False
 #             break
 #     if leader:
@@ -277,41 +300,99 @@
 '''107.	Equilibrium Index '''
 # l=[1,3,5,2,2]
 # for i in range(len(l)):
-#     left_sum=0
-#     right_sum=0
+#     left=0
+#     right=0
 #     for j in range(0,i):
-#         left_sum+=l[j]
+#         left+=l[j]
 #     for k in range(i+1,len(l)):
-#         right_sum+=l[k]
-#     if left_sum==right_sum:
+#         right+=l[k]
+#     if left==right:
 #         print(i)
 
-'''111.	Find Pair Closest to Target '''
-# l=[3,8,12,17,21,25,30]
-# target=28
-# min_target=999
-# for i in range(len(l)):
-#     for j in range(i+1,len(l)):
-#         sum=l[i]+l[j]
-#         diff=abs(target-sum)
-#         if diff<min_target:
-#             min_target=diff
-#             x=l[i]
-#             y=l[j]
-# print(x,y)
+'''108.	Longest Consecutive Sequence '''
+# l=[100,4,200,1,3,2]
+# max_len=0
+# ans=[]
+# for i in l:
+#     temp=[]
+#     num=i
+#     while num in l:
+#         temp.append(num)
+#         num=num+1
+#     if len(temp)>max_len:
+#         max_len=len(temp)
+#         ans=temp
+# print(ans)
+'''"I iterate over every element of the array and treat each element as a possible starting point 
+of a consecutive sequence. From that starting value, I keep checking whether the next integer 
+(num + 1) exists in the array. As long as consecutive numbers are present, I build the current 
+sequence in a temporary list. After the sequence ends, I compare its length with the maximum length 
+found so far. If it is longer, I update the answer."'''
 
-'''112.	Find Pair Closest to Zero '''
-# l=[-20,-10,-5,-2,1,4,8,15]
-# min_pair=999
+# optimized
+'''"Yes. In my brute-force approach, the same sequence is explored multiple times. 
+For example, if the sequence is 1,2,3,4, then I start from 1, then again from 2, then from 3, 
+causing repeated work. By using a HashSet and starting only from numbers whose previous element 
+(num-1) is absent, this duplicate work can be eliminated, reducing the complexity to O(n)."'''
+
+# l=[100,4,200,1,3,2]
+# s=set(l)
+# max_len=0
+# ans=[]
+# for i in s:
+#     if i-1 not in s:
+#         temp=[]
+#         num=i
+#         while num in s:
+#             temp.append(num)
+#             num+=i
+#         if len(temp)>max_len:
+#             max_len=len(temp)
+#             ans=temp
+# print(ans)
+
+'''113.	Find Triplet Sum = Target '''
+# l=[1,2,3,4,5,6,7]
+# target=12
 # for i in range(len(l)):
 #     for j in range(i+1,len(l)):
-#         sum=l[i]+l[j]
-#         diff=abs(sum)
-#         if diff<min_pair:
-#             min_pair=diff
-#             x=l[i]
-#             y=l[j]
-# print(x,y)
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k] == target:
+#                 print((l[i],l[j],l[k]))
+
+# optimized hashmap approach
+# l=[1,2,3,4,5,6,7]
+# k=12
+# for i in range(len(l)-2):
+#     d={}
+#     Target=k-l[i]
+#     for j in range(i+1,len(l)):
+#         need=Target-l[j]
+#         if need in d:
+#             print(l[i],need,l[j])
+#         d[l[j]]=1
+
+'''114.	Find Triplet Sum = Zero '''
+# l=[-1,0,1,2,-1,-4]
+# target=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         for k in range(j+1,len(l)):
+#             if l[i]+l[j]+l[k] == target:
+#                 print((l[i],l[j],l[k]))
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
            
