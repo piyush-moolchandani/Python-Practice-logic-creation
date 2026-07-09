@@ -382,6 +382,92 @@ causing repeated work. By using a HashSet and starting only from numbers whose p
 #                 print((l[i],l[j],l[k]))
 
 
+'''115.	Maximum Product Pair '''
+# l=[-10,-20,5,6,-2]
+# max_prod=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         prod=l[i]*l[j]
+#         if prod>max_prod:
+#             max_prod=prod
+#             x=l[i]
+#             y=l[j]
+# print((x,y))
+
+'''optimized approach 1 using sorting '''
+# l=[-10,-20,5,6,-2]
+# l.sort()
+# prod1 = l[0]*l[1]
+# prod2 = l[-1]*l[-2]
+# if prod1>prod2:
+#     print(l[0],l[1])
+# else:
+#     print(l[-1],l[-2])
+'''Maximum product sirf do largest ya do smallest numbers se hi aa sakta hai. 
+Isliye poore array ke har pair ko check karne ki zarurat nahi hai.'''
+
+'''optimized approach 2 more good without sorting '''
+# l=[-10,-20,5,6,-2]
+# max1=max2=float('-inf')
+# min1=min2=float('inf')
+# for i in l:
+#     if i>max1:
+#         max2=max1
+#         max1=i
+#     elif i>max2:
+#         max2=i
+#     if i<min1:
+#         min2=min1
+#         min1=i
+#     elif i<min2:
+#         min2=i
+# if min1 * min2 > max1 * max2:
+#     print((min1,min2))
+# else:
+#     print(max1,max2)
+
+'''116.	Maximum Difference '''
+# l=[2,3,10,6,4,8,1]
+# max_diff=0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         diff=l[j]-l[i]
+#         if diff>max_diff:
+#             max_diff=diff
+#             x=l[i]
+#             y=l[j]
+# print((x,y))
+
+'''optimized version '''
+# l=[2,3,10,6,4,8,1]
+# min_so_far=l[0]
+# max_diff=0
+# for i in range(1,len(l)):
+#     diff=l[i]-min_so_far
+#     if diff>max_diff:
+#         max_diff=diff
+#         x=min_so_far
+#         y=l[i]
+#     if l[i]<min_so_far:
+#         min_so_far=l[i]
+# print((x,y))
+'''"While traversing the array, I maintain the smallest element seen so far. 
+For every current element, I calculate the difference between the current element and that minimum. 
+If this difference is larger than the previous maximum, I update the answer. After that, 
+I check whether the current element itself becomes the new minimum for future iterations."'''
+
+'''118.	Rearrange Array in Wave Form '''
+# l=[1,2,3,4,5]
+# for i in range(0,len(l)-1,2):
+#     l[i],l[i+1]=l[i+1],l[i]
+# print(l)                       ---> optimized and logic left
+
+
+
+
+
+            
+
 
 
 
