@@ -460,7 +460,70 @@ I check whether the current element itself becomes the new minimum for future it
 # l=[1,2,3,4,5]
 # for i in range(0,len(l)-1,2):
 #     l[i],l[i+1]=l[i+1],l[i]
-# print(l)                       ---> optimized and logic left
+# print(l)         
+
+# optimized approach
+# l=[1,5,2,6,3]
+# for i in range(len(l)-1):
+#     if i%2==0:
+#         if l[i]<l[i+1]:
+#             l[i],l[i+1]=l[i+1],l[i]
+#         else:
+#             if l[i]>l[i+1]:
+#                 l[i],l[i+1]=l[i+1],l[i]
+# print(l)
+
+'''120.	Search + Pagination Logic (useful for Django interviews) '''
+# l=[
+# "apple",
+# "banana",
+# "mango",
+# "grapes",
+# "pineapple",
+# "orange",
+# "apple juice",
+# "apple pie"
+# ]
+# search="apple"
+# page=2
+# page_size=2
+# # search
+# filter=[]
+# for i in l:
+#     if search.lower() in i.lower():
+#         filter.append(i)
+# # pagination
+# start = (page-1)*page_size
+# end = start+page_size
+# print(filter[start:end])
+
+''' interviewer favourite function version '''
+# def search_pagination(l,search,page,page_size):
+#     filtered=[]
+#     for i in l:
+#         if search.lower() in i.lower():
+#             filtered.append(i)
+#     start=(page-1)*page_size
+#     end=start+page_size
+#     return filtered[start:end]
+# l=[
+# "apple",
+# "banana",
+# "mango",
+# "grapes",
+# "pineapple",
+# "orange",
+# "apple juice",
+# "apple pie"
+# ]
+# print(search_pagination(l,'apple',2,2))
+'''"I first filter the complete dataset based on the search keyword. 
+After obtaining the filtered results, I calculate the starting and ending 
+indices using the page number and page size, and return only that portion 
+of the filtered list. Searching is done before pagination because paginating 
+first may hide matching records that exist on later pages. The overall time 
+complexity is O(n), and the extra space is O(n) due to the filtered list."'''
+ 
 
 
 
