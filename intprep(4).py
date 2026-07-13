@@ -195,7 +195,181 @@ for every such pair. Finally, the count gives the total number of inversions."''
 
 
 
- 
+'''•	Equilibrium Index '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left=0
+#     right=0
+#     for j in range(0,i):
+#         left+=l[j]
+#     for k in range(i+1,len(l)):
+#         right+=l[k]
+#     if left==right:
+#         print(i)
+
+# frequency dictionary based
+'''•	Frequency Count '''
+# l=[1,2,1,3,2,1]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Character Frequency '''
+# l="madam"
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Word Frequency '''
+# word = "django is very very strong"
+# word_list=word.split()
+# d={}
+# for i in word_list:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Maximum Frequency '''
+# l=[1,2,1,3,2,1]
+# ch_freq=0
+# d={}
+# for i in l:
+#     if i in d:
+#        d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]>ch_freq:
+#         ch_freq=d[i]
+#         key=i
+# print(key,':',ch_freq ,'is maximum frequency')
+
+'''•	First Non-Repeating '''
+# l=[1,1,2,3,4,4]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in l:
+#     if d[i]==1:
+#         print(i)
+#         break
+
+'''•	Count Anagrams '''
+# words=["cat","dog","act","god","rat"]
+# d={}
+# count=0
+# for i in words:
+#     wrd = ''.join(sorted(i))
+#     if wrd in d:
+#         d[wrd]=d[wrd]+1
+#     else:
+#         d[wrd]=1
+# for i in d:
+#     if d[i]>1:
+#         count+=1
+# print(count)
+
+'''print anagram groups'''
+# words=["cat","dog","act","god","rat"]
+# d={}
+# for i in words:
+#     wrd=''.join(sorted(i))
+#     if wrd in d:
+#         d[wrd].append(i)
+#     else:
+#         d[wrd]=[i]
+# print(d)
+
+'''print anagram pairs'''
+# words=["cat","dog","act","god","rat"]
+# d={}
+# for i in words:
+#     wrd=''.join(sorted(i))
+#     if wrd in d:
+#         d[wrd].append(i)
+#     else:
+#         d[wrd]=[i]
+# for i in d:
+#     ch_pair=d[i]
+#     for j in range(len(ch_pair)):
+#         for k in range(j+1,len(ch_pair)):
+#             print((ch_pair[j],ch_pair[k]))
+
+'''count all anagram words'''
+# words=["cat","dog","act","god","rat"]
+# d={}
+# for word in words:
+#     key=''.join(sorted(word))
+#     if key in d:
+#         d[key]=d[key]+1
+#     else:
+#         d[key]=1
+# count=0
+# for key in d:
+#     if d[key]>1:
+#         count=count+d[key]
+# print(count)
+
+'''•Replace Prime Frequency with -1'''
+# l=[1,2,2,3,3,3]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in l:
+#     ch_prime=d[i]
+#     count=0
+#     for j in range(1,ch_prime+1):
+#         if ch_prime%j==0:
+#             count+=1
+#     if count==2:
+#         d[i]=-1
+# print(d)
+# for index in range(len(l)):
+#     if d[l[index]] == -1:
+#         l[index] = -1
+
+# print(l)
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+   
+
+
+       
+       
+
+
+
 
 
 
