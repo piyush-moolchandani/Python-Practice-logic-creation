@@ -346,6 +346,139 @@ for every such pair. Finally, the count gives the total number of inversions."''
 
 # print(l)
 
+'''•	Even Frequency '''
+# l=[1,2,2,3,3,3]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]%2==0:
+#         print(i)
+
+'''•	Frequency Sort '''
+# l=[1,2,2,3,3,3]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# sort_t = sorted(d.items(),key=lambda x:x[1],reverse=True)
+# ans=[]
+# for element,frequency in sort_t:
+#     for i in range(frequency):
+#         ans.append(element)
+# print(ans)
+
+'''•	Group By Frequency '''
+# l=[4,4,5,5,6]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# d2={}
+# for i in d:
+#     if d[i] in d2:
+#         d2[d[i]].append(i)
+#     else:
+#         d2[d[i]]=[i]
+
+# print(d2)
+
+'''•	Group By Digit Count '''
+# l=[1,22,333,44,5555,6]
+# d={}
+# for i in l:
+#     num=i
+#     count=0
+#     while num>0:
+#         digit=num%10
+#         count+=1
+#         num=num//10
+#     if count in d:
+#         d[count].append(i)
+#     else:
+#         d[count]=[i]
+# print(d)
+
+'''•	Group By Digit Sum '''
+# l=[123,222,321,444,909,99,81,18]
+# d={}
+# for i in l:
+#     num=i
+#     sum=0
+#     while num>0:
+#         digit=num%10
+#         sum+=digit
+#         num=num//10
+#     if sum in d:
+#         d[sum].append(i)
+#     else:
+#         d[sum]=[i]
+# print(d)
+
+'''Two Sum'''
+# l=[2,7,11,15]
+# target=9
+# d={}
+# for i in l:
+#     need=target-i
+#     if need in d:
+#         print((need,i))
+#     d[i]=1
+'''Two Sum
+
+Current
+
+↓
+
+Target-Current
+
+(Only One Need)'''
+
+'''•	Two Difference '''
+# l=[5,20,3,2,20,80]
+# k=78
+# d={}
+# for i in l:
+#     need1=i-k
+#     need2=i+k
+#     if need1 in d:
+#         print((need1,i))
+#     elif need2 in d:
+#         print((i,need2))
+#     d[i]=1
+'''"I use a HashMap to store all previously seen numbers. For every current number, 
+I check two possible partners: current - k and current + k, because the current number 
+can be either the larger or the smaller number in the pair. If either partner already 
+exists in the HashMap, I have found a valid pair. Otherwise, I store the current number 
+for future lookups."'''
+'''Two Difference
+
+Current
+
+↓
+
+Current-K   ← Left Partner
+
+Current+K   ← Right Partner
+
+(Two Needs)'''
+
+    
+     
+
+        
+  
+
+
+   
+
 
 
 
