@@ -470,8 +470,62 @@ Current+K   ← Right Partner
 
 (Two Needs)'''
 
-    
+'''•	Pair Product '''
+# l=[2,4,5,10,8]
+# target = 40
+# d={}
+# for i in l:
+#     if target%i==0:
+#         need = target//i
+#     if need in d:
+#         print((i,need))
+#     d[i]=True
      
+'''•	Pair XOR '''
+# l=[2,8,5,7]
+# target=10
+# d={}
+# for i in l:
+#     need = i^target
+#     if need in d:
+#         print(need,i)
+#     d[i]=1
+
+'''•	Maximum Sum Subarray of Size K '''
+# l=[4,2,1,7,8]
+# k=3
+# windows_sum=0
+# for i in range(k):
+#     windows_sum+=l[i]
+# max_sum=windows_sum
+# for j in range(k,len(l)):
+#     windows_sum=windows_sum-l[j-k]+l[j]
+#     if windows_sum>max_sum:
+#         max_sum=windows_sum
+# print(max_sum)
+
+'''•	Minimum Sum Subarray of size k'''
+# l = [5,-2,7,1,-4,3]
+# k = 3
+# window_sum = 0
+# for i in range(k):
+#     window_sum+=l[i]
+# min_sum=window_sum
+# for j in range(k,len(l)):
+#     window_sum=window_sum-l[j-k]+l[j]
+#     if window_sum<min_sum:
+#         min_sum=window_sum
+# print(min_sum)
+
+'''•	First Negative in Window '''
+# l = [12,-1,-7,8,-15,30,16,28]
+# k=3
+
+
+
+
+
+
 
         
   
