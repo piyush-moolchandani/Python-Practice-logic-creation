@@ -523,6 +523,14 @@ indices using the page number and page size, and return only that portion
 of the filtered list. Searching is done before pagination because paginating 
 first may hide matching records that exist on later pages. The overall time 
 complexity is O(n), and the extra space is O(n) due to the filtered list."'''
+
+'''•	Reverse String '''
+# word = "piyush"
+# new_word=""
+# for i in range(len(word)-1,-1,-1):
+#     new_word=new_word+word[i]
+# print(new_word)
+
  
 
 

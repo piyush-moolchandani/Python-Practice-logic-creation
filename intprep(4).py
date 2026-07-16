@@ -518,12 +518,66 @@ Current+K   ← Right Partner
 # print(min_sum)
 
 '''•	First Negative in Window '''
+'''Brute force approach'''
 # l = [12,-1,-7,8,-15,30,16,28]
 # k=3
+# for i in range(len(l)-k+1):
+#     store=0
+#     for j in range(i,i+k):
+#         if l[j]<0:
+#             store=l[j]
+#             break
+#     print(store)
+
+'''optimized approach'''
+# l = [12,-1,-7,8,-15,30,16,28]
+# k=3
+# neg=[]
+# # first window
+# for i in range(k):
+#     if l[i]<0:
+#         neg.append(l[i])
+# if neg:
+#     print(neg[0])
+# else:
+#     print(0)
+# sliding window
+# for j in range(k,len(l)):
+#     if neg and l[j-k] == neg[0]:
+#         neg.pop(0)
+#     if l[j]<0:
+#         neg.append(l[j])
+#     if neg:
+#         print(neg[0])
+#     else:
+#         print(0)
+'''"I first process the first window of size k and store all negative numbers in a list. 
+The first element of this list always represents the first negative number of the current window. 
+As the window slides, I check the element leaving the window. If it is the same as the first negative, 
+I remove it from the front of the list. Then I check the new incoming element, and if it is negative, 
+I append it to the list. After every slide, if the list is non-empty, its first element is the answer; 
+otherwise, I print 0. This avoids scanning every window again and reduces the complexity from O(n×k) 
+to O(n) (using a deque for efficient front removal).
+
+1. Build the first window.
+2. Store only negative numbers.
+3. Window slides → remove outgoing negative if needed.
+4. Add incoming negative.
+5. Front of the list/deque = First Negative."'''
 
 
 
 
+
+
+
+
+ 
+
+      
+
+ 
+    
 
 
 
