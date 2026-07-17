@@ -566,6 +566,39 @@ to O(n) (using a deque for efficient front removal).
 5. Front of the list/deque = First Negative."'''
 
 
+'''•	Maximum in Window '''
+'''Brute force approach'''
+# l=[1, 3, -1, -3, 5, 3, 6, 7]
+# k=3
+# for i in range(len(l)-k+1):
+#     max_window = l[i]
+#     for j in range(i,i+k):
+#         if l[j]>max_window:
+#             max_window=l[j]
+#     print(max_window)
+
+'''sliding window'''
+# from collections import deque
+# l=[1, 3, -1, -3, 5, 3, 6, 7]
+# k=3
+# dq=deque()
+# ans=[]
+# for i in range(k):
+#     while dq and l[dq[-1]]<l[i]:
+#         dq.pop()
+#     dq.append(i)
+# ans.append(l[dq[0]])
+# for j in range(k,len(l)):
+#     if dq[0]==j-k:
+#         dq.popleft()
+#     while dq and l[dq[-1]]<l[j]:
+#         dq.pop()
+#     dq.append(j)
+#     ans.append(l[dq[0]])
+# print(ans)
+    
+
+
 
 
 
