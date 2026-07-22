@@ -60,4 +60,45 @@ space o(1)'''
 # reverse(l,0,len(l)-1)
 # print(l)
 
+'''•	Move Zeroes '''
+# l=[1,0,2,0,3,0]
+# l2=[]
+# for i in l:
+#     if i!=0:
+#         l2.append(i)
+# l3=[]
+# for i in l:
+#     if i==0:
+#         l3.append(i)
+# print(l2+l3)
 
+# optimized version
+# l=[1,0,2,0,3,0]
+# i=0
+# for j in range(len(l)):
+#     if l[j]!=0:
+#         if i!=j:
+#             l[i],l[j]=l[j],l[i]
+#         i+=1
+# print(l)
+
+'''•	Merge Two Sorted Arrays '''
+# l1=[1,3,5]
+# l2=[2,4,6]
+# i=0
+# j=0
+# ans=[]
+# while i<len(l1) and j<len(l2):
+#     if l1[i]<l2[j]:
+#         ans.append(l1[i])
+#         i+=1
+#     else:
+#         ans.append(l2[j])
+#         j+=1
+# while i<len(l1):
+#     ans.append(l1[i])
+#     i+=1
+# while j<len(l2):
+#     ans.append(l2[j])
+#     j+=1
+# print(ans)

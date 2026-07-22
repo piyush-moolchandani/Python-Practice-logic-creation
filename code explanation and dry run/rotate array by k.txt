@@ -1,0 +1,193 @@
+Rotate Array by K
+Question
+
+Ek array aur ek integer k diya gaya hai.
+
+Array ko right side me k positions rotate karna hai.
+
+Example:
+
+Input:
+
+nums = [1,2,3,4,5,6,7]
+k = 3
+
+Output:
+
+[5,6,7,1,2,3,4]
+Sabse Pehla Observation
+
+Brute force me hum ek-ek rotation k baar kar sakte hain.
+
+Lekin uski complexity zyada ho jaati hai.
+
+Isliye hum Reverse Algorithm use karte hain.
+
+Interview me ye line bolna:
+
+"Instead of shifting elements one by one, I use the reverse algorithm to rotate the array in-place with O(1) extra space."
+
+Main Idea
+
+Right Rotation me hum 3 reverses karte hain.
+
+Pura array reverse.
+First k elements reverse.
+Remaining elements reverse.
+
+Ye teen reverses final rotated array de dete hain.
+
+Dry Run
+
+Input:
+
+nums = [1,2,3,4,5,6,7]
+k = 3
+Step 1
+
+Reverse complete array.
+
+Before
+
+[1,2,3,4,5,6,7]
+
+↓
+
+After
+
+[7,6,5,4,3,2,1]
+Step 2
+
+Reverse first k elements.
+
+First 3 elements
+
+[7,6,5]
+
+↓
+
+Reverse
+
+[5,6,7]
+
+Array becomes
+
+[5,6,7,4,3,2,1]
+Step 3
+
+Reverse remaining elements.
+
+Remaining part
+
+[4,3,2,1]
+
+↓
+
+Reverse
+
+[1,2,3,4]
+
+Final Array
+
+[5,6,7,1,2,3,4]
+
+Done.
+
+Why does this work?
+
+Pehle reverse se jo last k elements the, wo front me aa jaate hain.
+
+Lekin unka order ulta ho jata hai.
+
+Second reverse unka order wapas sahi kar deta hai.
+
+Baaki elements bhi ulte ho jaate hain.
+
+Third reverse unka bhi order theek kar deta hai.
+
+Isliye final rotated array mil jaati hai.
+
+Edge Case
+
+Suppose
+
+nums = [1,2,3]
+k = 5
+
+Question:
+
+5 rotations karne ki zarurat hai?
+
+❌ Nahi.
+
+Kyuki
+
+5 % 3 = 2
+
+Matlab
+
+k = k % len(nums)
+
+Ye line hamesha lagani chahiye.
+
+Left Rotation
+
+Agar left rotation karna ho to order change ho jayega.
+
+Steps:
+
+1. Reverse first k elements.
+
+2. Reverse remaining elements.
+
+3. Reverse complete array.
+Time Complexity
+
+Teen reverses.
+
+Har reverse O(n).
+
+Total
+
+O(n)
+Space Complexity
+
+Extra array use nahi ki.
+
+Sirf kuch variables.
+
+O(1)
+Interview Explanation ⭐
+
+Agar interviewer bole:
+
+"Explain your approach."
+
+Tum bolna:
+
+"Instead of shifting elements one by one, I use the reverse algorithm. First, I reverse the complete array. Then I reverse the first k elements and finally reverse the remaining elements. These three reversals place the last k elements at the front while preserving the correct order. The algorithm runs in O(n) time and O(1) extra space."
+
+Agar interviewer puche
+"Why reverse three times?"
+
+Tum bolna:
+
+"The first reverse brings the last k elements to the front but reverses their order. The second reverse restores the order of those k elements. The third reverse restores the order of the remaining elements. Together, these three reversals produce the correctly rotated array."
+
+One-Line Revision (Notes ke last me likhna)
+
+Right Rotation = Reverse Entire Array → Reverse First k Elements → Reverse Remaining Elements.
+
+Left Rotation = Reverse First k Elements → Reverse Remaining Elements → Reverse Entire Array.
+
+🔥 Interview Tip
+
+Agar interviewer puche:
+
+"Why didn't you use slicing?"
+
+Tum confidently bolna:
+
+"Slicing is simple in Python but uses O(n) extra space because it creates a new list. The reverse algorithm performs the rotation in-place using O(1) extra space, which is generally preferred in interviews."
+
+Ye answer interviewer ko dikha deta hai ki tumhe sirf Python syntax nahi, algorithmic trade-off bhi samajh aata hai.

@@ -1,0 +1,208 @@
+Merge Two Sorted Arrays
+Question
+
+Do sorted arrays diye gaye hain.
+
+Unhe merge karke ek single sorted array banana hai.
+
+Example:
+
+Input:
+
+arr1 = [1,3,5]
+arr2 = [2,4,6]
+
+Output:
+
+[1,2,3,4,5,6]
+Sabse Pehla Observation
+
+Hum sorting nahi karenge.
+
+Kyun?
+
+Kyuki dono arrays already sorted hain.
+
+Bas unke current elements compare karne hain.
+
+Interview me ye line bolna:
+
+"Since both arrays are already sorted, there is no need to sort again. We can merge them efficiently using two pointers."
+
+Pointer Meaning
+i
+
+i first array ke current element ko point karta hai.
+
+arr1 = [1,3,5]
+        ↑
+        i
+j
+
+j second array ke current element ko point karta hai.
+
+arr2 = [2,4,6]
+        ↑
+        j
+Dry Run
+
+Input:
+
+arr1 = [1,3,5]
+arr2 = [2,4,6]
+
+ans = [ ]
+
+Initially
+
+i = 0
+j = 0
+Step 1
+
+Compare
+
+1 vs 2
+
+Small = 1
+
+Append
+
+ans = [1]
+
+Move
+
+i++
+Step 2
+
+Compare
+
+3 vs 2
+
+Small = 2
+
+Append
+
+ans = [1,2]
+
+Move
+
+j++
+Step 3
+
+Compare
+
+3 vs 4
+
+Small = 3
+
+Append
+
+ans = [1,2,3]
+
+Move
+
+i++
+Step 4
+
+Compare
+
+5 vs 4
+
+Small = 4
+
+Append
+
+ans = [1,2,3,4]
+
+Move
+
+j++
+Step 5
+
+Compare
+
+5 vs 6
+
+Small = 5
+
+Append
+
+ans = [1,2,3,4,5]
+
+Move
+
+i++
+Step 6
+
+First array khatam.
+
+Second array me
+
+6
+
+abhi bhi bacha hua hai.
+
+Direct append.
+
+ans = [1,2,3,4,5,6]
+
+Done.
+
+Sabse Important Logic
+
+Har step par hum dono current elements compare karte hain.
+
+Jo chhota hota hai usse answer me daal dete hain.
+
+Us array ka pointer aage badha dete hain.
+
+Kyun?
+
+Kyuki dono arrays sorted hain.
+
+Agar current elements me 3 aur 5 hain, to future me 3 se chhota element kabhi nahi milega.
+
+Isliye 3 ko safely output me daal sakte hain.
+
+Remaining Elements
+
+Ek array khatam hone ke baad comparison possible nahi hota.
+
+Jo array bachi hai uske saare elements already sorted hain.
+
+Isliye unhe direct append kar dete hain.
+
+Time Complexity
+
+Har element sirf ek baar visit hota hai.
+
+O(n + m)
+
+Jahan
+
+n = First array size
+m = Second array size
+Space Complexity
+
+Hum ek naya result array bana rahe hain.
+
+O(n + m)
+Interview Explanation ⭐
+
+Agar interviewer bole:
+
+"Explain your approach."
+
+Tum ye bolna:
+
+"Since both arrays are already sorted, I maintain one pointer on each array. At every step, I compare the current elements of both arrays. I append the smaller element to the result and move only that pointer forward. This keeps the merged array sorted throughout the process. Once one array is exhausted, I append all the remaining elements from the other array because they are already in sorted order."
+
+Agar interviewer puche "Why Two Pointers?"
+
+Tum bolna:
+
+"Two pointers allow me to traverse both sorted arrays simultaneously. Instead of sorting again, I compare only the current elements, which lets me merge the arrays in a single pass."
+
+One-Line Revision (Notes ke last me likhna)
+
+i first array ko scan karta hai, j second array ko scan karta hai. Har step par current elements compare hote hain. Jo chhota hota hai usse result me add karke usi pointer ko aage badha dete hain. Ek array khatam hone par doosre array ke bache hue elements directly append kar dete hain.

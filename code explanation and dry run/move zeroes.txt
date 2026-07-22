@@ -1,0 +1,251 @@
+l = [1,0,2,0,3,0]
+i = 0
+
+for j in range(len(l)):
+    if l[j] != 0:
+        if i != j:
+            l[i], l[j] = l[j], l[i]
+        i += 1
+
+print(l)
+
+Ab isko line by line samajhte hain.
+
+Question
+
+Given an array, saare non-zero elements ka order same rakhna hai aur saare zeroes ko end me le jana hai.
+
+Example:
+
+Input:
+[1,0,2,0,3,0]
+
+Output:
+[1,2,3,0,0,0]
+Sabse pehle observation
+
+Hum zero ko move nahi karenge.
+
+Ye sabse important point hai.
+
+Hum sirf non-zero elements ko unki correct position par laayenge.
+
+Jab non-zero aage aa jayenge, zero automatically peeche chale jayenge.
+
+Interview me ye line bolna:
+
+"Instead of pushing zeroes to the end, I pull non-zero elements to the front."
+
+Ye line kaafi strong impression deti hai.
+
+Pointer Meaning
+j
+
+j scanning pointer hai.
+
+Ye poore array ko left se right scan karega.
+
+j
+↓
+[1,0,2,0,3,0]
+
+Har element ko ek baar dekhega.
+
+i
+
+i ka matlab hai:
+
+Next non-zero element kis index par jana chahiye.
+
+Initially:
+
+i = 0
+
+Matlab pehla non-zero index 0 par hona chahiye.
+
+Dry Run
+
+Array:
+
+[1,0,2,0,3,0]
+
+Initially:
+
+i = 0
+j = 0
+Iteration 1
+j = 0
+
+Element = 1
+
+Non-zero hai.
+
+Ab dekho
+
+i = 0
+j = 0
+
+Already correct position par hai.
+
+Swap ki zarurat nahi.
+
+Sirf
+
+i = 1
+
+Ab matlab:
+
+Agla non-zero index 1 par aana chahiye.
+
+Array:
+
+[1,0,2,0,3,0]
+Iteration 2
+j = 1
+
+Element = 0
+
+Zero hai.
+
+Ignore.
+
+Kuch nahi karna.
+
+i = 1
+
+Array:
+
+[1,0,2,0,3,0]
+Iteration 3
+j = 2
+
+Element = 2
+
+Non-zero hai.
+
+Current:
+
+i = 1
+j = 2
+
+Matlab
+
+2 ko index 1 par hona chahiye.
+
+Swap:
+
+[1,2,0,0,3,0]
+
+Ab
+
+i = 2
+Iteration 4
+j = 3
+
+Element = 0
+
+Ignore.
+
+i = 2
+
+Array same.
+
+Iteration 5
+j = 4
+
+Element = 3
+
+Current
+
+i = 2
+j = 4
+
+Swap
+
+[1,2,3,0,0,0]
+
+Ab
+
+i = 3
+Iteration 6
+j = 5
+
+Element = 0
+
+Ignore.
+
+Loop finish.
+
+Output:
+
+[1,2,3,0,0,0]
+i != j Optimization
+
+Suppose array hai:
+
+[1,2,3,0]
+
+Har non-zero already correct position par hai.
+
+Agar hum har baar swap kare:
+
+l[0], l[0] = l[0], l[0]
+
+Fir
+
+l[1], l[1] = l[1], l[1]
+
+Fir
+
+l[2], l[2] = l[2], l[2]
+
+Ye unnecessary operations hain.
+
+Isliye pehle check karte hain:
+
+Kya i aur j alag hain?
+
+Agar haan,
+
+Swap.
+
+Agar nahi,
+
+Swap skip.
+
+Lekin
+
+i++
+
+Phir bhi hoga.
+
+Kyunki ek non-zero apni correct position par mil gaya.
+
+Time Complexity
+
+Poora array sirf ek baar traverse kar rahe hain.
+
+O(n)
+Space Complexity
+
+Extra array use nahi ki.
+
+Sirf do variables:
+
+i
+j
+
+Isliye
+
+O(1)
+Agar interviewer puche:
+
+"Why did you use two pointers?"
+
+Tum confidently bol sakte ho:
+
+"j poore array ko scan karta hai aur i next valid position maintain karta hai jahan agla non-zero element rakhna hai. Isse hum array ko ek hi pass me in-place modify kar dete hain, bina extra space use kiye."
+
+Ek line me poora concept (Notes ke liye)
+
+j scans every element. i always points to the next position where the next non-zero element should be placed. When a non-zero is found, it is moved to index i (only if needed), then i is incremented. Zeroes are ignored, so they naturally accumulate at the end.
