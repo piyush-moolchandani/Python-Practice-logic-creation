@@ -102,3 +102,95 @@ space o(1)'''
 #     ans.append(l2[j])
 #     j+=1
 # print(ans)
+
+
+'''Pair Sum '''
+# l = [2,7,11,15]
+# target = 9
+# d={}
+# for index,i in enumerate(l):
+#     need=target-i
+#     if need in d:
+#         print((need,i))
+        # print(d[need],index)       --->indices
+#     d[i]=index
+
+
+'''•	Majority Element '''
+# l=[2,2,1,1,1,2,2]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# majority = len(l)/2
+# for key, value in d.items():
+#     if value > majority:
+#         print(key)
+
+'''•	Leaders in Array '''
+# l=[16,17,4,3,5,2]
+# for i in range(len(l)):
+#     leader=True
+#     for j in range(i+1,len(l)):
+#         if l[i]<l[j]:
+#             leader=False
+#     if leader:
+#         print(l[i])
+
+'''optimized approach'''
+# l=[16,17,4,3,5,2]
+# max_right = l[-1]
+# ans=[l[-1]]
+# for i in range(len(l)-2,-1,-1):
+#     if l[i]>max_right:
+#         ans.append(l[i])
+#         max_right=l[i]
+# final_ans = ans[::-1]
+# print(final_ans)
+
+'''•	Equilibrium Index '''
+# l=[1,3,5,2,2]
+# for i in range(len(l)):
+#     left_sum=0
+#     right_sum=0
+#     for j in range(0,i):
+#         left_sum+=l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum+=l[k]
+#     if left_sum==right_sum:
+#         print("equilibrium index is",i)
+
+'''optimized approach'''
+# l=[1,3,5,2,2]
+# total_sum = sum(l)
+# left_sum=0
+# for i in range(len(l)):
+#     right_sum = total_sum-left_sum-l[i]
+#     if left_sum==right_sum:
+#         print("equilibrium index is",i)
+#     else:
+#         left_sum+=l[i]
+
+
+'''•	Stock Buy and Sell '''
+# prices=[7,1,5,3,6,4]
+# min_price = prices[0]
+# max_profit = 0 
+# for i in prices:
+#     if i<min_price:
+#         min_price=i
+#     else:
+#         profit = i-min_price
+#         if profit>max_profit:
+#             max_profit=profit
+# print(max_profit)
+    
+
+
+
+
+
+
+

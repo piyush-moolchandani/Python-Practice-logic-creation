@@ -1,0 +1,452 @@
+📘 Pair Sum (Two Sum)
+1. Question
+
+Given an array of integers and a target value, find the two numbers whose sum equals the target.
+
+Example:
+
+nums = [2,7,11,15]
+target = 9
+
+Output:
+
+Indices = [0,1]
+
+Because
+
+2 + 7 = 9
+2. Observation (Most Important)
+
+Sabse pehle dimaag me ye question aana chahiye:
+
+"Current number ke saath pair banane ke liye mujhe aur kaunsa number chahiye?"
+
+Isliye har element ke liye calculate karte hain
+
+Need = Target - Current Number
+
+Example
+
+Current = 7
+
+Need = 9 - 7
+
+Need = 2
+
+Ab hum poora array dobara search nahi karenge.
+
+Hum dekhenge ki kya 2 pehle mil chuka hai?
+
+Agar mil gaya
+
+→ Pair mil gaya.
+
+Yahi poore question ki trick hai.
+
+3. HashMap Meaning
+
+Normal array search
+
+2 7 11 15
+
+Har baar search karna
+
+O(n)
+
+Aur har element ke liye search
+
+O(n²)
+
+Bahut slow.
+
+Isliye HashMap use karte hain.
+
+HashMap store karta hai
+
+Value → Index
+
+Example
+
+{
+2 : 0,
+7 : 1,
+11 : 2,
+15 : 3
+}
+
+Iska matlab
+
+Value 2 index 0 par hai
+
+Value 7 index 1 par hai
+
+Ab agar mujhe 7 chahiye
+
+Direct mil jayega
+
+O(1)
+4. Variables Meaning
+for index, num in enumerate(nums):
+index
+
+Current element ka index
+
+Example
+
+nums=[2,7,11,15]
+
+index
+
+0
+1
+2
+3
+num
+
+Current element ki value
+
+2
+
+7
+
+11
+
+15
+need
+
+Current number ke saath pair banane ke liye jo number chahiye
+
+Example
+
+Current = 11
+
+Target = 15
+
+Need = 4
+d
+
+HashMap
+
+Store karega
+
+Value → Index
+5. Core Logic
+
+Har element ke liye
+
+Step 1
+
+Current number uthao
+
+7
+Step 2
+
+Need nikalo
+
+Need = Target - Current
+
+Need = 9-7
+
+Need = 2
+Step 3
+
+Check
+
+Kya 2 pehle HashMap me hai?
+
+Agar
+
+YES
+
+Pair mil gaya.
+
+Agar
+
+NO
+
+Current number store kar do.
+
+6. Dry Run
+
+Example
+
+nums=[2,7,11,15]
+
+target=9
+
+Initially
+
+HashMap={ }
+First Iteration
+
+Current
+
+2
+
+Need
+
+7
+
+HashMap
+
+{}
+
+7 nahi mila.
+
+Store
+
+{
+2:0
+}
+Second Iteration
+
+Current
+
+7
+
+Need
+
+2
+
+HashMap
+
+{
+2:0
+}
+
+2 mil gaya.
+
+Answer
+
+Indices
+
+0
+
+1
+
+Loop khatam.
+
+7. Visualization
+
+Array
+
+Index
+
+0   1   2   3
+
+Value
+
+2   7   11   15
+
+Iteration 1
+
+Current =2
+
+Need =7
+
+HashMap
+
+{
+2:0
+}
+
+↓
+
+Iteration 2
+
+Current =7
+
+Need =2
+
+HashMap me 2 mil gaya
+
+Answer
+
+0 1
+8. Why Store Value → Index?
+
+Question
+
+HashMap me
+
+Index → Value
+
+kyun nahi?
+
+Suppose
+
+{
+0:2,
+1:7
+}
+
+Ab mujhe
+
+Need =2
+
+search karna hai.
+
+Python
+
+if 2 in d
+
+kya check karega?
+
+Keys
+
+0
+
+1
+
+2 key hi nahi hai.
+
+Isliye search fail.
+
+Lekin
+
+{
+2:0,
+7:1
+}
+
+me
+
+if 2 in d
+
+True.
+
+Aur
+
+d[2]
+
+seedha
+
+0
+
+de dega.
+
+Isliye
+
+Value → Index
+
+store karte hain.
+
+9. Why Check First, Then Store?
+
+Suppose
+
+nums=[3,3]
+
+target=6
+
+Agar pehle store kar diya
+
+Fir
+
+Need check kiya
+
+To current element khud hi apna pair ban sakta hai.
+
+Galat answer aa sakta hai.
+
+Isliye sequence hamesha
+
+Need check
+
+↓
+
+Pair mila?
+
+↓
+
+Yes → Return
+
+↓
+
+No
+
+↓
+
+Current Store
+
+Ye bahut important interview point hai.
+
+10. Edge Cases
+Duplicate Values
+[3,3]
+
+Handle ho jata hai.
+
+Negative Numbers
+[-2,8,4]
+
+Bilkul same logic.
+
+Zero
+[0,4,3,0]
+
+Works perfectly.
+
+Pair End me ho
+[1,5,8,11]
+
+Tab bhi O(n).
+
+11. Time Complexity
+
+Traversal
+
+O(n)
+
+HashMap lookup
+
+O(1)
+
+Overall
+
+O(n)
+12. Space Complexity
+
+HashMap
+
+Worst case
+
+O(n)
+13. Interview Explanation
+
+"Instead of comparing every pair, I calculate the complement (target - current) for each element. I use a HashMap to store previously visited values with their indices. If the complement already exists in the HashMap, I've found the answer immediately. Otherwise, I store the current value and continue. This reduces the time complexity from O(n²) to O(n) while using O(n) extra space."
+
+14. Common Mistakes
+
+❌ Storing
+
+d[index] = value
+
+Instead of
+
+d[value] = index
+
+❌ Searching after storing in the wrong order.
+
+❌ Forgetting to stop after finding the pair.
+
+❌ Using nested loops instead of a HashMap.
+
+15. One-Line Revision
+
+"For every number, calculate the complement (target - current). If the complement already exists in the HashMap, return both indices; otherwise, store the current value with its index."
+
+🧠 Pattern Recognition (Most Important)
+
+Ye question tumhe ek naya DSA pattern sikhata hai:
+
+Reverse Array → Two Pointers
+Move Zeroes → Read Pointer + Write Pointer
+Merge Two Sorted Arrays → Two Pointers on Two Arrays
+Pair Sum (Two Sum) → HashMap + Complement
+
+Interview me agar koi question aaye jisme line ho:
+
+"Find a pair...", "Two numbers...", "Target sum..."
+
+To sabse pehle dimaag me Complement + HashMap wala pattern aana chahiye. Yahi is problem ka sabse bada takeaway hai. 💯

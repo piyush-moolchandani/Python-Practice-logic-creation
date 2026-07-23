@@ -1,0 +1,79 @@
+📘 Equilibrium Index – Interview Notes
+1. Question
+
+Find the index where:
+
+Left Sum == Right Sum
+
+Current element ko kisi bhi sum me include nahi karna.
+
+2. Observation
+
+Har index par dobara left aur right sum nikalna waste hai.
+
+Ek baar total sum nikal lo.
+
+Fir running left sum maintain karo.
+
+3. Variables
+total_sum
+
+Poore array ka sum.
+
+left_sum
+
+Current index ke left ka sum.
+
+right_sum
+right_sum = total_sum - left_sum - l[i]
+
+Current index ke right ka sum.
+
+i
+
+Current index.
+
+4. Core Logic
+Calculate total_sum.
+Initialize left_sum = 0.
+Traverse array.
+Calculate right_sum.
+Compare:
+If left_sum == right_sum → Equilibrium index.
+Update left_sum.
+5. Dry Run
+Array = [1,3,5,2,2]
+
+Total = 13
+Left = 0
+Index	Current	Left	Right	Result
+0	1	0	12	❌
+1	3	1	9	❌
+2	5	4	4	✅
+3	2	9	2	❌
+4	2	11	0	❌
+
+Answer:
+
+2
+6. Time Complexity
+O(n)
+7. Space Complexity
+O(1)
+8. Interview Explanation
+
+"I first compute the total sum of the array. Then I maintain a running left_sum. For every index, the right_sum is simply total_sum - left_sum - current_element. If left_sum equals right_sum, that index is an equilibrium index. This avoids recalculating sums repeatedly and reduces the complexity from O(n²) to O(n)."
+
+9. Common Mistakes
+
+❌ Updating left_sum before comparison.
+
+left_sum += l[i]   # Wrong place
+
+Isse current element left sum me include ho jayega, jo galat hai.
+
+✔️ Pehle compare karo, phir update karo.
+
+10. One-Line Revision
+
+"Maintain a running left_sum; compute right_sum using total_sum - left_sum - current; compare, then update left_sum."

@@ -1,0 +1,203 @@
+📘 Leaders in Array – Interview Notes
+1. Question
+
+Given an array, find all the leaders.
+
+A leader is an element that is greater than every element to its right.
+
+Example
+
+[16,17,4,3,5,2]
+
+Answer
+
+[17,5,2]
+2. Observation
+
+Leader ko compare karna hai
+
+Sirf RIGHT side se.
+
+Left side se koi matlab nahi.
+
+Isliye
+
+Array ko
+
+Right → Left
+
+traverse karna best hai.
+
+3. Core Idea
+
+Ek variable rakho
+
+max_right
+
+Ye hamesha
+
+Right side ka maximum element
+
+store karega.
+
+Current element
+
+max_right
+
+To
+
+Leader.
+
+4. Variables Meaning
+i
+
+Current index
+
+max_right
+
+Right side ka maximum element.
+
+ans
+
+Leaders store karega.
+
+5. Dry Run
+
+Array
+
+[16,17,4,3,5,2]
+
+Initially
+
+max_right = 2
+
+ans=[2]
+
+Current
+
+5
+5>2
+
+Leader
+
+ans=[2,5]
+
+max_right=5
+
+Current
+
+3
+3>5
+
+No
+
+Current
+
+4
+4>5
+
+No
+
+Current
+
+17
+17>5
+
+Leader
+
+ans=[2,5,17]
+
+max_right=17
+
+Current
+
+16
+16>17
+
+No
+
+Reverse
+
+[17,5,2]
+6. Core Logic
+Last element is always a leader.
+Store it.
+Keep max_right.
+Traverse from right to left.
+If current > max_right
+Add to answer.
+Update max_right.
+Reverse the answer.
+7. Edge Cases
+Single Element
+[5]
+
+Answer
+
+[5]
+Increasing Array
+[1,2,3,4]
+
+Answer
+
+[4]
+Decreasing Array
+[9,8,7,6]
+
+Answer
+
+[9,8,7,6]
+
+Har element leader hai.
+
+Duplicate Values
+
+Question agar bole
+
+Greater than all right elements
+
+To equal values leader nahi hote.
+
+Isliye condition
+
+>
+
+rahegi.
+
+Agar question bole
+
+Greater than or equal
+
+Tab
+
+>=
+
+karna hoga.
+
+8. Time Complexity
+
+Ek traversal
+
+O(n)
+
+Reverse
+
+O(n)
+
+Overall
+
+O(n)
+9. Space Complexity
+
+Leader list
+
+Worst case
+
+O(n)
+10. Interview Explanation
+
+"Since a leader only depends on the elements to its right, I traverse the array from right to left while maintaining the maximum element seen so far (max_right). If the current element is greater than max_right, it is a leader. I store it, update max_right, and finally reverse the result because leaders were collected from right to left."
+
+11. One-Line Revision
+
+"Traverse from right to left, maintain max_right, add elements greater than max_right, then reverse the answer."

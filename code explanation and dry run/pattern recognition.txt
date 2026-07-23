@@ -1,0 +1,13 @@
+📈 Pattern Recognition
+
+Ab tak tumne ye patterns master kar liye hain:
+
+Question	Pattern
+Reverse Array	Two Pointers
+Rotate Array	Reverse Technique
+Move Zeroes	Read Pointer + Write Pointer
+Merge Two Sorted Arrays	Two Pointers
+Pair Sum	HashMap
+Majority Element	Boyer-Moore / HashMap
+Leaders in Array	Right-to-Left + Running Maximum
+Equilibrium Index	Prefix Sum / Running Sum

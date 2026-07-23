@@ -1,0 +1,336 @@
+📘 Stock Buy & Sell – Deep Interview Notes
+1. Question
+
+Given an array where:
+
+prices[i]
+
+represents the stock price on the ith day.
+
+Find the maximum profit by:
+
+Buying once
+Selling once
+Selling after buying
+
+If no profit is possible, return 0.
+
+Example
+
+prices = [7,1,5,3,6,4]
+
+Answer = 5
+2. Observation ⭐⭐⭐⭐⭐
+
+Question ko "Buy & Sell" mat samjho.
+
+Question ko is tarah socho:
+
+Har din imagine karo ki aaj stock bechna hai.
+
+Bas ek hi question poochna hai:
+
+"Agar aaj bechun, to maine ab tak sabse sasta stock kis price par kharida hota?"
+
+Isi observation se O(n) solution nikalta hai.
+
+3. Variables
+min_price
+
+Ab tak ka minimum stock price.
+
+Matlab
+
+Best Buying Price
+
+Initially
+
+min_price = prices[0]
+max_profit
+
+Ab tak ka maximum profit.
+
+Initially
+
+max_profit = 0
+profit
+
+Current day par stock bechne se kitna profit milega.
+
+Formula
+
+profit = current_price - min_price
+price
+
+Current day's stock price.
+
+4. Core Logic
+Step 1
+
+First element ko minimum maan lo.
+
+min_price = prices[0]
+Step 2
+
+Har price par jao.
+
+Step 3
+
+Agar current price aur chhota hai
+
+price < min_price
+
+To
+
+min_price = price
+
+Kyuki ab aur sasta stock mil gaya.
+
+Step 4
+
+Nahi to
+
+Current day par sell karne ka profit nikalo.
+
+profit = price - min_price
+Step 5
+
+Agar
+
+profit > max_profit
+
+To update.
+
+5. Dry Run
+prices = [7,1,5,3,6,4]
+
+Initially
+
+min_price = 7
+
+max_profit = 0
+Day	Price	Min Price	Profit	Max Profit
+1	7	7	0	0
+2	1	1	-	0
+3	5	1	4	4
+4	3	1	2	4
+5	6	1	5	5
+6	4	1	3	5
+
+Answer
+
+5
+6. Visualization
+Prices
+
+7   1   5   3   6   4
+↓   ↓   ↓   ↓   ↓   ↓
+
+Min Price
+
+7   1   1   1   1   1
+
+Profit
+
+-   -   4   2   5   3
+
+Best Profit
+
+0   0   4   4   5   5
+
+Notice
+
+min_price kabhi increase nahi hota.
+
+Sirf
+
+Same rehta hai
+Ya aur chhota hota hai.
+7. Why This Approach?
+
+Brute Force
+
+Har buy ke liye
+
+Saare sell check karo.
+
+O(n²)
+
+Optimal
+
+Ek hi traversal.
+
+Har din
+
+Cheapest buying price yaad rakho.
+Current price se profit nikal lo.
+O(n)
+8. Pattern Recognition
+
+Ye question kis pattern ka hai?
+
+Running Minimum
+
+Hum continuously
+
+Minimum Value
+
+maintain karte hain.
+
+Future me
+
+Maximum profit usi minimum ke against calculate karte hain.
+
+9. Edge Cases
+Case 1
+[7,6,5,4]
+
+Profit?
+
+0
+
+Kyun?
+
+Har din loss.
+
+Case 2
+[1]
+
+Profit
+
+0
+
+Sell possible nahi.
+
+Case 3
+[2,2,2]
+
+Profit
+
+0
+
+No gain.
+
+Case 4
+[1,10]
+
+Profit
+
+9
+10. Time Complexity
+
+Loop sirf ek baar.
+
+O(n)
+11. Space Complexity
+
+Sirf
+
+min_price
+
+max_profit
+
+profit
+
+Teen variables.
+
+O(1)
+12. Interview Explanation
+
+"Instead of checking every buy-sell pair, I maintain the minimum stock price seen so far. For every day's price, I calculate the profit if I sell today using that minimum price. If this profit is greater than the current maximum, I update it. This allows me to find the maximum profit in a single traversal with O(n) time and O(1) extra space."
+
+13. Common Mistakes
+❌ Mistake 1
+
+Profit pehle calculate karna.
+
+profit = price - min_price
+
+if price < min_price:
+    min_price = price
+
+Ye logic confusing ho sakta hai.
+
+Interview me pehle minimum update karo.
+
+Fir profit calculate karo.
+
+❌ Mistake 2
+
+Maximum price dhoondhna.
+
+Bahut log sochte hain
+
+Maximum Price - Minimum Price
+
+Ye galat hai.
+
+Kyun?
+
+Minimum future me bhi aa sakta hai.
+
+Example
+
+[5,8,2]
+
+Maximum
+
+8
+
+Minimum
+
+2
+
+Profit
+
+8-2=6
+
+Impossible.
+
+Kyun?
+
+2 baad me aaya.
+
+Sell pehle aur buy baad me nahi ho sakta.
+
+❌ Mistake 3
+
+Loss ko bhi profit maan lena.
+
+Question bolta hai
+
+Maximum Profit
+
+Loss nahi.
+
+Isliye
+
+max_profit = 0
+
+se start karte hain.
+
+14. One-Line Revision
+
+"Keep track of the cheapest stock seen so far. For every new price, assume you sell today and calculate the profit. Update the maximum profit if it's better."
+
+🧠 Pattern Revision Table
+Question	Pattern
+Reverse Array	Two Pointers
+Rotate Array	Reverse Technique
+Move Zeroes	Read Pointer + Write Pointer
+Merge Two Sorted Arrays	Two Pointers
+Pair Sum	HashMap
+Majority Element	Boyer-Moore Voting
+Leaders in Array	Right-to-Left + Running Maximum
+Equilibrium Index	Prefix Sum / Running Sum
+Stock Buy & Sell	Running Minimum + Maximum Profit
+
+⭐ Interview Shortcut (30-second Revision)
+Observation: Buy before sell, maximize profit.
+Variables: min_price, max_profit.
+Logic: Track the minimum price seen so far. For each day's price, compute price - min_price and update the maximum profit.
+Time Complexity: O(n)
+Space Complexity: O(1)
+Pattern: Running Minimum + Greedy.
+
+Ye notes interview ke liye enough hain aur isi format ko hum aage ke DSA questions me bhi continue karenge.
