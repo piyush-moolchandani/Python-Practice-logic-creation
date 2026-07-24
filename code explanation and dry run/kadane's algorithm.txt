@@ -1,0 +1,550 @@
+📘 Kadane's Algorithm — Maximum Subarray Sum
+1. Question kya kehta hai?
+
+Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum find karna hai.
+
+Example:
+
+nums = [-2,1,-3,4,-1,2,1,-5,4]
+
+Answer:
+
+6
+
+Kyunki maximum-sum subarray hai:
+
+[4,-1,2,1]
+
+Aur:
+
+4 + (-1) + 2 + 1 = 6
+2. Sabse pehle: Subarray kya hai?
+
+Subarray = array ka continuous part.
+
+Ye valid hai:
+
+[4,-1,2,1]
+
+Kyunki elements continuously aaye hain.
+
+Lekin:
+
+[4,2,4]
+
+valid subarray nahi hai, kyunki beech ke elements skip kiye gaye.
+
+Yaad rakho
+
+Subarray = continuous. Subsequence = elements skip kar sakte hain.
+
+3. Brute Force Soch
+
+Ek simple approach ho sakti hai:
+
+Har possible starting point se har possible ending point tak sum nikalo aur maximum store karo.
+
+Example:
+
+[-2]
+[-2,1]
+[-2,1,-3]
+...
+
+[1]
+[1,-3]
+[1,-3,4]
+...
+
+Ye kaam karega, lekin bahut saare subarrays check karne padenge.
+
+Typical brute-force approach:
+
+Time = O(n²)
+
+Humein better chahiye.
+
+4. Kadane ki asli observation ⭐
+
+Kadane ko code se nahi, is question se yaad rakho:
+
+"Jo sum main ab tak lekar aa raha hoon, kya wo future ke liye useful hai?"
+
+Suppose:
+
+current_sum = 8
+
+To ye 8 future ke liye useful hai.
+
+Agar next element 5 hai:
+
+8 + 5 = 13
+
+Akele 5 se start karne se better hai 8 ko saath lekar chalna.
+
+Lekin suppose:
+
+current_sum = -8
+
+Aur next element:
+
+5
+
+Agar purana sum lekar chale:
+
+-8 + 5 = -3
+
+Agar fresh start kare:
+
+5
+
+Obviously:
+
+5 > -3
+
+Matlab negative previous sum future ka fayda nahi karta, balki future ka sum kam karta hai.
+
+Yahi Kadane's Algorithm hai.
+
+5. Golden Rule 🧠
+
+Positive running sum ko carry karo. Negative running sum ko discard karo.
+
+Ya aur simple:
+
+Negative current_sum
+       ↓
+Future ke liye burden
+       ↓
+Reset to 0
+6. Do variables ka role
+
+Kadane me mainly do variables chahiye.
+
+current_sum
+
+Current running subarray ka sum.
+
+Ye basically pooch raha hai:
+
+"Jo current journey chal rahi hai, uska sum kitna hai?"
+
+max_sum
+
+Ab tak mila best subarray sum.
+
+Ye purana record save karke rakhta hai.
+
+So:
+
+current_sum = current journey
+
+max_sum = best journey ever seen
+
+Ye difference bahut important hai.
+
+7. Algorithm ka flow
+
+Har element ke liye teen kaam:
+
+1. current_sum me current element add karo.
+
+2. Agar current_sum > max_sum:
+      max_sum update karo.
+
+3. Agar current_sum < 0:
+      current_sum = 0
+
+Bas Kadane khatam.
+
+8. Code
+
+Tumhara interview version:
+
+nums = [-2,1,-3,4,-1,2,1,-5,4]
+
+current_sum = 0
+max_sum = nums[0]
+
+for num in nums:
+    current_sum += num
+
+    if current_sum > max_sum:
+        max_sum = current_sum
+
+    if current_sum < 0:
+        current_sum = 0
+
+print(max_sum)
+
+Output:
+
+6
+9. Ab ek-ek line ka meaning
+Line 1
+current_sum = 0
+
+Abhi current subarray me kuch nahi liya.
+
+Line 2
+max_sum = nums[0]
+
+First element ko initial answer maan rahe hain.
+
+0 kyun nahi?
+
+Kyuki all-negative array aa sakta hai:
+
+[-5,-2,-8]
+
+Correct answer:
+
+-2
+
+Agar:
+
+max_sum = 0
+
+karte, to answer 0 aa sakta tha.
+
+Lekin 0 kisi non-empty subarray ka sum hi nahi hai.
+
+Isliye:
+
+max_sum = nums[0]
+Loop
+for num in nums:
+
+Har value ko ek-ek karke process kar rahe hain.
+
+Yahan:
+
+num = VALUE
+
+Index nahi.
+
+Isliye:
+
+current_sum += num
+
+likhenge.
+
+nums[num] nahi.
+
+Current sum
+current_sum += num
+
+Current element ko current subarray me include kar rahe hain.
+
+Example:
+
+current_sum = 4
+num = -1
+
+new current_sum = 3
+Maximum update
+if current_sum > max_sum:
+    max_sum = current_sum
+
+Question:
+
+"Kya current subarray ka sum ab tak ke best answer se bada ho gaya?"
+
+Agar haan → record update.
+
+Negative check
+if current_sum < 0:
+    current_sum = 0
+
+Ye Kadane ki jaan hai.
+
+Negative running sum future me kisi bhi element ko help nahi kar sakta.
+
+Example:
+
+current_sum = -4
+
+next = 7
+
+Carry karoge:
+
+-4 + 7 = 3
+
+Fresh start:
+
+7
+
+Clearly 7 better.
+
+Isliye -4 discard.
+
+10. Full Dry Run ⭐
+
+Array:
+
+[-2,1,-3,4,-1,2,1,-5,4]
+
+Start:
+
+current_sum = 0
+max_sum = -2
+num	Add karne ke baad current	max_sum	Reset?
+-2	-2	-2	Yes → 0
+1	1	1	No
+-3	-2	1	Yes → 0
+4	4	4	No
+-1	3	4	No
+2	5	5	No
+1	6	6	No
+-5	1	6	No
+4	5	6	No
+
+Final:
+
+max_sum = 6
+11. Ek important point: -5 par reset kyun nahi hua?
+
+Yahan bahut achha conceptual point hai.
+
+Hum pahunch chuke the:
+
+4 + (-1) + 2 + 1 = 6
+
+Next:
+
+-5
+
+To:
+
+current_sum = 6 - 5 = 1
+
+Negative number aaya, lekin current sum negative nahi hua.
+
+Isliye reset nahi karenge.
+
+Ye yaad rakho:
+
+❌ Negative element dekhkar reset nahi karna.
+✅ Negative current_sum hone par reset karna.
+
+Bahut important distinction hai.
+
+12. All-Negative Case ⭐⭐⭐
+
+Interview favourite:
+
+[-2,-3,-1,-5]
+
+Correct answer:
+
+-1
+
+Kyunki possible single-element subarrays me:
+
+[-2]
+[-3]
+[-1]
+[-5]
+
+maximum -1 hai.
+
+Isi wajah se:
+
+max_sum = nums[0]
+
+rakhte hain.
+
+current_sum reset hota rahega, lekin reset karne se pehle max_sum update hota hai.
+
+For -1:
+
+current_sum = -1
+
+-1 > -2
+
+max_sum = -1
+
+then current_sum reset → 0
+
+Final answer safely:
+
+-1
+13. Order important hai
+
+Ye order yaad rakho:
+
+ADD
+ ↓
+MAX UPDATE
+ ↓
+NEGATIVE RESET
+
+Matlab:
+
+current_sum += num
+
+if current_sum > max_sum:
+    max_sum = current_sum
+
+if current_sum < 0:
+    current_sum = 0
+
+Agar negative ko max check karne se pehle reset kar doge, all-negative case me information lose ho sakti hai.
+
+14. Kadane actually decide kya kar raha hai?
+
+Har position par algorithm indirectly ye decision le raha hai:
+
+Purani subarray continue karun?
+
+             OR
+
+Nayi subarray start karun?
+
+Agar previous running sum useful hai:
+
+Continue
+
+Agar previous running sum negative hai:
+
+Discard + Fresh Start
+
+Isi wajah se Kadane ko Dynamic Programming / Greedy-style optimization ke perspective se bhi samjha ja sakta hai.
+
+15. Common Mistakes ❌
+
+Mistake 1:
+
+max_sum = 0
+
+All-negative arrays ke liye problem.
+
+Better:
+
+max_sum = nums[0]
+
+Mistake 2: Negative element dekhte hi reset karna.
+
+Wrong thinking:
+
+num < 0 → reset
+
+Correct:
+
+current_sum < 0 → reset
+
+Mistake 3: for num in nums ke andar nums[num] use karna.
+
+for num in nums:
+
+me num already value hai.
+
+Mistake 4: Subarray aur subsequence ko same samajhna. Kadane contiguous subarray ke liye hai.
+
+16. Time & Space Complexity
+
+Array ko ek hi baar traverse karte hain:
+
+Time Complexity = O(n)
+
+Sirf kuch variables:
+
+current_sum
+max_sum
+
+Isliye:
+
+Space Complexity = O(1)
+
+Ye Kadane ko powerful banata hai.
+
+17. Interview me kaise explain karna hai?
+
+Interviewer bole:
+
+"Explain your approach."
+
+Tum bol sakte ho:
+
+"I'll maintain a running sum for the current subarray and a maximum sum seen so far. At every element, I add it to the running sum and update the maximum if needed. If the running sum becomes negative, I discard it because carrying a negative sum forward can only reduce the sum of any future subarray. I then restart the running sum from zero. This gives O(n) time and O(1) extra space."
+
+Agar interviewer puche:
+
+Why reset negative sum?
+
+Bolna:
+
+"A negative prefix cannot improve any future subarray. Starting fresh from the next element will always be at least as good as carrying a negative sum."
+
+Ye actual intuition hai.
+
+18. Interview Follow-up: All elements negative?
+
+Answer:
+
+"max_sum should be initialized with the first array element rather than zero. I update max_sum before resetting a negative running sum, so the largest negative element is preserved as the answer."
+
+Example:
+
+[-8,-3,-6]
+
+Answer = -3
+19. Kadane ko ek story me yaad rakho
+
+Tum ek journey kar rahe ho.
+
+current_sum
+
+tumhara current balance hai.
+
+max_sum
+
+tumhari life ka best balance hai. 😄
+
+Jab tak current balance useful hai:
+
+Carry it.
+
+Jab current balance negative ho gaya:
+
+Purana loss future par mat daalo.
+Fresh start.
+
+Lekin jo best score pehle bana tha, max_sum usse kabhi nahi bhoolta.
+
+📝 Final 30-Second Revision
+
+Problem: Maximum sum contiguous subarray.
+
+Pattern: Running Sum / Kadane.
+
+Variables:
+
+current_sum → current subarray ka sum
+max_sum     → best sum found so far
+
+Logic:
+
+Current element add karo
+        ↓
+Maximum update karo
+        ↓
+Current sum negative?
+        ↓ Yes
+Reset to 0
+
+Why reset?
+
+Negative running sum future ke sum ko sirf decrease karega.
+
+All negative?
+
+max_sum = nums[0]
+
+Complexity:
+
+Time  = O(n)
+Space = O(1)
+🧠 One-line memory trick
+
+"Positive sum ko carry karo, negative sum ko chhod do, aur max_sum me ab tak ka best answer save rakho."

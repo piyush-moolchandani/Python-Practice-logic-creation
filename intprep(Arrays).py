@@ -188,6 +188,21 @@ space o(1)'''
 # print(max_profit)
     
 
+'''•	Kadane's Algorithm '''
+'''Maximum Sum Contiguous Subarray'''
+# l=[-2,1,-3,4,-1,2,1,-5,4]
+# current_sum=0
+# max_sum=l[0]
+# for i in l:
+#     current_sum+=i
+#     if current_sum>max_sum:
+#         max_sum=current_sum
+#     if current_sum<0:
+#         current_sum=0
+# print(max_sum)
+'''Running sum negative ho gaya → future ke liye burden hai → reset. 
+max_sum ab tak ka best answer sambhal ke rakhega.
+Aur max_sum = l[0] ki wajah se all-negative array bhi handle ho jayega.'''
 
 
 
