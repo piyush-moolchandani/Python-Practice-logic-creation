@@ -1,0 +1,406 @@
+Intersection of Two Arrays — Interview Notes
+Problem
+
+Do arrays diye hain:
+
+l1 = [4, 9, 5]
+l2 = [9, 4, 9, 8, 4]
+
+Dono arrays ke unique common elements find karne hain.
+
+Expected:
+
+[9, 4]
+
+9 aur 4 second array me multiple times aaye hain, lekin intersection me ek-ek baar hi chahiye.
+
+Approach 1 — HashMap + Answer List Check
+Code
+l1 = [4, 9, 5]
+l2 = [9, 4, 9, 8, 4]
+
+d = {}
+ans = []
+
+for i in l1:
+    d[i] = 1
+
+for j in l2:
+    if j in d and j not in ans:
+        ans.append(j)
+
+print(ans)
+Intuition
+
+Pehle l1 ke elements dictionary me mark karunga:
+
+l1 = [4,9,5]
+
+d = {
+    4: 1,
+    9: 1,
+    5: 1
+}
+
+Yahan value 1 frequency nahi bata rahi.
+
+Iska sirf meaning hai:
+
+Ye element first array me present hai.
+
+Ab l2 traverse karunga.
+
+Har element ke liye 2 questions:
+
+1. Kya j first array me present hai?
+              ↓
+           j in d
+
+2. Kya j answer me pehle se nahi hai?
+              ↓
+         j not in ans
+
+Dono true → intersection ka unique element → append.
+
+Approach 1 — Deep Dry Run
+
+Start:
+
+d = {4:1, 9:1, 5:1}
+ans = []
+j = 9
+
+Check:
+
+9 in d       → True
+9 not in ans → True
+
+Therefore:
+
+ans = [9]
+j = 4
+4 in d       → True
+4 not in ans → True
+
+Append:
+
+ans = [9,4]
+j = 9 again
+9 in d       → True
+9 not in ans → False
+
+9 already answer me hai.
+
+Skip:
+
+ans = [9,4]
+j = 8
+8 in d → False
+
+First array me 8 nahi hai.
+
+Skip.
+
+j = 4 again
+4 in d       → True
+4 not in ans → False
+
+Skip.
+
+Final:
+
+[9,4]
+Approach 1 me problem kya hai?
+
+Ye line dekho:
+
+j in d
+
+Dictionary lookup average:
+
+O(1)
+
+Good. ✅
+
+Lekin:
+
+j not in ans
+
+ans ek list hai.
+
+List me membership check ke liye Python ko elements scan karne pad sakte hain:
+
+ans = [10,20,30,40,50,...]
+
+                    ↑
+            j ko search karna
+
+Worst case:
+
+O(n)
+
+Aur ye check second array ke bahut saare elements ke liye ho sakta hai.
+
+Isliye worst-case overall complexity quadratic direction me ja sakti hai (more precisely, depending on the two input sizes and intersection size, the repeated list-membership work can accumulate to O(mn)).
+
+Yahin se optimization ka reason milta hai.
+
+Approach 2 — HashMap + Delete Trick 🔥
+
+Idea:
+
+Common element answer me add karne ke baad us element ko dictionary se hi remove kar do.
+
+Code:
+
+l1 = [4, 9, 5]
+l2 = [9, 4, 9, 8, 4]
+
+d = {}
+ans = []
+
+for i in l1:
+    d[i] = 1
+
+for j in l2:
+    if j in d:
+        ans.append(j)
+        del d[j]
+
+print(ans)
+
+Output:
+
+[9,4]
+Is approach ki intuition
+
+Pehle:
+
+d = {
+    4:1,
+    9:1,
+    5:1
+}
+
+Ab jab first time common element 9 mile:
+
+9 in d
+   ↓
+common
+   ↓
+ans me add
+   ↓
+dictionary se 9 delete
+
+Ab future me 9 dobara aaye to:
+
+9 in d?
+   ↓
+False
+
+Isliye duplicate automatically skip.
+
+Matlab ab hume ye karne ki zarurat nahi:
+
+j not in ans
+Approach 2 — Deep Dry Run
+
+Initial:
+
+d = {4:1, 9:1, 5:1}
+ans = []
+
+Second array:
+
+[9,4,9,8,4]
+Iteration 1 — j = 9
+9 in d?
+→ YES
+
+Append:
+
+ans = [9]
+
+Then:
+
+del d[9]
+
+Dictionary:
+
+d = {4:1, 5:1}
+
+Important:
+
+9 ko answer me lene ke baad dictionary se hata diya.
+
+Iteration 2 — j = 4
+4 in d?
+→ YES
+
+Append:
+
+ans = [9,4]
+
+Delete:
+
+d = {5:1}
+Iteration 3 — second 9
+9 in d?
+→ NO
+
+Kyun?
+
+First 9 ke time:
+
+del d[9]
+
+kar chuke hain.
+
+Therefore:
+
+skip
+
+ans remains:
+
+[9,4]
+Iteration 4 — j = 8
+8 in d?
+→ NO
+
+8 first array me tha hi nahi.
+
+Skip.
+
+Iteration 5 — second 4
+4 in d?
+→ NO
+
+First 4 process karte waqt delete kar diya tha.
+
+Skip.
+
+Final:
+
+ans = [9,4]
+Dono approaches ka main difference
+Approach 1
+j first array me hai?
+        ↓
+      j in d
+        ↓
+answer me already hai?
+        ↓
+   j not in ans
+        ↓
+      append
+
+Problem:
+
+j not in ans
+
+list scan kar sakta hai.
+
+Approach 2
+j dictionary me hai?
+       ↓
+      YES
+       ↓
+     append
+       ↓
+ dictionary se delete
+
+Ab dictionary itself do kaam kar rahi hai:
+
+Element present
+→ first array me tha AND abhi answer me nahi liya
+
+Element absent
+→ ya first array me nahi tha
+  OR already answer me le chuke hain
+
+Ye insight important hai. 🔥
+
+Complexity Comparison
+
+Suppose:
+
+n = len(l1)
+m = len(l2)
+
+Approach 1 me dictionary creation O(n) hai, lekin j not in ans list membership repeated linear scans kar sakta hai. Worst case roughly:
+
+O(n × m)
+
+Extra space:
+
+O(n)
+
+Approach 2 me:
+
+Dictionary creation → O(n)
+l2 traversal       → O(m)
+j in d             → O(1) average
+del d[j]           → O(1) average
+
+Overall average:
+
+O(n + m)
+
+Extra space:
+
+O(n)
+
+So optimized approach ka main benefit:
+
+Answer list ko repeatedly search karna hata diya.
+
+Interview me exactly kaise explain karna hai
+
+Pehle straightforward approach:
+
+“I’ll store all elements of the first array in a HashMap. Then I’ll traverse the second array. If an element exists in the HashMap and is not already present in my answer, I’ll add it to the result.”
+
+Phir optimization introduce karo:
+
+“However, checking whether an element is already present in the result list can take linear time. I can avoid this check entirely. Once I find a common element, I add it to the result and delete it from the HashMap. Therefore, if the same element appears again in the second array, it will no longer be present in the HashMap and will automatically be skipped.”
+
+Then complexity:
+
+“This gives me O(n + m) average time with O(n) extra space.”
+
+Ye explanation code se zyada valuable hai because tum optimization ka reason bata rahe ho.
+
+Copy me ye diagram zaroor likhna
+l1 = [4,9,5]
+
+       ↓ HashMap
+
+d = {4:1, 9:1, 5:1}
+
+
+l2 = [9,4,9,8,4]
+
+9 → present → ans=[9]   → delete 9
+4 → present → ans=[9,4] → delete 4
+9 → absent  → skip
+8 → absent  → skip
+4 → absent  → skip
+
+Final = [9,4]
+Memory trick
+
+“Use once, then delete.”
+
+Common mila
+    ↓
+Answer me lo
+    ↓
+HashMap se delete
+    ↓
+Dobara aaya?
+    ↓
+HashMap me milega hi nahi
+    ↓
+Automatically skip
+
+Bas ek nuance yaad rakhna: interview me del approach tab use karo jab dictionary/set ko mutate karna acceptable ho. Agar original lookup structure preserve karna ho, ek separate seen_result set bhi clean O(n+m) solution hai.
