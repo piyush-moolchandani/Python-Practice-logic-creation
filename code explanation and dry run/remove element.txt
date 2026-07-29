@@ -1,0 +1,187 @@
+✅ Deep Interview Notes
+1. Question
+
+Given an array nums and a value val, remove all occurrences of val in-place and return the number of remaining elements.
+
+Example:
+
+nums = [0,1,2,2,3,0,4,2]
+val = 2
+
+Output (valid part):
+
+[0,1,3,0,4]
+2. Observation
+
+Har element delete nahi karna.
+
+Bas jo val ke equal nahi hain unhe array ke front me shift karna hai.
+
+3. Variables
+i → Write Pointer
+
+j → Read Pointer
+4. Core Logic
+j poora array traverse karega.
+Agar nums[j] != val
+us element ko nums[i] par le aao.
+i += 1
+Agar equal hai
+skip.
+5. Dry Run
+[0,1,2,2,3,0,4,2]
+
+i=0
+j=0
+
+0 != 2
+↓
+
+[0,1,2,2,3,0,4,2]
+
+i=1
+
+1 != 2
+
+↓
+
+i=2
+
+2 == val
+
+↓
+
+Skip
+
+2 == val
+
+↓
+
+Skip
+
+3 != val
+
+↓
+
+[0,1,3,2,2,0,4,2]
+
+...
+
+Final
+
+[0,1,3,0,4,2,2,2]
+
+i = 5
+
+Valid Answer
+
+[0,1,3,0,4]
+6. Visualization
+Read Pointer (j)
+↓
+
+0 1 2 2 3 0 4 2
+^
+
+Write Pointer (i)
+
+↓
+
+Keep
+
+↓
+
+Write Pointer moves
+
+Only valid elements move forward.
+
+7. Why This Approach?
+
+Na deletion.
+
+Na extra array.
+
+Ek hi traversal.
+
+In-place modification.
+
+Isi liye interviewer ye question puchta hai.
+
+8. Edge Cases
+All elements remove
+[2,2,2]
+
+Output
+
+[]
+No element remove
+[1,3,4]
+
+Output
+
+[1,3,4]
+Empty array
+[]
+
+Output
+
+[]
+9. Time Complexity
+O(n)
+10. Space Complexity
+O(1)
+11. Interview Explanation
+
+"I use two pointers. One pointer reads every element, while the other marks the next position where a valid element should be placed. Whenever I find an element different from the target value, I copy it to the write pointer and move the write pointer forward. This modifies the array in-place without using extra space."
+
+12. Common Mistakes
+
+❌ Actually deleting elements inside the loop.
+
+nums.remove(val)
+
+This changes indices and is inefficient.
+
+❌ Using an extra list.
+
+ans = []
+
+Interviewer specifically wants an in-place solution.
+
+❌ Forgetting that only the first i elements are valid.
+
+13. One-Line Revision
+
+Read every element. Write only the valid ones.
+
+14. Pattern Recognition 🧠
+
+Notice the similarity:
+
+Move Zeroes
+        ↓
+Write all non-zero elements
+
+Remove Element
+        ↓
+Write all elements != val
+
+Remove Duplicates
+        ↓
+Write only unique elements
+
+🔥 Ye tino questions same Two Pointer pattern ke variants hain.
+
+✅ Two Pointers Progress
+✅ Reverse Array
+✅ Reverse String
+✅ Move Zeroes
+✅ Remove Duplicates
+✅ Merge Sorted Arrays
+✅ Remove Element
+
+Bas ek hi mandatory question bacha hai:
+
+⭐ Sorted Two Sum (Two Sum II)
+
+Uske baad Two Pointers section officially complete. 💯

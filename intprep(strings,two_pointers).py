@@ -98,6 +98,70 @@ Ye DSA interviews me bahut positive impression deta hai. 💯'''
 # print(count_vowel)
 
 
+'''•	Remove Duplicates '''
+# n="programming"
+# d={}
+# ans=""
+# for i in n:
+#     if i not in d:
+#         ans+=i
+#         d[i]=1
+# print(ans)
+
+'''•	String Compression '''
+# s = "aaabbcccc"
+# if not s:
+#     print("")
+# else:
+#     ans=""
+#     count=1
+#     for i in range(len(s)-1):
+#         if s[i]==s[i+1]:
+#             count+=1
+#         else:
+#             ans+=s[i]+str(count)
+#             count=1
+# ans+=s[-1]+str(count)
+# print(ans)
+
+'''•	Rotation Check '''
+# s1 = "abcd"
+# s2 = "cdab"
+# temp = s1+s1
+# if s2 in temp:
+#     print(True)
+# else:
+#     print(False)
+
+'''                                  TWO POINTERS                                 '''
+'''•	Remove Element '''
+# l = [0,1,2,2,3,0,4,2]
+# val = 2
+# i=0
+# for j in range(len(l)):
+#     if l[j]!=val:
+#         l[i],l[j]=l[j],l[i]
+#         i+=1
+# print(l[:i])
+
+'''•	Sorted Two Sum '''
+# l = [1, 2, 4, 6, 10]
+# target = 8
+# left=0
+# right=len(l)-1
+# while left<right:
+#     sum=l[left]+l[right]
+#     if sum==target:
+#         print((l[left],l[right]))
+#         break
+#     if sum<target:
+#         left+=1
+#     else:
+#         right-=1
+
+
+
+        
 
         
 
