@@ -205,6 +205,16 @@ max_sum ab tak ka best answer sambhal ke rakhega.
 Aur max_sum = l[0] ki wajah se all-negative array bhi handle ho jayega.'''
 
 
+'''find pairs of sum negative'''
+l=[-2,-1,3,-7,5,-9,5]
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        sum = l[i]+l[j]
+        if sum<0:
+            print((l[i],l[j]))
+        
+
+
 
 
 

@@ -1,0 +1,432 @@
+Bhai, ye line agar samajh aa gayi na, to deque wale 70–80% Sliding Window questions clear ho jayenge.
+
+Main code se zyada mindset samjhata hoon.
+
+Sabse Pehle Rule
+
+Deque me hum saare negative numbers nahi, balki window ke andar jo negatives hain sirf unhe order me rakhte hain.
+
+Initially
+
+l = [12, -1, -7, 8, -15, 30, 16, 28]
+k = 3
+
+First window
+
+[12, -1, -7]
+
+Deque
+
+Front
+ ↓
+[-1, -7]
+
+Answer
+
+-1
+Iteration 1
+j = 3
+
+New Window
+
+[-1, -7, 8]
+
+Visualization
+
+12  -1  -7   8  -15  30  16  28
+↑
+Outgoing
+
+Outgoing element
+
+l[j-k]
+
+↓
+
+l[0]
+
+↓
+
+12
+
+Deque
+
+[-1, -7]
+
+Ab condition dekho
+
+if dq and l[j-k] == dq[0]:
+
+Translate karo:
+
+"Agar deque khaali nahi hai aur jo element window se bahar gaya hai, wahi deque ke front me hai, tab usse remove kar do."
+
+Check
+
+12 == -1 ?
+
+False
+
+To remove?
+
+No
+
+Incoming
+
+l[3]
+
+↓
+
+8
+
+Negative?
+
+No
+
+Deque
+
+[-1,-7]
+
+Answer
+
+-1
+Iteration 2 (Yahi Magic Hai)
+j = 4
+
+Window
+
+[-7, 8, -15]
+
+Visualization
+
+12  -1  -7   8  -15  30  16  28
+    ↑
+Outgoing
+
+Outgoing
+
+l[j-k]
+
+↓
+
+l[1]
+
+↓
+
+-1
+
+Deque
+
+Front
+ ↓
+[-1,-7]
+
+Condition
+
+-1 == -1
+
+True
+
+Matlab...
+
+Jo first negative tha...
+
+Wo ab window ke bahar chala gaya.
+
+To deque bhi update karo.
+
+Before
+
+[-1,-7]
+
+↓
+
+popleft()
+
+↓
+
+[-7]
+
+Ab incoming
+
+l[4]
+
+↓
+
+-15
+
+Negative?
+
+Yes.
+
+Append
+
+[-7,-15]
+
+Answer?
+
+Front
+
+↓
+
+-7
+Iteration 3
+j = 5
+
+Window
+
+[8,-15,30]
+
+Visualization
+
+12 -1 -7 8 -15 30
+       ↑
+Outgoing
+
+Outgoing
+
+l[2]
+
+↓
+
+-7
+
+Deque
+
+[-7,-15]
+
+Condition
+
+-7 == -7
+
+True
+
+Remove
+
+[-15]
+
+Incoming
+
+30
+
+Negative?
+
+No.
+
+Deque
+
+[-15]
+
+Answer
+
+-15
+Iteration 4
+j = 6
+
+Window
+
+[-15,30,16]
+
+Outgoing
+
+8
+
+Deque
+
+[-15]
+
+Check
+
+8 == -15
+
+False
+
+Remove?
+
+No.
+
+Incoming
+
+16
+
+Negative?
+
+No.
+
+Deque
+
+[-15]
+
+Answer
+
+-15
+Iteration 5
+j = 7
+
+Window
+
+[30,16,28]
+
+Outgoing
+
+-15
+
+Deque
+
+[-15]
+
+Condition
+
+-15 == -15
+
+True
+
+Remove
+
+[]
+
+Incoming
+
+28
+
+Negative?
+
+No.
+
+Deque
+
+[]
+
+Deque empty.
+
+Answer
+
+0
+🧠 Ab Sabse Important Logic
+
+Tumhara doubt tha:
+
+if dq and l[j-k] == dq[0]:
+
+Iska matlab ye nahi hai ki:
+
+"Negative mila to remove."
+
+Iska matlab hai:
+
+"Jo element window se bahar gaya hai, agar wahi hamara current first negative tha, tabhi usse deque se hatao."
+
+Agar bahar gaya element negative hi nahi tha:
+
+12
+
+to deque ko chhedna hi nahi.
+
+Agar bahar gaya negative tha lekin first negative nahi tha, wo case aa hi nahi sakta, kyunki deque hamesha window ke negatives ko order me rakhta hai. Agar koi negative window se bahar ja raha hai, wo sabse pehle front par hi aayega.
+
+Interview Notes
+Question
+
+Find the first negative integer in every window of size k.
+
+Observation
+
+Hume poori window nahi dekhni.
+
+Sirf window ke negative numbers maintain karne hain.
+
+Data Structure
+
+deque
+
+Kyun?
+
+append() → O(1)
+popleft() → O(1)
+Front access → O(1)
+Variables
+dq
+
+Window ke negative numbers ko order me store karta hai.
+
+ans
+
+Har window ka answer.
+
+j
+
+Incoming element.
+
+j-k
+
+Outgoing element.
+
+Core Logic
+First window ke negatives deque me store karo.
+Front answer hai.
+Window slide karo.
+Agar outgoing element deque ke front ke equal hai, popleft() karo.
+Agar incoming negative hai, append() karo.
+Deque ka front answer hai; agar deque empty hai to 0.
+Visualization
+Window
+
+[12,-1,-7]
+Deque
+
+[-1,-7]
+
+↓
+
+Slide
+
+[-1,-7,8]
+
+Deque
+
+[-1,-7]
+
+↓
+
+Slide
+
+[-7,8,-15]
+
+Deque
+
+[-7,-15]
+
+↓
+
+Slide
+
+[8,-15,30]
+
+Deque
+
+[-15]
+Time Complexity
+O(n)
+
+Har negative element ek baar deque me aata hai aur ek baar hi nikalta hai.
+
+Space Complexity
+O(k)
+
+Worst case me window ke saare elements negative ho sakte hain.
+
+Common Mistakes
+
+❌ if l[j-k] == dq[0]:
+
+Isse pehle dq empty hai ya nahi check na karna.
+
+if dq and l[j-k] == dq[0]:
+
+✅ Ye safe version hai.
+
+One-Line Revision
+
+Deque me window ke negative numbers rakho. Agar first negative window se bahar jaye to popleft(), aur naya negative aaye to append(). Front hi answer hai.
+
+Bhai, ek baat notice kar raha hoon. Ab tum sirf code nahi likh rahe, code ke peeche ka pattern samajhne ki koshish kar rahe ho. Yehi habit tumhe interview me "memorized candidate" se "problem solver" banayegi. 💯
