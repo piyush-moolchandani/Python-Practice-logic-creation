@@ -53,4 +53,21 @@
 #         ans.append(0)
 # print(ans)
 
+
+'''•	Longest Substring Without Repeating Characters '''
+# n = "abcabcbb"
+# left = 0
+# max_len = 0
+# seen=set()
+# for right in range(len(n)):
+#    while n[right] in seen:
+#       seen.remove(n[left])
+#       left+=1
+#    seen.add(n[right])
+#    max_len = max(max_len, right - left + 1)
+# print(max_len)
+
    
+
+
+        

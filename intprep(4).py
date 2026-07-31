@@ -599,6 +599,24 @@ to O(n) (using a deque for efficient front removal).
     
 
 
+'''min triplet sum + prime else 0'''
+l=[1,2,3,4,5,6,7]
+min_sum=999
+for i in range(len(l)):
+    for j in range(i+1,len(l)):
+        for k in range(j+1,len(l)):
+            sum = l[i]+l[j]+l[k]
+            prime_count=0
+            for m in range(1,sum+1):
+                if sum%m==0:
+                    prime_count+=1
+            if prime_count==2 and sum<min_sum:
+                min_sum=sum
+                print((l[i],l[j],l[k]))
+            else:
+                print(0)
+
+
 
 
 

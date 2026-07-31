@@ -1,0 +1,671 @@
+Bilkul bhai! 🔥
+Ye question interview ke hisaab se Sliding Window ka backbone hai. Main wahi format follow kar raha hoon jo hum pehle karte aaye hain.
+
+Longest Substring Without Repeating Characters
+Question
+
+Given a string s, find the length of the longest substring that contains no repeating characters.
+
+Example
+
+s = "abcabcbb"
+
+Output
+
+3
+
+Because
+
+abc
+
+is the longest substring without repeating characters.
+
+Observation
+
+Question me "Substring" likha hai.
+
+Substring ka matlab
+
+Continuous characters
+
+Example
+
+abcdef
+
+Valid substrings
+
+abc
+bcd
+cde
+abcdef
+
+Invalid
+
+ace
+adf
+
+Ye substring nahi hai.
+
+Question me "Without Repeating Characters" bhi likha hai.
+
+Matlab
+
+Window ke andar
+
+✔ a b c
+
+❌ a b c a
+
+Duplicate allowed nahi hai.
+
+Pattern Recognition
+
+Ye Variable Size Sliding Window hai.
+
+Kyun?
+
+Window kabhi
+
+abc
+
+Kabhi
+
+abca
+
+Kabhi
+
+bca
+
+Window ka size fix nahi hai.
+
+Rule
+
+Unique
+
+↓
+
+Expand Window
+
+Duplicate
+
+↓
+
+Shrink Window
+
+↓
+
+Duplicate khatam
+
+↓
+
+Expand Again
+Observation
+
+Do pointers use honge.
+
+left
+right
+
+Right
+
+Window expand karega.
+
+Left
+
+Window shrink karega.
+Variables
+left = 0
+
+Window ka start.
+
+right
+
+Window ka end.
+
+seen = set()
+
+Current window ke unique characters store karega.
+
+max_len
+
+Ab tak ki longest valid window.
+
+Core Logic
+Step 1
+
+Har character ko right se visit karo.
+
+Step 2
+
+Check karo.
+
+n[right] in seen
+
+Agar duplicate hai
+
+To
+
+left
+
+ko move karo.
+
+Aur
+
+seen.remove(n[left])
+
+karte jao.
+
+Step 3
+
+Jab duplicate khatam ho jaye
+
+Current character ko
+
+seen.add(n[right])
+
+kar do.
+
+Step 4
+
+Current window ki length nikalo.
+
+right-left+1
+
+Aur maximum update kar do.
+
+Deep Dry Run
+
+Input
+
+abcabcbb
+Initial
+left = 0
+right = 0
+
+Window = ""
+
+seen = {}
+
+max_len = 0
+Iteration 1
+right = 0
+
+Character = a
+
+Duplicate?
+
+No
+
+Add
+
+seen = {a}
+
+Window
+
+a
+
+Length
+
+0-0+1
+
+=1
+
+max_len
+
+max(0,1)
+
+=1
+
+State
+
+left = 0
+
+right = 0
+
+Window = a
+
+seen = {a}
+
+max_len = 1
+Iteration 2
+right = 1
+
+Character = b
+
+Duplicate?
+
+No
+
+Add
+
+seen = {a,b}
+
+Window
+
+ab
+
+Length
+
+1-0+1
+
+=2
+
+max_len
+
+2
+Iteration 3
+right = 2
+
+Character = c
+
+Duplicate?
+
+No
+
+Add
+
+seen = {a,b,c}
+
+Window
+
+abc
+
+Length
+
+2-0+1
+
+=3
+
+max_len
+
+3
+Most Important Iteration 🔥
+right = 3
+
+Character = a
+
+Current Window
+
+abc
+
+Seen
+
+{a,b,c}
+
+Question
+
+'a' already present?
+
+Yes.
+
+While Starts
+First Iteration
+
+Remove
+
+seen.remove(a)
+
+Seen
+
+{b,c}
+
+Move
+
+left
+
+0 → 1
+
+Now check again
+
+'a' in {b,c}
+
+No.
+
+While stops.
+
+Now add current character
+
+seen
+
+{a,b,c}
+
+Window
+
+bca
+
+Length
+
+3-1+1
+
+=3
+
+max_len
+
+max(3,3)
+
+=3
+
+No change.
+
+Next Iteration
+right = 4
+
+Character = b
+
+Window
+
+bca
+
+Duplicate
+
+Yes
+
+Remove
+
+b
+
+Seen
+
+{a,c}
+
+Left
+
+2
+
+Again check
+
+b in {a,c}
+
+No.
+
+Add
+
+{a,b,c}
+
+Window
+
+cab
+
+Length
+
+3
+
+max_len
+
+3
+Why Window Length = right-left+1 ?
+
+Example
+
+a b c
+↑     ↑
+0     2
+
+Characters
+
+3
+
+Formula
+
+2-0+1
+
+=3
+
+Example
+
+b c a
+↑     ↑
+1     3
+
+Formula
+
+3-1+1
+
+=3
+
+Ye formula har Sliding Window question me use hota hai.
+
+Why do we use a Set?
+
+Set ki khas baat
+
+Insertion
+
+O(1)
+
+Checking
+
+'a' in seen
+
+O(1)
+
+Deletion
+
+O(1)
+
+Isi wajah se poora algorithm
+
+O(n)
+
+ban jata hai.
+
+Why WHILE and NOT IF? ⭐ (Interview Favorite)
+
+Suppose
+
+String
+
+abba
+
+Current Window
+
+ab
+
+Seen
+
+{a,b}
+
+Ab right par
+
+b
+
+aaya.
+
+Duplicate mil gaya.
+
+Agar IF use karte
+if n[right] in seen:
+
+Sirf ek baar execute hota.
+
+Remove
+
+a
+
+Seen
+
+{b}
+
+Lekin
+
+Current character
+
+b
+
+abhi bhi duplicate hai.
+
+Window abhi bhi invalid hai.
+
+Par IF ruk gaya.
+
+Galat answer.
+
+Agar WHILE use karte
+while n[right] in seen:
+
+Remove
+
+a
+
+Duplicate abhi bhi hai.
+
+Again
+
+Remove
+
+b
+
+Ab duplicate khatam.
+
+Window valid.
+
+Tabhi add karenge.
+
+Interview Statement
+
+We use while instead of if because removing one character does not guarantee that the duplicate is removed. We keep shrinking the window until the current character becomes unique inside the window.
+
+Visualization
+abc
+
+↓
+
+abca
+
+Duplicate
+
+↓
+
+bca
+
+↓
+
+bcab
+
+Duplicate
+
+↓
+
+cab
+
+↓
+
+cabc
+
+Duplicate
+
+↓
+
+abc
+
+Window
+
+Expand
+
+↓
+
+Duplicate
+
+↓
+
+Shrink
+
+↓
+
+Valid
+
+↓
+
+Expand Again
+Why Time Complexity is O(n)?
+
+Pehli baar dekhkar lagta hai
+
+for
+
++
+
+while
+
+Matlab
+
+O(n²)
+
+Lekin nahi.
+
+Reason
+
+Right pointer
+
+0 → n-1
+
+Sirf ek baar move karta hai.
+
+Left pointer bhi
+
+0 → n-1
+
+Sirf ek baar move karta hai.
+
+Koi bhi pointer kabhi peeche nahi aata.
+
+Total movements
+
+n+n
+
+Matlab
+
+O(2n)
+
+≈
+
+O(n)
+Complexity
+Time
+O(n)
+Space
+O(k)
+
+k = current window me unique characters ki sankhya.
+
+Worst case
+
+O(n)
+Common Mistakes
+
+❌
+
+if n[right] == n[left]
+
+Sirf left character se compare ho raha hai.
+
+Hume poori window se compare karna hai.
+
+❌
+
+if use karna instead of while.
+
+Duplicate poori tarah remove nahi hoga.
+
+❌
+
+Duplicate remove kiye bina
+
+seen.add(n[right])
+
+kar dena.
+
+❌
+
+Window length galat likhna.
+
+Correct
+
+right-left+1
+Interview Explanation (30 Seconds)
+
+"I use a variable-size sliding window with two pointers. The right pointer expands the window, while a set stores all unique characters currently inside the window. If the incoming character is already present, I repeatedly move the left pointer and remove characters from the set until the duplicate is removed. Once the window becomes valid again, I add the current character and update the maximum window length. Since both pointers move only forward, the overall time complexity is O(n)."
+
+One-Line Revision
+
+Expand the window using right; whenever a duplicate appears, keep shrinking the window with left until it becomes unique again, then update the maximum window length.
