@@ -67,7 +67,38 @@
 #    max_len = max(max_len, right - left + 1)
 # print(max_len)
 
-   
+
+'''•	Maximum Consecutive Ones '''
+# l = [1, 1, 0, 1, 1, 1]
+# count = 0
+# max_count=0
+# for i in l:
+#     if i==1:
+#         count+=1
+#         if count>max_count:
+#             max_count=count
+#     else:
+#         count=0
+# print(max_count)
+
+'''Maximum Consecutive Ones III'''
+# l = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0]
+# k = 2
+# left = 0
+# zero_count = 0
+# max_len = 0
+# for right in range(len(l)):
+#     if l[right]==0:
+#         zero_count+=1
+#     while zero_count>k:
+#         if l[left]==0:
+#             zero_count-=1
+#         left+=1
+#     max_len = max(max_len, right - left + 1)
+# print(max_len)
+
+
+    
 
 
         
