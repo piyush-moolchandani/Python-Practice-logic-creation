@@ -98,7 +98,46 @@
 # print(max_len)
 
 
-    
+'''•	Fruits Into Basket '''
+# fruits = [1, 2, 1, 2, 3]
+# left = 0 
+# d={}
+# max_len=0
+# for right in range(len(fruits)):
+#     if fruits[right] in d:
+#         d[fruits[right]] = d[fruits[right]] + 1
+#     else:
+#         d[fruits[right]] = 1
+#     while len(d)>2:
+#         d[fruits[left]]-=1
+#         if d[fruits[left]]==0:
+#             del d[fruits[left]]
+#         left+=1
+#     current_len = right - left + 1
+#     if current_len > max_len:
+#         max_len = current_len
+#         start = left
+# print(fruits[start:start+max_len])
+# print(max_len)
 
-
-        
+''' practice-2'''
+# l = [1, 2, 1, 2, 3]
+# i = 0 
+# d={}
+# max_len=0
+# for j in range(len(l)):
+#     if l[j] in d:
+#         d[l[j]] = d[l[j]]+1
+#     else:
+#         d[l[j]] = 1
+#     while len(d)>2:
+#         d[l[i]]-=1
+#         if d[l[i]] == 0:
+#             del d[l[i]]
+#         i+=1
+#     current = j-i+1
+#     if current>max_len:
+#         max_len=current
+#         start = i
+# print(max_len)
+# print(l[start:start+max_len])
