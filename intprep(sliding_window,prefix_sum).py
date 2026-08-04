@@ -141,3 +141,57 @@
 #         start = i
 # print(max_len)
 # print(l[start:start+max_len])
+
+'''•	Prefix Sum '''
+# l = [3, 2, 5, 1, 6]
+# l2=[]
+# total=0
+# left = 2
+# right = 4
+# for i in l:
+#     total+=i
+#     l2.append(total)
+# if left==0:
+#     range_sum = l2[right]
+# else:
+#     range_sum = l2[right] - l2[left-1]
+# print(range_sum)
+
+'''•	Running Sum '''
+# l = [5, 1, 2, 7, 3]   
+# l2=[]
+# total=0
+# for i in l:
+#     total+=i
+#     l2.append(total)
+# print(l2)
+
+'''•	Running Sum '''
+# l=[1,3,5,2,2]
+# total_sum = sum(l)
+# left_sum=0
+# for i in range(len(l)):
+#     right_sum = total_sum-left_sum-l[i]
+#     if left_sum==right_sum:
+#         print("equilibrium index is",i)
+#     else:
+#         left_sum+=l[i]
+
+'''•	Subarray Sum = K '''
+# l = [1, 1, 1]
+# k = 2
+# prefix_sum = 0
+# count = 0
+# d = {0: 1}
+# for i in l:
+#     prefix_sum+=i
+#     needed = prefix_sum-k
+#     if needed in d:
+#         count+=d[needed]
+#     if prefix_sum in d:
+#         d[prefix_sum]+=1
+#     else:
+#         d[prefix_sum]=1
+# print(count)
+
+
