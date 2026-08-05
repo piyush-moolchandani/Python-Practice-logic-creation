@@ -1,0 +1,720 @@
+Previous Smaller Element — Deep Notes
+1. Question
+
+Given:
+
+l = [4, 5, 2, 10, 8]
+
+Har element ke left side me nearest/pehla smaller element find karna hai.
+
+4  → -1
+5  → 4
+2  → -1
+10 → 2
+8  → 2
+
+Final output:
+
+[-1, 4, -1, 2, 2]
+
+Important:
+
+Hume left side ka sabse chhota element nahi chahiye. Hume current element ke left me sabse paas wala smaller element chahiye.
+
+2. Final Code
+l = [4, 5, 2, 10, 8]
+
+stack = []
+ans = []
+
+for i in range(len(l)):
+
+    while stack and stack[-1] >= l[i]:
+        stack.pop()
+
+    if not stack:
+        ans.append(-1)
+    else:
+        ans.append(stack[-1])
+
+    stack.append(l[i])
+
+print(ans)
+
+Output:
+
+[-1, 4, -1, 2, 2]
+3. Left → Right kyun?
+
+Next Greater Element me hume right side me answer chahiye tha, isliye hum:
+
+RIGHT → LEFT
+
+gaye the.
+
+Previous Smaller me hume left side ka answer chahiye.
+
+Isliye:
+
+LEFT → RIGHT
+
+normal traversal.
+
+for i in range(len(l)):
+
+Indices:
+
+0 → 1 → 2 → 3 → 4
+
+Elements:
+
+4 → 5 → 2 → 10 → 8
+
+Jab hum current element par pahunchte hain, stack me uske left side ke useful candidates already hote hain.
+
+4. Stack kya store kar raha hai?
+
+Stack me aise previous elements rakhe ja rahe hain jo future elements ke liye previous smaller candidates ban sakte hain.
+
+Example:
+
+current = 8
+stack = [2, 10]
+
+Hume 8 se smaller chahiye.
+
+Top:
+
+10
+
+Lekin:
+
+10 >= 8
+
+To 10 useless hai.
+
+Pop:
+
+stack = [2]
+
+Ab:
+
+2 < 8
+
+Perfect.
+
+So:
+
+8 → 2
+5. Sabse important while ⭐
+while stack and stack[-1] >= l[i]:
+    stack.pop()
+
+Isko tod ke samjho.
+
+stack
+
+Pehle check:
+
+Stack empty to nahi?
+
+Kyunki empty stack par:
+
+stack[-1]
+
+access karoge to error aayega.
+
+stack[-1]
+
+Stack ka top element.
+
+stack[-1] >= l[i]
+
+Check:
+
+Kya stack top current element se bada ya equal hai?
+
+Agar haan, wo smaller nahi hai.
+
+Isliye:
+
+stack.pop()
+6. >= kyun?
+
+Hume strictly smaller element chahiye.
+
+Suppose:
+
+current = 5
+stack top = 5
+
+Kya 5, 5 se smaller hai?
+
+5 < 5 ❌
+
+Nahi.
+
+Isliye equal ko bhi remove karna padega:
+
+stack[-1] >= current
+7. while kyun, if kyun nahi?
+
+Example:
+
+current = 2
+stack = [4, 5]
+
+Agar sirf if lagaya:
+
+5 >= 2 → pop
+
+Stack:
+
+[4]
+
+Lekin 4 bhi:
+
+4 >= 2
+
+Hai!
+
+Usko bhi remove karna hai.
+
+Isliye while:
+
+5 >= 2 → POP
+4 >= 2 → POP
+stack empty → STOP
+
+So:
+
+Jab tak top current se bada/equal hai, pop karte raho.
+
+8. if not stack / else ka exact role ⭐⭐⭐
+
+Ye wala part specially important hai:
+
+if not stack:
+    ans.append(-1)
+else:
+    ans.append(stack[-1])
+
+Dhyan dena:
+
+Ye while ke BAAD chalta hai.
+
+Aur while already saare bade/equal elements hata chuka hai.
+
+To ab sirf 2 possibilities hain.
+
+Possibility 1: Stack empty
+stack = []
+
+Matlab:
+
+Current ke left me jitne useful candidates the, unme se koi bhi current se smaller nahi bacha.
+
+Isliye:
+
+ans.append(-1)
+Possibility 2: Stack me kuch bacha
+
+Suppose:
+
+stack = [2]
+current = 8
+
+While already stop ho chuka hai.
+
+While stop hone ka matlab:
+
+stack[-1] >= current
+
+False hai.
+
+Yaani:
+
+stack[-1] < current
+
+So top smaller hai.
+
+Isliye:
+
+ans.append(stack[-1])
+9. Current ko end me push kyun?
+stack.append(l[i])
+
+Current ka answer mil chuka hai.
+
+Ab current element future me kisi doosre element ka previous smaller ban sakta hai.
+
+Example:
+
+[4, 5]
+
+Pehle 4 process hua.
+
+Uska answer -1.
+
+Lekin 4 ko stack me push kiya:
+
+stack = [4]
+
+Ab 5 aaya.
+
+Top:
+
+4 < 5
+
+So:
+
+5 → 4
+
+Agar 4 ko push hi nahi karte, to 5 ka answer nahi milta.
+
+Full Deep Dry Run 🔥
+
+Input:
+
+l = [4, 5, 2, 10, 8]
+
+Starting:
+
+stack = []
+ans = []
+Round 1 — Current = 4
+i = 0
+l[i] = 4
+
+Current:
+
+[4, 5, 2, 10, 8]
+ ↑
+
+Stack:
+
+[]
+While
+while stack and stack[-1] >= l[i]:
+
+Stack empty hai.
+
+So while nahi chalega.
+
+Ab ye part ⭐
+if not stack:
+
+Stack:
+
+[]
+
+Empty hai → condition True.
+
+Iska meaning:
+
+4 ke left me koi element hi nahi hai, to previous smaller kaise milega?
+
+So:
+
+ans.append(-1)
+
+Now:
+
+ans = [-1]
+
+Therefore:
+
+4 → -1
+Ab current push
+stack.append(4)
+
+Stack:
+
+[4]
+Round 2 — Current = 5
+
+Current:
+
+[4, 5, 2, 10, 8]
+    ↑
+
+Before:
+
+stack = [4]
+ans   = [-1]
+While check
+stack[-1] >= current
+
+4 >= 5 ?
+
+False ❌
+
+4 pop nahi hoga.
+
+Ab if not stack
+if not stack:
+
+Stack:
+
+[4]
+
+Empty nahi hai.
+
+So if false.
+
+else:
+
+ans.append(stack[-1])
+
+Stack top:
+
+4
+
+Aur kyunki while stop hua tha:
+
+4 < 5
+
+So 4 current 5 se smaller hai.
+
+Therefore:
+
+5 → 4
+
+Now:
+
+ans = [-1, 4]
+Current 5 push
+stack = [4, 5]
+Round 3 — Current = 2 ⭐
+
+Current:
+
+[4, 5, 2, 10, 8]
+       ↑
+
+Before:
+
+stack = [4, 5]
+ans   = [-1, 4]
+
+Top:
+
+5
+While
+
+Check:
+
+5 >= 2
+
+True.
+
+So:
+
+stack.pop()
+
+Stack:
+
+[4]
+WHILE AGAIN
+
+Ye important hai.
+
+Ab top:
+
+4
+
+Check:
+
+4 >= 2
+
+True.
+
+Again pop:
+
+stack = []
+While again
+
+Stack empty → stop.
+
+Ab specially if not stack samjho 🔥
+
+Current:
+
+current = 2
+stack = []
+
+Humne left side ke candidates dekhe:
+
+4, 5
+
+Dono:
+
+4 > 2
+5 > 2
+
+the.
+
+Dono remove ho gaye.
+
+Ab:
+
+if not stack:
+
+True.
+
+Meaning:
+
+Current 2 ke left me koi smaller element available nahi hai.
+
+Isliye:
+
+ans.append(-1)
+
+Now:
+
+ans = [-1, 4, -1]
+
+So:
+
+2 → -1
+Current push
+stack.append(2)
+
+Stack:
+
+[2]
+Round 4 — Current = 10
+
+Current:
+
+[4, 5, 2, 10, 8]
+           ↑
+
+Before:
+
+stack = [2]
+While
+2 >= 10 ?
+
+False.
+
+So 2 stack me rahega.
+
+if not stack
+
+Stack:
+
+[2]
+
+Empty nahi.
+
+So:
+
+else:
+    ans.append(stack[-1])
+
+Stack top:
+
+2
+
+Why can we safely take 2?
+
+Because while ne check kar diya:
+
+2 >= 10 → False
+
+Therefore:
+
+2 < 10
+
+So 2 is smaller.
+
+Answer:
+
+10 → 2
+
+Now:
+
+ans = [-1, 4, -1, 2]
+Current push
+stack = [2, 10]
+Round 5 — Current = 8 ⭐
+
+Ye if/else logic samajhne ke liye best round hai.
+
+Current:
+
+[4, 5, 2, 10, 8]
+               ↑
+
+Before:
+
+stack = [2, 10]
+
+Top:
+
+10
+While
+
+Check:
+
+10 >= 8
+
+True.
+
+10 smaller nahi hai.
+
+So pop:
+
+stack = [2]
+While AGAIN
+
+Top:
+
+2
+
+Check:
+
+2 >= 8 ?
+
+False.
+
+While stop. 🛑
+
+Ab if not stack
+if not stack:
+
+Stack:
+
+[2]
+
+Empty nahi hai.
+
+So else:
+
+ans.append(stack[-1])
+
+Top:
+
+2
+
+And we know:
+
+2 < 8
+
+Therefore:
+
+8 → 2
+
+Now:
+
+ans = [-1, 4, -1, 2, 2]
+
+Finally current 8 push:
+
+stack = [2, 8]
+
+Done.
+
+Final Answer
+[-1, 4, -1, 2, 2]
+
+Mapping:
+
+4  → -1
+5  → 4
+2  → -1
+10 → 2
+8  → 2
+Complete Dry Run Table
+Current	Stack Before	Kya Pop Hua?	Stack after pop	PSE	Stack after push
+4	[]	—	[]	-1	[4]
+5	[4]	—	[4]	4	[4,5]
+2	[4,5]	5,4	[]	-1	[2]
+10	[2]	—	[2]	2	[2,10]
+8	[2,10]	10	[2]	2	[2,8]
+Code ko Hindi me read karo
+for i in range(len(l)):
+
+Left se right har element ko process karo.
+
+while stack and stack[-1] >= l[i]:
+
+Jab tak stack top current se bada/equal hai...
+
+stack.pop()
+
+...use hata do, kyunki mujhe smaller chahiye.
+
+Then:
+
+if not stack:
+    ans.append(-1)
+
+Sab bade/equal elements hataane ke baad stack empty ho gaya → koi previous smaller nahi → -1.
+
+Otherwise:
+
+else:
+    ans.append(stack[-1])
+
+Stack me kuch bacha hai → while already prove kar chuka hai ki top current se smaller hai → wahi previous smaller.
+
+Finally:
+
+stack.append(l[i])
+
+Current ko future elements ke candidate ke liye stack me save karo.
+
+NGE vs PSE — Confusion mat karna
+
+Tumne ab dono kiye hain:
+
+	Next Greater	Previous Smaller
+Answer kidhar chahiye?	Right	Left
+Traverse	Right → Left	Left → Right
+Remove	smaller/equal	bigger/equal
+While	top <= current	top >= current
+Empty stack	-1	-1
+Not empty	stack[-1]	stack[-1]
+
+Ye comparison kaafi useful hai.
+
+Complexity
+
+Har element maximum ek baar push aur ek baar pop hota hai.
+
+Time Complexity = O(n)
+Space Complexity = O(n)
+
+Nested while dekhkar O(n²) mat sochna.
+
+Final Memory Trick 🧠
+
+Previous Smaller Element dekha:
+
+PREVIOUS
+   ↓
+LEFT → RIGHT
+
+SMALLER
+   ↓
+bade/equal hatao
+
+while top >= current:
+    POP
+
+       ↓
+
+stack empty?
+   ↓
+YES → -1
+
+NO → stack[-1]
+
+       ↓
+current PUSH
+
+Sabse important mental line:
+
+while pehle saare bade/equal elements hata deta hai. Uske baad stack empty hai to smaller mila hi nahi (-1), aur stack me kuch bacha hai to top automatically current se smaller hai (stack[-1]). 🔥
