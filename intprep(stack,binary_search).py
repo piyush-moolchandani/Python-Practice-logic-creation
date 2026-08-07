@@ -160,6 +160,88 @@
 # print(first_occurence(x,t))
 
 
+'''•	Last Occurrence '''
+# l = [2, 4, 4, 4, 7, 10]
+# t = 4
+# left = 0
+# right = len(l)-1
+# ans=-1
+# while left<=right:
+#     mid = (left+right)//2
+#     if l[mid] == t:
+#         ans = mid
+#         left = mid+1
+#     elif l[mid]<t:
+#         left = mid+1
+#     else:
+#         right = mid -1
+# print(ans)
+
+
+'''•	Search Insert Position '''
+# l = [1,3,5,6]
+# target = 2
+# left = 0
+# right = len(l)-1
+# while left<=right:
+#     mid = (left+right)//2
+#     if l[mid] == target:
+#         print(mid)
+#         break
+#     elif l[mid]<target:
+#         left = mid+1
+#     else:
+#         right = mid-1
+# print(left)
+
+
+'''•	Square Root '''
+# n = 20
+# left = 0
+# right = n
+# ans = 0
+# while left<=right:
+#     mid = (left+right)//2
+#     if mid**2 == n:
+#         ans=mid
+#         break
+#     elif mid**2<n:
+#         ans = mid
+#         left = mid +1
+#     else:
+#         right = mid-1
+# print(ans)
+
+
+'''lower bound'''
+# l = [2,4,4,4,7,10]
+# target = 5
+# left = 0
+# right = len(l)-1
+# ans=len(l)
+# while left<=right:
+#     mid = (left+right)//2
+#     if l[mid]>=target:
+#         ans=mid
+#         right = mid -1
+#     elif l[mid]<target:
+#         left = mid+1
+# print(ans)
+# only >= condition change to > then it will become upper bound
+'''  Question	    Save kab?	       Search kidhar?
+Binary Search	     ==	             Stop
+First Occurrence	 ==	             Left
+Last Occurrence	     ==	             Right
+Lower Bound	         >=	             Left
+Upper Bound	         >	             Left    '''
+
+
+
+
+
+
+
+
 
 
 
