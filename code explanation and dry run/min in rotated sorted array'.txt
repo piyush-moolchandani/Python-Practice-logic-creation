@@ -1,0 +1,485 @@
+Bilkul bhai ❤️ Is baar ekdum zero se karte hain. Ye question pehle wale rotated-array search se thoda different hai, isliye confusion hona normal hai.
+
+Question: Minimum in Rotated Sorted Array
+
+Example:
+
+l = [4,5,6,7,0,1,2]
+
+Hume minimum value chahiye:
+
+0
+
+Aur hum ye code use kar rahe hain:
+
+l = [4,5,6,7,0,1,2]
+
+left = 0
+right = len(l)-1
+
+while left < right:
+    mid = (left+right)//2
+
+    if l[mid] > l[right]:
+        left = mid+1
+    else:
+        right = mid
+
+print(l[left])
+🧠 Sabse pehle: ye code kar kya raha hai?
+
+Ye minimum ko directly find nahi kar raha.
+
+Ye actually kya kar raha hai?
+
+left aur right ko baar-baar adjust karke minimum ke index par le ja raha hai.
+
+End me:
+
+left == right
+
+aur wahi index minimum ka hota hai.
+
+Phir:
+
+print(l[left])
+
+se minimum value mil jaati hai.
+
+🔥 Sabse important observation
+
+Array:
+
+[4,5,6,7,0,1,2]
+
+Normal sorted array hota:
+
+[0,1,2,4,5,6,7]
+
+Rotation ki wajah se:
+
+[4,5,6,7 | 0,1,2]
+          ↑
+       minimum
+
+Minimum ke around array ka order break hua hai.
+
+Hume isi break point ko find karna hai.
+
+Ab line-by-line
+1. Array
+l = [4,5,6,7,0,1,2]
+
+Indices:
+
+Index:   0  1  2  3  4  5  6
+Value:  [4, 5, 6, 7, 0, 1, 2]
+2. Left
+left = 0
+
+Matlab search initially index 0 se start:
+
+[4,5,6,7,0,1,2]
+ ↑
+left
+3. Right
+right = len(l)-1
+
+Array ki length 7 hai.
+
+len(l) = 7
+
+Last index:
+
+7 - 1 = 6
+
+So:
+
+left = 0
+right = 6
+
+Search space:
+
+[4,5,6,7,0,1,2]
+ ↑           ↑
+left        right
+🔥 Ab actual Binary Search start
+while left < right:
+
+Dhyan dena:
+
+< hai, <= nahi.
+
+Kyun?
+
+Kyuki jab:
+
+left == right
+
+ho jayega, hum already minimum ke index par pahunch chuke honge.
+
+Us waqt aur search karne ki zarurat nahi.
+
+ITERATION 1
+
+Current:
+
+left = 0
+right = 6
+
+Array:
+
+Index:   0  1  2  3  4  5  6
+Value:  [4, 5, 6, 7, 0, 1, 2]
+         ↑           ↑        ↑
+        left        ?       right
+Mid:
+mid = (left + right)//2
+
+Calculation:
+
+mid = (0 + 6)//2
+    = 3
+
+So:
+
+mid = 3
+
+Array:
+
+Index:   0  1  2  3  4  5  6
+Value:  [4, 5, 6, 7, 0, 1, 2]
+                  ↑           ↑
+                 mid        right
+
+So:
+
+l[mid] = 7
+l[right] = 2
+Ab sabse important comparison
+if l[mid] > l[right]:
+
+Means:
+
+7 > 2
+
+✅ True.
+
+Ab iska meaning samjho.
+
+[4,5,6,7 | 0,1,2]
+         ↑
+        mid
+
+mid par 7 hai aur right par 2.
+
+Agar 7 > 2 hai, iska matlab kya?
+
+👉 Rotation/break point mid ke right side me hai.
+
+Minimum bhi wahi right side me hoga.
+
+[4,5,6,7 | 0,1,2]
+             ↑
+          minimum
+
+Isliye:
+
+left = mid + 1
+
+Calculation:
+
+left = 3 + 1
+     = 4
+
+Ab:
+
+left = 4
+right = 6
+
+Search space:
+
+[0,1,2]
+ ↑     ↑
+left  right
+
+🔥 Humne [4,5,6,7] ko discard kar diya.
+
+ITERATION 2
+
+Ab:
+
+left = 4
+right = 6
+
+Array:
+
+Index:   0  1  2  3  4  5  6
+Value:  [4, 5, 6, 7, 0, 1, 2]
+                  |  ↑     ↑
+                  | left  right
+
+Mid:
+
+mid = (4 + 6)//2
+mid = 5
+
+So:
+
+l[mid] = l[5] = 1
+l[right] = l[6] = 2
+
+Comparison:
+
+1 > 2
+
+❌ False.
+
+To else chalega:
+
+right = mid
+
+Matlab:
+
+right = 5
+Lekin bhai right = mid kyun?
+
+Ye bahut important hai.
+
+Hum jaante hain:
+
+l[mid] <= l[right]
+
+Yaani:
+
+1 <= 2
+
+Is situation me minimum mid ke left me ya mid khud ho sakta hai.
+
+Example:
+
+[0,1,2,3,4]
+    ↑
+   mid
+
+Agar mid hi minimum ho, aur hum mid ko remove kar dein, to answer miss ho jayega.
+
+Isliye:
+
+right = mid
+
+not:
+
+right = mid - 1
+
+Ab:
+
+left = 4
+right = 5
+
+Search space:
+
+[0,1]
+ ↑  ↑
+ L  R
+ITERATION 3
+
+Ab:
+
+left = 4
+right = 5
+
+Mid:
+
+mid = (4+5)//2
+    = 4
+
+So:
+
+l[mid] = l[4] = 0
+l[right] = l[5] = 1
+
+Comparison:
+
+0 > 1
+
+❌ False.
+
+Again:
+
+right = mid
+
+So:
+
+right = 4
+
+Now:
+
+left = 4
+right = 4
+🔥 Ab kya hua?
+
+Humare paas:
+
+Index:   0  1  2  3  4  5  6
+Value:  [4, 5, 6, 7, 0, 1, 2]
+                  ↑
+               left/right
+
+left == right.
+
+Aur humari condition thi:
+
+while left < right:
+
+Check:
+
+4 < 4
+
+❌ False.
+
+Loop STOP.
+
+🎯 Ab print
+
+Loop ke baad:
+
+print(l[left])
+
+Current:
+
+left = 4
+
+So:
+
+l[4] = 0
+
+Output:
+
+0
+
+🔥 Done.
+
+Ab pura dry run ek table me
+Iteration	left	mid	right	l[mid]	l[right]	Comparison	Action
+1	0	3	6	7	2	7 > 2 ✅	left = 4
+2	4	5	6	1	2	1 > 2 ❌	right = 5
+3	4	4	5	0	1	0 > 1 ❌	right = 4
+Stop	4	—	4	—	—	left < right ❌	Answer = l[4] = 0
+🧠 Ab sabse important conceptual part
+
+Tumhe ye do cases interview ke liye yaad rakhne hain:
+
+CASE 1
+l[mid] > l[right]
+
+Example:
+
+7 > 2
+
+Matlab:
+
+Minimum mid ke right me hai.
+
+Therefore:
+
+left = mid + 1
+CASE 2
+l[mid] <= l[right]
+
+Example:
+
+1 <= 2
+
+Matlab:
+
+Minimum mid ya mid ke left me hai.
+
+Therefore:
+
+right = mid
+
+mid - 1 nahi, because mid itself could be minimum.
+
+🤯 Tumhe right = mid ajeeb lag sakta hai
+
+Isko ek example se pakdo:
+
+[1,2,3,4,5]
+    ↑
+   mid
+
+Maan lo mid par 1 aa gaya.
+
+Agar tum:
+
+right = mid - 1
+
+kar doge, to 1 ko hi search se hata diya.
+
+❌ Answer miss.
+
+Lekin:
+
+right = mid
+
+karoge, to mid abhi search space me safe hai.
+
+✅
+
+Interview me internal working kaise explain karna hai?
+
+Agar interviewer bole:
+
+"Explain your approach."
+
+Tum bolna:
+
+"Because the array is a rotated sorted array, the minimum element is at the point where the sorted order breaks. I use binary search to locate that point. At every iteration, I compare the middle element with the rightmost element. If the middle element is greater than the rightmost element, the minimum must lie to the right of mid, so I move left to mid plus one. Otherwise, the minimum lies at mid or to its left, so I move right to mid. I continue until left and right converge. At that point, left is the index of the minimum element."
+
+🔥 Ye interview-quality explanation hai.
+
+Complexity
+
+Har iteration me search space roughly half ho raha hai.
+
+So:
+
+Time Complexity: O(log n)
+
+Koi extra array/set nahi banaya:
+
+Space Complexity: O(1)
+
+❤️ Aur ek final memory trick
+
+Isko bas 2 arrows ki tarah yaad rakh:
+
+        mid > right
+             ↓
+       minimum RIGHT
+             ↓
+       left = mid + 1
+
+Aur:
+
+        mid <= right
+             ↓
+       minimum LEFT/MID
+             ↓
+         right = mid
+
+Then:
+
+left == right
+     ↓
+minimum mil gaya
+     ↓
+l[left]
+
+Previous question se confuse mat karna:
+
+Search in Rotated Array → sorted half + target range
+Minimum in Rotated Array → mid vs right
+
+Bas ye distinction interview me tumhe bachayega. 🔥

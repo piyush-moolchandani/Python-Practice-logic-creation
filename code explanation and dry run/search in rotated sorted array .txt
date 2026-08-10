@@ -1,0 +1,474 @@
+Bilkul bhai ❤️ Ab same exact code ko ekdum microscopic level pe dry run karte hain. Goal ye hai ki interview me tumhe bas pattern yaad aaye:
+
+mid check → kaunsi side sorted → target sorted range me hai? → direction
+
+Hum ye input lenge:
+
+l = [4,5,6,7,0,1,2]
+target = 0
+
+Aur tumhara corrected code:
+
+l = [4,5,6,7,0,1,2]
+target = 0
+left = 0
+right = len(l)-1
+found = False
+
+while left<=right:
+    mid = (left+right)//2
+
+    if l[mid] == target:
+        print(mid)
+        found = True
+        break
+
+    if l[left] <= l[mid]:
+        if l[left] <= target <= l[mid]:
+            right = mid-1
+        else:
+            left = mid+1
+
+    else:
+        if l[mid] <= target <= l[right]:
+            left = mid+1
+        else:
+            right = mid-1
+
+if not found:
+    print(-1)
+🧠 Sabse pehle variables ka kaam
+left = 0
+right = 6
+
+Array:
+
+Index:  0  1  2  3  4  5  6
+Value: [4, 5, 6, 7, 0, 1, 2]
+        ↑           ↑        ↑
+       left        target   right
+
+Target:
+
+0
+
+found = False ka matlab:
+
+"Abhi target nahi mila."
+
+🔥 ITERATION 1
+
+Current:
+
+left = 0
+right = 6
+Line:
+mid = (left + right) // 2
+
+Calculation:
+
+mid = (0 + 6) // 2
+    = 3
+
+So:
+
+mid = 3
+
+Array:
+
+Index:  0  1  2  3  4  5  6
+Value: [4, 5, 6, 7, 0, 1, 2]
+                    ↑
+                   mid
+
+l[mid]:
+
+l[3] = 7
+Pehla check
+if l[mid] == target:
+
+Matlab:
+
+7 == 0 ?
+
+❌ False.
+
+To target abhi nahi mila.
+
+Ab asli magic 🔥
+if l[left] <= l[mid]:
+
+Current values:
+
+l[left] = l[0] = 4
+l[mid] = l[3] = 7
+
+Check:
+
+4 <= 7
+
+✅ True.
+
+Iska matlab:
+left → mid
+
+wala portion sorted hai.
+
+[4, 5, 6, 7]
+
+Sorted.
+
+Array ko mentally split karo:
+
+[4, 5, 6, 7] | [0, 1, 2]
+    sorted
+Ab sorted side ke andar target check
+if l[left] <= target <= l[mid]:
+
+Values:
+
+4 <= 0 <= 7
+
+Pehla part:
+
+4 <= 0
+
+❌ False.
+
+Matlab target 0 sorted left range me nahi hai.
+
+To:
+
+left = mid + 1
+
+Matlab:
+
+left = 3 + 1
+     = 4
+
+🔥 Iteration 1 ke baad:
+
+left = 4
+right = 6
+
+Ab search area:
+
+Index:  4  5  6
+Value: [0, 1, 2]
+        ↑
+       left
+
+Humne [4,5,6,7] ko completely discard kar diya.
+
+🔥 ITERATION 2
+
+Ab:
+
+left = 4
+right = 6
+
+Mid:
+
+mid = (4 + 6) // 2
+    = 5
+
+So:
+
+mid = 5
+
+Array:
+
+Index:  0  1  2  3  4  5  6
+Value: [4, 5, 6, 7, 0, 1, 2]
+                    ↑  ↑  ↑
+                   L  M  R
+
+Current:
+
+l[left] = l[4] = 0
+l[mid]  = l[5] = 1
+l[right] = l[6] = 2
+Pehla check
+if l[mid] == target:
+
+Matlab:
+
+1 == 0
+
+❌ False.
+
+Target nahi mila.
+
+Kaunsi side sorted hai?
+if l[left] <= l[mid]:
+
+Values:
+
+0 <= 1
+
+✅ True.
+
+Matlab left side sorted:
+
+[0, 1]
+Target sorted range me hai?
+if l[left] <= target <= l[mid]:
+
+Values:
+
+0 <= 0 <= 1
+
+✅ True!
+
+Target 0 is sorted range ke andar hai.
+
+To:
+
+right = mid - 1
+
+Matlab:
+
+right = 5 - 1
+      = 4
+
+🔥 Ab:
+
+left = 4
+right = 4
+
+Search area:
+
+[0]
+ ↑
+ L/R
+🔥 ITERATION 3
+
+Condition:
+
+while left <= right:
+
+Check:
+
+4 <= 4
+
+✅ True.
+
+Mid:
+
+mid = (4 + 4) // 2
+    = 4
+
+So:
+
+mid = 4
+
+Array:
+
+Index:  0  1  2  3  4  5  6
+Value: [4, 5, 6, 7, 0, 1, 2]
+                    ↑
+                  mid
+
+l[mid]:
+
+l[4] = 0
+
+Target:
+
+target = 0
+🎯 Target check
+if l[mid] == target:
+0 == 0
+
+✅ TRUE!
+
+To:
+
+print(mid)
+
+Output:
+
+4
+
+Then:
+
+found = True
+
+Ab:
+
+found = True
+
+Matlab:
+
+"Target mil gaya."
+
+Then:
+
+break
+
+🔥 break poori while loop ko immediately stop kar deta hai.
+
+Loop ke baad
+
+Ab ye line:
+
+if not found:
+
+Current:
+
+found = True
+
+So:
+
+not True
+
+= False.
+
+Isliye:
+
+print(-1)
+
+nahi chalega.
+
+Final output:
+
+4
+🧠 Ab poore dry run ko ek table me dekh
+Iteration	left	mid	right	l[mid]	Sorted side	Target range me?	Action
+1	0	3	6	7	Left [4,5,6,7]	0 nahi	left = 4
+2	4	5	6	1	Left [0,1]	0 haan	right = 4
+3	4	4	4	0	—	Target mil gaya	break
+🔥 Ab sabse important: else kab chalta?
+
+Tumhare code ka ye part:
+
+else:
+    if l[mid] <= target <= l[right]:
+        left = mid + 1
+    else:
+        right = mid - 1
+
+Ye tab chalega jab:
+
+if l[left] <= l[mid]:
+
+False ho.
+
+Matlab:
+
+l[left] > l[mid]
+
+Aur iska matlab hai:
+
+Left half sorted nahi hai, therefore right half sorted hai.
+
+Example:
+
+[6,7,0,1,2,4,5]
+ ↑     ↑       ↑
+ L     M       R
+l[left] = 6
+l[mid] = 1
+
+6 <= 1 ❌
+
+To right side sorted hogi:
+
+[1,2,4,5]
+
+Then check:
+
+l[mid] <= target <= l[right]
+
+Yaani:
+
+1 <= target <= 5
+
+Agar target is range me hai:
+
+👉 left = mid + 1
+
+Nahi hai:
+
+👉 right = mid - 1
+
+🧠 Interview me poora question yaad kaise rakhna?
+
+Code yaad mat karna.
+
+Ye 4-step algorithm yaad rakh:
+
+Step 1
+
+Mid target hai?
+
+YES → answer
+Step 2
+
+Left half sorted hai?
+
+l[left] <= l[mid]
+Step 3
+
+Agar left sorted:
+
+Target left range me?
+       ↓
+YES → LEFT
+NO  → RIGHT
+Step 4
+
+Agar left sorted nahi:
+
+Right sorted hai.
+
+Target right range me?
+       ↓
+YES → RIGHT
+NO  → LEFT
+
+बस bhai. ❤️
+
+Ek line ka mantra 🔥
+
+"Pehle sorted half pakdo, phir dekho target us sorted half ke range me hai ya nahi."
+
+Normal Binary Search me tum sirf mid vs target dekhte the.
+
+Rotated Binary Search me:
+
+mid → sorted half → target range → direction
+
+Ye pattern interview tak yaad raha, to question khud reconstruct kar loge.
+
+agar interviewer bole explain internal working toh kya bolu
+
+Haan bhai, agar interviewer bole “Explain the internal working of Search in Rotated Sorted Array”, to code line-by-line nahi bolna. Approach + decision making explain karni hai.
+
+Tum roughly ye bol sakte ho:
+
+“Since the array is rotated, the complete array is not sorted, so normal binary search cannot be directly applied. But in every iteration, at least one half of the current search space is sorted.
+
+I first calculate the middle element. If it is equal to the target, I return its index. Otherwise, I check whether the left half is sorted by comparing l[left] and l[mid].
+
+If the left half is sorted, I check whether the target lies within the range of that sorted half. If it does, I search on the left; otherwise, I discard the left half and search on the right.
+
+If the left half is not sorted, then the right half must be sorted. I check whether the target lies in the sorted right half. If it does, I search on the right; otherwise, I search on the left.
+
+I repeat this until I find the target or the search space becomes empty. Therefore, the time complexity is O(log n) and space complexity is O(1).”
+
+Agar interviewer bole: “Why does this work?”
+
+Ye line maarna 🔥:
+
+“Rotation breaks the sorted order at one point, so at any midpoint, one of the two halves still remains completely sorted. I use that sorted half to determine which half can be safely discarded.”
+
+Aur agar example maange:
+[4,5,6,7,0,1,2]
+target = 0
+
+Bolna:
+
+“Initially middle is 7. The left half [4,5,6,7] is sorted, but 0 doesn't lie in its range, so I discard that half and move right. Now I get [0,1,2], where the left half is sorted and the target lies in its range. I continue left until I find 0.”
+
+Bas bhai, interview me ye explanation kaafi strong lagega. Tum code nahi suna rahe — tum interviewer ko bata rahe ho ki dimaag me algorithm kaise decision le raha hai. 💪🔥

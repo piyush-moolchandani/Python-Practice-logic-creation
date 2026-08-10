@@ -236,6 +236,47 @@ Lower Bound	         >=	             Left
 Upper Bound	         >	             Left    '''
 
 
+'''•	Search in Rotated Sorted Array '''
+# l = [4,5,6,7,0,1,2]
+# target = 0
+# left = 0
+# right = len(l)-1
+# found = False
+# while left<=right:
+#     mid = (left+right)//2
+#     if l[mid] == target:
+#         print(mid)
+#         found = True
+#         break
+#     if l[left]<=l[mid]:
+#         if l[left]<=target<=l[mid]:
+#             right = mid-1
+#         else:
+#             left = mid+1
+#     else:
+#         if l[mid]<=target<=l[right]:
+#             left = mid+1
+#         else:
+#             right = mid-1
+# if not found:
+#     print(-1)
+
+
+'''•	Minimum in Rotated Sorted Array '''
+# l = [4,5,6,7,0,1,2]
+# left = 0
+# right = len(l)-1
+# while left<right:
+#     mid = (left+right)//2
+#     if l[mid]>l[right]:
+#         left = mid+1
+#     else:
+#         right = mid
+# print(l[left])
+   
+        
+
+
 
 
 
