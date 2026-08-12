@@ -128,4 +128,85 @@
 ok so enumerate gives indices with their respected values for example it will create 
 a pair like this 
 (0,4),(1,7),(2,2),(3,3)'''
+# ----------------------------------------------------------------------------------------------------
+
+'''•	Majority Element '''
+# l=[3, 3, 4, 2, 3, 3, 3]
+# n = len(l)/2
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]>n:
+#         print("The Majority Element is",i)
+
+''' booyer morre  algorithm '''
+# l=[3, 3, 4, 2, 3, 3, 3]
+# candidate = None
+# count = 0
+# for i in l:
+#     if count == 0:
+#         candidate = i
+#     if i==candidate:
+#         count+=1
+#     else:
+#         count-=1
+# print("The Majority Element is",candidate)
+# ---------------------------------------------------------------------------------------------------
+'''•	Leaders in Array '''
+# l = [16,17,4,5,2]
+# for i in range(len(l)):
+#     leader = True
+#     for j in range(i+1,len(l)):
+#         if l[i]<l[j]:
+#             leader = False
+#     if leader:
+#         print(l[i])
+
+'''optimized approach'''
+# l = [16,17,4,5,2]
+# max_right = l[-1]
+# ans=[l[-1]]
+# for i in range(len(l)-2,-1,-1):
+#     if l[i]>max_right:
+#         ans.append(l[i])
+#         max_right=l[i]
+# ans.reverse()
+# print(ans)
+# for i in range(len(l)-2,-1,-1):
+# Matlab
+# Second last element se start.
+# Example
+#    16 17 4 3 5 2
+#                ↑
+# Already handled
+# ------------------------------------------------------------------------------------------------------------
+'''•	Equilibrium Index '''
+# l=[3,1,5,2,2]
+# for i in range(len(l)):
+#     left_sum=0
+#     right_sum=0
+#     for j in range(0,i):
+#         left_sum+=l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum+=l[k]
+#     if left_sum==right_sum:
+#         print("The Equilibrium Index is",i)
+
+''' optimized approach'''
+# l=[3,1,5,2,2]
+# total_sum=sum(l)
+# left_sum=0
+# for i in range(len(l)):
+#     right_sum = total_sum-left_sum-l[i]
+#     if left_sum==right_sum:
+#         print("The Equilibrium Index is",i)
+#     left_sum+=l[i]
+        
+
+
+        
 
