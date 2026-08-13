@@ -205,7 +205,33 @@ a pair like this
 #     if left_sum==right_sum:
 #         print("The Equilibrium Index is",i)
 #     left_sum+=l[i]
-        
+# --------------------------------------------------------------------------------------------------
+'''•	Stock Buy and Sell '''
+'''brute force '''
+# l=[7,1,5,3,6,4]
+# max_profit = 0
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         profit = j-i
+#         if profit>max_profit:
+#             max_profit=profit
+# print(max_profit)
+
+'''optimized version'''
+# prices = [7,1,5,3,6,4]
+# min_price = prices[0]
+# max_profit = 0
+# for i in prices:
+#     if i<min_price:
+#         min_price=i
+#     profit = i-min_price
+#     if profit>max_profit:
+#         max_profit=profit
+# print(max_profit)
+# ----------------------------------------------------------------------------------------------------
+'''•	Kadane's Algorithm '''
+
+
 
 
         
