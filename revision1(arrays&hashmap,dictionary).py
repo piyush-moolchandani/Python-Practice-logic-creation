@@ -230,6 +230,126 @@ a pair like this
 # print(max_profit)
 # ----------------------------------------------------------------------------------------------------
 '''•	Kadane's Algorithm '''
+'''Maximum  contignuos Subarray Sum
+Brute force approach '''
+# l=[-2,1,-3,4,-1,2,1,-5,4]
+# max_sum=0
+# for i in range(len(l)):
+#     for j in range(i,len(l)):
+#         sub=l[i:j+1]
+#         total_sum=0
+#         for k in sub:
+#             total_sum+=k
+#         if total_sum>max_sum:
+#             max_sum=total_sum
+#             ans=sub
+# print(max_sum)
+# print(ans)
+
+'''optimized approach'''
+# l=[-2,1,-3,4,-1,2,1,-5,4]
+# current_sum=0
+# max_sum=l[0]
+# for i in l:
+#     current_sum+=i
+#     if current_sum>max_sum:
+#         max_sum=current_sum
+#     else:
+#         if current_sum<0:
+#             current_sum=0
+# print(max_sum)
+
+'''==================================== HASHMAP,DICTIONARY ============================================ '''
+'''•	Frequency Count '''
+# l=[1,2,2,3,3,3,3,4,4,4,5,5,5,5,5]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Character Frequency '''
+# ch = 'madam'
+# d={}
+# for i in ch:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Word Frequency '''
+# word = "if i will meet you then i will teach you python"
+# l=word.split()
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Maximum Frequency '''
+# l=[1,2,2,2,2,23,3,3,4,4,4]
+# d={}
+# max_freq=0
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]>max_freq:
+#         max_freq=d[i]
+#         ans=i
+# print("the maximum frequency is",max_freq,"and the value is",ans)
+
+'''•	First Non-Repeating '''
+# l=[1,1,2,3,4,4]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]==1:
+#         print("the first non repeating element is ",i)
+#         break
+
+'''•   Last Non-Repeating'''
+# l=[1,1,2,3,4,4]
+# d={}
+# for i in range(len(l)-1,-1,-1):
+#     if l[i] in d:
+#         d[l[i]] = d[l[i]]+1
+#     else:
+#         d[l[i]] = 1
+# for i in d:
+#     if d[i]==1:
+#         print(i)
+#         break
+
+'''•	Count Duplicates '''
+# l=[1,2,2,3,3,4,4,4,5,5,6,6,6]
+# d={}
+# count=0
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]>=2:
+#         count+=1
+# print(count)
+
+'''•	Remove Duplicates '''
+
+
+
 
 
 
