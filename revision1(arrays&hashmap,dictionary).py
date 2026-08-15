@@ -347,7 +347,56 @@ Brute force approach '''
 # print(count)
 
 '''•	Remove Duplicates '''
+# l=[1,2,2,3,4,4,5,5,5,6]
+# d={}
+# ans=[]
+# for i in l:
+#     if i not in d:
+#         ans.append(i)
+#         d[i]=1
+# print(ans)
 
+
+'''•	Contains Duplicate '''
+# l=[1,2,2,3,4,4,5,5,5,6]
+# d={}
+# for i in l:
+#     if i in d:
+#         print(True)
+#         break
+#     else:
+#         d[i]=1
+
+'''•	Missing Number '''
+# l=[3, 0, 1]
+# n=len(l)
+# excepted_sum=n*(n+1)//2
+# orginal_sum=0
+# for i in l:
+#     orginal_sum+=i
+# missing_no = excepted_sum-orginal_sum
+# print(missing_no)
+
+'''•	Group By Frequency '''
+# l=[1,22,333,4,55,666]
+# d={}
+# for i in l:
+#     count=0
+#     x=i
+#     while x>0:
+#         digit=x%10
+#         count+=1
+#         x=x//10 
+#     if count not in d:
+#         d[count]=[]
+#     d[count].append(i)
+# print(d)
+
+
+
+
+
+       
 
 
 
