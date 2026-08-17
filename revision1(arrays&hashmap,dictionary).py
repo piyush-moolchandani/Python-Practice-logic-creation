@@ -392,6 +392,72 @@ Brute force approach '''
 #     d[count].append(i)
 # print(d)
 
+'''group by sum'''
+# l=[1, 22, 333, 4, 55, 666]
+# d={}
+# for i in l :
+#     x=i
+#     digit_sum=0
+#     while x>0:
+#         digit=x%10
+#         digit_sum+=digit
+#         x=x//10
+#     if digit_sum not in d:
+#         d[digit_sum]=[]
+#     d[digit_sum].append(i)
+# print(d)
+
+
+'''•	Check Anagram '''
+# s1 = "listen"
+# s2 = "silent"
+# d1={}
+# d2={}
+# if len(s1)!=len(s2):
+#     print(False)
+# else:
+#     for i in s1:
+#         if i in d1:
+#             d1[i]=d1[i]+1
+#         else:
+#             d1[i]=1
+#     for j in s2:
+#         if j in d2:
+#             d2[j]=d2[j]+1
+#         else:
+#             d2[j]=1
+#     if d1==d2:
+#         print(True,"Anagram")
+#     else:
+#         print(False,"Not Anagram")
+
+'''•	Group Anagrams '''
+# words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# d={}
+# for i in words:
+#     sorted_words = "".join(sorted(i))
+#     if sorted_words not in d:
+#         d[sorted_words]=[]
+#     d[sorted_words].append(i)
+# print(list(d.values()))
+
+'''•	Intersection of Arrays '''
+# l1 = [4, 9, 5]
+# l2 = [9, 4, 9, 8, 4]
+# d={}
+# ans=[]
+# for i in l1:
+#     d[i]=1
+# for j in l2:
+#     if j in d and j not in ans:
+#         ans.append(j)
+# print(ans)
+
+
+    
+
+
+
 
 
 
