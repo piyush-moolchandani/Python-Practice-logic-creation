@@ -1,0 +1,880 @@
+Bilkul bhai ❤️ Is baar bilkul zero se karte hain. Code ko ratna nahi hai. Main har line ke baad bataunga abhi computer ke paas kya value hai, phir complete dry run karenge.
+
+Code:
+
+strs = ["flower", "flow", "flight"]
+
+
+common = ""
+
+
+for i in range(len(strs[0])):
+
+
+    char = strs[0][i]
+    match = True
+
+
+    for j in range(1, len(strs)):
+
+
+        if i >= len(strs[j]) or strs[j][i] != char:
+            match = False
+            break
+
+
+    if not match:
+        break
+
+
+    common += char
+
+
+print(common)
+1. Sabse pehle question
+
+Hume diya hai:
+
+strs = ["flower", "flow", "flight"]
+
+Hume common starting part chahiye.
+
+flower
+flow
+flight
+
+Common:
+
+fl
+
+Answer:
+
+"fl"
+
+Ab code isi fl ko find kar raha hai.
+
+2. common = ""
+common = ""
+
+Iska matlab:
+
+Abhi hume kuch common character nahi mila.
+
+So:
+
+common = ""
+
+Baad me:
+
+common = "f"
+
+phir:
+
+common = "fl"
+3. Outer loop
+for i in range(len(strs[0])):
+
+Sabse pehle:
+
+strs[0]
+
+ka matlab first string:
+
+"flower"
+
+Uski length:
+
+6
+
+So:
+
+range(6)
+
+matlab:
+
+i = 0
+i = 1
+i = 2
+i = 3
+i = 4
+i = 5
+i kya represent karta hai?
+
+Character ka index.
+
+flower
+012345
+
+So:
+
+i = 0 → f
+i = 1 → l
+i = 2 → o
+i = 3 → w
+i = 4 → e
+i = 5 → r
+
+Ye bahut important hai:
+
+i = character position
+
+4. char = strs[0][i]
+char = strs[0][i]
+
+First string ko reference bana rahe hain.
+
+First round:
+i = 0
+
+So:
+
+strs[0][0]
+
+means:
+
+first string ka 0th character
+
+Result:
+
+f
+
+So:
+
+char = "f"
+
+Matlab:
+
+Ab hum check karenge ki baaki sab strings ke index 0 par bhi f hai ya nahi.
+
+5. match = True
+match = True
+
+Ye ek flag hai.
+
+Iska meaning:
+
+Abhi tak assume kar rahe hain ki current character sab strings me match karega.
+
+Initially:
+
+match = True
+
+Agar baad me mismatch mil gaya:
+
+match = False
+6. Inner loop
+for j in range(1, len(strs)):
+
+Yahan len(strs):
+
+3
+
+So:
+
+range(1, 3)
+
+means:
+
+j = 1
+j = 2
+j kya represent karta hai?
+
+String ka index.
+
+strs[0] → "flower"
+strs[1] → "flow"
+strs[2] → "flight"
+
+Isliye:
+
+i → character ka index
+j → string ka index
+
+Ye dono yaad rakhna. 🔥
+
+Ab actual DRY RUN 🔥
+ROUND 1: i = 0
+
+Outer loop:
+
+i = 0
+
+First string:
+
+flower
+↑
+0
+
+So:
+
+char = strs[0][0]
+
+Result:
+
+char = "f"
+
+And:
+
+match = True
+
+Ab inner loop start.
+
+j = 1
+strs[1] = "flow"
+
+Hume check karna hai:
+
+strs[1][0]
+
+Result:
+
+f
+
+Ab condition:
+
+if i >= len(strs[j]) or strs[j][i] != char:
+
+Break it into 2 parts.
+
+Part 1:
+i >= len(strs[j])
+
+Current:
+
+i = 0
+len("flow") = 4
+
+So:
+
+0 >= 4
+
+False ❌
+
+Part 2:
+strs[j][i] != char
+
+Means:
+
+strs[1][0] != "f"
+
+Which is:
+
+"f" != "f"
+
+False ❌
+
+Both false.
+
+So:
+
+if False or False:
+
+False.
+
+Break nahi hua.
+
+j = 2
+
+Now:
+
+strs[2] = "flight"
+
+Check:
+
+strs[2][0]
+
+Result:
+
+f
+
+Compare:
+
+f != f
+
+False.
+
+So again:
+
+match = True
+
+Inner loop complete.
+
+Matlab:
+
+f sabhi strings me index 0 par same hai. ✅
+
+Ab inner loop ke baad
+
+Code:
+
+if not match:
+    break
+
+Currently:
+
+match = True
+
+not True:
+
+False
+
+So outer loop break nahi karega.
+
+Next:
+
+common += char
+
+Current:
+
+common = ""
+char = "f"
+
+So:
+
+common = "" + "f"
+
+Result:
+
+common = "f"
+
+🔥 First common character mil gaya.
+
+ROUND 2: i = 1
+
+Outer loop next:
+
+i = 1
+
+First string:
+
+flower
+ ↑
+ l
+char = strs[0][1]
+
+Result:
+
+char = "l"
+
+Again:
+
+match = True
+j = 1
+
+strs[1]:
+
+flow
+
+Index 1:
+
+l
+
+Compare:
+
+l != l
+
+False.
+
+No break.
+
+j = 2
+
+strs[2]:
+
+flight
+
+Index 1:
+
+l
+
+Compare:
+
+l != l
+
+False.
+
+No break.
+
+So l bhi sab strings me common. ✅
+
+match still:
+
+True
+
+Then:
+
+common += char
+
+Current:
+
+common = "f"
+char = "l"
+
+So:
+
+common = "fl"
+
+🔥
+
+ROUND 3: i = 2
+
+Ab:
+
+i = 2
+
+First string:
+
+flower
+  ↑
+  o
+
+So:
+
+char = "o"
+
+Again:
+
+match = True
+j = 1
+
+flow ka index 2:
+
+flow
+  ↑
+  o
+
+So:
+
+strs[1][2] = "o"
+
+Compare:
+
+o != o
+
+False.
+
+No break.
+
+j = 2
+
+flight ka index 2:
+
+flight
+  ↑
+  i
+
+So:
+
+strs[2][2] = "i"
+
+Compare:
+
+i != o
+
+🔥 True!
+
+Condition:
+
+if i >= len(strs[j]) or strs[j][i] != char:
+
+becomes:
+
+if False or True:
+
+So:
+
+True
+
+Condition execute.
+
+match = False
+
+Now:
+
+match = False
+
+Then:
+
+break
+
+⚠️ Yahan bahut important cheez hai.
+
+Ye break sirf inner j loop ko tod raha hai.
+
+Outer i loop abhi automatically nahi rukega.
+
+Isliye humne match banaya tha.
+
+Inner loop ke baad
+
+Ab code:
+
+if not match:
+    break
+
+Current:
+
+match = False
+
+So:
+
+not False = True
+
+Therefore:
+
+break
+
+🔥 Ab outer loop bhi break.
+
+Matlab:
+
+"o" common nahi hai, to uske baad w, e, r check karne ki zarurat hi nahi.
+
+Finally
+
+Ab:
+
+common = "fl"
+
+Outer loop ruk gaya.
+
+Then:
+
+print(common)
+
+Output:
+
+fl
+Ab poora dry run ek table me
+i	char	j=1	j=2	Result	common
+0	f	f ✅	f ✅	match	f
+1	l	l ✅	l ✅	match	fl
+2	o	o ✅	i ❌	stop	fl
+
+Bas. Yahi poora algorithm hai.
+
+Ab sabse confusing if ko decode karo
+
+Ye:
+
+if i >= len(strs[j]) or strs[j][i] != char:
+
+Actually bol raha hai:
+
+"Agar current string itni chhoti hai ki i index exist nahi karta, OR character match nahi karta, to common prefix yahin khatam."
+
+Example:
+
+strs = ["flower", "flow"]
+
+Jab:
+
+i = 4
+
+"flow" ke indexes:
+
+f l o w
+0 1 2 3
+
+Index 4 exist hi nahi karta.
+
+So:
+
+i >= len("flow")
+
+becomes:
+
+4 >= 4
+
+True.
+
+Isliye break.
+
+i aur j ko kabhi mix mat karna
+
+Ye question me sabse important:
+
+i = CHARACTER POSITION
+j = STRING POSITION
+
+Example:
+
+strs[j][i]
+
+Padhoge:
+
+j-th string ka i-th character
+
+For:
+
+j = 2
+i = 1
+strs[2][1]
+
+means:
+
+"flight" ka index 1
+
+Result:
+
+l
+match flag ki zarurat kyun?
+
+Kyuki Python ka:
+
+break
+
+sirf nearest loop ko todta hai.
+
+Hamare paas 2 loops hain:
+
+for i:
+    for j:
+
+Agar inner loop me:
+
+break
+
+kiya:
+
+for i
+   ↓
+   for j
+      ↓
+     break
+
+to sirf for j rukega.
+
+Isliye:
+
+match = False
+
+karke inner loop ke bahar:
+
+if not match:
+    break
+
+se outer loop bhi rok diya.
+
+Code ko ab normal language me padho
+for i in range(len(strs[0])):
+
+First string ke har character position ko check karo.
+
+char = strs[0][i]
+
+First string ka current character reference maan lo.
+
+match = True
+
+Assume karo ki ye character sabme common hai.
+
+for j in range(1, len(strs)):
+
+Baaki strings me same position ka character check karo.
+
+if i >= len(strs[j]) or strs[j][i] != char:
+
+Agar string chhoti pad gayi ya character different mila...
+
+match = False
+break
+
+...to current character common nahi hai.
+
+if not match:
+    break
+
+Aur outer loop bhi rok do.
+
+common += char
+
+Agar kisi ne mismatch nahi kiya, to character common hai; answer me add karo.
+
+Ek final mental picture 🧠
+                i
+                ↓
+flower          f l o w e r
+                ↑
+              char
+
+
+flow            f l o w
+                ↑
+              compare
+
+
+flight          f l i g h t
+                ↑
+              compare
+
+f → all same → answer me daalo.
+
+l → all same → answer me daalo.
+
+o → flower aur flow me o, lekin flight me i.
+
+STOP.
+
+Answer:
+
+fl
+
+Bhai, ab isko yaad karne ki zarurat nahi. Bas ye ek sentence yaad rakh:
+
+"First string ko reference bana ke, har character position ko baaki strings ke same position se compare karo; mismatch ya string khatam hote hi stop."
+
+Yahi Longest Common Prefix ka poora dimaag hai. 🔥
+
+for j in range(1,len(strs)):
+
+        if i>=len(strs[j]) or strs[j][i]!=char: yaha par j me puri string aa rahi hai toh uska character kaise le rahe hum
+
+Haan bhai, yahi Python indexing ka important point hai. 😄
+
+Tum keh rahe ho:
+
+for j in range(1, len(strs)):
+
+j me kya aa raha hai?
+
+j me puri string nahi aa rahi. j me string ka INDEX aa raha hai.
+
+Ye difference pakdo:
+
+strs = ["flower", "flow", "flight"]
+
+Index:
+
+j = 0 → strs[0] → "flower"
+j = 1 → strs[1] → "flow"
+j = 2 → strs[2] → "flight"
+
+So:
+
+for j in range(1, len(strs)):
+
+actually:
+
+j = 1
+j = 2
+Ab strs[j]
+
+Jab:
+
+j = 1
+
+to:
+
+strs[j]
+
+becomes:
+
+strs[1]
+
+Aur:
+
+strs[1] = "flow"
+
+Abhi puri string mili.
+
+Phir strs[j][i]
+
+Maan lo:
+
+i = 2
+j = 1
+
+To:
+
+strs[j][i]
+
+step-by-step padho:
+
+strs[1][2]
+
+Pehla [1]:
+
+strs[1] → "flow"
+
+Phir [2]:
+
+"flow"[2] → "o"
+
+So:
+
+strs[j][i]
+
+ka matlab:
+
+j-th string ka i-th character
+
+Ek visual dekh
+strs
+ ↓
+["flower", "flow", "flight"]
+    0        1        2
+    ↑        ↑        ↑
+    |        |        |
+    |        |        └── j=2 → "flight"
+    |        └─────────── j=1 → "flow"
+    └──────────────────── j=0 → "flower"
+
+Ab maan lo:
+
+j = 2
+i = 1
+
+To:
+
+strs[j][i]
+
+becomes:
+
+strs[2][1]
+
+Step 1:
+
+strs[2]
+
+→ "flight"
+
+Step 2:
+
+"flight"[1]
+
+→ "l"
+
+So final:
+
+"l"
+Aur tumhari condition:
+if i >= len(strs[j]) or strs[j][i] != char:
+
+isko literally padho:
+
+i >= len(strs[j])
+
+Kya j-th string me i-th position exist karti hai?
+
+OR
+
+strs[j][i] != char
+
+Kya j-th string ka i-th character reference char se different hai?
+
+Bas bhai. ❤️
+
+Golden rule:
+strs[j]       → j-th PURI STRING
+strs[j][i]    → j-th STRING ka i-th CHARACTER
+
+Jaise normal 2D list me:
+
+arr[row][column]
+
+waise hi yahan:
+
+strs[string_index][character_index]
+
+j string choose karta hai, i us string ke andar character choose karta hai. 🔥

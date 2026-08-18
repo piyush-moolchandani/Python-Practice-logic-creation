@@ -115,4 +115,45 @@
 # print({"vowels":vowel_count,"consonents":consonents_count})
 
 
+'''•	String Compression '''
+# s = "aaabbcccc"
+# if not s:
+#     print("")
+# else:
+#     count=1
+#     ans=""
+#     for i in range(len(s)-1):
+#         if s[i]==s[i+1]:
+#             count+=1
+#         else:
+#             ans+=s[i]+str(count)
+#             count=1
+#     ans+=s[-1]+str(count)
+#     print(ans)
 
+'''•	Rotation Check'''
+# s1 = "abcd"
+# s2 = "cdab"
+# if len(s1)==len(s2):
+#     temp = s1+s2
+#     if s2 in temp:
+#         print(True)
+#     else:
+#         print(False)
+# else:
+#     print(False)
+
+'''•	Longest Common Prefix '''
+# strs = ["flower", "flow", "flight"]
+# commmon=""
+# for i in range(len(strs[0])):
+#     char=strs[0][i]
+#     match=True
+#     for j in range(1,len(strs)):
+#         if i>=len(strs[j]) or strs[j][i]!=char:
+#             match=False
+#             break
+#     if not match:
+#         break
+#     commmon+=char
+# print(commmon)
