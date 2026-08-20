@@ -196,25 +196,114 @@
 
 
 '''•	Isomorphic Strings '''
-s = "egg"
-t = "add"
-if len(s)!=len(t):
-    print(False)
-else:
-    s_to_t={}
-    t_to_s={}
-    valid = True
-    for i in range(len(s)):
-        a=s[i]
-        b=t[i]
-        if a in s_to_t and s_to_t[a]!=b:
-            valid=False
-            break
-        if b in t_to_s and t_to_s[b]!=a:
-            valid=False
-            break
-        s_to_t[a]=b
-        t_to_s[b]=a
-print(valid)
-print(s_to_t)
-print(t_to_s)
+# s = "egg"
+# t = "add"
+# if len(s)!=len(t):
+#     print(False)
+# else:
+#     s_to_t={}
+#     t_to_s={}
+#     valid = True
+#     for i in range(len(s)):
+#         a=s[i]
+#         b=t[i]
+#         if a in s_to_t and s_to_t[a]!=b:
+#             valid=False
+#             break
+#         if b in t_to_s and t_to_s[b]!=a:
+#             valid=False
+#             break
+#         s_to_t[a]=b
+#         t_to_s[b]=a
+# print(valid)
+# print(s_to_t)
+# print(t_to_s)
+
+'''•	Reverse Vowels '''
+# s = 'he3llo'
+# l=list(s)
+# seen = set('AEIOUaeiou')
+# left = 0
+# right = len(s)-1
+# while left<right:
+#     if l[left] not in seen:
+#         left+=1
+#     elif l[right] not in seen:
+#         right-=1
+#     else:
+#         l[left],l[right]=l[right],l[left]
+#         left+=1
+#         right-=1
+# s="".join(l)
+# print(s)
+
+
+'''Reverse Only Letters '''
+# s = "a3bC-dEf-ghIj"
+# l=list(s)
+# left = 0
+# right = len(s)-1
+# while left<right:
+#     if not l[left].isalpha():
+#         left+=1
+#     elif not l[right].isalpha():
+#         right-=1
+#     else:
+#         l[left],l[right]=l[right],l[left]
+#         left+=1
+#         right-=1
+# s="".join(l)
+# print(s)
+
+# ======================================== TWO__POINTERS =====================================================
+
+# l = ['P','Y','T','H','O','N']
+# l2=[]
+# target = 'T'
+# for i in l:
+#     if i!=target:
+#         i='@'
+#     l2.append(i)
+# print(l2)
+
+'''•	Reverse Array (done)'''
+# l=[1,2,3,4,5]
+# left = 0
+# right = len(l)-1
+# while left<right:
+#     l[left],l[right]=l[right],l[left]
+#     left+=1
+#     right-=1
+# print(l)
+
+'''•	Move Zeroes (done)'''
+# l=[1,0,3,0,4,0]
+# left=0
+# for right in range(len(l)):
+#     if l[right]!=0:
+#         l[left],l[right]=l[right],l[left]
+#         left+=1
+# print(l)
+
+
+'''•	Remove Duplicates (done)'''
+# l=[1,2,2,3,4]
+# left=0
+# for right in range(1,len(l)):
+#     if l[right]!=l[left]:
+#         left+=1
+#         l[left]=l[right]
+# print(l[:left+1])
+
+
+
+
+
+
+
+
+
+    
+
+
+ 
