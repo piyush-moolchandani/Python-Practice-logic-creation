@@ -1,0 +1,30 @@
+Line-by-Line Explanation:
+
+
+
+left = 0: left pointer index 0 par rahega. Yeh batata hai ki aakhiri unique element kahan store hua hai.
+
+
+
+for right in range(1, len(l)):: right pointer index 1 se aage move karega naye elements dhoondhne ke liye.
+
+
+
+if l\[right] != l\[left]:: Agar right par khada element left wale se alag (naya) hai:
+
+
+
+left += 1: Unique area ka border ek step aage badhao.
+
+
+
+l\[left] = l\[right]: Naye unique element ko nayi jagah par overwrite/copy kar do.
+
+
+
+l\[: left + 1]: Index 0 se lekar left tak ke elements hi unique hain, unko slice karke print kar do.
+
+
+
+[dry run](https://docs.google.com/spreadsheets/d/1McdpG4kLGG1Gwhue4cDd8U9L41Sfop_SsEawYmqqxMY/edit?gid=1959936564#gid=1959936564)
+

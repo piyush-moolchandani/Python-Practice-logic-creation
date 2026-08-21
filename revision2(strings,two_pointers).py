@@ -296,6 +296,74 @@
 # print(l[:left+1])
 
 
+'''•	Remove Element '''
+# l=[0, 1, 2, 2, 3, 0, 4, 2]
+# target=2
+# i=0
+# for j in l:
+#     if j!=target:
+#         l[i]=j
+#         i+=1
+# print(i)
+# print(l[:i])
+
+'''•	Sorted Two Sum '''
+# l = [1, 2, 4, 6, 10]
+# target = 8
+# left=0
+# right=len(l)-1
+# while left<right:
+#     current_sum=l[left]+l[right]
+#     if current_sum==target:
+#         print((l[left],l[right]))
+#         break
+#     elif current_sum<target:
+#         left+=1
+#     else:
+#         right-=1
+
+
+'''•	Merge Sorted Arrays(done) '''
+# l1=[1,3,5]
+# l2=[2,4,6]
+# i=0
+# j=0
+# ans=[]
+# while i<len(l1) and j<len(l2):
+#     if l1[i]<l2[j]:
+#         ans.append(l1[i])
+#         i+=1
+#     else:
+#         ans.append(l2[j])
+#         j+=1
+# while i<len(l1):
+#     ans.append(l1[i])
+#     i+=1
+# while j<len(l2):
+#     ans.append(l2[j])
+#     j+=1
+# print(ans)
+
+'''Squares of a Sorted Array'''
+# l = [-4, -1, 0, 3, 10]
+# left=0
+# right=len(l)-1
+# ans=[0]*len(l)
+# pos=len(l)-1
+# while left<=right:
+#     if l[left]**2>l[right]**2:
+#         ans[pos]=l[left]**2
+#         left+=1
+#     else:
+#         ans[pos]=l[right]**2
+#         right-=1
+#     pos-=1
+# print(ans)
+
+
+
+
+
 
 
 
