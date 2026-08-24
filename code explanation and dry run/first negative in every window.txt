@@ -1,432 +1,746 @@
-Bhai, ye line agar samajh aa gayi na, to deque wale 70–80% Sliding Window questions clear ho jayenge.
+Bilkul bhai ❤️ Is baar ekdum zero se, line-by-line + har iteration me i/j, dq, ans sab track karenge. Ye code actually simple hai, bas index wali thinking thodi confusing hai.
 
-Main code se zyada mindset samjhata hoon.
+Tumhara code:
 
-Sabse Pehle Rule
+from collections import deque 
 
-Deque me hum saare negative numbers nahi, balki window ke andar jo negatives hain sirf unhe order me rakhte hain.
+l = [12, -1, -7, 8, -15, 30, 16, 28] 
+k = 3 
 
-Initially
+dq = deque() 
+ans = [] 
 
+for i in range(k): 
+    if l[i] < 0: 
+        dq.append(i) 
+
+ans.append(l[dq[0]] if dq else 0) 
+
+for j in range(k, len(l)): 
+    if dq and j-k == dq[0]: 
+        dq.popleft() 
+
+    if l[j] < 0: 
+        dq.append(j) 
+
+    ans.append(l[dq[0]] if dq else 0) 
+
+print(ans)
+1. Problem ko ek baar yaad karo
 l = [12, -1, -7, 8, -15, 30, 16, 28]
 k = 3
 
-First window
+Har 3 elements ki window me first negative chahiye.
+
+Windows:
+
+[12, -1, -7]       → -1
+[-1, -7, 8]        → -1
+[-7, 8, -15]       → -7
+[8, -15, 30]       → -15
+[-15, 30, 16]      → -15
+[30, 16, 28]       → 0
+
+Expected:
+
+[-1, -1, -7, -15, -15, 0]
+2. deque
+dq = deque()
+
+Deque ko hum negative numbers ke indexes store karne ke liye use kar rahe hain.
+
+⚠️ Values nahi, indexes.
+
+For example:
+
+l = [12, -1, -7]
+       ↑   ↑
+       1   2
+
+Deque:
+
+[1, 2]
+
+Matlab:
+
+index 1 → l[1] = -1
+index 2 → l[2] = -7
+
+Why index?
+
+Because window slide hone par hume pata lagana hai ki koi negative window se bahar gaya ya nahi.
+
+3. ans
+ans = []
+
+Isme har window ka first negative store karenge.
+
+Initially:
+
+ans = []
+🔥 FIRST WINDOW
+for i in range(k):
+
+k = 3, so:
+
+range(3)
+
+means:
+
+i = 0
+i = 1
+i = 2
+
+Matlab pehle 3 elements process karo.
+
+i = 0
+l[0] = 12
+
+Condition:
+
+if l[i] < 0:
+
+becomes:
+
+if 12 < 0:
+
+False.
+
+So kuch add nahi hoga.
+
+Deque:
+
+dq = []
+i = 1
+l[1] = -1
+
+Check:
+
+-1 < 0
+
+True ✅
+
+So:
+
+dq.append(i)
+
+i = 1, so:
+
+dq.append(1)
+
+Deque:
+
+dq = [1]
+
+Remember:
+
+1 → index
+l[1] → -1
+i = 2
+l[2] = -7
+
+Negative:
+
+-7 < 0
+
+True.
+
+So:
+
+dq.append(2)
+
+Deque:
+
+dq = [1, 2]
+
+Meaning:
+
+dq[0] = 1 → l[1] = -1
+dq[1] = 2 → l[2] = -7
+
+Current window:
 
 [12, -1, -7]
 
-Deque
-
-Front
- ↓
-[-1, -7]
-
-Answer
+First negative:
 
 -1
-Iteration 1
-j = 3
+4. Ye line
+ans.append(l[dq[0]] if dq else 0)
 
-New Window
+Ye line dekhne me scary hai 😄, lekin simple hai.
 
-[-1, -7, 8]
+Isko normal if-else me likho:
 
-Visualization
+if dq:
+    ans.append(l[dq[0]])
+else:
+    ans.append(0)
 
-12  -1  -7   8  -15  30  16  28
-↑
-Outgoing
+Ab current:
 
-Outgoing element
+dq = [1, 2]
 
-l[j-k]
+Deque empty nahi hai.
 
-↓
+So:
 
-l[0]
+dq[0]
 
-↓
+gives:
 
-12
+1
 
-Deque
+Aur:
 
-[-1, -7]
+l[dq[0]]
 
-Ab condition dekho
-
-if dq and l[j-k] == dq[0]:
-
-Translate karo:
-
-"Agar deque khaali nahi hai aur jo element window se bahar gaya hai, wahi deque ke front me hai, tab usse remove kar do."
-
-Check
-
-12 == -1 ?
-
-False
-
-To remove?
-
-No
-
-Incoming
-
-l[3]
-
-↓
-
-8
-
-Negative?
-
-No
-
-Deque
-
-[-1,-7]
-
-Answer
-
--1
-Iteration 2 (Yahi Magic Hai)
-j = 4
-
-Window
-
-[-7, 8, -15]
-
-Visualization
-
-12  -1  -7   8  -15  30  16  28
-    ↑
-Outgoing
-
-Outgoing
-
-l[j-k]
-
-↓
+becomes:
 
 l[1]
 
-↓
+which is:
 
 -1
 
-Deque
+So:
 
-Front
- ↓
-[-1,-7]
+ans = [-1]
 
-Condition
+🔥 First window done.
 
--1 == -1
+Ab asli sliding start 🔥
+for j in range(k, len(l)):
 
-True
+k = 3
 
-Matlab...
+len(l) = 8
 
-Jo first negative tha...
+So:
 
-Wo ab window ke bahar chala gaya.
+range(3, 8)
 
-To deque bhi update karo.
+means:
 
-Before
-
-[-1,-7]
-
-↓
-
-popleft()
-
-↓
-
-[-7]
-
-Ab incoming
-
-l[4]
-
-↓
-
--15
-
-Negative?
-
-Yes.
-
-Append
-
-[-7,-15]
-
-Answer?
-
-Front
-
-↓
-
--7
-Iteration 3
+j = 3
+j = 4
 j = 5
-
-Window
-
-[8,-15,30]
-
-Visualization
-
-12 -1 -7 8 -15 30
-       ↑
-Outgoing
-
-Outgoing
-
-l[2]
-
-↓
-
--7
-
-Deque
-
-[-7,-15]
-
-Condition
-
--7 == -7
-
-True
-
-Remove
-
-[-15]
-
-Incoming
-
-30
-
-Negative?
-
-No.
-
-Deque
-
-[-15]
-
-Answer
-
--15
-Iteration 4
 j = 6
-
-Window
-
-[-15,30,16]
-
-Outgoing
-
-8
-
-Deque
-
-[-15]
-
-Check
-
-8 == -15
-
-False
-
-Remove?
-
-No.
-
-Incoming
-
-16
-
-Negative?
-
-No.
-
-Deque
-
-[-15]
-
-Answer
-
--15
-Iteration 5
 j = 7
 
-Window
+Yahan j incoming element ka index hai.
 
-[30,16,28]
+🔥 ROUND 1: j = 3
 
-Outgoing
+Current array:
 
--15
+index:  0    1    2    3
+value:  12  -1   -7    8
 
-Deque
+New window:
 
-[-15]
+[-1, -7, 8]
 
-Condition
+Old window:
 
--15 == -15
+[12, -1, -7]
 
-True
+12 bahar gaya.
 
-Remove
+Line:
+if dq and j-k == dq[0]:
 
-[]
+Pehle:
 
-Incoming
+dq = [1, 2]
 
-28
+Calculate:
 
-Negative?
+j - k
+= 3 - 3
+= 0
 
-No.
+So condition becomes:
 
-Deque
+if dq and 0 == dq[0]:
 
-[]
+dq empty nahi hai ✅
 
-Deque empty.
+But:
 
+dq[0] = 1
+
+So:
+
+0 == 1
+
+False ❌
+
+Therefore:
+
+dq.popleft()
+
+nahi chalega.
+
+Why?
+
+Because outgoing element ka index 0 tha:
+
+12 → index 0
+
+Lekin 12 negative tha hi nahi, so uska index deque me tha hi nahi.
+
+Deque:
+
+[1, 2]
+
+bilkul sahi hai.
+
+Next line
+if l[j] < 0:
+
+Current:
+
+j = 3
+l[3] = 8
+
+Check:
+
+8 < 0
+
+False.
+
+So deque:
+
+[1, 2]
 Answer
+ans.append(l[dq[0]] if dq else 0)
 
-0
-🧠 Ab Sabse Important Logic
+Deque:
 
-Tumhara doubt tha:
+[1, 2]
 
-if dq and l[j-k] == dq[0]:
+Front:
 
-Iska matlab ye nahi hai ki:
+dq[0] = 1
 
-"Negative mila to remove."
+Value:
 
-Iska matlab hai:
+l[1] = -1
 
-"Jo element window se bahar gaya hai, agar wahi hamara current first negative tha, tabhi usse deque se hatao."
+So:
 
-Agar bahar gaya element negative hi nahi tha:
+ans = [-1, -1]
 
-12
+Current window:
 
-to deque ko chhedna hi nahi.
+[-1, -7, 8]
+       ↑
+first negative = -1
+🔥 ROUND 2: j = 4
 
-Agar bahar gaya negative tha lekin first negative nahi tha, wo case aa hi nahi sakta, kyunki deque hamesha window ke negatives ko order me rakhta hai. Agar koi negative window se bahar ja raha hai, wo sabse pehle front par hi aayega.
+Current window:
 
-Interview Notes
-Question
+[-7, 8, -15]
 
-Find the first negative integer in every window of size k.
+Incoming:
 
-Observation
+l[4] = -15
 
-Hume poori window nahi dekhni.
+Deque currently:
 
-Sirf window ke negative numbers maintain karne hain.
+[1, 2]
+First condition
+if dq and j-k == dq[0]:
 
-Data Structure
-
-deque
-
-Kyun?
-
-append() → O(1)
-popleft() → O(1)
-Front access → O(1)
-Variables
-dq
-
-Window ke negative numbers ko order me store karta hai.
-
-ans
-
-Har window ka answer.
-
-j
-
-Incoming element.
+Calculate:
 
 j-k
+= 4-3
+= 1
 
-Outgoing element.
+So:
 
-Core Logic
-First window ke negatives deque me store karo.
-Front answer hai.
-Window slide karo.
-Agar outgoing element deque ke front ke equal hai, popleft() karo.
-Agar incoming negative hai, append() karo.
-Deque ka front answer hai; agar deque empty hai to 0.
-Visualization
-Window
+1 == dq[0]
 
-[12,-1,-7]
-Deque
+And:
 
-[-1,-7]
+dq[0] = 1
 
-↓
+Therefore:
 
-Slide
+1 == 1
 
-[-1,-7,8]
+True! ✅
 
-Deque
+Why remove?
 
-[-1,-7]
+Because index 1 is now outside the new window.
 
-↓
+Old:
 
-Slide
+[12, -1, -7]
+     ↑
+    index 1
 
-[-7,8,-15]
+New:
 
-Deque
+[-1, -7, -15]
 
-[-7,-15]
+Wait, let's carefully see the actual new window by indexes:
 
-↓
+For j=4, window is indexes:
 
-Slide
+j-k+1 → j
+4-3+1 → 4
+2 → 4
 
-[8,-15,30]
+So:
 
-Deque
+index 2, 3, 4
 
-[-15]
-Time Complexity
-O(n)
+Values:
 
-Har negative element ek baar deque me aata hai aur ek baar hi nikalta hai.
+[-7, 8, -15]
 
-Space Complexity
-O(k)
+Index 1 (-1) has gone outside.
 
-Worst case me window ke saare elements negative ho sakte hain.
+So:
 
-Common Mistakes
+dq.popleft()
 
-❌ if l[j-k] == dq[0]:
+Deque:
 
-Isse pehle dq empty hai ya nahi check na karna.
+[2]
 
-if dq and l[j-k] == dq[0]:
+🔥 This is exactly why we stored indexes.
 
-✅ Ye safe version hai.
+Incoming check
+if l[j] < 0:
 
-One-Line Revision
+Current:
 
-Deque me window ke negative numbers rakho. Agar first negative window se bahar jaye to popleft(), aur naya negative aaye to append(). Front hi answer hai.
+l[4] = -15
 
-Bhai, ek baat notice kar raha hoon. Ab tum sirf code nahi likh rahe, code ke peeche ka pattern samajhne ki koshish kar rahe ho. Yehi habit tumhe interview me "memorized candidate" se "problem solver" banayegi. 💯
+Negative ✅
+
+So:
+
+dq.append(4)
+
+Deque:
+
+[2, 4]
+
+Meaning:
+
+index 2 → -7
+index 4 → -15
+Answer
+
+Front:
+
+dq[0] = 2
+
+Value:
+
+l[2] = -7
+
+So:
+
+ans = [-1, -1, -7]
+
+Correct. ✅
+
+🔥 ROUND 3: j = 5
+
+Current window:
+
+[8, -15, 30]
+
+Indexes:
+
+3, 4, 5
+
+Deque:
+
+[2, 4]
+Remove outgoing
+
+Calculate:
+
+j-k
+= 5-3
+= 2
+
+Deque front:
+
+dq[0] = 2
+
+So:
+
+2 == 2
+
+True.
+
+Index 2 is outside the new window.
+
+Remove:
+
+dq.popleft()
+
+Deque:
+
+[4]
+Incoming
+l[5] = 30
+
+Positive.
+
+Don't add.
+
+Deque:
+
+[4]
+Answer
+
+Front:
+
+dq[0] = 4
+
+Value:
+
+l[4] = -15
+
+So:
+
+ans = [-1, -1, -7, -15]
+🔥 ROUND 4: j = 6
+
+Window:
+
+[-15, 30, 16]
+
+Indexes:
+
+4, 5, 6
+
+Deque:
+
+[4]
+
+Outgoing index:
+
+j-k
+= 6-3
+= 3
+
+Check:
+
+dq[0] = 4
+
+So:
+
+3 == 4
+
+False.
+
+Why?
+
+Outgoing index 3 was 8, which wasn't negative, so it wasn't in deque.
+
+Deque stays:
+
+[4]
+
+Incoming:
+
+l[6] = 16
+
+Positive.
+
+Deque remains:
+
+[4]
+
+Answer:
+
+l[4] = -15
+
+So:
+
+ans = [-1, -1, -7, -15, -15]
+🔥 ROUND 5: j = 7
+
+Window:
+
+[30, 16, 28]
+
+Indexes:
+
+5, 6, 7
+
+Deque currently:
+
+[4]
+
+Outgoing index:
+
+j-k
+= 7-3
+= 4
+
+Deque front:
+
+dq[0] = 4
+
+Match! ✅
+
+So:
+
+dq.popleft()
+
+Deque:
+
+[]
+Incoming
+l[7] = 28
+
+Positive.
+
+So deque remains:
+
+[]
+Answer
+
+Now:
+
+if dq:
+
+False because deque empty.
+
+So:
+
+ans.append(0)
+
+Answer:
+
+ans = [-1, -1, -7, -15, -15, 0]
+
+🎯 Done!
+
+Full dry run table
+j	New window	Outgoing index j-k	dq after removal	Incoming	Final dq	Answer
+first	[12,-1,-7]	—	—	—	[1,2]	-1
+3	[-1,-7,8]	0	[1,2]	8	[1,2]	-1
+4	[-7,8,-15]	1	[2]	-15	[2,4]	-7
+5	[8,-15,30]	2	[4]	30	[4]	-15
+6	[-15,30,16]	3	[4]	16	[4]	-15
+7	[30,16,28]	4	[]	28	[]	0
+
+Final:
+
+[-1, -1, -7, -15, -15, 0]
+Ab sabse confusing line samjho
+if dq and j-k == dq[0]:
+
+Isko 2 parts me padho:
+
+Part 1:
+dq
+
+Kya deque empty nahi hai?
+
+Part 2:
+j-k == dq[0]
+
+j-k = jo index window se bahar ja raha hai
+
+dq[0] = deque me sabse purana negative index
+
+So poori line:
+
+"Agar deque khaali nahi hai aur jo element window se bahar ja raha hai wahi deque ke front wala negative hai, to use hata do."
+
+Ek aur SUPER important point
+
+Tum soch sakte ho:
+
+j-k outgoing index kyun hai?
+
+Example:
+
+k = 3
+
+Jab:
+
+j = 4
+
+Current window:
+
+indexes: 2  3  4
+
+Isse pehle wali window:
+
+indexes: 1  2  3
+
+To jo bahar gaya:
+
+index 1
+
+Aur:
+
+j-k
+= 4-3
+= 1
+
+Exactly. 🔥
+
+Aur dq[0] hi kyun?
+
+Kyuki deque me negative indexes order me hain:
+
+[1, 2, 4]
+
+Sabse left:
+
+dq[0] = 1
+
+means sabse pehla/oldest negative.
+
+Isliye:
+
+l[dq[0]]
+
+gives current window ka first negative.
+
+Final mental model 🧠
+
+Is question me bas ye 4 steps hain:
+
+1️⃣ Negative mila?
+   ↓
+   uska INDEX deque me daalo
+
+2️⃣ Window slide hui?
+   ↓
+   outgoing index deque ke front me hai?
+   ↓
+   YES → popleft()
+
+3️⃣ deque empty hai?
+   ↓
+   YES → 0
+
+4️⃣ deque empty nahi?
+   ↓
+   l[dq[0]]
+
+Aur sabse important:
+
+dq me VALUES nahi hain
+dq me INDEXES hain
+dq[0]          → index
+l[dq[0]]       → actual negative value
+
+Bas ye distinction pakad liya bhai, to poora question tumhara hai. ❤️

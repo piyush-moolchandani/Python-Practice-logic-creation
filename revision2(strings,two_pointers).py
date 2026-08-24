@@ -255,6 +255,26 @@
 # s="".join(l)
 # print(s)
 
+
+'''Valid Palindrome II (LeetCode 680)'''
+s = "abca"
+left=0
+right=len(s)-1
+is_valid=True
+while left<right:
+    if s[left]==s[right]:
+        left+=1
+        right-=1
+    else:
+        skip_left = s[left+1:right+1]
+        skip_right = s[left:right]
+        if skip_left!=skip_left[::-1] and skip_right!=skip_right[::-1]:
+            is_valid=False
+        break
+print(is_valid)
+
+        
+
 # ======================================== TWO__POINTERS =====================================================
 
 # l = ['P','Y','T','H','O','N']
