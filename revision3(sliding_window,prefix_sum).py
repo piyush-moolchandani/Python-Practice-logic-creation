@@ -181,78 +181,146 @@
 # print(max_len)
 # print(fruits[start:start+max_len])
 
-'''max con rev2'''
-l = [1, 1, 0, 1, 1, 1]
-count=0
-max_len=0
-for i in l:
-    if i==1:
-        count+=1
-        if count>max_len:
-            max_len=count
-    else:
-        count=0
-print(max_len)
+# '''max con rev2'''
+# l = [1, 1, 0, 1, 1, 1]
+# count=0
+# max_len=0
+# for i in l:
+#     if i==1:
+#         count+=1
+#         if count>max_len:
+#             max_len=count
+#     else:
+#         count=0
+# print(max_len)
 
 
-'''max con 3 rev2'''
-l = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0]
-k = 2
-left=0
-max_len=0
-zero_count=0
-for right in range(len(l)):
-    if l[right]==0:
-        zero_count+=1
-    while zero_count>k:
-        if l[left]==0:
-            zero_count-=1
-        left+=1
-    curren_len=right-left+1
-    if curren_len>max_len:
-        max_len=curren_len
-print(max_len)
+# '''max con 3 rev2'''
+# l = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0]
+# k = 2
+# left=0
+# max_len=0
+# zero_count=0
+# for right in range(len(l)):
+#     if l[right]==0:
+#         zero_count+=1
+#     while zero_count>k:
+#         if l[left]==0:
+#             zero_count-=1
+#         left+=1
+#     curren_len=right-left+1
+#     if curren_len>max_len:
+#         max_len=curren_len
+# print(max_len)
 
 
-'''long sub unique rev2'''
-s = "abcabcbb"
-left=0
-seen=set()
-max_len=0
-for right in range(len(s)):
-    while s[right] in seen:
-        seen.remove(s[left])
-        left+=1
-    seen.add(s[right])
-    curren_len=right-left+1
-    if curren_len>max_len:
-        max_len=curren_len
-print(max_len)
+# '''long sub unique rev2'''
+# s = "abcabcbb"
+# left=0
+# seen=set()
+# max_len=0
+# for right in range(len(s)):
+#     while s[right] in seen:
+#         seen.remove(s[left])
+#         left+=1
+#     seen.add(s[right])
+#     curren_len=right-left+1
+#     if curren_len>max_len:
+#         max_len=curren_len
+# print(max_len)
 
 
-'''fruits into basket rev2'''
-fruits = [1, 2, 1, 2, 3]
-left=0
-max_len=0
-d={}
-start=0
-for right in range(len(fruits)):
-    if fruits[right] in d:
-        d[fruits[right]]=d[fruits[right]]+1
-    else:
-        d[fruits[right]]=1
-    while len(d)>2:
-        d[fruits[left]]-=1
-        if d[fruits[left]]==0:
-            del d[fruits[left]]
-        left+=1
-    curren_len=right-left+1
-    if curren_len>max_len:
-        max_len=curren_len
-        start=left
-print(max_len)
-print(fruits[start:start+max_len])
-    
+# '''fruits into basket rev2'''
+# fruits = [1, 2, 1, 2, 3]
+# left=0
+# max_len=0
+# d={}
+# start=0
+# for right in range(len(fruits)):
+#     if fruits[right] in d:
+#         d[fruits[right]]=d[fruits[right]]+1
+#     else:
+#         d[fruits[right]]=1
+#     while len(d)>2:
+#         d[fruits[left]]-=1
+#         if d[fruits[left]]==0:
+#             del d[fruits[left]]
+#         left+=1
+#     curren_len=right-left+1
+#     if curren_len>max_len:
+#         max_len=curren_len
+#         start=left
+# print(max_len)
+# print(fruits[start:start+max_len])
+
+# ==================================== PREFIX SUM =======================================================
+
+'''•	Prefix Sum '''
+# l = [2, 4, 1, 3, 5]
+# ans = []
+# left=2
+# right=4
+# prefix_sum=0
+# for i in l:
+#     prefix_sum+=i
+#     ans.append(prefix_sum)
+# if left==0:
+#     range_sum = ans[right]
+# else:
+#     range_sum = ans[right] - ans[left-1]
+# print(range_sum)
+ 
+
+'''•	Running Sum '''
+# l = [5, 1, 2, 7, 3]
+# total=0
+# ans=[]
+# for i in l:
+#     total+=i
+#     ans.append(total)
+# print(ans)
+
+'''•	Equilibrium Index '''
+'''brute force '''
+# l = [2,2,8,3,1]
+# for i in range(len(l)):
+#     left_sum=0
+#     right_sum=0
+#     for j in range(0,i):
+#         left_sum+=l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum+=l[k]
+#     if left_sum==right_sum:
+#         print(f"The Equilibrium Index Is {i}")
+
+'''optimized approach'''
+# l = [2,2,8,3,1]
+# l2=[]
+# left_sum=0
+# total_sum=sum(l)
+# for i in range(len(l)):
+#     right_sum = total_sum-left_sum-l[i]
+#     if left_sum==right_sum:
+#         print(f"The Equilibrium Index Is {i}")
+#     else:
+#         left_sum+=l[i]
+       
+'''•	Subarray Sum = K '''
+'''brute force'''
+# l = [1, 2, 3]
+# target = 3
+# count=0
+# for i in range(len(l)):
+#     sub_sum=0
+#     for j in range(i,len(l)):
+#         sub_sum+=j
+#         if sub_sum==target:
+#             count+=1
+# print(count)
+
+
+
+
 
 
 
