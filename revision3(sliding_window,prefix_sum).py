@@ -318,6 +318,50 @@
 #             count+=1
 # print(count)
 
+'''•	Prefix Sum  rev2 '''
+# l = [2, 4, 1, 3, 5]
+# ans = []
+# total=0
+# left = 2
+# right = 4
+# for i in l:
+#     total+=i
+#     ans.append(total)
+# if left==0:
+#     range_sum = ans[right]
+# else:
+#     range_sum = ans[right] - ans[left-1]
+# print(range_sum)
+
+
+'''•	Equilibrium Index rev2'''
+# l=[2,2,6,1,3]
+# total_sum=sum(l)
+# left_sum=0
+# for i in range(len(l)):
+#     right_sum = total_sum - left_sum - l[i]
+#     if left_sum==right_sum:
+#         print(i)
+#     else:
+#         left_sum+=l[i]
+
+'''•	Subarray Sum = K '''
+# l = [1, 2, 3]
+# k = 3
+# prefix_sum=0
+# count=0
+# d={0:1}
+# for i in l:
+#     prefix_sum+=i
+#     needed= prefix_sum-k
+#     if needed in d:
+#         count+=d[prefix_sum-k]
+#     if prefix_sum in d:
+#         d[prefix_sum]+=1
+#     else:
+#         d[prefix_sum]=1
+# print(count) 
+
 
 
 
