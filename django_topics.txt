@@ -1,0 +1,25 @@
+Django fundamentals + MVT
+Project/app structure
+URLs + Views
+Models + Relationships
+Migrations
+ORM + advanced ORM
+CRUD
+Templates + Forms
+Authentication + Custom User
+Middleware
+Security
+Sessions/Cookies
+Signals
+Transactions
+Static/Media
+CBV
+DRF + REST APIs
+Serializers
+APIView / ViewSet
+JWT + Permissions
+Pagination / Filtering / Throttling
+Testing
+Performance / Query optimization
+Deployment basics
+Project-based questions
