@@ -134,6 +134,137 @@
 #         d[i]=1
 # print(ans)
 
+'''14. Find common elements between two lists'''
+# l1 = [1, 2, 3, 4, 5]
+# l2 = [3, 4, 5, 6, 7]
+# for i in l1:
+#     if i in l2:
+#         print(f"the common elements are {i}")
+
+'''Find elements present in first list but not second'''
+# l1 = [1, 2, 3, 4, 5]
+# l2 = [3, 4, 5, 6, 7]
+# ans=[]
+# for i in l1:
+#     if i not in l2:
+#         ans.append(i)
+# print(ans)
+
+'''Flatten a simple nested list'''
+# l = [[1,2], [3,4], [5]] 
+# ans=[]
+# for i in l:
+#     for j in i:
+#         ans.append(j)
+# print(ans)
+
+'''Find maximum and minimum without max() / min()'''
+# l=[5,3,5,86,4,6,6,645,6,52,3,3]
+# max_ele = l[0]
+# min_ele = l[0]
+# for i in l:
+#     if i>max_ele:
+#         max_ele=i
+#     elif i<min_ele:
+#         min_ele=i
+# print(f"max_element {max_ele}")
+# print(f"min_element {min_ele}")
+
+
+'''Find second largest element'''
+# l=[5,3,5,86,4,6,6,645,6,52,3,3]
+# largest = 0
+# se_largest = 0
+# for i in l:
+#     if i>largest:
+#         se_largest = largest
+#         largest = i
+#     elif i>se_largest and i!=largest:
+#         se_largest=i
+# print(se_largest)
+
+'''19. Find second smallest element'''
+# l=[5,3,5,86,4,6,6,645,6,52,3,3]
+# small = l[0]
+# se_small = l[0]
+# for i in l:
+#     if i<small:
+#         se_small=small
+#         small=i
+#     elif i<se_small and i!=small:
+#         se_small=i
+# print(se_small)
+
+'''Separate even and odd numbers'''
+'''Two Pointer Approach'''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# left = 0
+# for right in range(len(l)):
+#     if l[right]%2!=0:
+#         l[left],l[right]=l[right],l[left]
+#         left+=1
+# print(l)
+
+'''Core Python'''
+# l=[1,2,3,4,5,6,7,8,9,10]
+# even=[]
+# odd=[]
+# for i in l:
+#     if i%2==0:
+#         even.append(i)
+#     else:
+#         odd.append(i)
+# print(odd+even)
+
+
+'''Count even and odd numbers'''
+# l=[1,2,3,4,5,6,7,8,9]
+# even_count = 0
+# odd_count = 0
+# for i in l:
+#     if i%2==0:
+#         even_count+=1
+#     else:
+#         odd_count+=1
+# print({'even_count':even_count,'odd_count':odd_count})
+
+'''Move all zeroes to the end'''
+# l=[1,0,2,0,3,0,4,0]
+# zeroes = []
+# non_zeroes = []
+# for i in l:
+#     if i==0:
+#         zeroes.append(i)
+#     else:
+#         non_zeroes.append(i)
+# print(non_zeroes+zeroes)
+
+'''25. Rotate a list by K positions'''  '''{LEft}'''
+# l=[1,2,3,4,5]
+# k=2
+# for i in range(k):
+#     fi = l[0]
+#     for i in range(len(l)-1):
+#         l[i] = l[i+1]
+#     l[-1] = fi
+# print(l)
+
+'''25. Rotate a list by K positions'''  '''{RIGht}'''
+# l=[1,2,3,4,5]
+# k=2
+# for i in range(k):
+#     lv = l[-1]
+#     for i in range(len(l)-1,0,-1):
+#         l[i] = l[i-1]
+#     l[0] = lv
+# print(l)
+
+''''''
+    
+
+
+
+
 
 
 
