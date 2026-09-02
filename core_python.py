@@ -259,11 +259,126 @@
 #     l[0] = lv
 # print(l)
 
-''''''
-    
+'''Create a frequency dictionary from a list'''
+# l = [1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,5]
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''27. Find the key having maximum value'''
+# d = {
+#     "A": 10,
+#     "B": 25,
+#     "C": 15,
+#     "D": 30
+# }
+# max_value = 0
+# for i in d:
+#     if d[i]>max_value:
+#         max_value=d[i]
+#         ans=i
+# print(ans)
+# print(max_value)
+
+'''Sort a dictionary by values ascending '''
+# d = {"A": 40, "B": 10, "C": 30, "D": 20}
+# l = list(d.items())
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i][1]>l[j][1]:
+#             l[i],l[j]=l[j],l[i]
+# ans = dict(l)
+# print(ans)
+        
+# ans = dict(sorted(d.items(), key=lambda x: x[1]))
+# print(ans)
+
+'''Sort a dictionary by values descending '''
+# d = {"A": 40, "B": 10, "C": 30, "D": 20}
+# l = list(d.items())
+# for i in range(len(l)):
+#     for j in range(i+1,len(l)):
+#         if l[i][1]<l[j][1]:
+#             l[i],l[j]=l[j],l[i]
+# ans = dict(l)
+# print(ans)
+
+# ans = dict(sorted(d.items(), key=lambda x: x[1], reverse=True))
+# print(ans)
+
+'''Merge two dictionaries'''
+# d1 = {"a": 10, "b": 20}
+# d2 = {"c": 30, "d": 40}
+# l1 = list(d1.items())
+# l2 = list(d2.items())
+# ans = l1+l2
+# d = dict(ans)
+# print(d)
+
+# d1 = {"a": 10, "b": 20}
+# d2 = {"c": 30, "d": 40}
+# merge_dict = d1|d2
+# print(merge_dict)
+
+''' without built in method'''
+# d1 = {"a": 10, "b": 20}
+# d2 = {"c": 30, "d": 40}
+# d={}
+# for i in d1:
+#     if i not in d:
+#         d[i] = d1[i]
+# for j in d2:
+#     if j not in d:
+#         d[j]=d2[j]
+# print(d)
+
+'''D1 priority:
+if j not in d:
+    d[j] = d2[j]
+D2 priority:
+d[j] = d2[j]'''
 
 
+'''Find common keys between two dictionaries'''
+# d1 = {"a": 10, "b": 20,'f':78}
+# d2 = {"c": 30, "a": 40,'f':34}
+# for i in d1:
+#     if i in d2:
+#         print(f"The common keys are {i}")
 
+
+'''Find keys having duplicate values'''
+# d1 = {"a": 10, "b": 30,'g':78}
+# d2 = {"c": 30, "a": 40,'f':10}
+# for i in d1:
+#     for j in d2:
+#         if d1[i] == d2[j]:
+#             print((i,j))
+
+
+'''Invert a dictionary'''
+# d = {"a": 1, "b": 2}
+# new_dict = {}
+# for i in d:
+#     new_dict[d[i]] = i
+# print(new_dict)
+
+'''33.Group words according to their length'''
+# l = ["cat","dog","apple","bat"]
+# d={}
+# for i in l:
+#     length = len(i)
+#     if length not in d:
+#         d[length] = []
+#     d[length].append(i)
+# print(d)          
+
+
+        
 
 
 
