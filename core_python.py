@@ -378,10 +378,153 @@ d[j] = d2[j]'''
 # print(d)          
 
 
+'''Replace Zero With One '''
+# n = 2007
+# new = 0
+# while n>0:
+#     digit = n%10
+#     if digit == 0:
+#         digit = 1
+#     n=n//10
+#     new = new*10+digit
+# rev = 0
+# while new>0:
+#     digit=new%10
+#     rev = rev*10+digit
+#     new=new//10
+# print(rev)
+
+
         
+'''Count frequency of words in a sentence'''
+# s = '"I am learning Python and I am learning Django"'
+# l = s.split()
+# d = {}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
 
 
+'''35. Convert two lists into a dictionary'''
+# keys = ["a","b","c"]
+# values = [1,2,3]
+# d={}
+# for i in range(len(keys)):
+#     if keys[i] not in d:
+#         d[keys[i]] = values[i]
+# print(d)
+
+'''2. Different length — shorter list tak'''
+# keys = ["a", "b", "c", "d"]
+# values = [1, 2, 3]
+# d = {}
+# for i in range(min(len(keys), len(values))):
+#     d[keys[i]] = values[i]
+# print(d)
 
 
+'''Create list of squares using list comprehension'''
+# l = [1,2,3,4,5,6,7,8]
+# ans = [i**2 for i in l]
+# print(ans)
+
+'''Create list of even numbers using comprehension'''
+# l = [1,2,3,4,5,6,7,8]
+# ans = [i for i in l if i%2==0 ]
+# print(ans)
+
+'''Create list of odd numbers using comprehension'''
+# l = [1,2,3,4,5,6,7,8]
+# ans = [i for i in l if i%2!=0]
+# print(ans)
+
+'''Convert a list of strings to uppercase using comprehension'''
+# l=["python", "django", "sql", "rest"]
+# ans = [i.upper() for i in l]
+# print(ans)
+
+'''Extract numbers greater than 10'''
+# l = [1,2,45,6,78,7,57,9,8]
+# ans = [i for i in l if i>10]
+# print(ans)
+
+'''Create dictionary using dictionary comprehension'''
+# l = [1, 2, 3, 4, 5]
+# ans = {i:i**2 for i in l}
+# print(ans)
+
+'''Create a dictionary containing only even numbers and their squares.'''
+# l = [1, 2, 3, 4, 5, 6]
+# ans = {i:i**2 for  i in l if i%2==0}
+# print(ans)
+
+'''Using dictionary comprehension, create a dictionary containing only numbers greater than 5, 
+where the number is the key and its cube is the value.'''
+# l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# ans = {i:i**3 for i in l if i>5}
+# print(ans)
+'''{ key : value  for item in iterable  if condition }
+   ↓      ↓          ↓                   ↓
+   i     i**3       i in l              i > 5'''
 
 
+'''List ke numbers ko dictionary mein rakho. Agar number even hai toh value "Even" ho, warna "Odd"'''
+# l = [1, 2, 3, 4]
+# ans = {i:'even' if i%2==0 else 'odd' for i in l}
+# print(ans)
+
+
+'''Dictionary comprehension use karke dictionary banao jisme:
+Sirf even numbers include hon.
+Number key ho.
+Uski square value ho.
+Lekin agar square 200 se greater ho, toh us number ko dictionary mein include mat karo.'''
+# l = [12, 5, 8, 21, 16, 7, 30, 11]
+# ans = {i:i**2 for i in l if i%2==0 and i**2<=200}
+# print(ans)
+
+
+'''Dictionary comprehension use karke dictionary banao jisme:
+Sirf odd numbers include hon.
+Number key ho.
+Uski cube value ho.
+Lekin cube 3000 se greater ho toh exclude kar do.'''
+# l = [5, 12, 7, 20, 15, 8, 25, 10]
+# ans = {i:i**3 for i in l if i%2!=0 and i**3<=3000}
+# print(ans)
+
+'''Flatten a nested list using comprehension'''
+# l = [ [1, 2], [3, 4], [5, 6] ]
+# ans = [j for i in l for j in i]
+# print(ans)
+'''Normal loop:
+
+for i in l:
+    for j in i:
+        print(j)'''
+
+# comphernsion
+'''[j      for i in l      for j in i]
+ ↑           ↑               ↑
+kya       outer loop      inner loop
+store
+karna'''
+
+# =================================================================
+'''FUNCTIONS'''
+'''Write a function using default arguments'''
+# def default(name,city='bhopal'):
+#     return f'hello {name} welcome to {city}'
+# ans1 = default('piyush')
+# print(ans1)
+# ans2 = default('piyush','indore')
+# print(ans2)
+
+'''Write a function using *args'''
+def test(name,*marks):
+    return f'{name}:{marks}'
+ans1 = ('piyush',67,89,34)
+print(ans1)
