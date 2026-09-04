@@ -524,7 +524,37 @@ karna'''
 # print(ans2)
 
 '''Write a function using *args'''
-def test(name,*marks):
-    return f'{name}:{marks}'
-ans1 = ('piyush',67,89,34)
-print(ans1)
+# def test(name,*marks):
+#     return f'{name}:{marks}'
+# ans1 = ('piyush',67,89,34)
+# print(ans1)
+
+# def sum_all(*l):
+#     total = 0
+#     for i in l:
+#         total+=i
+#     return total
+# x = sum_all(1,2,3,4,5)
+# print(x)
+
+'''Write a function using **kwargs'''
+# def test(name,**kwargs):
+#         print("UserName :", name)
+#         for key,value in kwargs.items():
+#                 print(key, ':' ,value)
+# test('piyush',age=22,city="indore",role="django devloper")
+
+'''Write a function that accepts both *args and **kwargs'''
+def stu_details(name,*marks,**details):
+    print("Student Name: ", name)
+    print("--- Marks ---")
+    for subject, score in marks:
+        print(subject, ":", score)
+    print("--- Details ---")
+    for key,value in details.items():
+        print(key , ':' ,value)
+stu_details('Piyush',('Maths', 98), ('Physics', 92), ('Chemistry', 90), ('English', 86), ('CS', 77),
+            age=22, city='bhopal', status='pass'
+)
+
+
