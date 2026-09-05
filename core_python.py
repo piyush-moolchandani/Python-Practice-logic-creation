@@ -545,16 +545,98 @@ karna'''
 # test('piyush',age=22,city="indore",role="django devloper")
 
 '''Write a function that accepts both *args and **kwargs'''
-def stu_details(name,*marks,**details):
-    print("Student Name: ", name)
-    print("--- Marks ---")
-    for subject, score in marks:
-        print(subject, ":", score)
-    print("--- Details ---")
-    for key,value in details.items():
-        print(key , ':' ,value)
-stu_details('Piyush',('Maths', 98), ('Physics', 92), ('Chemistry', 90), ('English', 86), ('CS', 77),
-            age=22, city='bhopal', status='pass'
-)
+# def stu_details(name,*marks,**details):
+#     print("Student Name: ", name)
+#     print("--- Marks ---")
+#     for subject, score in marks:
+#         print(subject, ":", score)
+#     print("--- Details ---")
+#     for key,value in details.items():
+#         print(key , ':' ,value)
+# stu_details('Piyush',('Maths', 98), ('Physics', 92), ('Chemistry', 90), ('English', 86), ('CS', 77),
+#             age=22, city='bhopal', status='pass'
+# )
+
+'''Write a lambda function to square a number'''
+# sq = lambda x:x**2
+# print(sq(5))
+
+'''49. Sort a list of tuples using lambda
+[(1,3), (2,1), (4,2)]'''
+# students = [
+#     ("Rahul", 22),
+#     ("Aman", 19),
+#     ("Priya", 25),
+#     ("Neha", 21)
+# ]
+# x = sorted(students,key=lambda x:x[1])
+# print(x)
+
+# l = [(1,3), (2,1), (4,2)]
+# x = sorted(l,key=lambda x:x[1])
+# print(x)
+
+'''Use map() to square all numbers'''
+# l =[1,2,3,4,5]
+# ans = list(map(lambda x:x**2,l))
+# print(ans)
+
+'''Use filter() to get even numbers'''
+# l = [1,2,3,4,5,6,7,8,9]
+# ans = list(filter(lambda x:x%2==0,l))
+# print(ans)
+
+'''Use reduce() to calculate product of numbers'''
+# from functools import reduce
+# l = [1,2,3,4,5,6,7,8,9]
+# ans = reduce(lambda x,y:x*y,l)
+# print(ans)
+
+
+
+# Ab recursion ka skeleton dekh
+
+# Har basic recursion question mein ye structure dekhna:
+
+# def function(n):
+
+#     if STOP_CONDITION:
+#         return
+
+#     # current kaam
+
+#     function(smaller_problem)
+
+
+'''Write recursive sum of digits'''
+# def sum_digits(n):
+#     if n==0:
+#         return 0
+#     digit = n%10
+#     return digit+sum_digits(n//10)
+# print(sum_digits(1234))
+
+'''Write a recursive factorial function'''
+# def factorial(n):
+#     if n==1:
+#         return 1
+#     return n*factorial(n-1)
+# print(factorial(5))  
+
+'''54. Write recursive Fibonacci'''
+# def fibonaaci(n):
+#     if n==0:
+#         return 0
+#     if n==1:
+#         return 1
+#     return fibonaaci(n-1)+fibonaaci(n-2)
+# print(fibonaaci(5))
+
+# def count(n):
+#     if n==0:
+#         return 0
+#     count(n-1)
+#     print(n)
+# count(5)
 
 
