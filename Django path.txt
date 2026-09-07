@@ -1,0 +1,267 @@
+Django path
+ 
+1.study both projects expense_tracker and student_academic_management_system
+2.Topics to revise with practical and theory
+.What is Django
+.virtual enviroment
+.project/app structure
+.mvt architecture
+.middleware
+.session/cookies(with authentication using this both)
+.model.py/orm
+.relationships
+.authentication (Django built in)
+.email/reset password/otp
+
+/=================================================================== Topics I Forgot =====================================================================
+Topics I would add
+🔴 Must-know Django interview topics
+URL routing
+urls.py
+path() / re_path()
+URL parameters
+include()
+name and reverse()
+app_name / namespaces
+Views
+Function-Based Views (FBV)
+Class-Based Views (CBV)
+Generic views
+HttpResponse, JsonResponse
+render(), redirect()
+Templates
+Template inheritance
+{% extends %}, {% block %}, {% include %}
+Template filters/tags
+Context
+Custom template tags/filters
+Forms
+forms.Form
+forms.ModelForm
+Validation
+clean() / clean_<field>()
+CSRF
+File/image uploads
+Django Admin
+Registering models
+ModelAdmin
+list_display
+search_fields
+list_filter
+Custom admin actions
+Migrations
+makemigrations
+migrate
+showmigrations
+Migration conflicts
+How migrations work
+ORM — go deeper
+You already have ORM and relationships, but definitely add:
+filter(), exclude(), get()
+Q objects
+F expressions
+annotate() / aggregate()
+select_related()
+prefetch_related()
+values() / values_list()
+exists()
+bulk_create()
+QuerySet laziness
+N+1 query problem
+Transactions
+transaction.atomic()
+Database transactions
+Rollback
+select_for_update()
+🟠 Very important for practical interviews
+Django REST Framework (DRF)
+REST API concepts
+Serializers
+ModelSerializer
+APIView
+Generic API views
+ViewSets
+Routers
+Permissions
+Authentication
+Pagination
+Filtering/searching
+Status codes
+JWT authentication
+API security
+CSRF
+CORS
+Authentication vs authorization
+Permissions
+SQL injection
+XSS
+Clickjacking
+Secure password handling
+Static & media files
+STATIC_URL
+MEDIA_URL
+STATIC_ROOT
+MEDIA_ROOT
+Production handling
+File uploads
+Environment/configuration
+settings.py
+Environment variables
+.env
+DEBUG
+ALLOWED_HOSTS
+Secrets management
+Testing
+Django TestCase
+Unit tests
+API tests
+pytest
+Test client
+Mocking
+Caching
+Django cache framework
+Redis basics
+Cache invalidation
+Where caching should/shouldn't be used
+Background tasks
+Celery
+Redis/RabbitMQ
+Async/background jobs
+Scheduled tasks
+🟡 Deployment / real-world questions
+Production deployment
+Gunicorn
+Nginx
+PostgreSQL
+Docker basics
+DEBUG=False
+Static files in production
+Environment variables
+Logging
+Performance optimization
+Database indexing
+Query optimization
+select_related vs prefetch_related
+Caching
+Pagination
+Avoiding unnecessary queries
+Signals
+pre_save
+post_save
+pre_delete
+post_delete
+When signals are useful
+When not to use signals
+Custom User Model
+AbstractUser
+AbstractBaseUser
+Why you might create a custom user model
+AUTH_USER_MODEL
+Django commands
+manage.py
+Creating custom management commands
+Common Django commands
+⭐ Questions you should practice specifically
+
+Don't only study definitions. Interviewers often ask things like:
+
+What is the difference between session and cookie?
+What is the difference between authentication and authorization?
+FBV vs CBV?
+select_related() vs prefetch_related()?
+get() vs filter()?
+What is a QuerySet?
+Why are QuerySets lazy?
+What is middleware and how does it work?
+What happens when a Django request comes in?
+Explain the complete request → URL → view → model → template → response flow.
+What is CSRF and how does Django protect against it?
+How would you optimize a slow Django API?
+How would you design authentication for a real project?
+How would you deploy your Django project?
+How do you prevent duplicate database records?
+How do Django transactions work?
+Why use PostgreSQL instead of SQLite in production?
+How would you send an email/OTP asynchronously?
+How would you structure a large Django project?
+🎯 For your two projects
+
+Since you've specifically listed expense_tracker and student_academic_management_system as projects to study, I'd make sure you can explain for each one:
+
+Architecture → Models → Relationships → URLs → Views → Forms/API → Authentication → Validation → Database queries → Security → Error handling → Deployment
+
+That will make your interview preparation much stronger than simply memorizing Django definitions.
+
+If you're preparing specifically for a Django developer interview, I would prioritize the topics in this order:
+
+ORM → Views → URLs → Forms → Authentication → DRF → SQL/Database → Security → Testing → Performance → Deployment → Celery/Redis.
+
+/================================================================
+🔥 Must be strong
+Django fundamentals + MVT
+URLs, views, templates
+Models + ORM
+Relationships
+select_related() vs prefetch_related()
+QuerySets, Q, F, aggregation
+Forms + validation
+Authentication + authorization
+Sessions/cookies
+Middleware
+CSRF
+Migrations
+Django Admin
+PostgreSQL/SQL basics
+REST APIs + Django REST Framework
+Serializers, ViewSets, permissions, JWT
+API error handling + status codes
+Your 2 projects, end-to-end
+🟡 Know reasonably well
+Signals
+Transactions
+Caching/Redis
+Celery
+Testing
+Docker
+Gunicorn/Nginx
+Deployment
+Performance optimization
+Static/media files
+Environment variables
+/==================================================================
+Django fundamentals & architecture
+Project/app structure
+Virtual environments
+URLs & routing
+Views — FBV/CBV
+Templates
+Forms & validation
+Models & ORM
+Relationships
+Query optimization
+Migrations
+Middleware
+Sessions & cookies
+Authentication & authorization
+Custom User Model
+Password reset / email / OTP
+Django Admin
+Static & media files
+CSRF / CORS / security
+Transactions
+Signals
+Django REST Framework
+API authentication / JWT
+API permissions
+Serialization
+Pagination / filtering
+Testing
+Caching / Redis
+Celery / background tasks
+PostgreSQL / database concepts
+Performance optimization
+Environment variables & settings
+Deployment — Gunicorn/Nginx/Docker
+Logging & error handling
+Your expense_tracker project
+Your student_academic_management_system project

@@ -640,3 +640,160 @@ karna'''
 # count(5)
 
 
+# ===================================
+'''generator'''
+# basic syntax of generator
+# def numbers():
+#     yield 1
+#     yield 2
+#     yield 3
+#     yield 4
+#     yield 5
+#     yield 6
+# res = numbers()
+# for i in res:
+#     print(i)
+
+# def generator(n):
+#     yield n
+# res = generator(5)
+# for i in res:
+#     print(i)
+
+# def test():
+#     yield 1
+#     yield 2
+#     yield 3
+# g = test()
+# print(next(g))
+# print(next(g))
+
+'''56. Create a generator that yields numbers from 1 to N'''
+# def num(n):
+#     for i in range(1,n+1):
+#         yield i
+# res = num(20)
+# for j in res:
+#     print(j)
+
+'''57. Create a generator for even numbers'''
+# def even(n):
+#     for i in range(1,n+1):
+#         if i%2==0:
+#             yield i
+# ans = even(20)
+# for j in ans:
+#     print(j)
+
+''' generator expression'''
+'''Basic syntax
+(expression for item in iterable)
+Condition ke saath:
+(expression for item in iterable if condition)
+Example:
+g = (i for i in range(1, 11) if i % 2 == 0)'''
+'''Generator function
+    ↓
+yield
+    ↓
+one value at a time
+
+Generator expression
+    ↓
+(expression for item in iterable)
+    ↓
+one value at a time
+
+next()
+    ↓
+next value maango
+
+for loop
+    ↓
+generator ko automatically consume karta hai'''
+
+# l = [1, 2, 3, 4, 5, 6]
+# n = (i for i in l if i%2==0)
+# for i in n:
+#     print(i)
+
+'''Create a generator for Fibonacci numbers'''
+# def fibonacci(n):
+#     a = 0
+#     b = 1
+#     for i in range(n):
+#         yield a
+#         a, b = b,a + b
+# ans = fibonacci(5)
+# for j in ans:
+#     print(j)
+
+'''Create a generator that reads a large file line-by-line'''
+
+# def read(file):
+#     for i in file:
+#         yield i
+# ans = read( open('Django path.txt','r',encoding='utf-8'))
+# for j in ans:
+#     print(j)
+
+''' using with open '''
+# def read(file):
+#     for i in file:
+#         yield i
+# with open('Django path.txt','r',encoding='utf-8') as file:
+#     ans = file
+#     for j in ans:
+#         print(j)
+
+'''60. Write a generator and compare it with a normal list-returning function'''
+
+'''| Normal List                      | Generator                         |
+| -------------------------------- | --------------------------------- |
+| Saari values ek saath banata hai | One-by-one value deta hai         |
+| Memory zyada use kar sakta hai   | Memory efficient                  |
+| List return karta hai            | Generator object return karta hai |
+| Data immediately available       | Data lazily generate hota hai     |
+| Small data ke liye convenient    | Large data ke liye useful         |
+
+Interview mein agar pooche "When would you prefer generator?"
+Bolna:
+"I would prefer a generator when I need to process a large amount of data sequentially
+ and don't need all values in memory at the same time."
+
+Aur ek important nuance: generator hamesha faster nahi hota. Uska primary advantage memory 
+efficiency/lazy evaluation hai.
+
+Code:-
+'''
+# def normal(n):
+#     ans = []
+#     for i in range(1,n+1):
+#         ans.append(i)
+#     return ans
+# print(normal(5))
+
+# def generator(n):
+#     for i in range(1,n+1):
+#         yield i
+# for j in generator(5):
+#     print(j)
+
+'''"Why did you use yield instead of return in the generator?"
+Ans:-
+"Because yield allows the function to produce values one at a time and pause its execution, 
+whereas return terminates the function and returns the complete result. Since the purpose of a 
+generator is lazy evaluation and memory-efficient processing, we use yield."'''
+
+'''"Can you use return i instead?"
+Ans:- 
+"Technically yes, but it would not work as a generator for producing multiple values. 
+return terminates the function at the first return, while yield allows multiple values 
+to be produced over multiple iterations."'''
+
+'''61. Create a generator that yields squares of numbers from 1 to N.'''
+# def square(n):
+#     for i in range(1,n+1):
+#         yield i**2
+# for j in square(10):
+#     print(j)
