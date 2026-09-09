@@ -797,3 +797,54 @@ to be produced over multiple iterations."'''
 #         yield i**2
 # for j in square(10):
 #     print(j)
+# ===============================================
+'''Decorator'''
+'''61. Create a simple decorator that prints before and after a function'''
+# def decorator(func):
+#     def wrapper():
+#         print('starting')
+#         func()
+#         print('ending')
+#     return wrapper
+
+# @decorator
+# def greet():
+#     print('hello')
+# greet()
+
+'''error'''
+# def decorator(func):
+#     print('s')
+#     func()
+#     print('s')
+
+# @decorator
+# def greet():
+#     print('h')
+# greet()
+
+'''|                                         | Without wrapper         | With wrapper            |
+| --------------------------------------- | ----------------------- | ----------------------- |
+| `starting/ending` kab chale?            | Decorator apply hote hi | `greet()` call hone par |
+| `greet()` baad mein kaam karega?        | ❌                       | ✅                       |
+| Original function ko replace kar sakte? | ❌                       | ✅                       |
+| Decorator ka standard pattern?          | ❌                       | ✅                       |
+'''
+
+# def sum(func):
+#     def wrapper(a):
+#         total=0
+#         while a>0:
+#             digit=a%10
+#             total+=digit
+#             a=a//10
+#         print(total)
+#         func(9,8)
+#     return wrapper
+# @sum
+# def addition(a,b):
+#     print(a+b)
+# addition(56)
+
+
+
