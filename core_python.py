@@ -847,4 +847,78 @@ to be produced over multiple iterations."'''
 # addition(56)
 
 
+# def decorator(func):
+#     def wrapper(*args):
+#         print('starting of sum')
+#         func(*args)
+#         print('ending of sum')
+#     return wrapper
+# @decorator
+# def add(*args):
+#     total=0
+#     for i in args:
+#         total+=i
+#     print(total)
+# add(2,4,5,67,4)
 
+'''62. Create a decorator that calculates execution time'''
+# import time
+# def timer(func):
+#     def wrapper():
+#         starting_time = time.time()
+#         func()
+#         end_time = time.time()
+#         execution_time  = end_time-starting_time
+#         print(execution_time)
+#     return wrapper
+
+# @timer
+# def check():
+#     print('cheking time execution')
+# check()
+
+'''63. Create a decorator that checks whether a user/function argument is valid'''
+# def age_checker(func):
+#     def wrapper(age):
+#         if age>=18:
+#             print('you are allowed to enter')
+#             func()
+#         else:
+#             print('you are not allowed to enter')
+#     return wrapper
+# @age_checker
+# def check():
+#     print('welcome')
+# check(17)
+
+# def login(func):
+#     def wrapper(username,password):
+#         create_username = input("create your username: ")
+#         create_password = int(input('create your password: '))
+#         if create_username==username and create_password==password:
+#             print('sucessfully login')
+#             func()
+#         else:
+#             print('invalid credintials')
+#     return wrapper
+# @login
+# def welcome():
+#     print('welcome to login')
+# welcome('piyush',1234)
+
+'''64. Create a decorator that accepts arguments'''
+# def decorator(message):
+#     def actual_decorator(func):
+#         def wrapper():
+#             print(message)
+#             func()
+#         return wrapper
+#     return actual_decorator
+
+# @decorator('starting_function')
+# def greet():
+#     print('hello')
+# greet()
+
+# ==========================================
+'''OOPS'''
