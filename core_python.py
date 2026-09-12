@@ -922,3 +922,207 @@ to be produced over multiple iterations."'''
 
 # ==========================================
 '''OOPS'''
+'''🧠 OOP Roadmap
+Hum is order mein chalenge:
+                    Class kya hai?
+                    Object kya hai?
+                    Class vs Object
+                    __init__() constructor
+COMPLETED -->                    self
+                    Instance variables
+                    Instance methods
+                    Class variables
+                    Class methods
+                    Static methods
+
+Inheritance
+Method overriding
+super()
+Encapsulation
+Public / Protected / Private
+Polymorphism
+Abstraction
+Abstract class / ABC
+@property
+Practical OOP interview questions'''
+
+'''Create a class Student with name and marks'''
+# class Student:
+#     def info(name,marks):
+#         print(name,marks)
+# Student.info('piyush',90)
+
+'''Create a class with constructor __init__()'''
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name = name
+#         self.marks = marks
+# s1 = Student('piyush',90)
+# print(s1.name)
+# print(s1.marks)
+
+'''class variable'''
+# class Student:
+#     college = 'sage'
+#     def __init__(self,name):
+#         self.name = name
+# s1 = Student('piyush')
+# print(s1.name,'-',s1.college)
+
+'''local variable'''
+# class check:
+#     def __init__(self,mess):
+#         self.mess = mess
+#     def show(self):
+#         msg = 'hello'
+#         print(msg)
+# s1 = check('hi')
+# print(s1.mess)
+# s1.show()
+
+'''instaNCE method'''
+# class Student:
+#     def  __init__(self,name,marks):
+#         self.n,self.r=name,marks
+#     def display(self):
+#         print(self.n,self.r)
+# s1 = Student("Piyush", 90)
+# s1.display()
+        
+''' class variable ko modify/call karna '''
+# class Students:
+#     college = 'lnct'
+#     def __init__(self,name):
+#         self.n=name
+# s1  = Students('piyush')
+# s2  = Students('rahul')
+# Students.college = 'sage'
+# print(s1.n,s1.college)
+        
+''' class method 
+Create a class with @classmethod'''
+# class Students:
+#     college = 'lnct'
+#     @classmethod
+#     def change(cls,new_college):
+#         cls.college = new_college
+# Students.change('sage')
+# print(Students.college)
+
+''' static method
+Create a class with @staticmethod'''
+# class Calculator:
+#     @staticmethod
+#     def add(*args):
+#         total=0
+#         for i in args:
+#             total+=i
+#         return total
+# print(Calculator.add(10,20))
+
+# -------------------------------------------------
+'''inheritance
+Inheritance is an OOP mechanism where a child class acquires the attributes and methods 
+of a parent class, mainly providing code reusability.
+'''
+''' types of inheritance'''
+'''Inheritance
+Single inheritance is a type of inheritance where a child class inherits attributes
+ and methods from a single parent class.
+Create a parent and child class demonstrating inheritance
+single - level - inheritance'''
+# class Animal:
+#     def eat(self):
+#         print('eating')
+# class Dog(Animal):
+#     def bark(self):
+#         print('barking')
+# d=Dog()
+# d.eat()
+# d.bark()   
+
+''' multiple inheritance
+Multiple inheritance is a type of inheritance where a single 
+child class inherits from two or more parent classes.'''     
+# class Father:
+#     def property1(self):
+#         print('property from father')
+# class Mother:
+#     def property2(self):
+#         print('property from mother')
+# class Child(Father,Mother):
+#     pass
+# c=Child()
+# c.property1()
+# c.property2()
+
+'''multi-level-inheritance
+Multilevel inheritance is a type of inheritance where a class inherits from another 
+derived class, forming a chain of inheritance.'''
+# class A:
+#     def classA(self):
+#         print('hello from class A')
+# class B(A):
+#     def classB(self):
+#         print('hello from class B')
+# class C(B):
+#     def classC(self):
+#         print('hello from class C ')
+# child = C()
+# child.classA()
+# child.classB()
+# child.classC()
+
+'''Hierarchical Inheritance.
+Hierarchical inheritance is a type of inheritance where multiple
+child classes inherit from a single parent class.'''
+# class Parent:
+#     def property(self):
+#         print('child 1 you get 60% property child 2 you get 40% property')
+# class Child1(Parent):
+#     def get_property(self):
+#         print('getting parents 60% property ')
+# class Child2(Parent):
+#     def get_property2(self):
+#         print('getting parents 40% property')
+# c1 = Child1()
+# c1.property()
+# c1.get_property()
+
+# c2 = Child2()
+# c2.property()
+# c2.get_property2()
+
+'''hybrid inheritance
+Ismein Hierarchical + Multiple inheritance combine ho rahe hain.
+A → B and A → C = Hierarchical
+D(B, C) = Multiple
+Dono combine = Hybrid
+Hybrid inheritance is a combination of multiple inheritance types, 
+such as multiple, multilevel, or hierarchical inheritance.'''
+# class A:
+#     def show_a(self):
+#         print('A')
+# class B(A):
+#     def show_b(self):
+#         print('B')
+# class C(A):
+#     def show_c(self):
+#         print('C')
+# class D(B,C):
+#     def show_d(self):
+#         print('D')
+# d = D()
+# d.show_a()
+# d.show_b()
+# d.show_c()
+# d.show_d()
+                    # '''Inheritance ke 5 types — COMPLETE ✅
+                    # Single → 1 parent → 1 child
+                    # Multiple → multiple parents → 1 child
+                    # Multilevel → inheritance ki chain
+                    # Hierarchical → 1 parent → multiple children
+                    # Hybrid → 2+ inheritance types ka combination'''
+
+
+       

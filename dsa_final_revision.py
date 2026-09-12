@@ -50,3 +50,25 @@ left'''
 #             l[left],l[right]=l[right],l[left]
 #         left+=1
 # print(l)
+
+
+'''•	Merge Two Sorted Arrays '''
+# l1 = [1,3,5]
+# l2 = [2,4,6]
+# i = 0
+# j = 0
+# ans = []
+# while i<len(l1) and j<len(l2):
+#     if l1[i]<l2[j]:
+#         ans.append(l1[i])
+#         i+=1
+#     else:
+#         ans.append(l2[j])
+#         j+=1
+# while i<len(l1):
+#     ans.append(l1[i])
+#     i+=1
+# while j<len(l2):
+#     ans.append(l2[j])
+#     j+=1
+# print(ans)
