@@ -928,16 +928,15 @@ Hum is order mein chalenge:
                     Object kya hai?
                     Class vs Object
                     __init__() constructor
-COMPLETED -->                    self
+COMPLETED -->        self
                     Instance variables
                     Instance methods
                     Class variables
                     Class methods
                     Static methods
-
-Inheritance
-Method overriding
-super()
+                    Inheritance
+                    Method overriding
+                    super()
 Encapsulation
 Public / Protected / Private
 Polymorphism
@@ -1125,4 +1124,134 @@ such as multiple, multilevel, or hierarchical inheritance.'''
                     # Hybrid → 2+ inheritance types ka combination'''
 
 
-       
+''' Method Overriding 
+Method overriding occurs when a child class provides its own implementation of a method 
+that is already defined in the parent class.'''
+# class Animal:
+#     def sound(self):
+#         print("animal sounds coming....")
+# class Dog(Animal):
+#     def sound(self):
+#         print('dog barks')
+
+''' super() method
+Parameter lena pad sakta hai → parent ko value pass karne ke liye.
+Attribute banana dobara nahi padta → parent already bana raha hai. ✅'''
+# class Animal:
+#     def show(self):
+#         print('animal')
+# class Dog(Animal):
+#     def show(self):
+#         super().show()
+#         print('dog')
+# d = Dog()
+# d.show()
+'''super() is used in a child class to access or call methods and the constructor of its parent class, 
+especially when extending or overriding parent-class functionality.
+Short version:
+super() allows a child class to call the parent class's methods or constructor.'''
+'''with init '''
+# class Student:
+#     def __init__(self,name):
+#         self.name = name
+# class Profile(Student):
+#     def __init__(self, name,rollno):
+#         super().__init__(name)  
+#         self.rollno = rollno
+# p=Profile('piyush',123)
+# print(p.name,p.rollno)
+
+''' ENCAPSULATION 
+Encapsulation is the process of bundling data and methods into a single class and 
+restricting or controlling direct access to the data.'''
+
+# class Student:
+#     def __init__(self,name,city):
+#         self.name = name
+#         self.city = city
+#     def display(self):
+#         print(self.name,self.city)
+# s1 = Student('piyush','bhopal')
+# s1.display()
+# s2 = Student('rohit','indore')
+# s2.display()
+
+''' public vaRIable
+A public variable is a variable that can be directly accessed and modified from outside the class. 
+In Python, variables without a leading underscore are public by default. '''
+
+# class Student:
+#     def __init__(self,name,marks):
+#        self.name,self.marks = name,marks
+#     def display(self):
+#         print(self.name,self.marks)
+# p = Student('piyush',78)
+# p.marks = 97
+# p.display()
+
+''' protected variable
+A protected variable in Python is represented by a single leading underscore and is intended for 
+internal use within the class and its subclasses. It can still be accessed from outside because 
+Python does not enforce strict access restrictions.'''
+# class Students:
+#     def __init__(self,name,marks):
+#         self.name = name
+#         self._marks = marks
+# s = Students('piyush',45)
+# s._marks = 90
+# print(s.name,s._marks)
+'''_marks protected convention hai, strictly private nahi. 
+Python technically outside access ko prevent nahi karta.
+Python's protected variables are not strictly enforced; 
+a single underscore indicates that the attribute is intended for internal use.'''
+'''internal usage example'''
+# class BankAccount:
+#     def __init__(self, balance):
+#         self._balance = balance
+#     def deposit(self, amount):
+#         self._balance += amount
+#         print("Balance:", self._balance)
+#     def show_balance(self):
+#         print("Balance:", self._balance)
+# a = BankAccount(1000)
+# a.deposit(500)
+# a.show_balance()
+
+'''private variable
+A private variable is an attribute prefixed with double underscores (__). 
+Python applies name mangling to it, making direct access from outside the class 
+difficult and helping protect internal class data.'''
+
+# class BankAccount:
+#     def __init__(self,balance):
+#         self.__balance = balance
+#     def show_balance(self):
+#         print(self.__balance)
+# a=BankAccount(5000)
+# a.show_balance()
+# print(dir(a))  --> this is name mangling using magic dinder method 
+# we can see the calling name and call __private method
+# Lekin dir() se object ke attributes/methods ki list dekh sakte ho:
+# print(a._BankAccount__balance) --> this is name mangling method
+
+'''Coding Question 🔥
+Ek BankAccount class banao:
+__balance private variable ho.
+deposit(amount) method ho jo balance mein amount add kare.
+show_balance() method current balance print kare.
+Object mein initial balance 1000 rakho.
+deposit(500) call karo.
+Phir show_balance() call karo.'''
+# class BankAccount:
+#     def __init__(self,balance):
+#         self.__balance = balance
+#     def deposit(self,amount):
+#         self.__balance+=amount
+#     def show_balance(self):
+#         print(self.__balance)
+# p = BankAccount(1000)
+# p.deposit(500)
+# p.show_balance() 
+        
+        
+
