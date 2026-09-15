@@ -937,11 +937,11 @@ COMPLETED -->        self
                     Inheritance
                     Method overriding
                     super()
-Encapsulation
-Public / Protected / Private
-Polymorphism
-Abstraction
-Abstract class / ABC
+                    Encapsulation
+                    Public / Protected / Private
+                    Polymorphism
+                    Abstraction
+                    Abstract class / ABC
 @property
 Practical OOP interview questions'''
 
@@ -1253,5 +1253,130 @@ Phir show_balance() call karo.'''
 # p.deposit(500)
 # p.show_balance() 
         
-        
+''' Polymorphism 
+Polymorphism is an OOP concept where the same method or interface 
+can have different implementations or behaviors depending on the object.
+Jo humne Method Overriding padha tha, woh polymorphism achieve karne ka ek common way hai.'''
 
+# class Dog:
+#     def sound(self):
+#         print('bark')
+# class Cat:
+#     def sound(self):
+#         print('meow')
+# d = Dog()
+# c = Cat()
+# d.sound()
+# c.sound()
+
+''' Abstraction. 
+Abstraction is the process of hiding implementation details and exposing 
+only the essential functionality to the user. In Python, abstraction can be implemented 
+using abstract classes and abstract methods from the abc module.
+Abstract method = parent mein requirement define, child mein actual implementation. 🔥
+
+Bas ye distinction yaad rakhna: abstract method ka purpose “hume implementation nahi 
+pata” se zyada “child classes ko ye method implement karna mandatory hai” hai.'''
+# from abc import ABC,abstractmethod
+# class Animal(ABC):
+#     @abstractmethod
+#     def sound(self):
+#         pass
+# class Dog(Animal):
+#     def sound(self):
+#         print('barks')
+# d=Dog()
+# d.sound()
+
+'''Q: Shape naam ki abstract class banao.
+ABC aur abstractmethod use karo.
+area() naam ka abstract method banao.
+Rectangle class Shape se inherit kare.
+Rectangle mein area() implement karo.
+Length = 10, breadth = 5
+Area print karo.'''
+# from abc import ABC,abstractmethod
+# class Shape(ABC):
+#     @abstractmethod
+#     def area(self):
+#         pass
+# class Rectangle(Shape):
+#     def __init__(self,l,b):
+#         self.l = l
+#         self.b = b
+#     def area(self):
+#         print('the area of rectangle is',self.l*self.b)
+# a = Rectangle(10,5)
+# a = a.area()
+
+''' @property 
+@property is a decorator that allows a method to be accessed like an attribute, 
+without explicitly calling it with parentheses. It is commonly used for controlled 
+access to object data.
+@property allows a method to be accessed like an attribute, 
+while @property_name.setter allows controlled modification of that property.'''
+# class Student:
+#     def __init__(self,name):
+#         self._name = name
+#     @property
+#     def name(self):
+#         return self._name
+# s = Student('piyush')
+# print(s.name)
+'''Employee class banao jisme salary property ho. Salary 0 se kam set nahi honi chahiye. 
+Tum code likho, main interview-style review karunga. 💪'''
+# class Employee:
+#     def __init__(self,salary):
+#         self._salary = salary
+#     @property
+#     def salary(self):
+#         return self._salary
+#     @salary.setter
+#     def salary (self,check_salary):
+#         if check_salary<0:
+#             print('salary cannot be negative')
+#         else:
+#             self._salary=check_salary
+# s = Employee(20000)
+# print(s.salary)
+# s.salary = 80000
+# print(s.salary)
+# s.salary = -42356
+# print(s.salary)
+
+'''__str__()'''    
+'''"__str__() is a special method in Python that returns 
+a human-readable string representation of an object. 
+It is commonly used when an object is passed to print()."'''
+# class Students:
+#     def __init__(self,name,marks):
+#         self.name,self.marks = name,marks
+#     def __str__(self):
+#         return self.name+" "+self.marks
+# s = Students('piyush','98')
+# print(s)
+
+'''75. Implement __len__() in a custom class'''
+# class Students:
+#     def __init__(self,students):
+#         self.students = students
+#     def __len__(self):
+#         return len(self.students)
+# s = Students(["Piyush", "Rahul", "Aman"])
+# print(len(s))
+
+'''76. Create a class that keeps track of how many objects have been created'''
+# class Student:
+#     count = 0
+#     def __init__(self,name):
+#         self.n = name
+#         Student.count+=1
+# s1 = Student("Piyush")
+# s2 = Student("Rahul")
+# s3 = Student("Aman")
+# print(Student.count)
+# ==================================================================================== oops ended
+
+        
+        
+        
