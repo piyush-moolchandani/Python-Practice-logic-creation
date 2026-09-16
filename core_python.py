@@ -1377,6 +1377,172 @@ It is commonly used when an object is passed to print()."'''
 # print(Student.count)
 # ==================================================================================== oops ended
 
+# ==============================
+''' EXCEPTION HANDLING '''
+'''Exception kya hota hai?
+Error vs Exception
+try
+except
+else
+finally
+Multiple except
+Specific exceptions (ValueError, TypeError, ZeroDivisionError, etc.)
+raise
+Custom Exception
+Practical coding questions'''
+
+'''what is exception
+An exception is a runtime error that interrupts the normal flow of program execution.'''
+
+''' error vs exception
+| Error                                                             | Exception                                                              |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Usually serious problem hoti hai                                  | Runtime par aane wali problem hoti hai                                 |
+| Program ko recover karna generally difficult hota hai             | Exception ko `try-except` se handle kar sakte hain                     |
+| Examples: `SyntaxError`, `IndentationError`                       | Examples: `ValueError`, `TypeError`, `ZeroDivisionError`, `IndexError` |
+| Mostly code/program structure se related errors bhi ho sakte hain | Mostly program execute hote waqt unexpected situation                  |
+An error is a problem in a program that can prevent it from executing correctly, while an exception is a runtime problem that can usually be handled 
+using exception-handling mechanisms like try-except.
+'''
+
+''' try-except 
+try-except is used to handle exceptions and prevent the program from terminating unexpected'''
+'''86. Write code using try-except for division by zero'''
+# n = int(input(" enter number to divide "))
+# try:
+#      print(10/n)
+# except ZeroDivisionError:
+#     print('Cannot divide by zero')
+
+'''Specific exceptions should be handled instead of using a bare except, because it makes error 
+handling more precise and avoids hiding unexpected problems.'''
+'''87. Handle invalid integer input
+   
+'''
+# try:
+#     n = int(input(" enter your number "))
+#     m = int(input(" enter your number "))
+#     print(n/m)
+# except ZeroDivisionError:
+#     print(' cannot divide by zero ')
+# except ValueError:
+#     print(' invalid value ')
+
+''' else 
+else block runs only when the try block executes successfully without raising an exception.'''
+'''89. Use else with try-except'''
+# try:
+#     n = int(input(" enter your number "))
+#     m = int(input(" enter your number "))
+#     print(n/m)
+# except ZeroDivisionError:
+#     print('cannot divide by zero ')
+# else:
+#     print('division succesfull')
+
+
+'''90. Use finally
+finally is a block that executes regardless of whether an exception occurs or not,
+ and it is commonly used for cleanup operations.'''
+# try:
+#     age = int(input('Age: '))
+#     print(age)
+# except ValueError:
+#     print(' invalid age ')
+# finally:
+#     print('Input process completed')
+
+'''  multiple except 
+88. Use multiple except blocks
+Ek try block ke saath multiple except laga sakte hain, taaki different 
+exceptions ko separately handle kar sakein.'''
+# try:
+#     l = [10,20,30]
+#     n = int(input(" enter your number: "))
+#     print(l[n])
+# except ValueError:
+#     print(' invalid number ')
+# except IndexError:
+#     print(" invalid index ")
+
+''' raise 
+raise is used to explicitly raise an exception when a specific condition is not valid.
+raise = manually exception generate karna.'''
+# try:
+#     age = int(input("enter your age: "))
+#     if age<0:
+#         raise ValueError('age cannot be negative ')
+# except ValueError:
+#     print(' age cannot be negative ')
+
+
+'''Ek BankAccount class banao:
+balance input lo.
+Agar balance negative diya gaya → manually ValueError raise karo.
+Agar valid hai → balance print karo.
+except mein error handle karo.'''
+# class BankAccount:
+#     def __init__(self,balance):
+#         self.b = balance
+#         if self.b<0:
+#             raise ValueError('balance cannot be negative ')
+# try:
+#     c = BankAccount(-4000)
+#     print(c.b)
+# except ValueError as e:
+#     print(e)
+       
+
+''' custom exception
+A custom exception is a user-defined exception created by
+ inheriting from Python's Exception class. 
+'''
+# class InsufficientBalanceError(Exception):
+#     pass
+# class BankAccount:
+#     def __init__(self,balance):
+#         self.b = balance
+#     def withdraw(self,amount):
+#         if amount>self.b:
+#             raise InsufficientBalanceError('Insufficient Balance')
+#         self.b-=amount
+#         print('Withdrawal successful','Balance Left:-',self.b)
+# account = BankAccount(500)
+# try:
+#     account.withdraw(1000)
+# except InsufficientBalanceError as e:
+#     print(e)
+
+
+'''91. Create your own custom exception'''
+# class AgeError(Exception):
+#     pass
+# class Age:
+#     def __init__(self,age):
+#         self.a = age
+#     def age_check(self):
+#         if type(self.a)!=int or self.a<0 :
+#             raise AgeError('Invalid Age')
+#         print(self.a)
+# try:
+#     c = Age('-78')
+#     c.age_check()
+# except AgeError as e:
+#     print(e)
+        
+
+        
+
+
+
+
+
+
+
+
+
+
+
         
         
         
