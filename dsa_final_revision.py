@@ -73,4 +73,27 @@ left'''
 #     j+=1
 # print(ans)
 
-''' '''
+'''•	Pair Sum 
+•	Two Sum 
+'''
+# l = [4,7,5,6,9]
+# target = 11
+# d = {}
+# for i in l:
+#     need = target - i
+#     if need in d:
+#         print((need,i))
+#     d[i] = 1        
+
+'''•	Majority Element '''
+# l=[2,2,1,1,1,2,2]
+# maj_element = (len(l))/2
+# d={}
+# for i in l:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# for i in d:
+#     if d[i]>maj_element:
+#         print(i)

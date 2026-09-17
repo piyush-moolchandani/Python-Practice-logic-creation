@@ -1529,7 +1529,23 @@ A custom exception is a user-defined exception created by
 #     c.age_check()
 # except AgeError as e:
 #     print(e)
-        
+
+# try:
+#     n = int(input(" enter your number: "))
+#     m = int(input(" enter your number: "))
+#     divide = n/m
+# except ValueError:
+#     print("Please enter valid numbers")
+# except ZeroDivisionError:
+#     print(' cannot divide by zero ')
+# else:
+#     print(divide)
+# finally:
+#     print("Calculation completed")
+
+# ==================================================================
+''' File Handling '''  
+      
 
         
 
