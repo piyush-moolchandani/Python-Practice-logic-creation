@@ -1544,11 +1544,133 @@ A custom exception is a user-defined exception created by
 #     print("Calculation completed")
 
 # ==================================================================
+'''✅ Completed
+File Handling introduction
+open() function
+File modes: r, w, a, x, b (overview)
+read()
+readline()
+readlines()
+with open() / Context Manager
+write()
+Write vs Append
+writelines()
+File ko for loop se line-by-line read karna'''
+
+'''📌 Remaining Topics
+Next
+seek() and tell()
+read() vs line-by-line reading — practical differences
+File existence and basic file operations (os / pathlib)
+Exception handling with files
+CSV file handling
+JSON file handling
+File Handling interview coding questions'''
+
+
 ''' File Handling '''  
-      
+'''File handling ka use Python mein files ko create, read,
+ write aur update karne ke liye hota hai.
+1️⃣ open() Function
+Python mein file open karne ke liye open() use hota hai.
+"data.txt" → file ka naam
+"r" → read mode
+Important File Modes
+Mode
+Meaning
+r Read
+w Write (purana content overwrite)
+a Append (end mein add)
+x New file create
+b Binary mode'''
+# file = open('django_topics.txt','r')      
+# content = file.read()
+# print(content)
+# file.close()
+'''read(), readline() aur readlines()'''
+# 1️⃣ read() — Puri File Read
+# 2️⃣ readline() — Ek Time Par Ek Line
+# 3️⃣ readlines() — Saari Lines as List
 
-        
+'''readline'''
+# file = open('django_topics.txt','r')  
+# print(file.readline())
+# print(file.readline())
+# print(file.readline())
+# file.close()
+''' readlines()'''
+# file = open('django_topics.txt','r')
+# lines = file.readlines()
+# print(lines)
+# file.close()
 
+''' with open()
+"with open() is a context manager used for file handling. It automatically closes the file after
+ the block completes, helping manage resources safely."'''
+# with open('django_topics.txt','r') as file:
+#     content = file.read()
+#     print(content)
+'''🧠 Iska flow
+open() file open karta hai.
+as file file object ko variable deta hai.
+Indented block mein file operations hote hain.
+Block complete hone par file automatically close ho jaati hai—even agar exception aaye.'''
+
+''' write() method 
+write() is a file object method used to write a single string into a file. 
+It returns the number of characters written.'''
+# with open('django_topics.txt','w') as file:
+#     file.write('Hello Django')
+# with open('django_topics.txt','r') as file:
+#     content = file.read()
+#     print(content)
+
+''' append() method 
+Append mode ("a") is used to add new content at the end of an existing file
+without overwriting its existing content.
+Existing content preserve rahega.
+New content file ke end mein add hoga.
+File exist nahi karti ho toh generally create ho jaati hai.
+New line automatically add nahi hoti; zaroorat ho toh \n manually dena padta hai.'''
+# with open('django_topics.txt','a') as file:
+#     file.write("\npython")
+# with open('django_topics.txt','r') as file:
+#     content = file.read()
+#     print(content)
+
+'''Ek Python program likh bhai jo:
+students.txt file mein "Piyush" write kare using w.
+Same file mein "Rahul" append kare using a.
+File read karke final content print kare.
+with open() use karna hai. 👊'''
+
+# with open('student.txt','w') as file:
+#     file.write('piyush')
+# with open('student.txt','a') as file:
+#     file.write('\nrahul')
+# with open('student.txt','r') as file:
+#     content = file.read()
+#     print(content)
+
+''' for loop for reading lines-by-lines'''
+# with open('django_topics.txt','r') as file:
+#     for line in file:
+#         print(line.strip())
+
+'''write() vs writelines()
+write() ek string file mein likhta hai.
+writelines() strings ki list (ya iterable) ko file mein write karta hai.
+✅ Newline khud dena padega:'''
+# writelines
+# students = ["Python\n", "Django\n", "SQL\n"]
+# with open('student.txt','w') as file :
+#     file.writelines(students)
+# with open('student.txt','r') as file:
+#     content = file.read()
+#     print(content)
+
+
+   
 
 
 

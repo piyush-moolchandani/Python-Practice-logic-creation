@@ -1,25 +1,53 @@
-Django fundamentals + MVT
-Project/app structure
-URLs + Views
-Models + Relationships
-Migrations
-ORM + advanced ORM
-CRUD
-Templates + Forms
-Authentication + Custom User
-Middleware
-Security
-Sessions/Cookies
-Signals
-Transactions
-Static/Media
-CBV
-DRF + REST APIs
-Serializers
-APIView / ViewSet
-JWT + Permissions
-Pagination / Filtering / Throttling
-Testing
-Performance / Query optimization
-Deployment basics
-Project-based questions
+🔥 DRF / APIs
+
+🚀 Django Learning Roadmap
+
+1. Basic CRUD + ModelForm
+
+Complete ✅ Create, Edit, Delete, validation.
+
+2. Authentication + Ownership
+
+Register, login, logout, user-specific data and permissions.
+
+3. Search, Filter & Pagination
+
+QuerySets, GET parameters, pagination and combined filters.
+
+4. Relationships & Advanced ORM
+
+ForeignKey, ManyToMany, select_related, prefetch_related, aggregation.
+
+5. Django Forms & Security
+
+Custom validation, CSRF, permissions, messages and secure practices.
+
+6. Class-Based Views
+
+ListView, CreateView, UpdateView, DeleteView and LoginRequiredMixin.
+
+7. Testing & Deployment Basics
+
+Django tests, environment variables, static/media files and deployment concepts.
+
+8. REST APIs
+
+DRF, serializers, API views, authentication and permissions — current practical track ke baad.
+
+🎯 6 LPA Interview ke liye extra important
+
+ORM queries and optimization
+
+Authentication and authorization difference
+
+select_related() vs prefetch_related()
+
+get_object_or_404()
+
+CSRF and security basics
+
+Function-Based Views vs Class-Based Views
+
+Project explanation and debugging
+
+Mera plan: Pehle Employee project mein authentication + ownership complete karenge. Uske baad search/filter/pagination, phir ek complete interview-level Django project banayenge.
