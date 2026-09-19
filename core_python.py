@@ -1669,7 +1669,20 @@ writelines() strings ki list (ya iterable) ko file mein write karta hai.
 #     content = file.read()
 #     print(content)
 
+'''92. Read a text file and count lines'''
+# with open('django_topics.txt','r') as file:
+#     count = 0
+#     for line in file:
+#         count+=1
+# print(count)
 
+'''93. Count words in a file'''
+with open('django_topics.txt','r') as  file:
+    count=0
+    for line in file:
+      words = line.split()
+      count+=len(words)
+print(count)
    
 
 
