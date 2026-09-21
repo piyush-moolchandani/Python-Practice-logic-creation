@@ -1677,19 +1677,107 @@ writelines() strings ki list (ya iterable) ko file mein write karta hai.
 # print(count)
 
 '''93. Count words in a file'''
-with open('django_topics.txt','r') as  file:
-    count=0
-    for line in file:
-      words = line.split()
-      count+=len(words)
-print(count)
+# with open('django_topics.txt','r') as  file:
+#     count=0
+#     for line in file:
+#       words = line.split()
+#       count+=len(words)
+# print(count)
    
+''' tell() 
+tell() returns the current position of the file pointer in the file.'''
+# with open('student.txt','r') as file:
+#     print(file.tell())
+#     content = file.read(5)
+#     print(content)
+#     print(file.tell())
+'''Agar file mein Hello Python hai:
+Starting position → 0
+read(5) → Hello
+After reading 5 characters → position 5'''
 
+'''seek()
+seek() changes the file pointer to a specified position in the file.'''
+# with open('student.txt','r') as file :
+#     print(file.read(5))
+#     file.seek(0)
+#     print(file.read(6))
+'''🔍 Dry Run
+Initially pointer position 0 par hai.
+read(5) → Hello read hua, pointer 5 par chala gaya.
+seek(0) → Pointer wapas beginning par aa gaya.
+Dobara read(5) → Hello read hua.'''
 
+# with open('student.txt','rb') as file :
+#     print(file.read(6))
+#     file.seek(0)
+#     print(file.read(6))
+#     print(file.tell())
+'''🔍 Aisa kyun ho raha hai?
 
+Text mode mein Python tell() ka value hamesha simple character count nahi hota. Ye ek opaque position value hoti hai, jo text decoding aur newline handling ko track karne ke liye use hoti hai.
 
+Tumhare case mein:
 
+"rb" (binary mode) → 6 aa raha hai, kyunki binary stream bytes count karta hai.
 
+"r" (text mode) → bada number aa raha hai, kyunki text stream ka internal position representation different ho sakta hai.
+
+🎯 Interview mein kya yaad rakhna hai?
+
+tell() returns the current stream position. In binary mode, it generally represents a byte position. In text mode, it can return an opaque position value, so it should not always be treated as a simple character count.
+
+Aur seek(0) se beginning par jaana bilkul valid hai.
+
+Tumhara code sahi hai bhai. Bas tell() ke behavior ka ye technical difference samajh lo.'''
+
+'''File Existence Checking
+
+Method 1: os.path.exists()
+Kabhi-kabhi file open karne se pehle check karna hota hai ki file exist karti hai ya nahi.'''
+# import os
+# if os.path.exists('student.txt'):
+#     print(True)
+# else:
+#     print(False)
+'''Explanation:
+import os → Python ka built-in module.
+os.path.exists() → File ya directory exist karti hai ya nahi check karta hai.
+Return value True ya False hoti hai.'''
+
+'''Method 2: pathlib (Modern Approach)'''
+# from pathlib import Path
+# file_path = Path('student.txt')
+# if file_path.exists:
+#     print(True)
+# else:
+#     print(False)
+
+'''File handling mein exceptions—FileNotFoundError
+"FileNotFoundError occurs when we try to access a file that does not exist. 
+We can handle it using a specific except FileNotFoundError block."'''
+# try:
+#     with open('data.txt','r') as file:
+#         content = file.read()
+#         print(content)
+# except FileNotFoundError:
+#     print(' file doesnt exists ')
+
+''' CSV File Handling
+CSV file mein data rows aur columns ke format mein store hota hai.
+Python mein CSV handle karne ke liye built-in csv module use karte hain.
+"csv.reader() reads CSV data row by row and returns each row as a list."'''
+# import csv
+# with open('pizzas.csv','r') as file:
+#     reader = csv.reader(file)
+#     for row in reader:
+#         print(row)
+'''import csv → CSV module import karta hai.
+csv.reader(file) → CSV data read karta hai.
+for row in reader → Har row ko list ke form mein deta hai.
+Har value initially string hoti hai.'''
+
+''''''
 
 
 
