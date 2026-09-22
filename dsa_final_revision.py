@@ -97,3 +97,15 @@ left'''
 # for i in d:
 #     if d[i]>maj_element:
 #         print(i)
+
+'''•	Leaders in Array '''
+# l = [16,17,4,3,5,2]
+# max_right = l[-1]
+# ans = [l[-1]]
+# for i in range(len(l)-2,-1,-1):
+#     if l[i]>max_right:
+#         max_right=l[i]
+#         ans.append(l[i])
+# ans = ans[::-1]
+# print(ans)
+

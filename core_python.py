@@ -1777,6 +1777,27 @@ csv.reader(file) → CSV data read karta hai.
 for row in reader → Har row ko list ke form mein deta hai.
 Har value initially string hoti hai.'''
 
+
+'''CSV mein writing (csv.writer)
+csv.writer() CSV file mein rows write karne ke liye use hota hai.
+Method              Use
+writerow()   Ek row write karta hai
+writerows()  Multiple rows write karta hai
+newline=""   CSV writing mein unwanted blank lines avoid karne mein helpfull'''
+# import csv
+# employee = [
+#     ['Name', 'Salary', 'Department'],
+#     ['Piyush', 30000, 'IT'],
+#     ['Rahul', 35000, 'HR']
+# ]
+# with open('pizzas.csv','w',newline="") as file:
+#     writer = csv.writer(file)
+#     writer.writerows(employee)
+# with open('pizzas.csv','r') as file:
+#     reader = csv.reader(file)
+#     for i in reader:
+#         print(i)
+
 ''''''
 
 
