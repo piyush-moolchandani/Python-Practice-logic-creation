@@ -109,3 +109,24 @@ left'''
 # ans = ans[::-1]
 # print(ans)
 
+
+'''•	Equilibrium Index '''
+# l = [2,2,67,1,3]
+# for i in range(len(l)):
+#     left_sum = 0
+#     right_sum = 0
+#     for j in range(0,i):
+#         left_sum+=l[j]
+#     for k in range(i+1,len(l)):
+#         right_sum+=l[k]
+#     if left_sum==right_sum:
+#         print(i)
+
+# l = [2,2,67,1,3]
+# total_sum = sum(l)
+# left_sum = 0
+# for i in range(len(l)):
+#     right_sum = total_sum-left_sum-l[i]
+#     if left_sum == right_sum:
+#         print(i)
+#     left_sum+=l[i]

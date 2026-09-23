@@ -1798,7 +1798,41 @@ newline=""   CSV writing mein unwanted blank lines avoid karne mein helpfull'''
 #     for i in reader:
 #         print(i)
 
-''''''
+'''DictReader
+DictReader mein row dictionary ke form mein milti hai, jahan header keys ban jaate hain.'''
+# import csv
+# with open('pizzas.csv','r') as file:
+#     reader = csv.DictReader(file)
+#     for i in reader:
+#         print(i)
+
+'''csv.DictWriter
+Dictionary data ko CSV mein write karne ke liye:'''
+# import csv
+# employees = [
+#     {"Name": "Alok", "Salary": 30000, "Department": "IT"},
+#     {"Name": "Sarthak", "Salary": 35000, "Department": "HR"}
+# ]
+# with open('pizzas.csv','w') as file:
+#     fieldnames = ['Name','Salary','Department']
+#     writer = csv.DictWriter(file,fieldnames=fieldnames)
+#     writer.writeheader()
+#     writer.writerows(employees)
+# with open('pizzas.csv','r') as file:
+#     reader = csv.DictReader(file)
+#     for i in reader:
+#         print(i)
+
+
+'''CSV mein Existing Data Append Karna'''
+# import csv
+# with open('pizzas.csv','a') as file:
+#     writer = csv.writer(file)
+#     writer.writerow(['Aman',40000,'Finance'])
+# with open('pizzas.csv','r') as file:
+#     reader = csv.DictReader(file)
+#     for i in reader:
+#         print(i)
 
 
 
