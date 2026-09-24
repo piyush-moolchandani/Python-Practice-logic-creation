@@ -130,3 +130,18 @@ left'''
 #     if left_sum == right_sum:
 #         print(i)
 #     left_sum+=l[i]
+
+
+'''•	Stock Buy and Sell '''
+# prices = [7,1,5,3,6,4]
+# min_prices = prices[0]
+# max_profit = 0
+# for i in prices:
+#     if i<min_prices:
+#         min_prices=i
+#     else:
+#         profit = i-min_prices
+#         if profit>max_profit:
+#             max_profit=profit
+# print(max_profit)
+
