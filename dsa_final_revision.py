@@ -112,17 +112,6 @@ left'''
 
 '''•	Equilibrium Index '''
 # l = [2,2,67,1,3]
-# for i in range(len(l)):
-#     left_sum = 0
-#     right_sum = 0
-#     for j in range(0,i):
-#         left_sum+=l[j]
-#     for k in range(i+1,len(l)):
-#         right_sum+=l[k]
-#     if left_sum==right_sum:
-#         print(i)
-
-# l = [2,2,67,1,3]
 # total_sum = sum(l)
 # left_sum = 0
 # for i in range(len(l)):
@@ -145,3 +134,21 @@ left'''
 #             max_profit=profit
 # print(max_profit)
 
+
+'''•	Kadane's Algorithm
+Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum find karna hai'''
+''' kadane algo'''
+# l = [-2,1,-3,4,-1,2,1,-5,4]
+# current_sum = 0
+# max_sum = 0
+# for i in l:
+#     current_sum+=i
+#     if current_sum>max_sum:
+#         max_sum=current_sum
+#     else:
+#         if current_sum<0:
+#             current_sum = 0
+# print(max_sum)
+
+# =================================================================================================
+'''•	Group By Frequency '''
