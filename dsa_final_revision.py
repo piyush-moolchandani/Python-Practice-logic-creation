@@ -151,4 +151,99 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 # print(max_sum)
 
 # =================================================================================================
+
+'''HashMap / Dictionary '''
+'''•	Frequency Count '''
+# l = [1,1,2,2,3,3,34,4,5,4,5,3,4,45,5]
+# d = {}
+# for i in l:
+#     if i in d:
+#         d[i] = d[i]+1
+#     else:
+#         d[i] = 1
+# print(d)
+
+'''•	Character Frequency '''
+# s = 'madam'
+# d = {}
+# for i in s:
+#     if i in d:
+#         d[i] = d[i]+1
+#     else:
+#         d[i] = 1
+# print(d)
+
+'''•	Word Frequency '''
+# s = " hi my name is python and my age is 22"
+# l = s.split()
+# d = {}
+# for i in l:
+#     if i in d:
+#         d[i] = d[i]+1
+#     else:
+#         d[i] = 1
+# print(d)
+
+'''•	Maximum Frequency '''
+# l = [1,2,2,2,3,3,3,3,3,3,4,4,6]
+# d = {}
+# max_freq = 0
+# for i in l:
+#     if i in d:
+#         d[i] = d[i]+1
+#     else:
+#         d[i] = 1
+# for i in d:
+#     if d[i]>max_freq:
+#         max_freq=d[i]
+#         ans = i
+# print(max_freq)
+# print(ans)
+
+'''•	First Non-Repeating '''
+# l = [1,1,2,3,3,4,5,5]
+# d  = {}
+# for i in l:
+#     if i in d:
+#         d[i] = d[i]+1
+#     else:
+#         d[i] = 1
+# for i in d:
+#     if d[i] == 1:
+#         print(i)
+#         break
+
+'''•	Remove Duplicates '''
+# l = [1,1,2,3,3,3,4,5,5,5,5,5]
+# d = {}
+# l2 = []
+# for i in l:
+#     if i not in d:
+#         l2.append(i)
+#         d[i] = 1
+# print(l2)
+
+'''•	•	Group Anagrams  '''
+# words = ["eat", "tea", "tan", "ate", "nat", "bat"]
+# d = {}
+# for i in words:
+#     sorted_words = "".join(sorted(i))
+#     if sorted_words not in d:
+#         d[sorted_words] = []
+#     d[sorted_words].append(i)
+# print(d)
+
 '''•	Group By Frequency '''
+# l = [1,1,2,2,2,3,3,4]
+# d = {}
+# d2= {}
+# for i in l:
+#     if i in d:
+#         d[i] = d[i]+1
+#     else:
+#         d[i] = 1
+# for key,value in d.items():
+#     if value not in d2:
+#         d2[value] = []
+#     d2[value].append(key)
+# print(d2)
