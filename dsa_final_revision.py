@@ -271,3 +271,18 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 #     else:
 #         print('not anagram')
 
+
+'''•	Intersection of Arrays '''
+# l1 = [4, 9, 5]
+# l2 = [9, 4, 9, 8, 4]
+# d = {}
+# ans = []
+# for i in l1:
+#     d[i]=1
+# for j in l2:
+#     if j in d and j not in ans:
+#         ans.append(j)
+# print(ans)
+
+
+
