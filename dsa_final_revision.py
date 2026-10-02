@@ -284,5 +284,44 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 #         ans.append(j)
 # print(ans)
 
+'''•	Reverse String '''
+# s = "RestApi"
+# l = list(s)
+# left = 0
+# right = len(s)-1
+# while left<right:
+#     l[left],l[right] = l[right],l[left]
+#     left+=1
+#     right-=1
+# s = "".join(l)
+# print(s)
+
+'''•	Reverse Words '''
+# s = "ForeignKey, ManyToMany, select_related, prefetch_related, aggregation"
+# l = s.split()
+# left = 0
+# right = len(l)-1
+# while left<right:
+#     l[left],l[right] = l[right],l[left]
+#     left+=1
+#     right-=1
+# s = " ".join(l)
+# print(s)
+
+'''•	Palindrome '''
+# s = 'madam'
+# left = 0
+# right = len(s)-1
+# is_palindrome = True
+# while left<right:
+#     if s[left]!=s[right]:
+#         is_palindrome = False
+#         break
+#     left+=1
+#     right-=1
+# if is_palindrome:
+#     print('palindrome')
+# else:
+#     print('Not palindrome')
 
 
