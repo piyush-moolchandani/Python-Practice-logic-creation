@@ -325,3 +325,26 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 #     print('Not palindrome')
 
 
+''' valid palindrome '''
+# s = "A man, a plan, a canal: Panama"
+# char = []
+# for i in s:
+#     if i.isalnum():
+#         char.append(i.lower())
+# s = "".join(char)
+# left = 0
+# right = len(s)-1
+# is_palindrome = True
+# while left<right:
+#     if s[left]!=s[right]:
+#         is_palindrome = False
+#         break
+#     left+=1
+#     right-=1
+# if is_palindrome:
+#     print('palindrome')
+# else:
+#     print(' Not palindrome')
+
+
+
