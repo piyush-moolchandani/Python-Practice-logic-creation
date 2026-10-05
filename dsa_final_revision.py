@@ -346,5 +346,32 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 # else:
 #     print(' Not palindrome')
 
+''' character frequency '''
+# s = 'programming'
+# d={}
+# for i in s:
+#     if i in d:
+#         d[i]=d[i]+1
+#     else:
+#         d[i]=1
+# print(d)
+
+'''•	Remove Spaces '''
+# s = "my name is piyush"
+# x = ""
+# for i in s:
+#     if i!=" ":
+#         x=x+i
+# print(x)
+
+'''•	Remove Duplicates '''
+# l = [1,2,2,3,3,3,4,4,4,4]
+# left = 0
+# for right in range(1,len(l)):
+#     if l[left]!=l[right]:
+#         left+=1
+#         l[left] = l[right]
+# print(l[:left+1])
+
 
 
