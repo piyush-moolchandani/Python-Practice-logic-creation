@@ -374,4 +374,12 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 # print(l[:left+1])
 
 
-
+'two sum'
+# l = [2,3,4,5,3,7]
+# target = 12
+# d={}
+# for i in l:
+#     need = target-i
+#     if need in d:
+#         print((need,i))
+#     d[i] =1
