@@ -383,3 +383,17 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 #     if need in d:
 #         print((need,i))
 #     d[i] =1
+
+
+'''•	Leaders in Array '''
+
+# l = [16,17,4,3,5,2]
+# max_right = l[-1]
+# ans = [l[-1]]
+# for i in range(len(l)-2,-1,-1):
+#     if l[i]>max_right:
+#         ans.append(l[i])
+#         max_right = l[i]
+# final_ans = ans[::-1]
+# print(final_ans)
+
