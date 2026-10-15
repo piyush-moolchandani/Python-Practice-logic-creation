@@ -373,27 +373,30 @@ Ek integer array diya hai. Humein us contiguous subarray ka maximum possible sum
 #         l[left] = l[right]
 # print(l[:left+1])
 
+'''•	Count Vowels '''
+# s = "piyush"
+# vowel_count = 0
+# consonent_count = 0
+# for i in s:
+#     if i in "aeiou":
+#         vowel_count+=1
+#     else:
+#         consonent_count+=1
+# print({"vowels":vowel_count,"consonent":consonent_count})
 
-'two sum'
-# l = [2,3,4,5,3,7]
-# target = 12
-# d={}
-# for i in l:
-#     need = target-i
-#     if need in d:
-#         print((need,i))
-#     d[i] =1
-
-
-'''•	Leaders in Array '''
-
-# l = [16,17,4,3,5,2]
-# max_right = l[-1]
-# ans = [l[-1]]
-# for i in range(len(l)-2,-1,-1):
-#     if l[i]>max_right:
-#         ans.append(l[i])
-#         max_right = l[i]
-# final_ans = ans[::-1]
-# print(final_ans)
+''' •	String Compression  '''
+# s = "aaabbcdddd"
+# if not s:
+#     print("")
+# else:
+#     ans = ""
+#     ch_count = 1
+#     for i in range(len(s)-1):
+#         if s[i] == s[i+1]:
+#             ch_count+=1
+#         else:
+#             ans+=s[i]+str(ch_count)
+#             ch_count = 1
+# ans+=s[-1]+str(ch_count)
+# print(ans)
 
